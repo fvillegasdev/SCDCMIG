@@ -1,0 +1,291 @@
+﻿@using System.Configuration;
+
+<link href="@Url.Content("~/Content/Theme/global/plugins/font-awesome/5.11.2/css/all.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Scripts/lib/bootstrap/dist/css/bootstrap.css")" rel="stylesheet" />
+
+<script src="@Url.Content("~/Scripts/lib/jquery/dist/jquery.js")"></script>
+<script src="@Url.Content("~/Scripts/lib/bootstrap/dist/js/bootstrap.js")"></script>
+
+<style>
+    #adressMap {
+        height: 100%;
+    }
+</style>
+<input type="hidden" id="hdnGeoLatLng" value="" />
+<script type="text/javascript">
+    var initLat = 0, initLng = 0;
+    var idModal = "@Request.QueryString["callback"]";
+    var map;
+    var geocoder;
+    var markers = [];
+
+    //function getLocation() {
+    //    if (navigator.geolocation) {
+    //        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    //    } else {
+    //        alert("Geolocation is not supported by this browser.");
+    //    }
+    //}
+
+    //function showPosition(position) {
+    //    initLat = position.coords.latitude;
+    //    initLng = position.coords.longitude;
+    //    //map.setCenter({ lat: initLat, lng : initLng });
+    //}
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred while getting the browser coordinates.")
+                break;
+        };
+    };
+    function checkParentInfo() {
+        var idFn = "$modal$" + idModal;
+        var infoParent = window.parent[idFn];
+
+        if (infoParent) {
+            window.parent[idFn] = undefined;
+            //
+            return infoParent;
+        }
+        else {
+            return undefined;
+        };
+    };
+    function createMarker(current, markerPosition, map) {
+        var marker = new google.maps.Marker({
+            position: markerPosition,
+            icon: current.icon,
+            map: map,
+            type: current.markerType,
+            title: current.title
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+            content: current.infoFn ? current.infoFn(current) : undefined
+        });
+
+        marker.addListener("click", function (e) {
+            infowindow.open(map, marker);
+        });
+
+        return marker;
+    }
+    function addMarkers(infoParent, map, bounds) {
+        //var idFn = "$modal$" + idModal;
+        //var infoParent = window.parent[idFn];
+        var markers;
+        //
+        if (infoParent && infoParent.mode === "read") {
+            markers = infoParent.markers;
+            if (!markers && infoParent.marker) {
+                var nMarker = infoParent.marker;
+                nMarker.geolocalizacion = infoParent.geolocalizacion;
+                markers = [nMarker];
+            };
+            if (markers && markers.length >= 0) {
+                for (var i = 0; i < markers.length; i++) {
+                    var current = markers[i];
+                    //
+                    if (current.geolocalizacion) {
+                        var pos = current.geolocalizacion.indexOf(",");
+                        if (pos >= 0) {
+                            var v1 = parseFloat(current.geolocalizacion.substr(0, pos - 1));
+                            var v2 = parseFloat(current.geolocalizacion.substr(pos + 1));
+                            var markerPosition = new google.maps.LatLng(v1, v2);
+                            //
+                            var marker = createMarker(current, markerPosition, map);
+                            //var marker = new google.maps.Marker({
+                            //    position: markerPosition,
+                            //    icon: current.icon,
+                            //    map: map,
+                            //    type: current.markerType,
+                            //    title: current.title
+                            //});
+
+                            //var infowindow = new google.maps.InfoWindow({
+                            //    content: current.infoFn ? current.infoFn() : undefined
+                            //});
+
+                            //marker.addListener("click", function (e) {
+                            //    debugger;
+                            //    infowindow.open(map, marker);
+                            //});
+                            //
+                            if (markers.length === 1) {
+                                map.setCenter(markerPosition)
+                                map.setZoom(16);
+                                //
+                                bounds = null;
+                            }
+                            else {
+                                bounds.extend(marker.position);
+                            }
+                            //
+                        };
+                    };
+                };
+                if (bounds) {
+                    map.fitBounds(bounds);
+                }
+            };
+        }
+        else if (infoParent && infoParent.mode === "select") {
+            var fn = function (pos) {
+                if (infoParent.onMapLocationChanged) {
+                    infoParent.onMapLocationChanged(pos.lat() + ", " + pos.lng());
+                };
+            };
+            //
+            if (infoParent.address) {
+                var geocodeAddress = { "address": infoParent.address };
+                geocoder = new google.maps.Geocoder();
+                geocoder.geocode(geocodeAddress, function (results, status) {
+                    if (status === "OK") {
+                        map.setCenter(results[0].geometry.location);
+                        //
+                        var current = infoParent.marker ? infoParent.marker : {};
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location,
+                            draggable: true,
+                            icon: current.icon,
+                            type: current.markerType,
+                            title: current.title
+                        });
+                        //
+                        fn(marker.position);
+                        //
+                        document.getElementById("hdnGeoLatLng").value = results[0].geometry.location;
+                        google.maps.event.addListener(marker, "dragend", function () {
+                            try {
+                                fn(marker.position);
+                            }
+                            catch (e) {
+                            }
+                            document.getElementById("hdnGeoLatLng").value = marker.getPosition();
+                        });
+                        //
+                        map.setCenter(marker.position)
+                        map.setZoom(16);
+                        //
+                        bounds = null;
+                    } else {
+                        alert("Geocode was not successful for the following reason: " + status);
+                    };
+                });
+            }
+            else if (infoParent.geolocalizacion) {
+                var current = infoParent.marker ? infoParent.marker : {};
+                var pos = infoParent.geolocalizacion.indexOf(",");
+                if (pos >= 0) {
+                    var v1 = parseFloat(infoParent.geolocalizacion.substr(0, pos - 1));
+                    var v2 = parseFloat(infoParent.geolocalizacion.substr(pos + 1));
+
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(v1, v2),
+                        draggable: true,
+                        icon: current.icon,
+                        type: current.markerType,
+                        title: current.title
+                    });
+                    //
+                    fn(marker.position);
+                    //
+                    document.getElementById("hdnGeoLatLng").value = infoParent.geolocalizacion;
+                    google.maps.event.addListener(marker, "dragend", function () {
+                        try {
+                            fn(marker.position);
+                        }
+                        catch (e) {
+                        }
+                        document.getElementById("hdnGeoLatLng").value = marker.getPosition();
+                    });
+                    //
+                    map.setCenter(marker.position)
+                    map.setZoom(16);
+                    //
+                    bounds = null;
+                };
+            };
+        };
+    };
+    function initMap() {
+        var parentData = checkParentInfo();
+        if (!parentData) {
+            return;
+        };
+        //getLocation();
+        var bounds = new google.maps.LatLngBounds();
+
+        //if (!initLat > 0 || !initLng > 0) {
+        //    initLat = 26.015666316987229;
+        //    initLng = -98.402088660544578;
+        //};
+        /*
+        zoom: 12,
+        center: { lat: initLat, lng: initLng },
+        */
+        map = new google.maps.Map(document.getElementById('adressMap'), {
+            zoomControl: true,
+            mapTypeControl: true,
+            fullscreenControl: true,
+            streetViewControl: false,
+            gestureHandling: 'greedy'
+        });
+        //
+        addMarkers(parentData, map, bounds);
+        //
+        if (bounds) {
+            //map.fitBounds(bounds);
+        };
+        //
+        var fn = function (pos) {
+            if (window.parent && window.parent.window.parent) {
+                var p = window.parent.window.parent.window;
+                if (p.onMapLocationClicked) {
+                    p.onMapLocationClicked(pos.lat() + ", " + pos.lng());
+                };
+            };
+        };
+
+        map.addListener("click", function (event) {
+            fn(event.latLng);
+        });
+    };
+
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    function deleteMarkers() {
+        setMapOnAll(null);
+        markers = [];
+    };
+
+</script>
+<div style="
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    background-color: aliceblue;
+    z-index: 1000;
+"></div>
+<div id="adressMap" style="min-height:600px; margin: auto;"></div>
+
+<script async defer src="@ConfigurationManager.AppSettings["drivers:maps:url"]?key=@ConfigurationManager.AppSettings["drivers:maps:key"]&libraries=@ConfigurationManager.AppSettings["drivers:maps:libraries"]&callback=initMap"></script>

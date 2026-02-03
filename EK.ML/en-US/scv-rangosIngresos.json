@@ -1,0 +1,83 @@
+﻿{
+  "rangosIngresos": {
+      "bc": {
+      "text": "Rangos de Ingresos",
+      "link": "/scv/rangosIngresos"
+    },
+    "consulta": {
+      "title": "Administración de rangos de ingresos", 
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "rangoInicial": "Rango Inicial",
+          "rangoFinal": "Rango Final",
+          "estatus": "Estatus",
+          "creado": "Creado",
+          "modificado": "Modificado"
+        }
+      }
+    },
+    "form": {
+      "Id": {
+        "label": "ID"
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave del rango es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre del rango es requerido"
+        }
+      },
+      "RangoInicial": {
+        "label": "Rango Inicial",
+        "helplabel": "Capture el rango inicial",
+        "validaciones": {
+          "requerida": "El rango inicial es requerido"
+        }
+      },
+      "RangoFinal": {
+        "label": "Rango final",
+        "helplabel": "Capture el rangofinal",
+        "validaciones": {
+          "requerida": "El rango final es requerida"
+        }
+      },
+      "Moneda": {
+        "label": "Tipo De Moneda",
+        "helplabel": "Capture tipo de moneda",
+        "validaciones": {
+          "requerida": "El tipo de moneda es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Creado": {
+        "label": "Creado",
+        "helplabel": ""
+      },
+      "Modificado": {
+        "label": "Modificado",
+        "helplabel": ""
+      }
+    },
+    "mensajes": {
+      "exito": "El rango de ingresos ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo rango de ingresos"
+    },
+    "titulo": {
+      "nuevo": "Nuevo rango de ingresos"
+    }
+  }
+}

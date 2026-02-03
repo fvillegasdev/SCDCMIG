@@ -1,0 +1,31 @@
+﻿{
+  "DISABLED": {
+    "google": {
+      "storageV1": {
+        "bucket": "enkontrol",
+        "credentials": {
+          "type": "service_account",
+          "project_id": "halogen-base-163218",
+          "private_key_id": "228fa53aa263f32fef51f115116843b77eb48fdf",
+          "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDhp2ZjIJFIzxJQ\nk+9wRPxuUucxtWpWj5tfEsaKBYlEsQ+S+O9mXt7N+ZXA0Xf0B2GHjMwAy4HUJL+k\nPVX44y7fW+9eaDQ32ABti58ctP5Y86kdur0Gqy6Bt8OoUQZvaM0Mwgz4clCLVSDf\noe+Zc01Ijbn3soE1avwsqt7IJL2QaCOYBMgrfEYQ7Xou3FramCl480Is9GtsQjTD\nTLXzQu4iDbW8DCwVSnQcnSSdSjLT1bO2lINWyGe+ieRb/K4LhN/15yQqgyVNcBnh\nOrBEqKDksM4ukhiQsj0y/e8TM5JhikmpMElLiG2R0JSsCGRV22ecJv7RNIYm2tCT\njE0YEWSDAgMBAAECggEAPHjbFHeW17c+hj+O7DxglcQ71vNyIu5rSehDMpvXNIRq\n0w1JQtrrxLE9M6YvCkOsHGJcDV58VXjfrskNMBzZ49vEYz1zuP925eSD6HKMsxPh\nX2k63P2lAfhYQ9Qq8FJamS+rwC0KbryKicPg7POcY3QvwTSiMcmQ+Pt1ppdKAdeV\nw1PhABJDzofjeL39gmEaOIg8OumLvk7E5MJD/My1yig5HzdRxH/xEWT2PQcmT66g\nQpo4jY4iTrtcwLwy1AEp8Y/5eQ+cLqfvRwBZkEHcp/rtSt5c3MaPH5kqtKdlwfIx\nwUVhM3IghcxsjWvpJ1Z0jTxpO7z6I1waqPwBTTmyUQKBgQD4/W+WupdvSiq3EOAm\nPmZtCuP0WSeHAOIBHv7M6lsHwOxV+2R/SZCqZuKGN7AfJa022Il/6jBKg/3RRzF6\n9wJQIMxVC2MyD4lRC0XQzXajiySOPsexjvZ5I8zuR78JngnrlQACtsdpZe2hI2Np\n3RQUTMEp19KmMvZ8t8WtuFYQWQKBgQDoAcWu2r3dQEz8vehKeAlhc4ToTXwhkXwc\nrUByF8cjiut7bRkt5iCVugOQGQ6fVhrYap9aIEc/fAceb0DznOJT2xUFl4lnmVIy\nXh4HD10QMvEcxH11hcWt19PBYHNY+mzEWkEAj17gOlUMQc/77P/h3m7+Uwltya0O\nAjBTAaSgOwKBgHp4zqapaUuIg7JATsEA+IiyTqYmJFc3i/NZN6O7ssMBlj5ExY4G\ntW3b5Zh3U94+PhE4OYn9u3srqXGDP0dosG6Rc3BxhX1ePwDqNpEaPzz6eCSvpLIl\ny/6SKX8bM1Cbt+11AOhU14l0ZYpZSdEMuY+yoWDfk/HEJ5H5IvbsMQkhAoGBAOVK\nqxaudKqvm+bFwUen7o1zX80+lwmOAT1ONL0NpvAHoccwAYyNPXL8jfzh5sOuk4WD\nis3FzOR/LYH0rhqV2FDL2rDWHSRYMRY6Ui7kDjOuRQELaHq3pLC090DMk/NCPDCq\nikeFalztCZS9jlIK3rFZ5hRP+Keag/+uRhgjLZJ1AoGBAJaoU441we/OrQtbk3VT\nMh2q2hRvGb6K0XNN1jpWkbskfDXXRre/OE7nOAura8EICDWhpIuYjvDZ/bfjgooJ\ncQQ2xu6GJkdl+2VwXZWbZfyXpz5OMFeix4TWJJCnijYvtdu7Z2M6Irglc/mLGjdj\nWMIDlOcSGTh/7im2BivA3HVd\n-----END PRIVATE KEY-----\n",
+          "client_email": "id-dev-ek10-03@halogen-base-163218.iam.gserviceaccount.com",
+          "client_id": "102909341268356221605",
+          "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+          "token_uri": "https://accounts.google.com/o/oauth2/token",
+          "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+          "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/id-dev-ek10-03%40halogen-base-163218.iam.gserviceaccount.com"
+        }
+      }
+    },
+    "azure": {
+      "$$blobStorage": {
+        "token": "DefaultEndpointsProtocol=https;AccountName=kv10alora;AccountKey=dKBz93nStnQNC2PcesAHRWHQEe7QxjUpvfEkpNPFbvIPUGGyug0fuKEsauTmkc6ATp08rR4IVHjx6rJtBh66AA==;EndpointSuffix=core.windows.net",
+        "container": "enkontrol"
+      },
+      "$blobStorage": {
+        "token": "DefaultEndpointsProtocol=https;AccountName=ekdevclient01;AccountKey=yZpzKLh5XYVC2b0t+WKp10iQXa5yAd3eH7FW3mkc8+kMnOy9v0DEA+nwO9anwwoZnU8KjEtoir/lfH46XHEUsA==;EndpointSuffix=core.windows.net",
+        "container": "enkontrol"
+      }
+    }
+  }
+}

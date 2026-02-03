@@ -1,0 +1,18 @@
+﻿@using EK.Common.Reportes
+@{
+    Layout = "~/Views/Shared/_R3LetterPortrait.cshtml";
+
+    dynamic data = ViewBag.Data.Resultado;
+
+    var reporte = new EK.Common.Reportes.Reporte();
+    reporte.Titulo = "CATÁLOGO DE CONFIGURACIÓN DE PARÁMETROS";
+    reporte.SubTitulo = "HAVITAL COMERCIAL, S.A. DE C.V.";
+    reporte.FechaImpresion = System.DateTime.Now.ToString();
+    reporte.Columnas = new List<Reporte.Columna>();
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Sección", Longitud = 250, Campo = "Parametro.Secciones.Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Parámetro", Longitud = 200, Campo = "Parametro.Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Valor", Longitud = 250, Campo = "Valor" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Estatus", Longitud = 100, Campo = "Estatus.Nombre" });
+
+    ViewBag.Reporte = reporte;
+}

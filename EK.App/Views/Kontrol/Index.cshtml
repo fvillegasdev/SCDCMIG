@@ -1,0 +1,11 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutMenuLateral.cshtml";
+
+    string languageID = ViewBag.Language;
+    string isModal = ViewBag.IsModal;
+}
+@Html.Hidden("element_language", languageID)
+@Html.Hidden("element_modal", isModal)

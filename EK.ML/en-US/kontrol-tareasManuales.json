@@ -1,0 +1,133 @@
+﻿{
+  "tareasManuales": {
+    "bc": {
+      "text": "Tareas",
+      "link": "/kontrol/tareas"
+    },
+    "consulta": {
+      "title": "Administracion de tareas de usuario",
+      "grid": {
+        "headers": {
+          "tipo": { "Nombre": "Tipo" },
+          "nombre": "Tarea",
+          "prioridad": { "Nombre": "Prioridad" },
+          "asignado": "Asignada",
+          "fechaInicio": "Fecha Inicio",
+          "fechaFin": "Fecha Fin",
+          "estatus": { "Nombre": "Estatus" }
+        }
+      }
+    },
+    "form": {
+        "Clave": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerido": "La clave es requerida"
+            }
+        },
+        "Nombre": {
+            "label": "Descripción",
+            "helplabel": "Capture la descripción de la tarea",
+            "validaciones": {
+                "requerido": "La descripción es requerido"
+            }
+        },
+        "Tipo": {
+            "label": "Tipo",
+            "helplabel": "Capture el nombre la tarea",
+            "validaciones": {
+                "requerido": "El nombre es requerido"
+            }
+        },
+        "TipoCitas": {
+            "label": "Tipo",
+            "helplabel": "Capture el nombre la tarea",
+            "validaciones": {
+                "requerido": "El nombre es requerido"
+            }
+        },
+        "Asignado": {
+            "label": "Asignado",
+            "helplabel": "Usuario al que se le asigna esta tarea",
+            "validaciones": {
+                "requerido": "Requerido"
+            }
+        },
+        "Completado": {
+            "label": "% Avance",
+            "helplabel": "Porcentaje de avance",
+            "validaciones": {
+                "requerido": "Requerida"
+            }
+        },
+        "Descripcion": {
+            "label": "Descripcion",
+            "helplabel": "Capture la descripcion",
+            "validaciones": {
+                "requerido": "La descripcion es requerida"
+            }
+        },
+        "Estatus": {
+            "label": "Estatus",
+            "helplabel": "Estatus",
+            "validaciones": {
+                "requerido": "El Estatus es requerido"
+            }
+        },
+        "Cliente": {
+            "label": "Cliente",
+            "helplabel": "Capture el Cliente",
+            "validaciones": {
+                "requerido": "El Cliente es requerida"
+            }
+        },
+        "Expediente": {
+            "label": "Expediente",
+            "helplabel": "Capture el Expediente",
+            "validaciones": {
+                "requerido": "El Expediente es requerida"
+            }
+        },
+        "Localidad": {
+            "label": "Localidad",
+            "helplabel": "Capture la Localidad",
+            "validaciones": {
+                "requerido": "La Localidad es requerida"
+            }
+        },
+        "FechaInicio": {
+            "label": "Fecha Inicio",
+            "helplabel": "Capture la fecha inicio",
+            "validaciones": {
+                "requerido": "La fecha inicio es requerida"
+            }
+        },
+        "FechaFin": {
+            "label": "Fecha Fin",
+            "helplabel": "Capture la fecha fin",
+            "validaciones": {
+                "requerido": "La fecha fin es requerida"
+            }
+        }
+    },
+    "sections": {
+      "Comentarios": {
+        "title": "Comentarios"
+      },
+      "TipoLista": {
+        "Lista": "Lista",
+        "Calendario": "Calendario"
+      },
+      "CompletarTarea": {
+        "title": "¿Desea marcar esta tarea como completada?"
+      }
+    },
+    "mensajes": {
+      "exito": "La tarea ha sido actualizado"
+    },
+    "titulo": {
+      "nuevo": "Nueva tarea"
+    }
+  }
+}

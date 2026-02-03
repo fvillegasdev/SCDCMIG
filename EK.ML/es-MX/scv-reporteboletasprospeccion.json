@@ -1,0 +1,141 @@
+﻿{
+    "reporteboletasprospeccion": {
+        "bc": {
+            "text": "Reportes de Boletas de Preospección",
+            "link": "/scv/reporteboletasprospeccion"
+        },
+        "consulta": {
+            "title": "Reporte de Boletas de Prospección",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "plazoEstandar": "Plazo Estándar",
+                    "macroEtapa": { "Nombre": "Macro-Etapa" },
+                    "faseExpediente": { "Nombre": "Fase Expediente" },
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "AgenteCaptura": {
+                "label": "Agente que Captura",
+                "helplabel": "Seleccione el Agente que Captura.",
+                "validaciones": {
+                    "requerida": "El Agente que Captura es Requerido."
+                }
+            },
+            "AgenteAsignado": {
+                "label": "Agente Asignado",
+                "helplabel": "Seleccione el Agente que esta Asignado.",
+                "validaciones": {
+                    "requerida": "El Agente que esta Asignado es Requerido."
+                }
+            },
+            "AgenteDescartada": {
+                "label": "Agente que Descarta",
+                "helplabel": "Seleccione el Agente que descarta.",
+                "validaciones": {
+                    "requerida": "El Agente que descarta es Requerido."
+                }
+            },
+            "CPMunicipio": {
+                "label": "Codigo Postal",
+                "helplabel": "Seleccione el Código Postal a Buscar",
+                "validaciones": {
+                    "requerida": "El Código Postal es requerido para la busqueda."
+                }
+            },
+            "FechaNacInicial": {
+                "label": "Fecha de Nacimiento Inicial",
+                "helplabel": "Seleccione la Fecha Inicial para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaNacFinal": {
+                "label": "Fecha de Nacimiento Final",
+                "helplabel": "Seleccione la Fecha Final para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaCreacionInicial": {
+                "label": "Fecha de Creación Inicial",
+                "helplabel": "Seleccione la Fecha de Creación Inicial.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaCreacionFinal": {
+                "label": "Fecha de Creación Final",
+                "helplabel": "Seleccione la Fecha de Creación Final.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaAsignacionInicio": {
+                "label": "Fecha de Asignación Inicial",
+                "helplabel": "Seleccione la Fecha Inicial para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaAsignacionFinal": {
+                "label": "Fecha de Asignación Final",
+                "helplabel": "Seleccione la Fecha Final para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaDescarteInicio": {
+                "label": "Fecha de Descarte Inicial",
+                "helplabel": "Seleccione la Fecha Inicial para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaDescarteFinal": {
+                "label": "Fecha de Descarte Final",
+                "helplabel": "Seleccione la Fecha Final para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "Genero": {
+                "label": "Género",
+                "helplabel": "Seleccione el género a buscar.",
+                "validaciones": {
+                    "requerida": "El Género es requerido para la busqueda."
+                }
+            },
+            "TipoPersona": {
+                "label": "Tipo de Persona",
+                "helplabel": "Seleccione el tipo de Persona.",
+                "validaciones": {
+                    "requerida": "El Tipo de Persona es requerido."
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            }
+        }
+    },
+    "mensajes": {
+        "exito": "La etapa del trámite ha sido actualizado"
+    },
+    "edit": {
+        "titulo": "Nuevo etapa de trámite"
+    },
+    "titulo": {
+        "nuevo": "Nuevo etapa de trámite"
+    } 
+} 

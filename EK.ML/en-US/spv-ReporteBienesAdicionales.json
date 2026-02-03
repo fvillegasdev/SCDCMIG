@@ -1,0 +1,14 @@
+{
+  "ReporteBienesAdicionales": {
+    "bc": {
+      "text": "Consulta de Reporte de bienes adicionales",
+      "link": "/scv/pv/ReporteBienesAdicionales"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        
+      }
+    }
+  }
+}

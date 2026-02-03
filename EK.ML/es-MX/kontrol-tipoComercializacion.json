@@ -1,0 +1,54 @@
+﻿{
+  "tipoComercializacion": {
+    "bc": {
+      "text": "Tipos de Comercialización",
+      "link": "/kontrol/tipocomercializacion"
+    },
+    "consulta": {
+        "title": "Administración de Tipo de Comercialización",
+        "grid": {
+            "headers": {
+                "clave": "Clave",
+                "nombre": "Nombre",
+                "estatus": "Estatus"
+            }
+        }
+    },
+    "editar": {
+      "title": "Modificar Tipo de Comercialización"
+    },
+    "form": {
+      "ID": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido."
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Tipo de Comercialización ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nueva Tipo de Comercialización"
+    }
+  }
+}

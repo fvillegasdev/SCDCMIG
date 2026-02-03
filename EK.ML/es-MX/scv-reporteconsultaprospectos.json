@@ -1,0 +1,60 @@
+﻿{
+  "reporteconsultaprospectos": {
+    "bc": {
+      "text": "Reporte Consulta de Prospectos",
+      "link": "/scv/reporteconsultaprospectos"
+    },
+
+    "form": {
+      "Origen": {
+        "label": "Origen",
+        "helplabel": "Seleccione el Origen.",
+        "validaciones": {
+          "requerida": "El Origen es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Seleccione el Estatus de expediente.",
+        "validaciones": {
+          "requerida": "El Estatus es Requerido."
+        }
+      },
+      "AgenteTitular": {
+        "label": "Agente Titular",
+        "helplabel": "Seleccione el Agente Titular.",
+        "validaciones": {
+          "requerida": "El Agente Titular es Requerido."
+        }
+      },
+      "AgenteResponsable": {
+        "label": "Agente Responsable",
+        "helplabel": "Seleccione el Agente Responsable.",
+        "validaciones": {
+          "requerida": "El Agente Responsable es Requerido."
+        }
+      },
+      "AgenteRegistro": {
+        "label": "Agente Registro",
+        "helplabel": "Seleccione el Agente Registro.",
+        "validaciones": {
+          "requerida": "El Agente Regustro es Requerido."
+        }
+      },
+      "FechaInicial": {
+        "label": "Fecha  Inicial",
+        "helplabel": "Seleccione la Fecha Inicial para la busqueda.",
+        "validaciones": {
+          "requerida": "La Fecha es requerida para la busqueda.."
+        }
+      },
+      "FechaFinal": {
+        "label": "Fecha  Final",
+        "helplabel": "Seleccione la Fecha Final para la busqueda.",
+        "validaciones": {
+          "requerida": "La Fecha es requerida para la busqueda."
+        }
+      }
+    }
+  }
+} 

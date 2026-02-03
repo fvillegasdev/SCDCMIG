@@ -1,0 +1,66 @@
+﻿{
+  "centrocosto": {
+    "bc": {
+      "text": "Centros de Costo",
+      "link": "/kontrol/centrocosto"
+    },
+    "consulta": {
+      "title": "Administración de centros de costo",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerido": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Centro de Costo",
+        "helplabel": "Capture el nombre del centro de costo",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Descripcion": {
+        "label": "Centro de Costo",
+        "helplabel": "Capture el nombre del centro de costo",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "TipoClasificador": {
+        "label": "Tipo de Clasificador",
+        "helplabel": "Capture el tipo de clasificador",
+        "validaciones": {
+          "requerido": "El tipo de clasificador es requerido"
+        }
+      },
+      "MontoGlobal": {
+        "label": "Monto Global",
+        "helplabel": "Monto Global"
+      },
+      "ValidacionPresupuesto": {
+        "label": "Validación Presupuesto",
+        "helplabel": "Validación Presupuesto"
+      }
+    },
+    "mensajes": {
+      "exito": "El centro de costo ha sido actualizado"
+    },
+    "titulo": {
+      "nuevo": "Nuevo centro de costo"
+    }
+  }
+}

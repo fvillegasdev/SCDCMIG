@@ -1,0 +1,56 @@
+﻿{
+  "ubicacionEstatus": {
+    "bc": {
+      "text": "Estatus de Ubicación",
+      "link": "/scv/ubicacionEstatus"
+    },
+    "consulta": {
+      "title": "Administración de estatus de ubicaciones",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "naturaleza": {"Nombre": "Naturaleza"},
+          "descripcion": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerida"
+        }
+      },
+      "Naturaleza": {
+        "label": "Naturaleza",
+        "helplabel": "Capture la Naturaleza",
+        "validaciones": {
+          "requerida": "La Naturaleza es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El estatus de ubicación ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo estatus de ubicación"
+    },
+    "titulo": {
+      "nuevo": "Nuevo estatus de ubicación"
+    }
+  }
+}

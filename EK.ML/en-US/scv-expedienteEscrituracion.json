@@ -1,0 +1,156 @@
+﻿{
+  "expedientesEscriturar": {
+    "bc": {
+      "text": "Expedientes por Escriturar",
+      "link": "/scv/ExpedientesPorEscriturar"
+    },
+    "consulta": {
+      "title": "Expedientes por Escriturar",
+      "grid": {
+        "headers": {
+          "iD": "ID",
+          "cliente": { "Nombre": "Cliente" },
+          "desarrollo": { "Nombre": "Desarrollo" },
+          "tipoComercializacion": { "Nombre": "Tipo de comercialización" }
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "Folio",
+        "helpLabel": "Capture la Folio",
+        "validaciones": {
+          "requerida": "El Folio es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido."
+        }
+      },
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helpLabel": "Capture el Desarrollo",
+        "validaciones": {
+          "requerida": "El desarrollo es requerido."
+        }
+      },
+      "Esquema": {
+        "label": "Esquema de Seguimiento",
+        "helpLabel": "Esquema de Seguimiento",
+        "validaciones": {
+          "requerida": "Esquema de Seguimiento es requerido"
+        }
+      },
+      "TipoComercializacion": {
+        "label": "Tipo Comercialización",
+        "helpLabel": "Capture el tipo de comercialización",
+        "validaciones": {
+          "requerida": "El tipo de comercialización es requerido."
+        }
+      },
+      "Plaza": {
+        "label": "Plaza",
+        "helpLabel": "Capture la plaza",
+        "validaciones": {
+          "requerida": "La plaza es requerido."
+        }
+      },
+      "FolioExpediente": {
+        "label": "Folio Expediente",
+        "helpLabel": "Capture el Folio",
+        "validaciones": {
+          "requerida": "El folio es requerido."
+        }
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helpLabel": "Capture la moneda",
+        "validaciones": {
+          "requerida": "La moneda es requerida."
+        }
+      },
+      "EsquemaSeguimiento": {
+        "label": "Esquema de seguimiento",
+        "helpLabel": "Capture el esquema de seguimiento",
+        "validaciones": {
+          "requerida": "El esquema de seguimiento es requerida."
+        }
+      },
+      "Compania": {
+        "label": "Compañia Cartera",
+        "helpLabel": "Capture la compañia cartera",
+        "validaciones": {
+          "requerida": "La compañia cartera es requerida."
+        }
+      },
+      "FechaFiniquito": {
+        "label": "Fecha Finiquito",
+        "helpLabel": "Capture la fecha Finiquito",
+        "validaciones": {
+          "requerida": "La Fecha Finiquito es requerida."
+        }
+      },
+      "FechaEscrituracion": {
+        "label": "Fecha Escrituración",
+        "helpLabel": "Capture la fecha escrituración",
+        "validaciones": {
+          "requerida": "La fecha escrituración es requerida."
+        }
+      },
+      "Agente": {
+        "label": "Agente",
+        "helpLabel": "Capture el agente",
+        "validaciones": {
+          "requerida": "El agente es requerido."
+        }
+      },
+      "Notario": {
+        "label": "Notario",
+        "helpLabel": "Capture el Notario",
+        "validaciones": {
+          "requerida": "El Notario es requerido."
+        }
+      },
+      "NumeroEscrituracion": {
+        "label": "N° Escrituración",
+        "helpLabel": "Capture el N° Escrituración",
+        "validaciones": {
+          "requerida": "El N° Escrituración es requerido."
+        }
+      },
+      "AgenteFiniquito": {
+        "label": "Agente finiquito"
+      },
+      "AgenteEscrituracion": {
+        "label": "Agente escrituración"
+      },
+      "Cliente": {
+        "label": "Cliente",
+        "helpLabel": "Capture el Cliente",
+        "validaciones": {
+          "requerida": "El cliente es requerido."
+        }
+      }
+
+    },
+
+    "sections": {
+      "Ubicaciones": {
+        "title": "Ubicaciones"
+      },
+      "Financiamiento": {
+        "title": "Financiamiento"
+      },
+      "DatosEscrituracion": {
+        "title": "Datos Escrituración"
+      }
+    },
+
+    "mensajes": {
+      "exito": "El Expediente ha sido actualizado"
+    }
+  }
+}

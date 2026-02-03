@@ -1,0 +1,14 @@
+{
+  "ReporteRadarComunidades": {
+    "bc": {
+      "text": "Reporte del radar de comunidades",
+      "link": "/scv/pv/ReporteRadarComunidades"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        
+      }
+    }
+  }
+}

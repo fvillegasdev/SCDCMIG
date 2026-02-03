@@ -1,0 +1,19 @@
+﻿//{
+//  "compileOnSave": true,
+//  "compilerOptions": {
+//    "module": "commonjs",
+//    "sourceMap": true,
+//    "noImplicitAny": true,
+//    "removeComments": true,
+//    "preserveConstEnums": true,
+//    "jsx": "react",
+//    "noEmitOnError": true
+//  },
+//  "include": [
+//    "**/*.ts",
+//    "**/*.tsx"
+//  ],
+//  "exclude": [
+//    "**/*.js"
+//  ]
+//}

@@ -1,0 +1,118 @@
+﻿{
+  "comisionesCalculo": {
+    "consulta": {
+      "title": "Comisiones",
+      "grid": {
+        "headers": {
+          "agente": {
+            "Nombre": "Agente"
+          },
+          "desarrollo": {
+            "Nombre": "Desarrollo"
+          },
+          "esquema": {
+            "Nombre": "Esquema"
+          },
+          "prototipo": {
+            "Nombre": "Prototipo"
+          },
+          "categoria": {
+            "Nombre": "Categoría"
+          },
+          "etapa": {
+            "Nombre": "Etapa"
+          },
+          "ubicacion": {
+            "Nombre": "Ubicación",
+            "Clave": "Ubicación"
+          },
+          "observacion": "Observación",
+          "idConsiderarParaGuardar": "Notificación",
+          "importeComisionable": "Base Comisionable",
+          "porcentajeComision": "% Comisión",
+          "importeComision": "Imp. Comisión",
+          "montoComisionUbicacion": "Monto",
+          "porcentajeEtapa": "% Etapa",
+          "montoComisionAPagar": "a Pagar"
+        },
+        "config$Periodos": {
+          "title": "Períodos",
+          "tituloGeneral": "Configuración de Períodos",
+          "tituloDetalle": "Detalles del Período",
+          "headers": {
+            "id": "Id",
+            "clave": "Período",
+            "descripcion": "Descripción",
+            "fechaInicio": "Fecha Inicio",
+            "fechaFin": "Fecha Fin",
+            "estatus": "Estatus"
+          }
+        },
+        "comisiones$calculo": {
+          "title": "Cálculo de Comisiones",
+          "tituloGeneral": "Cálculo de Comisiones",
+          "tituloDetalle": "Porcentaje de Comisiones",
+          "headers": {
+            "id": "Id",
+            "clave": "Clave",
+            "desarrollo": "Desarrollo",
+            "esquema": "Esquema",
+            "prototipo": "Prototipo",
+            "categoria": "Categoría",
+            "etapa": "Etapa",
+            "ubicacion": "Ubicación",
+            "agente": {
+              "Nombre": "Agente"
+            },
+            "tipo": "Tipo",
+            "valor": "Valor",
+            "estatus": "Estatus"
+          }
+        }
+      }
+    },
+    "form": {
+      "agente": {
+        "Nombre": "Agente",
+        "label": "Agente"
+      },
+      "section": {
+        "comisiones$calculo": {
+          "id": "Id",
+          "clave": "Período",
+          "desarrollo": "Desarrollo",
+          "esquema": "Esquema",
+          "prototipo": "Prototipo",
+          "categoria": "Categoría",
+          "ubicacion": "Ubicación",
+          "importe": "Importe",
+          "porcentaje": "Porcentaje",
+          "estatus": {
+            "label": "Estatus",
+            "helplabel": "Estatus"
+          }
+        }
+      }
+    },
+    "validaciones": {
+      "config$Periodos": {
+        "fechaInicioMenor ": "La fecha de Inicio no puede ser mayor a la Fecha Final"
+      },
+      "config$PlanEsquemas": {
+        "fechaInicioMenor ": "La fecha de Inicio no puede ser mayor a la Fecha Final"
+      }
+    },
+    "mensajes": {
+      "exito": "El período ha sido actualizado"
+    },
+    "guardarExito": {
+      "exito": "El período ha sido actualizado"
+    },
+    "eliminado": {
+      "exito": "El período fue eliminado"
+    },
+    "edit": {
+      "title": "Nuevo período"
+    }
+  }
+}

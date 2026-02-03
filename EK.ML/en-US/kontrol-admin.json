@@ -1,0 +1,11 @@
+﻿{
+  "admin": {
+    "bc": {
+      "text": "Configuración",
+      "link": "/kontrol/admin"
+    },
+    "consulta": {
+      "title": "Configuración de EnKontrol"
+    }
+  }
+}

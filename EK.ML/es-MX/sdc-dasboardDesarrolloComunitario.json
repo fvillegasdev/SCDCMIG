@@ -1,0 +1,61 @@
+﻿{
+  "dashboardDesarrolloComunitario": {
+    "bc": {
+      "text": "Dashboard Desarrollo Comunitario",
+      "link": "/sdc/dashboardDesarrolloComunitario"
+    },
+    "consulta": {
+      "title": "Dashboard Desarrollo Comunitario",
+      "grid": {
+        "headers": {
+          "ubicacion": { "Clave": "Ubicación" },
+          "cuota": "Cuota",
+          "concepto": { "Nombre": "Concepto" },
+          "estatus": "Estatus",
+          "periodicidadDetalle": {
+            "FechaFin": "Vencimiento",
+            "Periodicidad": { "Nombre": "Periodo" }
+
+          },
+          "medioSolicitud": "Solicitud",
+          "calificacion": "Calificación",
+          "fechaReporte": "Fecha",
+          "diasTranscurridos": "Días",
+          "ID": "#",
+          "EstatusTicket": "Estatus",
+          "ObservacionesCliente": "Observación del Ticket",
+          "Observaciones": "Observación de la Atención"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      }
+    },
+    "sections": {
+      "EstadoCuenta": {
+        "title": "Estado de cuenta"
+      },
+      "Conceptos": {
+        "title": "Conceptos de Crédito"
+      },
+      "TicketsClientes": {
+        "title": "Tickets"
+      }
+    },
+    "mensajes": {
+      "exito": "El tipo de financiamiento ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de fiananciamiento"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de financiamiento"
+    }
+  }
+}

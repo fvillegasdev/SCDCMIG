@@ -1,0 +1,132 @@
+﻿{
+  "comisionesAjustes": {
+    "bc": {
+      "text": "Administración de Ajustes a Comisiones",
+      "link": "/scv/comisionesAjustes"
+    },
+    "consulta": {
+      "title": "Administración de Ajustes a Comisiones",
+      "grid": {
+        "headers": {
+          "tipoComision": { "Nombre": "Tipo Comisión" },
+          "usuario": { "Nombre": "Nombre" },
+          "importeComision": "Importe",
+          "importeComisionMoneda": "Importe",
+          "moneda": { "Nombre": "Moneda" },
+          "periodicidad": { "Nombre": "Periodicidad" },
+          "fechaAplicacion": "Fecha Aplicación",
+          "numeroParcialidades": "N° Parcialidades",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "TipoComision": {
+        "label": "Tipo Comisión",
+        "helpLabel": "Capture el tipo comisión",
+        "validaciones": {
+          "requerida": "El tipo comisión es requerido"
+        }
+      },
+      "Usuario": {
+        "label": "Usuario",
+        "helpLabel": "Capture la agente",
+        "validaciones": {
+          "requerida": "El agente es requerido"
+        }
+      },
+      "ImporteComisionMoneda": {
+        "label": "Importe Comisión",
+        "helpLabel": "Capture el importe comisión",
+        "validaciones": {
+          "requerida": "El importe comisión es requerido"
+        }
+      },
+
+      "ImporteComision": {
+        "label": "Importe Comisión",
+        "helpLabel": "Capture el importe comisión",
+        "validaciones": {
+          "requerida": "El importe comisión es requerido"
+        }
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helpLabel": "Capture la moneda",
+        "validaciones": {
+          "requerida": "La moneda es requerida"
+        }
+      },
+      "Periodicidad": {
+        "label": "Periodicidad",
+        "helpLabel": "Capture la periodicidad",
+        "validaciones": {
+          "requerida": "La periodicidad es requerida"
+        }
+      },
+      "NumeroParcialidades": {
+        "label": "N° Parcialidades",
+        "helpLabel": "Capture el número de parcialidades",
+        "validaciones": {
+          "requerida": "El Número de parcialidades es requerido"
+        }
+      },
+      "FechaAplicacionCargo": {
+        "label": "Fecha Aplicación",
+        "helpLabel": "Capture la Fecha aplicación",
+        "validaciones": {
+          "requerida": "La Fecha Aplicación es requerida"
+        }
+      },
+      "FechaAplicacionAbono": {
+        "label": "Fecha Aplicación",
+        "helpLabel": "Capture la Fecha aplicación",
+        "validaciones": {
+          "requerida": "La Fecha Aplicación es requerida"
+        }
+      },
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helpLabel": "Capture el desarrollo",
+        "validaciones": {
+          "requerida": "El desarrollo es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helpLabel": "Capture el estatus",
+        "validaciones": {
+          "requerida": "El estatus es requerido"
+        }
+      }
+
+    },
+    "sections": {
+
+      "Parcialidades": {
+        "title": "Parcialidades",
+        "Cancelacion": {
+          "title": "Cancelar Parcialidad",
+          "descripcion": "¿Esta seguro que desea cancelar esta parcialidad?"
+        }
+      },
+
+      "Cancelacion": {
+        "title": "Cancelar Comisión",
+        "descripcion": "¿Esta seguro que desea cancelar esta comisión?"
+      }
+
+    },
+    "mensajes": {
+      "exito": "La comisión ha sido actualizada"
+    },
+    "validaciones": {
+    },
+    "edit": {
+      "title": "Nuevo Ajuste a comisión"
+    },
+    "titulo": {
+      "nuevo": "Nuevo A juste a comisión"
+    }
+  }
+}

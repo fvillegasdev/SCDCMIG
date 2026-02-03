@@ -1,0 +1,73 @@
+﻿{
+  "plantillas": {
+    "bc": {
+      "text": "Plantillas",
+      "link": "/kontrol/plantillas"
+    },
+    "consulta": {
+      "title": "Administración de plantillas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus",
+          "categoria": {
+            "Nombre": "Categoría"
+          } 
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerido": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Categoria": {
+        "label": "Categoría",
+        "helplabel": "Seleccione la categoría",
+        "validaciones": {
+          "requerido": "requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Privado": {
+        "label": "Privado",
+        "helplabel": "Privado"
+      }
+    },
+    "filtros": {
+      "modulo": "Módulo",
+      "compania": "Compañía"
+    },
+    "edit": {
+      "titulo": "Nueva plantilla"
+    },
+    "mensajes": {
+      "exito": "La plantilla ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nueva plantilla"
+    },
+    "sections": {
+      "Info": {
+        "title": "Información General"
+      },
+      "Plantilla": {
+        "title": "Plantilla"
+      }
+    }
+  }
+}

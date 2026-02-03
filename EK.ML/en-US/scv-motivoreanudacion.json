@@ -1,0 +1,47 @@
+﻿{
+  "motivoreanudacion": {
+    "bc": {
+      "text": "Motivos de Reanudación",
+      "link": "/scv/motivoreanudacion"
+    },
+    "consulta": {
+      "title": "Motivos de Reanudación",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El motivo de reanudación ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Motivo de reanudación"
+    },
+    "titulo": {
+      "nuevo": "Nueva Motivo de reanudación"
+    }
+  }
+}

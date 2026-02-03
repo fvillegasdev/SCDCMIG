@@ -1,0 +1,60 @@
+﻿{
+  "TipoMovimiento": {
+    "bc": {
+      "text": "Tipo Movimiento",
+      "link": "/scv/TipoMovimiento"
+    },
+    "consulta": {
+      "title": "Administración de Tipo Movimiento",
+      "grid": {
+        "headers": {
+          "estatus": "Estatus",
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "naturaleza": "Naturaleza"
+           //"naturaleza": { "Nombre": "Naturaleza" }
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Cancelar": {
+        "label": "Cancelar",
+        "helplabel": "Cancelar"
+      },
+      "Naturaleza": {
+        "label": "Naturaleza",
+        "helplabel": "Capture la Naturaleza",
+        "validaciones": {
+          "requerida": "La Naturaleza es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Tipo de Movimiento ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Tipo Movimiento"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Tipo de Movimiento"
+    }
+  }
+}

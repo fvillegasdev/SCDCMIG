@@ -1,0 +1,147 @@
+﻿{
+  "reportes": {
+    "bc": {
+      "text": "Reportes",
+      "link": "/kontrol/reportes"
+    },
+    "consulta": {
+      "title": "Administración de reportes",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Titulo",
+          "categoria": {
+            "Nombre": "Categoría"
+          },
+          "tipoReporte": {
+            "Nombre": "Tipo"
+          },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "La clave es un identificador único para el reportes",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Título",
+        "helpLabel": "Nombre descriptivo del reporte",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "PlantillaEnc": {
+        "label": "Encabezado",
+        "helpLabel": "Plantilla de encabezado para el reporte",
+        "validaciones": {
+          "requerida": "La plantilla es requerida"
+        }
+      },
+      "Categoria": {
+        "label": "Categoria",
+        "helpLabel": "Categoria del reporte para agruparlos lógicamente",
+        "validaciones": {
+          "requerida": "La categoría es requerida"
+        }
+      },
+      "TipoReporte": {
+        "label": "Tipos disponibles de reportes",
+        "helpLabel": "El tipo de reporte define ya sea la tecnología, forma y medio de entrega del reporte",
+        "validaciones": {
+          "requerida": "El tipo de reporte es requerido"
+        }
+      },
+      "PlantillaPP": {
+        "label": "Pie de página",
+        "helpLabel": "Plantilla para el pie de página del reporte",
+        "validaciones": {
+          "requerida": "La plantilla es requerida"
+        }
+      },
+      "SubTitulo": {
+        "label": "Subtítulo",
+        "helpLabel": "Descripción secundaria del reporte"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Campos": {
+        "Clave": {
+          "label": "Campo",
+          "helplabel": ""
+        },
+        "Titulo": {
+          "label": "Título",
+          "helplabel": "Título de la columna"
+        },
+        "Alineacion": {
+          "label": "Alineación:",
+          "helplabel": "Alineación horizontal de la columna"
+        },
+        "Width": {
+          "label": "Ancho",
+          "helplabel": "El ancho en puntos de la columna"
+        },
+        "DataType": {
+          "label": "Tipo de datos:",
+          "helplabel": "Tipo de datos del campo"
+        }
+      },
+      "Filtros": {
+        "Clave": {
+          "label": "Campo",
+          "helplabel": ""
+        },
+        "OperadorLogico": {
+          "label": "AND/OR/...",
+          "helplabel": "Operador lógico"
+        },
+        "Operador": {
+          "label": "Operador",
+          "helplabel": "Operador"
+        },
+        "DataType": {
+          "label": "Tipo de datos:",
+          "helplabel": "Tipo de datos del campo"
+        },
+        "Titulo": {
+          "label": "Campo",
+          "helplabel": "Campo de la columna"
+        },
+        "Value": {
+          "label": "Valor",
+          "helplabel": "Valor del filtro"
+        }
+      },
+      "RPBI": {
+        "ReportePBI": {
+          "label": "Seleccione el reporte de PowerBI",
+          "helpLabel": "Debe seleccionar un reporte de PowerBI",
+          "validaciones": {
+            "requerida": "requerido"
+          }
+        }
+      }
+    },
+    "sections": {
+      "RKV10": {
+        "title": "Información de reporte KV10"
+      },
+      "RPBI": {
+        "title": "Reporte de PowerBI"
+      }
+    },
+    "mensajes": {
+      "exito": "El reporte ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nuevo reporte"
+    }
+  }
+}

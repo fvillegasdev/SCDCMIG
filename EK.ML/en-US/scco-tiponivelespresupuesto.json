@@ -1,0 +1,47 @@
+﻿{
+  "TipoNivelesPresupuesto": {
+    "bc": {
+      "text": "Tipo de Niveles de Presupuesto",
+      "link": "/scco/TipoNivelesPresupuesto"
+    },
+    "consulta": {
+      "title": "Administración Tipo de Niveles Presupuesto",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture la Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "Tipo de Nivel ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Nivel de Presupuesto"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Tipo de Nivel Presupuesto"
+    }
+  }
+}

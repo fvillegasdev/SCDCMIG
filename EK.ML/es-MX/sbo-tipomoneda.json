@@ -1,0 +1,47 @@
+﻿{
+  "tipomoneda": {
+    "consulta": {
+      "title": "Administración de tipos de moneda",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la sección es requerida"
+        }
+      },
+      "nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la sección es requerida"
+        }
+      },
+      "MoneySymbol": {
+        "label": "Símbolo",
+        "helplabel": "Capture el Símbolo",
+        "validaciones": {
+          "requerida": "El Símbolo es requerida"
+        }
+      },
+      "estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El estatus ha sido actualizado"
+    },
+    "edit": {
+      "title": "Nuevo Tipo de Moneda"
+    }
+  }
+}

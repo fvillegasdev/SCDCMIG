@@ -1,0 +1,74 @@
+﻿{
+    "tiposproceso": {
+        "bc": {
+            "text": "Administración de Tipos de Proceso -  Póliza",
+            "link": "/scv/tiposproceso"
+        },
+        "consulta": {
+            "title": "Administración de etapas de Seguimiento",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "plazoEstandar": "Plazo Estándar",
+                    "macroEtapa": { "Nombre": "Macro-Etapa" },
+                    "faseExpediente": { "Nombre": "Fase Expediente" },
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helplabel": "Capture el Nombre",
+                "validaciones": {
+                    "requerida": "El nombre es requerido"
+                }
+            },
+            "PlazoEstandar": {
+                "label": "Plazo Estándar(días)",
+                "helplabel": "Capture el plazo estándar (días)",
+                "validaciones": {
+                    "requerida": "El plazo estándar es requerido",
+                    "numero": "El número de copias no es válido"
+                }
+            },
+            "MacroEtapa": {
+                "label": "Macro-Etapa",
+                "Nombre": { "label": "Macro-Etapa" },
+                "helplabel": "Seleccione la macro-etapa",
+                "validaciones": {
+                    "requerida": "La macro-etapa es requerida"
+                }
+            },
+            "FaseExpediente": {
+                "label": "Fase Expediente",
+                "Nombre": { "label": "Fase Expediente" },
+                "helplabel": "Seleccione la fase del expediente",
+                "validaciones": {
+                    "requerida": "La fase de expediente es requerida"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            }
+        },
+        "mensajes": {
+            "exito": "La etapa del trámite ha sido actualizado"
+        },
+        "edit": {
+            "titulo": "Nuevo etapa de trámite"
+        },
+        "titulo": {
+            "nuevo": "Nuevo etapa de trámite"
+        }
+    }
+}

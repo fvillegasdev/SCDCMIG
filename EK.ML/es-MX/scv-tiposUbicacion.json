@@ -1,0 +1,54 @@
+﻿{
+  "tiposUbicacion": {
+    "bc": {
+      "text": "Tipos de Ubicación",
+      "link": "/scv/tiposUbicacion"
+    },
+    "consulta": {
+      "title": "Administración de tipos de ubicación",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus" 
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave del tipo de ubicación es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre del tipo de ubicación es requerida"
+        }
+      },
+      "UnidadCompra": {
+        "label": "Unidad Compra",
+        "helplabel": "Capture la Unidada Compra",
+        "validaciones": {
+          "requerida": "La Unidad Compra es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El tipo de ubicación ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de ubicación"
+    },
+      "titulo": {
+      "nuevo": "Nuevo tipo de ubicación"
+    }
+  }
+}

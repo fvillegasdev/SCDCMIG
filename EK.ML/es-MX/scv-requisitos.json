@@ -1,0 +1,102 @@
+﻿{
+  "requisitos": {
+    "bc": {
+      "text": "Catálogo de Requisitos",
+      "link": "/scv/requisitos"
+    },
+    "consulta": {
+      "title": "Catálogo de Requisitos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "tipoRequisito": { "Nombre": "Tipo Requisito" },
+          "workFlow": { "Nombre": "Autorización" },
+          "tieneVencimiento": "Vencimiento",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la clave del requisito",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre del requisito",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helpLabel": "Capture la descripción",
+        "validaciones": {
+          "requerida": "La descripción es requerida"
+        }
+      },
+      "Caracteristica": {
+        "label": "Característica",
+        "helpLabel": "Capture la característica",
+        "validaciones": {
+          "requerida": "La característica es requerida"
+        }
+      },
+      "TieneVencimiento": {
+        "label": "Vencimiento",
+        "helpLabel": "Capture si el requisito tiene vencimiento"
+      },
+      "WorkFlow": {
+        "label": "Autorización",
+        "helpLabel": "Capture la autorización"
+      },
+      "TipoRequisito": {
+        "label": "Tipo de Requisito",
+        "helpLabel": "Capture el tipo de requisito",
+        "validaciones": {
+          "requerida": "El tipo de requisito es requerido"
+        }
+      },
+      "Valores": {
+        "label": "Lista de Valores",
+        "helpLabel": "Capture un valor"
+      },
+      "TipoEntidad": {
+        "label": "Tipo de Entidad",
+        "helpLabel": "Capture un tipo de entidad"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus"
+      }
+    },
+    "sections": {
+      "caracteristicas": {
+        "title": "Características del Requisito",
+        "list": {
+          "headers": {
+            "caracteristica": "Caracteristica",
+            "descripcion": "Descripción"
+          }
+        }
+      },
+      "tipoRequisito": {
+        "title": "Tipo de Requisito"
+      }
+    },
+    "mensajes": {
+      "exito": "El requisito ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+    },
+    "editar": {
+      "title": "Modificar requisito"
+    },
+    "titulo": {
+      "nuevo": "Nuevo requisito"
+    }
+  }
+}

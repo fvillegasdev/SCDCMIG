@@ -1,0 +1,113 @@
+﻿{
+  "campaniasPublicidad": {
+    "bc": {
+      "text": "Campaña Publicidad",
+      "link": "/scv/campaniaPublicidad"
+    },
+    "consulta": {
+      "title": "Administración de campañas de publicidad",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "medioPublicidad": { "Nombre": "Medio de publicidad" },
+          "fechaInicial": "Fecha Inicial",
+          "fechaFinal": "Fecha Final",
+          "estadoCampania": { "Nombre": "Estado Campaña" }
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la campaña de publicidad es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la campaña de publicidad es requerida"
+        }
+      },
+      "MedioPublicidad": {
+        "label": "Medio de publicidad",
+        "helplabel": "Capture el medio de publicidad",
+        "validaciones": {
+          "requerida": "El medio de publicidad es requerido"
+        }
+      },
+      "EstadoCampania": {
+        "label": "Estado Campaña",
+        "helplabel": "Capture el estado de la campaña de publicidad",
+        "validaciones": {
+          "requerida": "El estado de la campaña es requerido"
+        }
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helplabel": "Capture Moneda"
+      },
+      "CostoActual": {
+        "label": "Costo Actual",
+        "helplabel": "Capture el costo actual",
+        "validaciones": {
+          "requerida": "El costo actual es requerido"
+        }
+      },
+      "CostoPresupuestado": {
+        "label": "Costo Presupuestado",
+        "helplabel": "Capture el costo presupuestado",
+        "validaciones": {
+          "requerida": "El costo presupuestado es requerido"
+        }
+      },
+      "IngresosEsperados": {
+        "label": "Ingresos Esperados",
+        "helplabel": "Capture el ingreso esperado",
+        "validaciones": {
+          "requerida": "El ingreso esperado es requerido"
+        }
+      },
+      "FechaInicial": {
+        "label": "Fecha Inicial",
+        "helplabel": "Capture la fecha inicial",
+        "validaciones": {
+          "requerida": "La fecha inicial es requerida"
+        }
+      },
+      "FechaFinal": {
+        "label": "Fecha final",
+        "helplabel": "Capture la fecha final",
+        "validaciones": {
+          "requerida": "La fecha final es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "PropietarioC": {
+        "label": "Propietario Campaña",
+        "helplabel": "Capture el Propietario de la campaña"
+      },
+      "Plantilla": {
+        "label": "Plantilla"
+      },
+      "FechaProgramacion": {
+        "label": "Programación Fecha/Hora"
+      }
+    },
+    "mensajes": {
+      "exito": "La campaña de publicidad ha sido actualizado"
+    },
+    "editar": {
+      "title": "Modificar campaña de publicidad"
+    },
+    "titulo": {
+      "nuevo": "Nueva campaña de publicidad"
+    }
+  }
+}

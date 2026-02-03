@@ -1,0 +1,77 @@
+﻿{
+  "flujoTrabajoInstancia": {
+    "bc": {
+      "text": "Flujos de autorización",
+      "link": "/kontrol/workflows/procesos"
+    },
+    "consulta": {
+      "title": "Administracion de Solicitudes de autorización",
+      "grid": {
+        "headers": {
+          "iD": "ID",
+          "idReferencia": "Ref.",
+          "workflow": { "Tipo": { "Nombre": "Tipo Flujo" } },
+          "nombre": "Flujo",
+          "estadoWF": "Estado",
+          "userOwner": { "Nombre": "Propietario" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerido": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "EstadoWF": {
+        "label": "Estado"
+      },
+      "IdReferencia": {
+        "label": "Referencia",
+        "helplabel": "Capture el expediente"
+      },
+      "userOwner": {
+        "label": "Propietario",
+        "helplabel": "Propietario"
+      },
+      "FechaInicio": {
+        "label": "Fecha Inicio",
+        "helplabel": "Capture la Fecha Inicio"
+      },
+      "FechaFin": {
+        "label": "Fecha Fin"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "sections": {
+      "TAREASINSTANCIA": {
+        "title": "Tareas"
+      },
+      "DETALLETAREA": {
+        "title": "Detalle Tarea"
+      },
+      "AUTORIZADORESTAREA": {
+        "title": "Autorizadores"
+      }
+    },
+    "mensajes": {
+      "exito": "El flujo ha sido actualizado"
+    },
+    "titulo": {
+      "nuevo": "Nueva flujo"
+    }
+  }
+}

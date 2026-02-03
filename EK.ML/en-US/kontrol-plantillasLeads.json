@@ -1,0 +1,78 @@
+﻿{
+  "PlantillasLeads": {
+    "bc": {
+      "text": "Leads",
+      "link": "/kontrol/PlantillasLeads"
+    },
+    "consulta": {
+      "title": "Administración de Leads",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus",
+          "vigencia": "Vigencia"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerido": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "TipoPlantilla": {
+        "label": "Tipo de plantilla",
+        "helplabel": "Seleccione el tipo de plantilla, documento, texto, etc.",
+        "validaciones": {
+          "requerido": "requerido"
+        }
+      },
+      "Archivo": {
+        "label": "Archivo",
+        "helplabel": "Seleccione el archivo de la plantilla",
+        "validaciones": {
+          "requerido": "requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },  
+      "UUID": {
+        "label": "UUID",
+        "helplabel": "UUID"
+      }
+    },
+    "filtros": {
+      "modulo": "Módulo",
+      "compania": "Compañía"
+    },
+    "edit": {
+      "titulo": "Nueva plantilla"
+    },
+    "mensajes": {
+      "exito": "La plantilla ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nueva plantilla"
+    },
+    "sections": {
+      "Info": {
+        "title": "Información General"
+      },
+      "Plantilla": {
+        "title": "Plantilla"
+      }
+    }
+  }
+}

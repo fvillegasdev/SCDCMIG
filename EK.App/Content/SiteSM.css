@@ -1,0 +1,13 @@
+﻿@media (min-width: 576px) {
+    .page-bar .page-bar-buttons {
+        display: block;
+        position: absolute;
+        right: 25px;
+        top: 10px;
+    }
+    .page-bar .page-bar-button {
+        margin-top: 0px !important;
+    }
+}
+@media (max-width: 767px) {
+}

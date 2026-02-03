@@ -1,0 +1,233 @@
+﻿{
+  "ConfigViviendaEntregable": {
+    "bc": {
+      "text": "Programacion de Vivienda",
+      "link": "/scv/pv/ConfigViviendaEntregable"
+    },
+    "consulta": {
+      "title": "Administración de Programacion de Vivienda",
+      "grid": {
+        "headers": {
+          "nombre": "Cliente",
+          "id_cve_fracc": "Id Fraccionamiento",
+          "nom_fracc": "Fraccionamiento",
+          "fraccionamiento": "Fraccionamiento",
+          "cantidadDocImpresos": "Documentos",
+          "etapa": "Etapa",
+          "dir_email": "Email",
+          "CURP": "CURP",
+          "RFC": "RFC",
+          "Celular": "Celular",
+          "tel_casa": "Teléfono",
+          "tel_oficina": "Tel. Oficina",
+          "id_num_smza": "Etapa",
+          "id_num_mza": "Manzana",
+          "id_num_lote": "Lote",
+          "id_num_interior": "Número Interior",
+          "num_ext": "Número Exterior",
+          "prototipo": "Prototipo",
+          "desc_tipo_vivienda": "Tipo de Vivienda",
+          "financiamiento": "Financiamiento",
+          "subsidio": "Subsidio",
+          "hipoteca_verde": "Hipoteca Verde",
+          "ecocasa": "Ecocasa",
+          "fecha_etapa": "F. Etapa",
+          "firma_Escritura": "F. Escritura",
+          "libera_Titulacion": "F. Titulación",
+          "fecha_construccion": "F. Construcción",
+          "detalles": "Detalles",
+          "fecha_programacion": "F. Programación",
+          "fec_Entrega": "F. Entrega",
+          "bit_detalles": "Observación Cliente",
+          "pendiente_pago": "Pendiente de Pago",
+          "fec_pendiente_pago": "F. Pendiente de Pago",
+          "pago": "Pagado",
+          "fec_pago": "F. de Pago",
+          "clave_rezago": "Motivo Rezago",
+          "fecha_reprogramacion": "F. Reprogramación",
+          "observaciones": "Observaciones",
+          "desde_Liberacion": "Desde Liberación",
+          "desde_Construccion": "Desde Construcción",
+          "personaentregavivienda": "Persona Entrega de Vivienda",
+          "monto_seguro": "Monto Seguro",
+          "estatusAgendaConstruccion": { "Nombre": "Estatus Agenda Construcción" },
+          "estatusAgendaEntrega": { "Nombre": "Estatus Agenda Entrega" }
+        }
+      }
+    },
+    "form": {
+      "Detalles": {
+        "label": "Detalles",
+        "helplabel": "Capture un Detalle",
+        "validaciones": {
+          "requerida": "Los Detalles son Requeridos"
+        }
+      },
+      "Observaciones": {
+        "label": "Observaciones",
+        "helplabel": "Capture las Observaciones",
+        "validaciones": {
+          "requerida": "Las Observaciones son Requeridas"
+        }
+      },
+      "LugarHoraEntrega": {
+        "label": "Lugar y Hora de Entrega",
+        "helplabel": "Capture el Lugar y Hora de Entrega",
+        "validaciones": {
+          "requerida": "El Lugar y Hora de Entrega es Requerido"
+        }
+      },
+      "HoralugarEntrega": {
+        "label": "Lugar y Hora de Entrega",
+        "helplabel": "Capture el Lugar y Hora de Entrega",
+        "validaciones": {
+          "requerida": "El Lugar y Hora de Entrega es Requerido"
+        }
+      },
+      "FechaEntrega": {
+        "label": "Fecha Entrega",
+        "helplabel": "Capture La Fecha Entrega",
+        "validaciones": {
+          "requerida": "La Fecha Entrega es Requerida"
+        }
+      },
+      "FechaProgramacion": {
+        "label": "Fecha Program.",
+        "helplabel": "Capture La Fecha Programacion",
+        "validaciones": {
+          "requerida": "La Fecha Programacion es Requerida"
+        }
+      },
+      "ViviendaEntregable": {
+        "label": "Viviendas Entregadas",
+        "helplabel": "Capture La Vivienda Entregada",
+        "validaciones": {
+          "requerida": "La Vivienda Entregada es Requerido"
+        }
+      },
+      "Financiamiento": {
+        "label": "Financiamiento",
+        "helplabel": "Capture el Financiamiento",
+        "validaciones": {
+          "requerida": "El Financiamiento es Requerido"
+        }
+      },
+      "Segmentos": {
+        "label": "Segmentos",
+        "helplabel": "Capture el Segmento",
+        "validaciones": {
+          "requerida": "El Segmentos es Requerida"
+        }
+      },
+      "Cliente": {
+        "label": "Cliente",
+        "helplabel": "Capture la información del Cliente",
+        "validaciones": {
+          "requerida": "El Cliente es Requerido"
+        }
+      },
+      "ClienteInicial": {
+        "label": "Cliente Inicial",
+        "helplabel": "Capture al Cliente Inicial",
+        "validaciones": {
+          "requerida": "El Cliente Inicial es Requerido"
+        }
+      },
+      "ClienteFinal": {
+        "label": "Cliente Final",
+        "helplabel": "Capture el Cliente Final",
+        "validaciones": {
+          "requerida": "El Cliente Final es Requerido"
+        }
+      },
+      "HipotecaVerde": {
+        "label": "Hipoteca Verde",
+        "helplabel": "Capture la Hipoteca Verde",
+        "validaciones": {
+          "requerida": "La Hipoteca Verde es Requerido"
+        }
+      },
+      "Equipamiento": {
+        "label": "Equipamiento",
+        "helplabel": "Capture el Equipamiento",
+        "validaciones": {
+          "requerida": "El Equipamiento es Requerido"
+        }
+      },
+      "PlazaInicial": {
+        "label": "Plaza Inicial",
+        "helplabel": "Capture el Plaza Inicial",
+        "validaciones": {
+          "requerida": "El Plaza Inicial es Requerido"
+        }
+      },
+      "PlazaFinal": {
+        "label": "Plaza Final",
+        "helplabel": "Capture el Plaza Final",
+        "validaciones": {
+          "requerida": "El Plaza Final es Requerido"
+        }
+      },
+      "FechaInicio": {
+        "label": "Fecha Inicial",
+        "helplabel": "Capture la Fecha Inicial",
+        "validaciones": {
+          "requerida": "La Fecha Inicial es Requerido"
+        }
+      },
+      "FechaFinal": {
+        "label": "Fecha Final",
+        "helplabel": "Capture la Fecha Final",
+        "validaciones": {
+          "requerida": "La Fecha Final es Requerido"
+        }
+      },
+      "FraccInicial": {
+        "label": "Fraccionamientos",
+        "helplabel": "Capture el Fraccionamiento",
+        "validaciones": {
+          "requerida": "El Fraccionamientos es Requerido"
+        }
+      },
+      "FraccFinal": {
+        "label": "Fraccionamiento Final",
+        "helplabel": "Capture el Fraccionamiento Final",
+        "validaciones": {
+          "requerida": "El Fraccionamiento Final es Requerido"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la Descripción",
+        "validaciones": {
+          "requerida": "La Descripci�n es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "sections": {
+      "ConfigViviendaEntregableResult": {
+        "title": "Detalles Programación de Vivienda"
+      }
+    },
+    "mensajes": {
+      "exito": "La Causas de Consulta de Vivienda Entregable ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+﻿{
+  "UbicacionComun": {
+    "bc": {
+        "text": "Ubicación Común",
+        "link": "/scv/pv/UbicacionComun"
+    },
+    "consulta": {
+        "title": "Administración de Ubicaciones Común",
+        "grid": {
+            "headers": {
+                "clave": "Clave",
+                "descripcion": "Descripción",
+                "estatus": "Estatus"
+            }
+        }
+    },
+    "form": {
+        "id_ubicacion": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Clave": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Descripcion": {
+            "label": "Descripción",
+            "helplabel": "Capture la Descripción",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "Estatus": {
+            "label": "Activo",
+            "helplabel": "Estatus"
+        }
+    },
+    "mensajes": {
+        "exito": "La Ubicación Común ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de la Ubicación Común"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de la Ubicación Común"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+﻿{
+  "estatus": {
+    "consulta": {
+      "title": "Administración de estatus",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "puesto": "Puesto",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la sección es requerida"
+        }
+      },
+      "nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la sección es requerida"
+        }
+      },
+      "estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El estatus ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo estatus"
+    }
+  }
+}

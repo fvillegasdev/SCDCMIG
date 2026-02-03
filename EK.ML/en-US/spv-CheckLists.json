@@ -1,0 +1,104 @@
+﻿{
+  "CheckList": {
+    "bc": {
+      "text": "CheckLists",
+      "link": "/scv/pv/SPVCheckList"
+    },
+    "consulta": {
+      "title": "Administración de CheckLists",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "descripcion": "Descripción",
+          "obligatorio": "Obligatorio",
+          "estatus": "Estatus",
+          "categoriaCheckList": { "Nombre": "Categoria" },
+          "tipoCheckList": { "Nombre": "Tipo" }
+        }
+      }
+    },
+    "form": {
+        "Clave": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Nombre": {
+            "label": "Nombre",
+            "helplabel": "Capture el Nombre",
+            "validaciones": {
+                "requerida": "El Nombre es requerido"
+            }
+        },
+        "Descripcion": {
+            "label": "Descripción",
+            "helplabel": "Capture la Descripción",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "Obligatorio": {
+            "label": "Obligatorio",
+            "helplabel": "Obligatorio"
+        },
+        "Estatus": {
+            "label": "Activo",
+            "helplabel": "Estatus"
+        },
+        "CheckList$PlanAccionAsignado": {
+            "PlanAccion": {
+                "label": "Nombre",
+                "helplabel": "Capture el nombre del plan de acción ",
+                "validaciones": {
+                    "requerida": "El nombre es requerido"
+                }
+            },
+            "PlazoDias": {
+                "label": "Plazo en Días",
+                "helplabel": "Capture el número de días",
+                "validaciones": {
+                    "requerida": "El número de días es requerido"
+                }
+            },
+            "prioridad": {
+                "label": "Prioridad",
+                "helplabel": "Indique la prioridad",
+                "validaciones": {
+                    "requerida": "La prioridad es requerida"
+                }
+            },
+            "Comentarios": {
+                "label": "Comentarios",
+                "helplabel": "Capture el comentario",
+                "validaciones": {
+                    "requerida": "El comentario es requerido"
+                }
+            }
+        },
+        "FlujoAutorizacion": {
+            "label": "Flujo Autorización",
+            "helplabel": "Flujo Autorización"
+        }
+    },
+    "sections": {
+      "CheckList$TareasNoAsignadas": {
+        "title": "Tareas"
+      },
+      "CheckList$PlanAccionAsignado": {
+        "title": "Plan de Acción"
+      }
+    },
+    "mensajes": {
+      "exito": "El CheckList ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Editar CheckList"
+    },
+    "titulo": {
+      "nuevo": "Nuevo CheckList"
+    }
+  }
+}

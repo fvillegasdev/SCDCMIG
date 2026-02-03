@@ -1,0 +1,104 @@
+﻿{
+  "expedientesGenerarPoliza": {
+    "bc": {
+      "text": "Expedientes para Generar Poliza",
+      "link": "/scv/ExpedientesEnFiniquito"
+    },
+    "consulta": {
+      "title": "Expedientes en Fiiquito",
+      "grid": {
+        "headers": {
+          "iD": "ID",
+          "cliente": { "Nombre": "Cliente" },
+          "desarrollo": { "Nombre": "Desarrollo" },
+          "tipoComercializacion": { "Nombre": "Tipo de comercialización" }
+        }
+      }
+    },
+    "editar": {
+      "title": "Modificar Giro"
+    },
+    "form": {
+      "ID": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido."
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus"
+      },
+      "FolioExpediente": {
+        "label": "Folio Expediente",
+        "helpLabel": "Capture el Folio",
+        "validaciones": {
+          "requerida": "El folio es requerido."
+        }
+      },
+      "TiposDeProcesos": {
+        "label": "Tipos de Proceso",
+        "helpLabel": "Seleccione el Tipo de Proceso",
+        "validaciones": {
+          "requerida": "El Tipo de Proceso es requerido."
+        }
+      },
+      "FechaPoliza": {
+        "label": "Fecha Poliza",
+        "helpLabel": "Capture la Fecha de la Poliza",
+        "validaciones": {
+          "requerida": "La fecha es requerida."
+        }
+      },
+      "Agente": {
+        "label": "Agente",
+        "helpLabel": "Capture el agente",
+        "validaciones": {
+          "requerida": "El agente es requerido."
+        }
+      },
+      "Cliente": {
+        "label": "Cliente",
+        "helpLabel": "Capture el Cliente",
+        "validaciones": {
+          "requerida": "El cliente es requerido."
+        }
+      },
+      "FilterTiposDeProcesos": {
+        "label": "Tipos de Proceso",
+        "helpLabel": "Seleccione el Tipo de Proceso",
+        "validaciones": {
+          "requerida": "El Tipo de Proceso es requerido."
+        }
+      },
+      "FilterFechaPoliza": {
+        "label": "Fecha Poliza",
+        "helpLabel": "Capture la Fecha de la Poliza",
+        "validaciones": {
+          "requerida": "La fecha es requerida."
+        }
+      },
+      "EsquemaSeguimiento": {
+        "label": "Esquema de Seguimiento"
+      }
+    },
+    "mensajes": {
+      "exito": "El Expediente ha sido actualizado"
+    }
+  }
+}

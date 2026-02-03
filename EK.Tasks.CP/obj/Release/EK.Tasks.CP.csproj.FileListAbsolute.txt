@@ -1,0 +1,7 @@
+D:\KV10\Codigo\EK\EK.Tasks.CP\bin\Release\EK.Tasks.CP.exe.config
+D:\KV10\Codigo\EK\EK.Tasks.CP\bin\Release\EK.Tasks.CP.exe
+D:\KV10\Codigo\EK\EK.Tasks.CP\bin\Release\EK.Tasks.CP.pdb
+D:\KV10\Codigo\EK\EK.Tasks.CP\obj\Release\EK.Tasks.CP.csprojAssemblyReference.cache
+D:\KV10\Codigo\EK\EK.Tasks.CP\obj\Release\EK.Tasks.CP.csproj.CoreCompileInputs.cache
+D:\KV10\Codigo\EK\EK.Tasks.CP\obj\Release\EK.Tasks.CP.exe
+D:\KV10\Codigo\EK\EK.Tasks.CP\obj\Release\EK.Tasks.CP.pdb

@@ -1,0 +1,68 @@
+﻿{
+  "tiposEvento": {
+    "bc": {
+      "text": "Tipos de Eventos",
+      "link": "/kontrol/TiposEventos"
+    },
+    "consulta": {
+      "title": "Administracion de Tipos de Eventos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "color": "Color",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "tiposEvento": {
+      "title": "Tipos de Evento"
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerido": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la Tipo de Citas",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Color": {
+        "label": "Color de Fondo",
+        "helplabel": "Capture el color de fondo del tipo de Evento",
+        "validaciones": {
+          "requerido": "El color es requerido"
+        }
+      },
+      "ColorText": {
+        "label": "Color de Texto",
+        "helplabel": "Capture el color del texto para el tipo de Evento",
+        "validaciones": {
+          "requerido": "El color es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+
+
+    },
+    "mensajes": {
+      "exito": "El tipos de evento ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+    },
+    "edit": {
+      "titulo": "Modificar el Tipo de Evento"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo tipo de evento"
+    }
+  }
+}

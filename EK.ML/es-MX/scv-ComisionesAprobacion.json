@@ -1,0 +1,123 @@
+﻿{
+  "ComisionesAprobacion": {
+    "bc": {
+      "text": "Aprobacion de Comisiones",
+      "link": "/scv/AprobacionComisiones"
+    },
+    "consulta": {
+      "title": "Aprobacion de Comisiones",
+      "grid": {
+        "headers": {
+          "origen": { "Nombre": "Origen" },
+
+          "tipoComision": { "Nombre": "Tipo Comisión" },
+          "tipoMovimiento": { "Nombre": "Tipo Movimiento" },
+          "compania": { "Nombre": "Compañia" },
+          "centroCosto": { "Nombre": "Centro Costo" },
+          "referencia": { "Clave": "Referencia" },
+          "importeComision": "Importe Comisión",
+          "importeComisionMoneda": "Importe Comisión",
+          "importePorAplicar": "Importe por Aplicar",
+          "importeAplicado": "Importe Aplicado",
+          "moneda": { "Nombre": "Moneda" },
+          "usuario": { "Nombre": "Usuario" },
+          "estatus": { "Nombre": "Estatus" }
+
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validacones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+
+
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Estatus"
+      },
+      "TipoComision": {
+        "label": "Tipo Comisión",
+        "helplabel": "Capture el Tipo de Comision"
+      },
+      "TipoMovimiento": {
+        "label": "Tipo Movimiento",
+        "helplabel": "Capture el Tipo de Movimiento"
+      },
+      "Referencia": {
+        "label": "Referencia",
+        "helplabel": "Capture la Referencia",
+        "validaciones": {
+          "requerida": "la Referencia es requerido"
+        }
+      },
+      "Compania": {
+        "label": "Tipo de Compañía",
+        "helplabel": "Capture el Tipo de Compañía"
+      },
+
+
+
+
+
+      "Usuario": {
+        "label": "Usuario",
+        "helplabel": "Capture El Usuario"
+      },
+      "ImporteComisiones": {
+        "label": "Importe de comisión",
+        "helplabel": "Capture el Nombre"
+      },
+      "ImporteAplicado": {
+        "label": "Importe Aplicado",
+        "helplabel": "Capture El Importe Aplicado",
+        "validaciones": {
+          "requerida": "El Importe Aplicado es requerida"
+        }
+      },
+      "ImportePorAplicar": {
+        "label": "Importe Por Aplicar",
+        "helplabel": "Capture El Importe Por Aplicar"
+      },
+
+
+      "NRevision": {
+        "label": "Revisión",
+        "helplabel": "Número Revisión"
+      },
+      "TotalCompania": {
+        "label": "Total de Compañia",
+        "helplabel": "El Total de Compañia"
+      },
+      "TotalAgentes": {
+        "label": "Total de Agentes",
+        "helplabel": "El Total de Agentes"
+      },
+      "TotalImporte": {
+        "label": "Total Importe",
+        "helplabel": "Total Importe"
+      }
+
+    },
+    "mensajes": {
+      "exito": "La Aprobación de Comisiones ha sido actualizada",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+    },
+    "edit": {
+      "titulo": "Modificar la Aprobación de Comisiónes"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Aprobación de Comisiónes"
+    },
+    "autorizacion": {
+      "titulo": "Solicitar Autorización",
+      "descripcion": "Presione Confirmar para solicitar la autorización de aprobación de comisiones",
+      "mensaje": "Solicitud Enviada"
+    }
+
+  }
+}

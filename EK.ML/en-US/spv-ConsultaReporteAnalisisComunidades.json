@@ -1,0 +1,14 @@
+{
+  "ConsultaAnalisisComunidades": {
+    "bc": {
+      "text": "Consulta de Reporte de analisis de comunidades",
+      "link": "/scv/pv/ConsultaReporteAnalisisComunidades"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+
+      }
+    }
+  }
+}

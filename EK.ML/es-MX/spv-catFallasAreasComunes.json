@@ -1,0 +1,29 @@
+{
+  "catFallasAreasComunes": {
+    "bc": {
+      "text": "Catalogo Fallas Areas Comunes",
+      "link": "/scv/pv/catFallasAreasComunes"
+    },
+    "consulta": {
+      "title": "Administración de Fallas Areas Comunes",
+      "grid": {
+        "headers": {
+          "ClaveFalla": "Clave Falla",
+          "IdAreaFalla": "Descripción",
+          "DescripcionFalla": "Estatus",
+          "DuracionGarantia": "Duración Garantia",
+          "Impacto": "Impacto"
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "La Ubicación Común ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de la Ubicación Común"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de la Ubicación Común"
+    }
+  }
+}

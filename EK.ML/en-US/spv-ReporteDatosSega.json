@@ -1,0 +1,14 @@
+{
+  "ReporteDatosSega": {
+    "bc": {
+      "text": "Consulta de Reporte de datos Sega",
+      "link": "/scv/pv/reporteDatosSega"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        
+      }
+    }
+  }
+}

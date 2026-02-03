@@ -1,0 +1,57 @@
+﻿{
+  "documentosExpediente": {
+    "bc": {
+      "text": "Catálogo de Documentos para Expediente",
+      "link": "/scv/documentosExpediente"
+    },
+    "consulta": {
+      "title": "Catálogo de Documentos para Expediente",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "numeroCopias": "Número de Copias",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave del documento",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre del documento",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "NumeroCopias": {
+        "label": "Número de Copias",
+        "helplabel": "Capture el número de copias del documento",
+        "validaciones": {
+          "requerida": "El tipo del documento es requerido",
+          "numero": "El número de copias no es válido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El documento ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+    },
+    "editar": {
+      "title": "Modificar documento de expediente"
+    },
+    "titulo": {
+      "nuevo": "Nuevo documento de expediente"
+    }
+  }
+}

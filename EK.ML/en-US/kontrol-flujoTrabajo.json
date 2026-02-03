@@ -1,0 +1,91 @@
+﻿{
+  "flujoAutorizacion": {
+    "bc": {
+      "text": "Flujos de Autorización",
+      "link": "/kontrol/tipoFlujo"
+    },
+    "consulta": {
+      "title": "Flujos de autorizaciones",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "view": {
+      "title": "Flujo de autorización",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "editar": {
+      "title": "Flujo de autorización",
+      "subtitle": "Nuevo",
+      "href": "kontrol/workflows/plantilla",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "update": "El flujo de autorización ha sido actualizado...",
+      "save": "El flujo de autorización se ha guardado con éxito.",
+      "savetitle": "Guardar flujo de autorización",
+      "section": ""
+    },
+    "form": {
+      "title": "Flujo de autorización",
+      "textUpdate": "Actualizando información",
+      "Tipo": {
+        "label": "Tipo de autorización",
+        "helpLabel": "Seleccione el tipo del flujo de autorización",
+        "validations": ""
+      },
+      "id": {
+        "label": "ID",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "Clave": {
+        "label": "Alias",
+        "helpLabel": "Capture el alias del flujo de autorización",
+        "validations": "El alias del flujo de autorización es requerido"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helpLabel": "Indicador de ACTIVO e INACTIVO",
+        "validations": ""
+      },
+      "automatico": {
+        "label": "Automatico",
+        "helpLabel": "Ejecución del flujo",
+        "validations": ""
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre del flujo de autorización",
+        "validations": "El nombre es requerido"
+      },
+      "notificadores": {
+        "label": "Notificadores",
+        "helpLabel": "Capture el usuario o nivel que desea asignar como notificador",
+        "validations": ""
+      },
+      "tareas": {
+        "label": "Tareas",
+        "helpLabel": "",
+        "validations": ""
+      }
+    },
+    "sections": {
+      "tareas": {
+        "title": "Tareas"
+      },
+      "notificacion": {
+        "title": "Notificaciones"
+      }
+    }
+  }
+}

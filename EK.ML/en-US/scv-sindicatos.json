@@ -1,0 +1,120 @@
+﻿{
+  "sindicatos": {
+    "bc": {
+      "text": "Administración de Sindicatos",
+      "link": "/scv/sindicatos"
+    },
+    "consulta": {
+      "title": "Catálogo de Sindicatos",
+      "grid": {
+        "headers": {
+            "clave": "Clave",
+            "nombre": "Nombre",
+            "agente": {"Nombre": "Agentes" },
+            "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave del sindicato es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre o Razón Social",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre del sindicato es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Estatus",
+        "validaciones": {
+          "requerida": "El Estatus del sindicato es requerido"
+        }
+      },
+      "Domicilio": {
+        "label": "Domicilio: calle, número exterior e interior",
+        "helplabel": "Capture el domicilio",
+        "validaciones": {
+          "requerida": "El domicilio del sindicato es requerido"
+        }
+      },
+      "Localidad": {
+        "label": "Localidad",
+        "helplabel": "Capture la localidad",
+        "validaciones": {
+          "requerida": "La localidad del sindicato es requerida"
+        }
+      },
+      "codigopostal": {
+        "label": "Código Postal",
+        "helplabel": "Capture el Código Postal",
+        "validaciones": {
+          "requerida": "El Código Postal del sindicato es requerido",
+          "numero": "El Código Postal no es válido"
+        }
+      },
+      "Telefono": {
+        "label": "Teléfono",
+        "helplabel": "Capture el Teléfono",
+        "validaciones": {
+          "requerida": "El Teléfono del sindicato es requerido"
+        }
+      },
+      "Telefono2": {
+        "label": "Teléfono 2",
+        "helplabel": "Capture el Teléfono"
+      },
+      "Celular": {
+        "label": "Celular",
+        "helplabel": "Capture el Celular"
+      },
+      "Fax": {
+        "label": "Fax",
+        "helplabel": "Capture el Fax"
+      },
+      "Email": {
+        "label": "Correo Electrónico",
+        "helplabel": "Capture el Correo Electrónico",
+        "validaciones": {
+          "email": "El Correo Electrónico no es válido"
+        }
+      },
+      "Contacto": {
+        "label": "Contacto",
+        "helplabel": "Capture el Contacto",
+        "validaciones": {
+          "requerida": "El Contacto del sindicato es requerido"
+        }
+      },
+      "Agente": {
+        "label": "Agente",
+        "helplabel": "Capture el Agente",
+        "validaciones": {
+          "requerida": "El Agente del sindicato es requerido"
+        }
+      },
+      "AgenteExterno": {
+        "label": "Agente Externo",
+        "helplabel": "Capture el Agente Externo",
+        "validaciones": {
+          "requerida": "El Agente Externo del sindicato es requerido"
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "El sindicato ha sido actualizada"
+    },
+    "editar": {
+      "title": "Modificar sindicato"
+    },
+    "titulo": {
+      "nuevo": "Nueva sindicato"
+    }
+  }
+}

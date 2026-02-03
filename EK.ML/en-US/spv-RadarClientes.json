@@ -1,0 +1,14 @@
+{
+  "RadarClientes": {
+    "bc": {
+      "text": "Proceso de radar de clientes",
+      "link": "/scv/pv/RadarClientes"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        
+      }
+    }
+  }
+}

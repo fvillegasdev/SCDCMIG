@@ -1,0 +1,119 @@
+﻿{
+    "Proyectos": {
+        "bc": {
+            "text": "Proyectos",
+            "link": "/sgp/proyectos"
+        },
+        "consulta": {
+            "title": "Proyectos",
+            "subTitle": "Descripción general del proyecto",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus",
+                    "EstatusProyecto": { "Nombre": "Estatus del proyecto" }
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helpLabel": "La clave es un identificador único para el proyecto",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helpLabel": "Nombre descriptivo del proyecto",
+                "validaciones": {
+                    "requerida": "El nombre es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            },
+            "CreadoPor": {
+                "label": "Creado Por"
+            },
+            "Creado": {
+                "label": "Creado"
+            },
+            "Modificado": {
+                "label": "Modificado"
+            },
+            "FechaInicio": {
+                "label": "Fecha de Inicio",
+                "helpLabel": "Fecha de inicio del proyecto",
+                "validaciones": {
+                    "requerida": "Es necesario seleccionar una fecha de Inicio"
+                }
+            },
+            "FechaFin": {
+                "label": "Fecha Fin",
+                "helpLabel": "Fecha de terminación del proyecto",
+                "validaciones": {
+                    "requerida": "Es necesario seleccionar una fecha Final"
+                }
+            },
+            "Responsable": {
+                "label": "Responsable",
+                "helpLabel": "Es el responsable de proyecto",
+                "validaciones": {
+                    "requerida": "Es necesario seleccionar un responsable"
+                }
+            },
+            "AsignadoA": {
+                "label": "Asignado A",
+                "helpLabel": "Es el colaborador al cual se le asignara el proyecto",
+                "validaciones": {
+                    "requerida": "Es necesario asignar a un colaborador"
+                }
+            },
+            "Tipo": {
+                "label": "Tipo",
+                "helpLabel": "Es el tipo de de proyecto",
+                "validaciones": {
+                    "requerida": "Es necesario seleccionar un tipo"
+                }
+            },
+            "TipoVisualizacion": {
+                "label": "Tipo Visualización",
+                "helplabel": "Visualización"
+            },
+            "EstatusProyecto": {
+                "label": "Estatus del proyecto",
+                "helpLabel": "Define el estatus en el que se encuentra el proyecto",
+                "validaciones": {
+                    "requerida": "Es necesario seleccionar un estatus de proyecto"
+                }
+            },
+            "Descripcion": {
+                "label": "Indicaciones iniciales",
+                "helpLabel": "Descripción del proyecto",
+                "validaciones": {
+                    "requerida": "Descripción del proyecto opcional"
+                }
+            }
+        },
+        "sections": {
+            "Info": {
+                "title": "Información General"
+            },
+            "Grupos": {
+                "title": "Proyecto"
+            },
+            "Globalizacion": {
+                "title": "Configuración Regional"
+            }
+        },
+        "mensajes": {
+            "exito": "El proyecto ha sido actualizado"
+        },
+        "titulo": {
+            "nuevo": "Nuevo proyecto"
+        }
+    }
+}

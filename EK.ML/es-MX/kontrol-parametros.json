@@ -1,0 +1,218 @@
+﻿{
+    "parametros": {
+        "bc": {
+            "text": "Parametros",
+            "link": "/kontrol/parametros"
+        },
+        "consulta": {
+            "title": "Parámetros",
+            "grid": {
+                "headers": {
+                    "nombre": "Nombre",
+                    "seccion": { "Nombre": "Sección" },
+                    "tipoDato": { "Nombre": "Tipo de Dato" },
+                    "ambito": { "Nombre": "Ámbito" },
+                    "modulo": { "Nombre": "Módulo" },
+                    "estatus": "Estatus"
+                }
+            },
+            "filtros": {
+                "modulo": "Módulo",
+                "ambito": "Ámbito",
+                "compania": "Compañía"
+            }
+        },
+        "view": {
+            "title": "Parámetros",
+            "subtitle": "",
+            "grids": {
+                "headers": {}
+            }
+        },
+        "editar": {
+            "title": "Parámetros",
+            "subtitle": "Nuevo",
+            "href": "kontrol/parametros",
+            "grid": {
+                "headers": {}
+            }
+        },
+      "form": {
+        "title": "Parámetros",
+        "textUpdate": "Actualizando información",
+        "Tipo": {
+          "label": "Parámetros",
+          "helpLabel": "Seleccione el parámetro",
+          "validations": ""
+        },
+        "id": {
+          "label": "ID",
+          "helpLabel": "",
+          "validations": ""
+        },
+        "Clave": {
+          "label": "Clave",
+          "helpLabel": "Capture la clave",
+          "validations": "La Clave es requerida"
+        },
+        "Nombre": {
+          "label": "Nombre",
+          "helpLabel": "Nombre",
+          "validations": "El nombre es requerido"
+        },
+        "Valor": {
+          "label": "Valor",
+          "helpLabel": "Valor",
+          "validations": "El Valor es requerido"
+        },
+        "parametro": {
+          "label": "Nombre",
+          "helpLabel": "Nombre",
+          "validations": "El nombre es requerido"
+        },
+        "Descripcion": {
+          "label": "Descripción",
+          "helpLabel": "Capture la descripción",
+          "validations": "La descripción es requerida"
+        },
+        "Seccion": {
+          "label": "Agrupador",
+          "helpLabel": "Capture la sección",
+          "validations": "La sección es requerida"
+        },
+        "TipoDato": {
+          "label": "Tipo de Dato",
+          "helpLabel": "Capture el nombre tipo de datos",
+          "validations": "El tipo de datos es requerido"
+        },
+        "Modulo": {
+          "label": "Módulo",
+          "helpLabel": "Capture el módulo",
+          "validations": "El tipo de datos es requerido"
+        },
+        "Ambito": {
+          "label": "Ámbito",
+          "helpLabel": "Capture el ámbito",
+          "validations": "el ámbito es requerido"
+        },
+        "Longitud": {
+          "label": "Longitud",
+          "helpLabel": "Capture el la longitud",
+          "validations": "La longitud es requerida"
+        },
+        "Decimales": {
+          "label": "Decimales",
+          "helpLabel": "Capture los decimales",
+          "validations": "Los decimales son requeridos"
+        },
+        "Estatus": {
+          "label": "Estatus",
+          "helpLabel": "Indicador de ACTIVO e INACTIVO",
+          "validations": ""
+        }
+      },
+        "sections": {
+            "Configuracion": {
+                "title": "Configuración Parámetros"
+            },
+            "notificacion": {
+                "title": "Notificaciónes"
+            }
+        },
+        "mensajes": {
+            "exito": "El Parámetro ha sido actualizado"
+        },
+        "edit": {
+            "titulo": "Nuevo Parametro"
+        },
+        "titulo": {
+            "nuevo": "Nueva Parametro"
+        }
+    }
+}
+//{
+//  "parametros": {
+//    "consulta": {
+//      "title": "Administración de parámetros",
+//      "grid": {
+//        "headers": {
+//          "seccion": "Sección",
+//          "parametro": "Parámetro",
+//          "tipodato": "Tipo Dato",
+//          "descripcion": "Descripción",
+//          "estatus": "Estatus"
+//        }
+//      },
+//      "filtros": {
+//        "modulo": "Módulo",
+//        "ambito": "Ámbito",
+//        "compania": "Compañía"
+//      }
+//    },
+//    "form": {
+//      "ambito": {
+//        "label": "Ámbito",
+//        "helplabel": "Seleccione el ámbito",
+//        "validaciones": {
+//          "requerido": "Seleccione el ámbito"
+//        }
+//      },
+//      "modulo": {
+//        "label": "Módulo",
+//        "helplabel": "Seleccione el módulo",
+//        "validaciones": {
+//          "requerido": "Seleccione el módulo"
+//        }
+//      },
+//      "estatus": {
+//        "label": "Activo",
+//        "helplabel": "Estatus"
+//      },
+//      "descripcion": {
+//        "label": "Descripción",
+//        "helplabel": "Capture la descripción"
+//      },
+//      "nombre": {
+//        "label": "Parámetro",
+//        "helplabel": "Capture el parámetro",
+//        "validaciones": {
+//          "requerido": "El nombre del parámetro es requerido"
+//        }
+//      },
+//      "seccion": {
+//        "label": "Sección",
+//        "helplabel": "Capture el nombre de la Sección.",
+//        "validaciones": {
+//          "requerido": "Capture el nombre de la Sección."
+//        }
+//      },
+//      "tipodato": {
+//        "label": "Tipo de Dato",
+//        "helplabel": "Seleccione el tipo de dato",
+//        "validaciones": {
+//          "requerido": "Seleccione el tipo de dato"
+//        }
+//      },
+//      "longitud": {
+//        "label": "Longitud",
+//        "helplabel": "Capture la longitud",
+//        "validaciones": {
+//          "requerido": "Capture la longitud"
+//        }
+//      },
+//      "decimales": {
+//        "label": "Decimales",
+//        "helplabel": "Capture el número de decimales",
+//        "validaciones": {
+//          "requerido": "Capture el número de decimales"
+//        }
+//      }
+//    },
+//    "mensajes": {
+//      "exito": "El parámetro ha sido actualizado"
+//    },
+//    "edit": {
+//      "titulo": "Nuevo parámetro"
+//    }
+//  }
+//}

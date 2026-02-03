@@ -1,0 +1,28 @@
+﻿{
+  "bc": {
+    "global": {
+      "ek": {
+        "text": "EK",
+        "link": "/"
+      },
+      "edicion": {
+        "text": "Edición",
+        "link": ""
+      },
+      "principal": {
+        "text": "Vista de Catálogo",
+        "link": ""
+      },
+      "nuevo": {
+        "text": "Nuevo",
+        "link": ""
+      }
+    }
+  },
+  "global": {
+    "mensajes": {
+      "guardando": "Guardando ...",
+      "leyendo": "Obtendiendo información ..."
+    }
+  }
+}

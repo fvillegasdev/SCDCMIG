@@ -1,0 +1,75 @@
+﻿{
+  "gruposusuario": {
+    "bc": {
+      "text": "Grupos de Usuario",
+      "link": "/kontrol/GruposUsuario"
+    },
+    "consulta": {
+      "title": "Administración de Grupos de Usuario",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "descripcion": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Seleccione la Clave",
+        "validaciones": {
+          "requerida": "La Clave es requerido"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Seleccione el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Seleccione la Descripcion",
+        "validaciones": {
+          "requerida": "La Descripcion es requerido"
+        }
+      },
+      "Usuario": {
+        "label": "Usuario",
+        "helplabel": "Seleccione el Usuario",
+        "validaciones": {
+          "requerida": "El Usuario es requerido"
+        }
+      },
+      "grupos_Detalle": {
+        "label": "Grupos Detalle",
+        "helplabel": "Seleccione el Grupos Detalle",
+        "validaciones": {
+          "requerida": "El Grupos Detalle es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "sections": {
+      "gruposDetalle": {
+        "title": "Miembros del grupo"
+      }
+    },
+    "mensajes": {
+      "exito": "El grupo de usuario ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones "
+    },
+    "edit": {
+      "titulo": "Nuevo grupo de usuarios"
+    },
+    "titulo": {
+      "nuevo": "Nuevo grupo de usuarios"
+    }
+  }
+}

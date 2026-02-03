@@ -1,0 +1,19 @@
+﻿@using EK.Common.Reportes
+@{
+    Layout = "~/Views/Shared/_R3LetterPortrait.cshtml";
+
+    var reporte = new EK.Common.Reportes.Reporte();
+    reporte.Titulo = "Requisitos de los Esquemas Financieros";
+    reporte.SubTitulo = "HAVITAL COMERCIAL, S.A. DE C.V.";
+    reporte.FechaImpresion = System.DateTime.Now.ToString();
+
+    reporte.Columnas = new List<Reporte.Columna>();
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Clave", Campo = "Clave", Longitud = 100 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Nombre", Campo = "Nombre", Longitud = 120 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Descripción", Campo = "Descripcion", Longitud = 120 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Tipo Requisito", Campo = "TipoRequisito.Nombre", Longitud = 100 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Vencimiento", Campo = "TieneVencimiento", Longitud = 100 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Autorización", Campo = "WorkFlow.Nombre", Longitud = 120 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Estatus", Campo = "Estatus.Nombre", Longitud = 120 });
+    ViewBag.Reporte = reporte;
+}

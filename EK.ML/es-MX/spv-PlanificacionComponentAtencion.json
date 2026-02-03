@@ -1,0 +1,75 @@
+﻿{
+  "SPVPlanificacionComponentAtencion": {
+    "bc": {
+      "text": "SPVPlanificacionComponentAtencion",
+      "link": "/scv/pv/PlanificacionComponent"
+    },
+    "consulta": {
+      "title": "Planificación",
+      "grid": {
+        "headers": {
+          "hipoteca_verde": "Hipoteca Verde",
+          "ecocasa": "Ecocasa",
+          "fecha_etapa": "F. Etapa",
+          "firma_Escritura": "F. Escritura",
+          "estatusAgendaEntrega": { "Nombre": "Estatus Agenda Entrega" }
+        }
+      }
+    },
+    "form": {
+      "TipoTarea": {
+        "label": "Tipo de Agenda",
+        "helplabel": "Seleccione un Tipo",
+        "validaciones": {
+          "requerida": "El Tipo es Requeridos"
+        }
+      },
+      "Tarea": {
+        "label": "Tarea",
+        "helplabel": "Seleccione una Tarea",
+        "validaciones": {
+          "requerida": "La Tarea es Requerida"
+        }
+      },
+      "NotificacionCorreo": {
+        "label": "Notificación Correo",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Confirmacion": {
+        "label": "Confirmación",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Recordatorio": {
+        "label": "Recordatorio",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "sections": {
+      "ConfigViviendaEntregableResult": {
+        "title": "Detalles Programación de Vivienda"
+      }
+    },
+    "mensajes": {
+      "exito": "La Causas de Consulta de Vivienda Entregable ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+    }
+  }
+}

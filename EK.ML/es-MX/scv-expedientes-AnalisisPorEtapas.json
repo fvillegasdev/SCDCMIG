@@ -1,0 +1,52 @@
+﻿{
+  "expedientesAnalisisPorEtapas": {
+    "bc": {
+      "text": "Análisis de expedientes por etapas",
+      "link": "/scv/expedientes"
+    },
+    "consulta": {
+      "title": "Análisis de expedientes por etapas",
+      "grid": {
+        "headers": {
+          "iD": "Folio Expediente",
+          "clave": "Clave",
+          "cliente": { "Nombre": "Cliente" },
+          "agente": { "Nombre": "Agente" },
+
+          "estados": "Fases Expediente",
+          "configuracion": "Configuración",
+
+          "etapaActiva": {
+            "Nombre": "Etapa Activa",
+            "FechaInicio": "Fecha Inicio EA.",
+            "DiasTranscurridos": "Días EA"
+          },
+          "EtapaHistorica": {
+            "Nombre": "Etapa seleccionada",
+            "FechaInicio": "Fecha Inicio ES",
+            "FechaCierre": "Fecha Fino ES",
+            "DiasTranscurridos": "Duración ES"
+          },
+          "estatusExpediente": { "Nombre": "Estatus Expediente" }
+        }
+      }
+    },
+    "form": {
+      "Cliente": {
+        "label": "Prospecto/Cliente",
+        "helplabel": "Capture el cliente",
+        "validaciones": {
+          "requerida": "El cliente es requerido"
+        }
+      },
+      "Agente": {
+        "label": "Agente",
+        "helplabel": "Capture el agente",
+        "validaciones": {
+          "requerida": "El agente es requerido"
+        }
+      }
+
+    }
+  }
+}

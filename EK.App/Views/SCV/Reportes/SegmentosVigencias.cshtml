@@ -1,0 +1,24 @@
+﻿@using EK.Common.Reportes
+@{
+    Layout = "~/Views/Shared/_R3LetterPortrait.cshtml";
+
+    dynamic data = ViewBag.Data.Resultado;
+
+    var reporte = new EK.Common.Reportes.Reporte();
+    reporte.Titulo = "Catálogo de Vigencias de Segmentos";
+    reporte.SubTitulo = "HAVITAL COMERCIAL, S.A. DE C.V.";
+    reporte.FechaImpresion = System.DateTime.Now.ToString();
+
+    reporte.Columnas = new List<Reporte.Columna>();
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "ID", Campo = "ID", Longitud = 30 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Segmento de Vivienda", Campo = "Segmento.Descripcion", Longitud = 130 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Vigencia", Campo = "Vigencia", Longitud = 75 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Rango de precio inicial", Campo = "PrecioInicial", Longitud = 135 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Rango de precio final", Campo = "PrecioFinal", Longitud = 135 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Estatus", Campo = "Estatus.Nombre", Longitud = 50 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Creado", Campo = "Creado", Longitud = 75});
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Creado Por", Campo = "CreadoPor.Nombre", Longitud = 75 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Modificado", Campo = "Modificado", Longitud = 75 });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Modificado Por", Campo = "ModificadoPor.Nombre", Longitud = 75 });
+    ViewBag.Reporte = reporte;
+}

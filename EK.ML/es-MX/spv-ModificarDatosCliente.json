@@ -1,0 +1,125 @@
+﻿{
+  "ModificarDatosCliente": {
+    "bc": {
+      "text": "Modificar Datos del Cliente",
+      "link": "/scv/pv/ModificarDatosCliente"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "form": {
+      "Cliente": {
+        "label": "Cliente",
+        "helplabel": "Capture los datos del cliente o la ubicación",
+        "validaciones": {
+          "requerida": "El cliente o la ubicación es requerida"
+        }
+      },
+      "datosCliente$ubicacion": {
+        "Calle": {
+          "label": "Dirección"
+        },
+        "Desarrollo": {
+          "label": "Fraccionamiento"
+        },
+        "Plaza": {
+          "label": "Plaza"
+        },
+        "Segmento": {
+          "label": "Segmento"
+        },
+        "Prototipo": {
+          "label": "Prototipo"
+        },
+        "FechaEntregaCalidad": {
+          "label": "Fecha de Entrega"
+        }
+      },
+      "datosCliente$info": {
+        "Nombre": {
+          "label": "Nombre",
+          "helplabel": "Capture el nombre del cliente",
+          "validaciones": {
+            "requerida": "El nombre del cliente es requerido."
+          }
+        },
+        "FechaNacimiento": {
+          "label": "Fecha de Nacimiento",
+          "helplabel": "Capture la fecha de nacimiento del cliente",
+          "validaciones": {
+            "requerida": "La fecha de nacimiento del cliente es requerida."
+          }
+        },
+        "RFC": {
+          "label": "RFC",
+          "helplabel": "Capture el RFC del cliente",
+          "validaciones": {
+            "requerida": "El RFC del cliente es requerido."
+          }
+        },
+        "Direccion": {
+          "label": "Dirección",
+          "helplabel": "Capture la dirección del cliente",
+          "validaciones": {
+            "requerida": "La dirección del cliente es requerida."
+          }
+        },
+        "Ciudad": {
+          "label": "Ciudad",
+          "helplabel": "Capture la ciudad del cliente",
+          "validaciones": {
+            "requerida": "La ciudad del cliente es requerida."
+          }
+        },
+        "EntidadFederal": {
+          "label": "EntidadFederal",
+          "helplabel": "Capture la entidad federal del cliente",
+          "validaciones": {
+            "requerida": "La entidad federal del cliente es requerida."
+          }
+        },
+        "CorreoElectronico": {
+          "label": "Correo Electrónico",
+          "helplabel": "Capture el correo electrónico del cliente",
+          "validaciones": {
+            "requerida": "El correo electrónico del cliente es requerido."
+          }
+        },
+        "TelefonoCasa": {
+          "label": "Teléfono de Casa",
+          "helplabel": "Capture el teléfono de casa del cliente",
+          "validaciones": {
+            "requerida": "El teléfono de casa del cliente es requerido."
+          }
+        },
+        "TelefonoOtros": {
+          "label": "Teléfono Celular",
+          "helplabel": "Capture el celular del cliente",
+          "validaciones": {
+            "requerida": "El celular del cliente es requerido."
+          }
+        }
+      }
+    },
+    "sections": {
+      "datosCliente$info": {
+        "title": "Cliente"
+      },
+      "datosCliente$ubicacion": {
+        "title": "Ubicación"
+      }
+    },
+    "mensajes": {
+      "exito": "Los datos del cliente han sido actualizados exitosamente."
+    },
+    "edit": {
+      "titulo": "Modificar Datos del Cliente"
+    },
+    "titulo": {
+      "Nuevo": "Modificar Datos del Cliente"
+    }
+  }
+}

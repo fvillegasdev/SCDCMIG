@@ -1,0 +1,91 @@
+﻿{
+    "puntosventa": {
+        "bc": {
+            "text": "Puntos de Venta",
+            "link": "/scv/puntosventa"
+        },
+        "consulta": {
+            "title": "Administración de Puntos de Venta",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "telefono1": "Teléfono",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+
+        "form": {
+            "ID": {
+                "label": "Clave",
+                "helpLabel": "Capture la Clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helpLabel": "Capture el nombre del Punto de Venta",
+                "validaciones": {
+                    "requerida": "El Nombre del Punto de Venta es requerido."
+                }
+            },
+            "Clave": {
+                "label": "Clave",
+                "helpLabel": "Capture la Clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Direccion": {
+                "label": "Dirección",
+                "helpLabel": "Capture la Dirección"
+            },
+            "CodigoPostal": {
+                "label": "Codigo Postal",
+                "helpLabel": "Capture el Codigo Postal",
+                "validaciones": {
+                    "requerida": "El dato es numérico"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helpLabel": "Estatus"
+            },
+            "Localidad": {
+                "label": "Localidad",
+                "helpLabel": "Capture la Localidad",
+                "validaciones": {
+                    "requerida": "La Localidad es requerida"
+                }
+            },
+            "Telefono1": {
+                "label": "Teléfono 1",
+                "helpLabel": "Capture el Teléfono",
+                "validaciones": {
+                    "requerida": "El teléfono es requerido",
+                    "length": "la longitud del teléfono es de 10 posiciones"
+                }
+            },
+            "Telefono2": {
+                "label": "Teléfono 2",
+                "helpLabel": "Capture el Teléfono",
+                "validaciones": {
+                    "requerida": "El teléfono es requerido",
+                    "length": "la longitud del teléfono es de 10 posiciones"
+                }
+            }
+        },
+        "mensajes": {
+            "exito": "El Punto de Venta ha sido actualizado",
+            "warning": "Los datos están incompletos, verificar campos requeridos y validaciones "
+        },
+        "titulo": {
+            "nuevo": "Nuevo Punto de Venta"
+        },
+        "editar": {
+            "title": "Modificar Punto de Venta"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "misTareas": {
+    "grid": {
+      "headers": {
+        "nombreFlujoInstancia": "Nombre Flujo",
+        "descripcion": "Descripción",
+        "comentarios": "Comentarios",
+        "status": "Status"
+      }
+    },
+    "opcionesConsulta": {
+      "asignadosami": "Asignados a mi",
+      "aprobadas": "Aprobadas",
+      "rechazadas": "Rechazadas"
+    },
+    "title": "Mis Tareas",
+    "tipoConsultaDDL": {
+      "label": "Tipo Consulta",
+      "helpLabel": "Seleccione el tipo de consulta",
+      "validations": "Seleccionar el tipo de consulta"
+    }
+  }
+}

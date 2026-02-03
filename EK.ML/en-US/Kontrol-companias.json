@@ -1,0 +1,111 @@
+﻿{
+  "companias": {
+    "bc": {
+      "text": "Compañías",
+      "link": "/kontrol/companias"
+    },
+    "consulta": {
+      "title": "Administración de compañías",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Descripción",
+          "rfc": "RFC",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerido": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Compañía",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Cliente": {
+        "label": "Cliente",
+        "helplabel": "Capture el cliente",
+        "validaciones": {
+          "requerido": "El Cliente es requerido"
+        }
+      },
+
+      "Rfc": {
+        "label": "RFC",
+        "helplabel": "Capture el RFC",
+        "validaciones": {
+          "requerido": "El RFC es requerido"
+        }
+      },
+      "Domicilio": {
+        "label": "Domicilio",
+        "helplabel": "Capture el Domicilio",
+        "validaciones": {
+          "requerido": "El Domicilio es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+        "Asentamiento": {
+            "label": "C.P./Colonia/Municipio",
+            "helplabel": "Capture la Localidad",
+            "validaciones": {
+                "requerido": "El Localidad es requerida"
+            }
+        },
+      "Vivienda": {
+        "label": "Aplica en Vivienda",
+        "helplabel": "Seleccione si opera vivienda"
+      },
+      "TimeZone": {
+        "label": "Zona horaria",
+        "helpLabel": "Configuración de fecha y hora de acuerdo a la ubicación del usuario",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "MonedaBase": {
+        "label": "Moneda Base",
+        "helpLabel": "Moneda en la que se va a operar el sistema",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      }
+    },
+    "sections": {
+      "Configuracion": {
+        "title": "Configuración"
+      }
+    },
+    "filters": {
+      "Vivienda": {
+        "Label": "¿Aplica para vivienda?",
+        "On": "Si",
+        "Off": "No",
+        "None": "Todos"
+      }
+    },
+    "mensajes": {
+      "exito": "La compañía ha sido actualizada"
+    },
+    "nuevo": {
+      "titulo": "Nueva compañía"
+    },
+    "editar": {
+      "title": "Modificar compañía"
+    },
+    "titulo": {
+      "nuevo": "Nueva compañía"
+    }
+  }
+}

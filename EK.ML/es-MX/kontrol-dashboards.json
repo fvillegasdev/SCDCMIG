@@ -1,0 +1,11 @@
+﻿{
+  "Tableros": {
+    "bc": {
+      "text": "Configuración",
+      "link": "/kontrol/DashBoards"
+    },
+    "consulta": {
+      "title": "DashBoards"
+    }
+  }
+}

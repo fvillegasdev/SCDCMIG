@@ -1,0 +1,122 @@
+﻿{
+  "caracteristicaAdicional": {
+    "bc": {
+      "text": "Caracteristicas Adicionales",
+      "link": "/scv/caracteristicaAdicional"
+    },
+    "consulta": {
+      "title": "Administración de Características Adicionales para Viviendas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "tipoCaracteristica": { "Nombre": "Tipo Característica" },
+          "tipoEntidad": { "Nombre": "Tipo Entidad" },
+          "escriturado": "Escriturado",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "component": {
+      "title": {
+        "view": "Vista de Características",
+        "edit": "Edición de Características"
+      },
+      "list": {
+        "header": {
+          "caracteristica": "Característica",
+          "tipoCaracteristica": "Tipo",
+          "ventaOpcional": "Obligatorio",
+          "importe": "Importe",
+          "opciones": ""
+        }
+      },
+      "form": {
+        "ventaOpcional": {
+          "venta": "Obligatorio",
+          "opcional": "Opcional"
+        },
+        "importe": {
+          "label": "Importe",
+          "helplabel": "Capture el Importe",
+          "validaciones": {
+            "requerida": "El importe es requerido",
+            "numero": "El importe no es válido"
+          }
+        },
+        "caracteristica": {
+          "label": "Característica",
+          "helplabel": "Capture la característica",
+          "validaciones": {
+            "requerida": "La característica es requerida"
+          }
+        },
+        "tipoUbicacion": {
+          "label": "Tipo de Ubicación",
+          "helplabel": "Capture el tipo de ubicación",
+          "validaciones": {
+            "requerida": "El tipo de ubicación es requerido"
+          }
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la característica es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la característica es requerida"
+        }
+      },
+      "TipoCaracteristica": {
+        "label": "Tipo de Característica",
+        "helplabel": "Capture el tipo de característica",
+        "validaciones": {
+          "requerida": "El tipo de la característica es requerido"
+        }
+      },
+      "TipoEntidad": {
+        "label": "Tipo de Entidad ",
+        "helplabel": "Capture la entidad relacionada a la característica",
+        "validaciones": {
+          "requerida": "La entidad relacionada es requerida"
+        }
+      },
+      "Escriturado": {
+        "label": "Escriturado",
+        "helplabel": "Escriturado",
+        "checked": "Si",
+        "unchecked": "No"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "La característica ha sido actualizada",
+      "warning": {
+        "message": "Los datos están incompletos, verificar campos requeridos y validaciones",
+        "item": {
+          "message": "La característica ya está agregada al listado"
+        }
+      }
+    },
+    "editar": {
+      "title": "Nueva característica"
+    },
+    "edit": {
+      "titulo": "Nueva Característica"
+    },
+    "titulo": {
+      "nuevo": "Nueva Característica"
+    }
+  }
+}

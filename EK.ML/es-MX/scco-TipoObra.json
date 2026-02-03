@@ -1,0 +1,61 @@
+﻿{
+  "TipoObra": {
+    "bc": {
+        "text": "Tipo Obra",
+        "link": "/scco/TipoObra"
+    },
+    "consulta": {
+        "title": "Administración de Tipo Obra",
+        "grid": {
+          "headers": {
+            "estatus": "Estatus",
+            "clave": "Clave",
+            "nombre": "Nombre"
+          }
+        }
+    },
+    "form": {
+      "clave_tipo_obra": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "activo": {
+        "label": "Activo",
+        "helplabel": "Seleccione el Activo",
+        "validaciones": {
+          "requerida": "El Activo es Requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Tipo de la Obra ha sido actualizado"
+    },
+    "edit": {
+        "titulo": "Nuevo tipo de la Obra"
+    },
+    "titulo": {
+        "nuevo": "Nuevo tipo de la Obra"
+    }
+  }
+}

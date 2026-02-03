@@ -1,0 +1,488 @@
+﻿{
+  "scvclientes": {
+    "bc": {
+      "text": "Prospectos clientes",
+      "link": "/scv/clientes"
+    },
+    "titulo": {
+      "nuevo": "Prospecto cliente nuevo"
+    },
+    "consulta": {
+      "title": "Administración de Prospectos clientes",
+      "grid": {
+        "headers": {
+          "iD": "No. Cliente",
+          "tipoPersona": { "Nombre": "Tipo de persona" },
+          "rFC": "RFC",
+          "nombre": "Nombre(s)",
+          "agente": "Agente",
+          "creado": "Creación",
+          "desarrollo.nombre": "Desarrollo",
+          "cantidadExpedientes": "Expedientes",
+          "estatus": "Estatus",
+          "geolocalizacion": "Geolocalización"
+
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "#",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "TipoPersona": {
+        "label": "Tipo de persona",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "NombreContacto": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "ApellidoPaterno": {
+        "label": "Apellido Paterno",
+        "helplabel": "Capture el apellido paterno",
+        "validaciones": {
+          "requerida": "El apellido paterno es requerido"
+        }
+      },
+      "ApellidoMaterno": {
+        "label": "Apellido Materno",
+        "helplabel": "Capture el apellido materno",
+        "validaciones": {
+          "requerida": "El apellido materno es requerido"
+        }
+      },
+      "APaterno": {
+        "label": "Apellido Paterno",
+        "helplabel": "Capture el apellido paterno",
+        "validaciones": {
+          "requerida": "El apellido paterno es requerido"
+        }
+      },
+      "AMaterno": {
+        "label": "Apellido Materno",
+        "helplabel": "Capture el apellido materno",
+        "validaciones": {
+          "requerida": "El apellido materno es requerido"
+        }
+      },
+      "Discapacidad": {
+        "label": "Discapacidad"
+      },
+      "Domicilio": {
+        "label": "Calle",
+        "helplabel": "Calle del domicilio",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Geolocalizacion": {
+        "label": "Geolocalización",
+        "helplabel": "Geolocalización",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Giro": {
+        "label": "Giro"
+      },
+      "FechaCliente": {
+        "label": "Fecha Cliente"
+      },
+      "NumInterior": {
+        "label": "Int",
+        "helplabel": "Número interior",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "NumExterior": {
+        "label": "Ext",
+        "helplabel": "Número exterior",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "CodigoPostal": {
+        "label": "Código Postal",
+        "helplabel": "Capture el código postal",
+        "validaciones": {
+          "requerida": "El código postal es requerido"
+        }
+      },
+      "Asentamiento": {
+        "label": "C.P. / Colonia / Municipio",
+        "helplabel": "Seleccione su colonia, puede buscarla por código postal, nombre, municipio",
+        "validaciones": {
+          "requerida": "La colonia y municipio son requeridos"
+        }
+      },
+      "AntiguedadDomicilio": {
+        "label": "Antigüedad",
+        "helplabel": "Antiguedad en su domicilio actual",
+        "validaciones": {
+          "requerida": "El apellido materno es requerido"
+        }
+      },
+      "RFC": {
+        "label": "RFC",
+        "helplabel": "Capture el RFC",
+        "validaciones": {
+          "requerida": "El RFC es requerido"
+        }
+      },
+      "CURP": {
+        "label": "CURP",
+        "helplabel": "Capture el CURP",
+        "validaciones": {
+          "requerida": "El CURP es requerido"
+        }
+      },
+      "NSS": {
+        "label": "NSS",
+        "helplabel": "Capture el NSS",
+        "validaciones": {
+          "requerida": "El NSS es requerido"
+        }
+      },
+      "PuntoVenta": {
+        "label": "Punto de Venta",
+        "helplabel": "Capture el Punto de Venta",
+        "validaciones": {
+          "requerida": "El Punto de Venta es requerido"
+        }
+      },
+      "CampaniaPublicidad": {
+        "label": "Campaña de Publicidad",
+        "helplabel": "Capture la Campaña de Publicidad",
+        "validaciones": {
+          "requerida": "La Campaña de Publicidad es requerida"
+        }
+      },
+      "MedioPublicidad": {
+        "label": "Medio de Publicidad",
+        "helplabel": "Capture el Medio de Publicidad",
+        "validaciones": {
+          "requerida": "El Medio de Publicidad es requerido"
+        }
+      },
+      "FechaNacimiento": {
+        "label": "Fecha de Nacimiento",
+        "helplabel": "Capture la fecha de nacimiento",
+        "validaciones": {
+          "requerida": "La Fecha de Nacimiento es requerida"
+        }
+      },
+      "FechaContacto": {
+        "label": "Fecha de Contacto",
+        "helplabel": "Capture la fecha de contacto"
+      },
+      "FechaProspecto": {
+        "label": "Fecha Prospecto",
+        "helplabel": "Capture la fecha de prospecto"
+      },
+
+      "Email": {
+        "label": "Email",
+        "helplabel": "Capture el Email",
+        "validaciones": {
+          "requerida": "El email es requerida",
+          "formato": "el email no tiene el formato esperado"
+        }
+      },
+      "RangoIngresos": {
+        "label": "Rango de Ingresos",
+        "helplabel": "Capture el rango de ingresos",
+        "validaciones": {
+          "requerida": "El rango de ingreso es requerido"
+        }
+      },
+      "Telefono": {
+        "label": "Teléfono",
+        "helplabel": "Capture el número de teléfono",
+        "validaciones": {
+          "requerida": "El teléfono es requerido",
+          "length": "la longitud del teléfono es de 10 posiciones"
+        }
+      },
+      "Celular": {
+        "label": "Celular",
+        "helplabel": "Capture el número de celular",
+        "validaciones": {
+          "requerida": "El número de celular es requerido"
+        }
+      },
+      "EstadoCivil": {
+        "label": "Estado Civil",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "RegimenConyugal": {
+        "label": "Regimen Conyugal",
+        "helplabel": "Seleccion un regimen conyugal",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Genero": {
+        "label": "Género",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Puesto": {
+        "label": "Puesto/Ocupación",
+        "helplabel": "Capture un puesto/ocupación",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Empresa": {
+        "label": "Empresa",
+        "helplabel": "Seleccione una empresa",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "AntiguedadEmpleo": {
+        "label": "Antigüedad",
+        "helplabel": "Capture su antigüedad en años",
+        "validaciones": {
+          "requerida": "La antigüedad no tiene formato valido"
+        }
+      },
+      "Antiguedad": {
+        "label": "Antigüedad",
+        "helplabel": "Capture su antigüedad en años",
+        "validaciones": {
+          "requerida": "La antigüedad no tiene formato valido"
+        }
+      },
+      "EmpleoActual": {
+        "label": "Empleo Actual",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "TitularRH": {
+        "label": "Titular RH",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "TelEmpresa": {
+        "label": "Teléfono",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "ExtEmpresa": {
+        "label": "Extensión",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "DescuentoPension": {
+        "label": "Pensión alim.",
+        "helplabel": "Capture su descuento",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "DependientesEconomicos": {
+        "label": "# Dependientes",
+        "helplabel": "Capture el número de dependientes economicos",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Estudios": {
+        "label": "Estudios",
+        "helplabel": "Seleccione su nivel de estudios",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "TipoPercepcion": {
+        "label": "Tipo Percepción",
+        "helplabel": "Seleccione  un tipo de percepción",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "AutosPropios": {
+        "label": "Autos Propios",
+        "helplabel": "Capture la cantidad de autos",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "CentralObrera": {
+        "label": "Central Obrera",
+        "helplabel": "Seleccione una central obrera",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "EstadoOrigen": {
+        "label": "Ciudad y Estado de origen",
+        "helplabel": "Seleccione un estado de origen",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "PaisOrigen": {
+        "label": "Pais de Origen",
+        "helplabel": "Seleccione un país de origen",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "TipoCasa": {
+        "label": "Tipo de Casa",
+        "helplabel": "Seleccione un tipo de casa",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus",
+        "validaciones": ""
+      },
+      "EstatusCliente": {
+        "label": "Estatus",
+        "helpLabel": "Indica si la persona es Contacto, Prospecto o Cliente",
+        "validaciones": ""
+      },
+      "RepresentanteLegal": {
+        "label": "Representante Legal",
+        "helpLabel": "Persona física que representa a una empresa registrada como persona moral",
+        "validaciones": ""
+      },
+      "Prospecto": {
+        "label": "Prospecto",
+        "helpLabel": "Prospecto",
+        "validaciones": ""
+      },
+      "TipoReferencia": {
+        "label": "Tipo Referencia",
+        "helplabel": "Seleccione un tipo de referencia",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Referencia": {
+        "label": "Tipo Referencia",
+        "helplabel": "Seleccione un tipo de referencia",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Creado": {
+        "label": "Fecha Creación",
+        "helplabel": "Fecha Creación"
+      },
+      "edit": {
+        "titulo": "Nuevo Cliente"
+      },
+      "infoLaboral": {
+        "titulo": "Información Laboral"
+      },
+      "infoConyugue": {
+        "titulo": "Información Conyugue"
+      },
+      "referencias": {
+        "titulo": "Referencias Personales"
+      },
+      "infoAdicional": {
+        "titulo": "Información Adicional"
+      }
+    },
+    "sections": {
+      "InfoGeneral": {
+        "title": "Información General"
+      },
+      "InfoDomicilio": {
+        "title": "Domicilio"
+      },
+      "InformacionProspeccion": {
+        "title": "Información de prospección"
+      },
+      "InfoContacto": {
+        "title": "Información de Contacto"
+      },
+      "RefLaborales": {
+        "title": "Referencias Laborales"
+      },
+      "Asesores": {
+        "title": "Agentes"
+      },
+      "InfoAdicional": {
+        "title": "Información Adicional"
+      },
+      "Referencias": {
+        "title": "Referencias Personales"
+      },
+      "InfoTipoPersona": {
+        "title": "Seleccione el tipo de persona"
+      },
+      "Telefonos": {
+        "title": "Teléfonos"
+      },
+      "Correos": {
+        "title": "Correos"
+      },
+      "ClienteDesarrollo": {
+        "title": "Desarrollos de Interés"
+      },
+      "Boletas": {
+        "title": "Información de prospección"
+      }
+    },
+    "mensajes": {
+      "save": "El Prospecto cliente ha sido actualizado",
+      "nodata": "No existe registros",
+      "validacionDesarrollo": "Este Desarrollo ya fue agregado",
+      "validacionAsesor": "Este Asesor ya fue añadido",
+      "validacionAsesorTitular": "No se puede eliminar al Asesor titular",
+      "validacionTelefono": "Este Teléfono ya fue añadido",
+      "validacionCorreo": "Este Correo ya fue añadido",
+      "validacionLaboral": "Esta Referencia Laboral ya fue añadido",
+      "exito": "El Prospecto cliente ha sido actualizado"
+    },
+    "validaciones": {
+      "rfc": "Favor de Capturar el RFC"
+    }
+  }
+}

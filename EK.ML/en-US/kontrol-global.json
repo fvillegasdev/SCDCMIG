@@ -1,0 +1,207 @@
+﻿{
+  "bc": {
+    "kontrol": {
+      "cg": {
+        "text": "Catálogos Globales",
+        "link": "/kontrol"
+      },
+      "usuarios": {
+        "text": "Usuarios",
+        "link": "/kontrol/usuarios"
+      },
+      "excepciones": {
+        "text": "Excepciones"
+      },
+      "niveles": {
+        "text": "Niveles"
+      },
+      "clasificadores": {
+        "text": "Clasificadores"
+      },
+      "secciones": {
+        "text": "Secciones de Parámetros",
+        "link": "/kontrol/parametros/secciones",
+        "editar": {
+          "text": "Editar",
+          "href": "/kontrol/parametros/secciones/editar"
+        }
+      },
+      "tiposClasificadores": {
+        "text": "Tipos de Clasificador",
+        "link": "/kontrol/tiposClasificador/"
+      },
+       "centrocosto": {
+        "text": "Centro de Costo",
+        "link": "kontrol/centrocosto"
+      },
+      "flujoEstatus": {
+        "text": "Estatus de flujos",
+        "link": "kontrol/flujoestatus"
+      },
+      "tareaEstatus": {
+        "text": "Estatus de tareas",
+        "link": "kontrol/tareaestatus"
+      },
+      "misTareas": {
+        "text": "Mis Tareas",
+        "link": "/kontrol/workflows/misTareas"
+      },
+      "clientes": {
+        "text": "Dominios",
+        "link": "kontrol/dominios"
+      },
+      "kontrolFileManager": {
+        "text": "Administrador de archivos Enkontrol",
+        "link": ""
+      },
+      "companias": {
+        "text": "Compañías",
+        "link": "kontrol/companias"
+      },
+      "estatus": {
+        "text": "Estatus",
+        "link": "kontrol/estatus"
+      },
+      "configurarparametros": {
+        "text": "Configurar Parámetros",
+        "link": "kontrol/parametros/configuracion"
+      },
+      "modulos": {
+        "text": "Módulos",
+        "link": "kontrol/modulos"
+      },
+      "nivelescatalogo": {
+        "text": "Niveles",
+        "link": "kontrol/niveles"
+      },
+      "parametros": {
+        "text": "Parámetros",
+        "link": "kontrol/parametros/plantillas"
+      },
+      "plantillas": {
+        "text": "Plantillas",
+        "link": "kontrol/plantillas"
+      },
+      "puestos": {
+        "text": "Puestos",
+        "link": "kontrol/puestos"
+      },
+      "tiposdatos": {
+        "text": "Tipos de Datos",
+        "link": "kontrol/tiposdatos"
+      },
+      "flujoTrabajo": {
+        "text": "Flujo de autorización",
+        "link": "kontrol/workflows/plantilla"
+      },
+      "flujoInstancia": {
+        "text": "Instancias",
+        "link": "/kontrol/workflows/procesos"
+      },
+      "tipoFlujo": {
+        "text": "Tipo de Autorizaciones",
+        "link": "/kontrol/workflows/tipos"
+      },
+      "tareaInstancia": {
+        "text": "Tarea de flujo de Autorizaciones",
+        "link": "/kontrol/workflows/plantilla/tareas"
+      }
+    },
+    "sbo": {
+      "catalogo": {
+        "text": "Catálogos",
+        "link": "/sbo"
+      },
+      "cuentabancaria": {
+        "text": "Cuentas Bancarias",
+        "link": "/sbo/cuentasbancarias"
+      }
+    },
+    "scv": {
+      "cg": {
+        "text": "Catálogos Globales",
+        "link": "/scv"
+      },
+      "mediosPublicidad": {
+        "text": "Medios de Publicidad",
+        "link": "/scv/medios"
+      },
+      "gradosInteres": {
+        "text": "Grados de Interes",
+        "link": "/scv/gradosInteres"
+      },
+      "estatusubicacion": {
+        "text": "Estatus de Ubicaciones",
+        "link": "/scv/estatusubicacion"
+      },
+      "modelosPaquete": {
+        "text": "Modelos de Paquete",
+        "link": "/scv/modelosPaquete"
+      },
+      "tiposUbicacion": {
+        "text": "Tipos de Ubicación",
+        "link": "/scv/tiposUbicacion"
+      },
+      "ubicaciones": {
+        "text": "Administración de Ubicaciones para Vivienda",
+        "link": "/scv/ubicaciones"
+      },
+      "caracteristicaAdicional": {
+        "text": "Administración de Características Adicionales para Viviendas",
+        "link": "/scv/caracteristicaAdicional"
+      },
+      "campaniaPublicidad": {
+        "text": "Campaña de publicidad",
+        "link": "/scv/campaniaPublicidad"
+      },
+      "referenciasPersonales": {
+        "text": "Referencias personales",
+        "link": "/scv/referenciasPersonales"
+      },
+      "rangosIngresos": {
+        "text": "Rangos de Ingresos",
+        "link": "/scv/rangosIngresos"
+      },
+      "tiposcambio": {
+        "text": "Tipos de Cambio",
+        "link": "/scv/tiposcambio"
+      },
+      "pd": {
+        "text": "Procesos Diarios",
+        "link": "/scv/"
+      },
+      "clientes": {
+        "text": "Clientes",
+        "link": "/scv/clientes"
+      },
+      "motivos": {
+        "text": "Motivos de Cancelación",
+        "link": "/scv/motivoscancelacion"
+      },
+      "empresas": {
+        "text": "Empresas",
+        "link": "/scv/empresas"
+      },
+      "puntosventa": {
+        "text": "Puntos de Venta",
+        "link": "/scv/puntosventa"
+      },
+      "prototipos": {
+        "text": "Prototipos",
+        "link": "/scv/prototipos"
+      },
+      "desarrollos": {
+        "text": "Desarrollos",
+        "link": "/scv/desarrollos"
+      },
+      "notarios": {
+        "text": "Notarios",
+        "link": "/scv/notarios"
+      },
+       "ventas": {
+        "text": "Ventas",
+        "link": "/scv/ventas"
+      }
+    }
+  }
+}

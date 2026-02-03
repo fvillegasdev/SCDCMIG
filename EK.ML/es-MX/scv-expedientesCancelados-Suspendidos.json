@@ -1,0 +1,82 @@
+﻿{
+  "expedientesCanceladosSuspendidos": {
+    "bc": {
+      "text": "Expedientes Cancelados y Suspendidos",
+      "link": "/scv/expedientes"
+    },
+    "consulta": {
+      "title": "Expedientes Cancelados y Suspendidos",
+      "grid": {
+        "headers": {
+          "iD": "Folio Expediente",
+          "clave": "Clave",
+          "cliente": { "Nombre": "Cliente" },
+          "tipoComercializacion": { "Nombre": "Tipo De Comercialización" },
+          "desarrollo": { "Nombre": "Desarrollo" },
+          "faseActiva": { "Nombre": "Fase" },
+          "etapaActiva": {
+            "Nombre": "Etapa Activa",
+            "FechaInicio": "Fecha Inicio EA",
+            "DiasTranscurridos": "Días"
+          },
+          "agente": { "Nombre": "Agente" },
+          "estatus": { "Nombre": "Estatus" },
+
+          "motivo": {
+            "Nombre": "Motivo",
+            "Fecha": "Fecha",
+            "SuspendidoDesde": "Suspendido Desde",
+            "Observaciones": "Observaciones",
+            "SolicitadoPor": {
+              "Nombre": "Solicitado Por"
+            },
+            "AutorizadoPor": {
+              "Nombre": "Autorizado Por"
+            }
+
+
+          },
+          "motivoCancelacion": {
+            "Nombre": "Motivo Cancelación",
+            "Fecha": "Fecha de Cancelación"
+          },
+          "motivoSuspension": {
+            "Nombre": "Motivo Suspensión",
+            "Fecha": "Fecha de Suspensión",
+            "SuspendidaPor": "Suspendida Por",
+            "DiasTranscurridos": "Días Transcurridos",
+            "FechaEstimada": "Fecha Estimada"
+          }
+
+        }
+      }
+    },
+    "form": {
+      "Cliente": {
+        "label": "Prospecto/Cliente",
+        "helplabel": "Capture el cliente",
+        "validaciones": {
+          "requerida": "El cliente es requerido"
+        }
+      },
+      "Agente": {
+        "label": "Agente",
+        "helplabel": "Capture el agente",
+        "validaciones": {
+          "requerida": "El agente es requerido"
+        }
+      }
+
+    },
+    "filters": {
+      "FechaInicio": "Desde",
+      "FechaFin": "Hasta"
+
+    },
+    "alerts": {
+      "FechaInicio": "La fecha inicio no puede ser menor que la fecha fin",
+      "FechaFin": "La fecha fin no puede ser mayor que la fecha inicio"
+
+    }
+  }
+}

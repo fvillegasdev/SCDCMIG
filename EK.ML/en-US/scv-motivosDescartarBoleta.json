@@ -1,0 +1,54 @@
+﻿{
+  "motivosDescartarBoleta": {
+    "bc": {
+      "text": "Motivos para Descartar Boleta",
+      "link": "/kontrol/motivosDescartarBoleta"
+    },
+    "consulta": {
+      "title": "Administración de Motivos para Descartar (Boletas de Prospección)",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "editar": {
+      "title": "Modificar Giro"
+    },
+    "form": {
+      "ID": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido."
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Motivo para descartar boleta ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Motivo para descartar boleta"
+    }
+  }
+}

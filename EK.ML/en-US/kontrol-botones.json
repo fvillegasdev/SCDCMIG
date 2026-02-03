@@ -1,0 +1,128 @@
+﻿{
+  "BotonesApp": {
+    "btnExcel": {
+      "titulo": "Exportar a Excel",
+      "ico": ""
+    },
+    "btnRefreshFilter": {
+      "titulo": "Filtrar Información",
+      "ico": ""
+    },
+    "btnPrint": {
+      "titulo": "Imprimir",
+      "ico": ""
+    },
+    "btnView": {
+      "titulo": "Visualizar",
+      "ico": ""
+    },
+    "btnCancel": {
+      "titulo": "Cancelar",
+      "ico": ""
+    },
+    "btnSave": {
+      "titulo": "Guardar",
+      "ico": ""
+    },
+    "btnDelete": {
+      "titulo": "Eliminar",
+      "ico": ""
+    },
+    "btnEdit": {
+      "titulo": "Editar",
+      "ico": ""
+    },
+    "btnNew": {
+      "titulo": "Agregar",
+      "ico": ""
+    },
+    "btnSectionButtonPlus": {
+      "titulo": "Agregar",
+      "ico": ""
+    },
+    "btnNivelesOpcionesNONE": {
+      "titulo": "Sin Permiso",
+      "ico": ""
+    },
+    "btnNivelesOpcionesRead": {
+      "titulo": "Permiso de Lectura",
+      "ico": ""
+    },
+    "btnNivelesOpcionesWrite": {
+      "titulo": "Permiso de Lectura y Edición",
+      "ico": ""
+    },
+    "btnNivelesOpcionesNew": {
+      "titulo": "Permiso de Lectura, Edición e Inserción",
+      "ico": ""
+    },
+    "btnNivelesOpcionesDelete": {
+      "titulo": "Permiso de Lectura, Edición, Inserción y Eliminación",
+      "ico": ""
+    },
+    "btnKONTROLFILESubirInformacion": {
+      "titulo": "Subir Archivo",
+      "ico": ""
+    },
+    "btnSPVPreReporteFallas": {
+      "titulo": "Pre-Reporte de Fallas",
+      "ico": ""
+    },
+    "btnSPVReversarReporteFallas": {
+      "titulo": "Revertir Reporte de Fallas",
+      "ico": ""
+    },
+    "btnSPVEliminarReporteFallas": {
+      "titulo": "Eliminar Reporte de Fallas",
+      "ico": ""
+    },
+    "btnSPVAutorizarReporteFallas": {
+      "titulo": "Autorizar Reporte de Fallas",
+      "ico": ""
+    },
+    "btnSPVOtrosReportesFallas": {
+      "titulo": "Otros Reportes de Fallas del Cliente",
+      "ico": ""
+    },
+    "btnSPVFiltrarInformacion": {
+      "titulo": "Filtrar Información",
+      "ico": ""
+    },
+    "btnSPVImprimirDOC": {
+      "titulo": "Imprimir Documentos",
+      "ico": ""
+    },
+    "btnSPVNuevaPlanificacion": {
+      "titulo": "Nueva Planificación",
+      "ico": ""
+    },
+    "btnSPVReprogramarPlanificacion": {
+      "titulo": "Reprogramar Planificación",
+      "ico": ""
+    },
+    "btnGenerarPoliza": {
+      "titulo": "Generar Poliza",
+      "ico": ""
+    },
+    "btnCancelarPoliza": {
+      "titulo": "Cancelar Poliza",
+      "ico": ""
+    },
+    "btnCancelarFiniquito": {
+      "titulo": "Cancelar Finiquito",
+      "ico": ""
+    },
+    "btnSPVBuscadorGralFamCom": {
+      "titulo": "Buscador general de Familias-Componentes",
+      "ico": ""
+    },
+    "btnSPVReversarEntregav": {
+      "titulo": "Revertir Entrega de Vivienda",
+      "ico": ""
+    },
+    "btnSPVReversarReporteFallasAreasComunes": {
+      "titulo": "Revertir Reporte de Incidencias",
+      "ico": ""
+    }
+  }
+}

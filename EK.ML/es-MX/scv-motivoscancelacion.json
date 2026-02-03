@@ -1,0 +1,55 @@
+﻿{
+  "motivoscancelacion": {
+    "bc": {
+      "text": "Motivos de Cancelación",
+      "link": "/scv/motivoscancelacion"
+    },
+    "consulta": {
+      "title": "Motivos de Cancelación",
+      "grid": {
+        "headers": {
+            "clave": "Clave",
+            "nombre": "Nombre",
+            "porcentaje": "% Reembolsable",
+            "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+        "Porcentaje": {
+            "label": "% Reembolsable",
+            "helplabel": "Capture de Porcentaje",
+            "validaciones": {
+                "requerida": "El dato es numérico"
+            }
+        },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El motivo de cancelación ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Motivo de cancelación"
+    },
+    "titulo": {
+      "nuevo": "Nueva Motivo de Cancelación"
+    }
+  }
+}

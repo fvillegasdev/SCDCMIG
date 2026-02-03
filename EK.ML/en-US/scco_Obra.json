@@ -1,0 +1,208 @@
+﻿{
+  "Obra": {
+    "bc": {
+      "text": "Obra",
+      "link": "/scco/Obra"
+    },
+    "consulta": {
+      "title": "Administración de Obra",
+      "grid": {
+        "headers": {
+          "estatus": "Estatus",
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "desarrollo": { "Nombre": "Desarrollo" },
+          "centroCosto": { "Nombre": "Centro Costo" },
+          "tipoObra": { "Nombre": "Tipo Obra" }
+        }
+      }
+    },
+    "form": {
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Capture el Desarrollo de la Obra"
+      },
+      "CentroCosto": {
+        "label": "Centro Costo",
+        "helplabel": "Capture el Centro de Costo de la Obra"
+      },
+      "EstadoObra": {
+        "label": "Estatus Obra",
+        "helplabel": "Capture Estatus de la Obra"
+      },
+      "Compañia": {
+        "label": "Compañia",
+        "helplabel": "Capture la Compañia de la Obra"
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "TipoObra": {
+        "label": "Tipo Obra",
+        "helplabel": "Capture tipo Obra"
+      },
+      "TipoAvance": {
+        "label": "Tipo Avance",
+        "helplabel": "Capture tipo Avance"
+      },
+      "FechaInicio": {
+        "label": "Fecha Inicio",
+        "helplabel": "Fecha Inicial"
+      },
+      "FechaFin": {
+        "label": "Fecha Fin",
+        "helplabel": "Fecha Final"
+      },
+      "Contrato": {
+        "label": "Contrato",
+        "helplabel": "Capture el Contrato de la Obra"
+      },
+      "Direccion": {
+        "label": "Direccion",
+        "helplabel": "Capture la Direccion de la Obra"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Capture el Estatus de la Obra"
+      },
+      "UbicacionObra": {
+        "label": "Ubicacion Obra",
+        "helplabel": "Capture la Ubicacion de la Obra"
+      },
+      "Responsable": {
+        "label": "Responsable",
+        "helplabel": "Capture el Responsable de la Obra"
+      },
+      "LotesPartida": {
+        "label": "Lotes por Incidencia",
+        "helplabel": "Capture Lotes por Incidencia de la Obra"
+      },
+      "TipoFSR": {
+        "label": "Tipo FSR",
+        "helplabel": "Seleccione un tipo"
+      },
+      "FactorFSR": {
+        "label": "Factor FSR",
+        "helplabel": "Ingrese FSR"
+      },
+      "InsumoFSR": {
+        "label": "Insumo FSR",
+        "helplabel": "Selecione un Insumo FSR"
+      },
+      "ValuacionActualizada": {
+        "label": "Valuación Actualizada",
+        "helplabel": "Valuación"
+      },
+      "Nivel": {
+        "label": "Tipo de Nivel",
+        "helplabel": "Nivel"
+      },
+      "Porcentaje": {
+        "label": "Porcentaje %",
+        "helplabel": "Ingresa Porcentaje"
+      },
+      "TipoIndirecto": {
+        "label": "Tipo de Indirecto",
+        "helplabel": "Seleccione un tipo de Indirecto"
+      },
+      "TipoInsumo": {
+        "label": "Tipo de Insumo",
+        "helplabel": "Seleccione tipo de Insumo"
+      },
+      "TipoValidacion": {
+        "label": "Tipo de Validación",
+        "helplabel": "Seleccione tipo de Validación"
+      },
+      "Operacion": {
+        "label": "Tipo de Operación",
+        "helplabel": "Seleccione tipo de Operación"
+      },
+      "Valor": {
+        "label": "Valor",
+        "helplabel": "Ingrese un Valor"
+      },
+      "Tarjeta": {
+        "label": "Tarjeta",
+        "helplabel": "Ingresa una tarjeta"
+      },
+      "MontoValuacion": {
+        "label": "Monto Valuación",
+        "helplabel": "Ingrese un Monto"
+      },
+      "Geolocalizacion": {
+        "label": "Geolocalización",
+        "helplabel": "Ingresa un punto en el mapa"
+      },
+      "Asentamiento": {
+        "label": "C.P. / Colonia / Municipio",
+        "helplabel": "Seleccione su colonia, puede buscarla por código postal, nombre, municipio",
+        "validaciones": {
+          "requerida": "La colonia y municipio son requeridos"
+        }
+      },
+      "MinimoWBSNivel": {
+        "label": "Minimo nivel WBS",
+        "helplabel": "Ingresa un valor"
+      },
+      "MaximoWBSNivel": {
+        "label": "Maximo nivel WBS",
+        "helplabel": "Ingresa un valor"
+      },
+      "ObraUniversal": {
+        "label": "Obra Universal",
+        "helplabel": "Seleccione una Obra Universal"
+      },
+      "AfectaObraUniversal": {
+        "label": "Afecta Obra Universal",
+        "helplabel": "Seleccione si afecta Obra Universal"
+      },
+      "Tabulador": {
+        "label": "Tabulador",
+        "helplabel": "Seleccione un Tabulador"
+      },
+      "Obra": {
+        "label": "Obra Universal",
+        "helplabel": "Seleccione una Obra Universal"
+      }
+    },
+    "sections": {
+      "ObraIndirectos": {
+        "title": "Indirectos"
+      },
+      "ObraValidaciones": {
+        "title": "Validaciones"
+      },
+      "ObraIndirectoTarjetas": {
+        "title": "Indirectos Tarjeta"
+      },
+      "ObraCompanias": {
+        "title": "Compañias de Ejecución"
+      },
+      "ObraNiveles": {
+        "title": "Configuracion WBS"
+      }
+    },
+    "mensajes": {
+      "exito": "La Obra ha sido actualizado",
+      "save": "La Obra ha sido Creado",
+      "nodata": "No existe registros"
+    },
+    "edit": {
+      "titulo": "Editar Obra"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Obra"
+    }
+  }
+}

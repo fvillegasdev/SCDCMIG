@@ -1,0 +1,65 @@
+﻿{
+  "Impuestos": {
+    "bc": {
+      "text": "Impuestos",
+      "link": "/scv/Impuestos"
+    },
+    "consulta": {
+      "title": "Administración de Impuestos",
+      "grid": {
+        "headers": {
+          "estatus": "Estatus",
+          "clave": "Clave",
+          "nombre": "Nombre"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "RetImp": {
+        "label": "Retencion de Impuestos",
+        "helplabel": "Retencion de Impuestos"
+      },
+      "Porcentaje": {
+        "label": "Porcentaje",
+        "helplabel": "Capture el Porcentaje",
+        "validaciones": {
+          "requerida": "el Porcentaje es requerida"
+        }
+      },
+      "TipoImpuesto": {
+        "label": "Tipo Impuesto",
+        "helplabel": "Capture el Tipo de Impuesto",
+        "validaciones": {
+          "requerida": "el Tipo de Impuesto es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Impuesto ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Impuesto"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Impuesto"
+    }
+  }
+}

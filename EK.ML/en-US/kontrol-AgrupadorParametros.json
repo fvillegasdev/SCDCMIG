@@ -1,0 +1,40 @@
+{
+  "seccionesparametros": {
+    "consulta": {
+      "title": "Administración de secciones de parámetros",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la sección es requerida"
+        }
+      },
+      "nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la sección es requerida"
+        }
+      },
+      "estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus de la sección"
+      }
+    },
+    "mensajes": {
+      "exito": "La sección ha sido actualizada"
+    },
+    "edit": {
+      "titulo": "Nueva sección de parámetros"
+    }
+  }
+}

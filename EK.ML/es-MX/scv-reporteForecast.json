@@ -1,0 +1,46 @@
+﻿{
+  "reporteForecast": {
+    "bc": {
+      "text": "Reporte Forecast",
+      "link": "/scv/reporteForecast"
+    },
+    "consulta": {
+      "title": "Reporte Forecast",
+      "grid": {
+        "headers": {
+          "desarrollo": { "Nombre": "Desarrollo" },
+          "january": "Enero",
+          "february": "Febrero",
+          "march": "Marzo",
+          "april": "Abril",
+          "may": "Mayo",
+          "june": "Junio",
+          "july": "Julio",
+          "august": "Agosto",
+          "september": "Septiembre",
+          "october": "Octubre",
+          "november": "Noviembre",
+          "december": "Diciembre"
+        }
+      },
+      "sections": {
+        "forecast": {
+          "desarrollo": { "Nombre": "Desarrollo" },
+          "january": "Ene",
+          "february": "Feb",
+          "march": "Mar",
+          "april": "Abr",
+          "may": "May",
+          "june": "Jun",
+          "july": "Jul",
+          "august": "Ago",
+          "september": "Sep",
+          "october": "Oct",
+          "november": "Nov",
+          "december": "Dic"
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,261 @@
+﻿{
+  "usuarios": {
+    "bc": {
+      "text": "Usuarios",
+      "link": "/kontrol/usuarios"
+    },
+    "consulta": {
+      "title": "Administración de usuarios",
+      "grid": {
+        "headers": {
+          "nombre": "Nombre",
+          "clave": "Clave",
+          "email": "Email",
+          "areaOrganizacion": { "Nombre": "Área" },
+          "posicion": { "Nombre": "Posición" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Nombre": {
+        "label": "Nombre(s)",
+        "helpLabel": "Nombre(s) del usuario",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Apellidos": {
+        "label": "Apellidos",
+        "helpLabel": "Ambos apellidos del usuarios",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Clave",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Email": {
+        "label": "Correo electrónico",
+        "helpLabel": "Correo electrónico del usuario, debe ser único en el sistema",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Telefono": {
+        "label": "Teléfono",
+        "helpLabel": "Telefono del usuario (casa, celular u oficina)",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "VigenciaInicio": {
+        "label": "Vigente desde",
+        "helpLabel": "Inicio de la vigencia del usuario",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Agente": {
+        "label": "Agente",
+        "helpLabel": "Seleccionar Agente",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Comisionable": {
+        "label": "Comisionable",
+        "helpLabel": "Seleccionar Comisionable",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "VigenciaFin": {
+        "label": "Vigente hasta",
+        "helpLabel": "Inicio de la vigencia del usuario",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "InicioOperaciones": {
+        "label": "Inicio operaciones",
+        "helplabel": "Fecha de inicio de operaciones"
+      },
+      "Posicion": {
+        "label": "Posición",
+        "helpLabel": "Se refiere al lugar del organigrama de su Puesto-Categoría",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "AreaOrganizacion": {
+        "label": "Área Organización",
+        "helpLabel": "Se refiere al área funcional dentro de la Organización",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "TimeZone": {
+        "label": "Zona horaria",
+        "helpLabel": "Configuración de fecha y hora de acuerdo a la ubicación del usuario",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Idioma": {
+        "label": "Idioma",
+        "helpLabel": "Idioma en el que se mostrará el sistema",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "DashBoard": {
+        "label": "DashBoard principal",
+        "helpLabel": "DashBoard principal",
+        "validaciones": {
+          "requerida": "DashBoard principal requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Bloqueado": {
+        "label": "Bloqueado",
+        "helplabel": "Estatus de Bloqueado"
+      },
+      "Password": {
+        "label": "Nueva contraseña",
+        "helplabel": "Capture su nueva contraseña"
+      },
+      "PasswordConfirm": {
+        "label": "Confirme su nueva contraseña",
+        "helplabel": "Capture su nueva contraseña"
+      },
+      "Compania": {
+        "label": "Compañía"
+      },
+      "Nivel": {
+        "label": "Nivel"
+      },
+      "TipoClasificador": {
+        "label": "Tipo de Clasificador"
+      },
+      "Clasificador": {
+        "label": "Clasificador"
+      }
+    },
+    "sections": {
+      "Info": {
+        "title": "Información General"
+      },
+      "Posicion": {
+        "title": "Posición en la Organización"
+      },
+      "Grupos": {
+        "title": "Grupos"
+      },
+      "Globalizacion": {
+        "title": "Configuración Regional"
+      },
+      "Password": {
+        "title": "Nueva contraseña"
+      },
+      "PasswordInfo": {
+        "title": "Cambio de contraseña"
+      },
+      "Niveles": {
+        "title": "Niveles Asignados"
+      },
+      "Clasificadores": {
+        "title": "Clasificadores Asignados"
+      }
+    },
+    "mensajes": {
+      "exito": "El usuario fué actualizado"
+    },
+    "clasificadores": {
+      "title": ""
+    },
+    "excepciones": {
+      "title": "Configuración de Excepciones de Seguridad"
+    },
+    "niveles": {
+      "guardado": "La configuración de niveles fué guardada",
+      "guardando": "Guardando los niveles asignados al usuario...",
+      "leyendo": "Obteniendo la configuración de niveles...",
+      "noAsignado": "No asignado"
+    },
+    "titulo": {
+      "nuevo": "Nuevo usuario"
+    }
+  },
+  "agentes": {
+    "bc": {
+      "text": "Usuarios/Agentes",
+      "link": "/kontrol/usuarios"
+    },
+    "form": {
+      "Nombre": {
+        "label": "Nombre(s)",
+        "helpLabel": "Nombre(s) del usuario",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Clave": {
+        "label": "Correo electrónico",
+        "helpLabel": "Correo electrónico del usuario, debe ser único en el sistema",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "VigenciaInicio": {
+        "label": "Vigente desde",
+        "helpLabel": "Inicio de la vigencia del usuario",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "VigenciaFin": {
+        "label": "Vigente hasta",
+        "helpLabel": "Inicio de la vigencia del usuario",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Bloqueado": {
+        "label": "Bloqueado",
+        "helplabel": "Estatus de Bloqueado"
+      }
+    },
+    "sections": {
+      "Info": {
+        "title": "Información General"
+      },
+      "Agente": {
+        "title": "Información de Agente"
+      }
+    },
+    "mensajes": {
+      "exito": "El usuario fué actualizado"
+    },
+    "clasificadores": {
+      "title": ""
+    },
+    "excepciones": {
+      "title": "Configuración de Excepciones de Seguridad"
+    },
+    "titulo": {
+      "nuevo": "Nuevo agente"
+    }
+  }
+}

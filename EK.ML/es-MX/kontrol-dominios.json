@@ -1,0 +1,87 @@
+﻿{
+  "dominios": {
+    "bc": {
+      "text": "Dominios",
+      "link": "/kontrol/dominios"
+    },
+    "consulta": {
+      "title": "Administración de dominios",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "vigenciaInicio": "Vigente desde",
+          "vigenciaFinal": "Vigente hasta",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Código",
+        "helplabel": "Capture el Código",
+        "validaciones": {
+          "requerido": "El código es requerido"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Bloqueado": {
+        "label": "Bloqueado",
+        "helplabel": "Bloqueado"
+      },
+      "VigenciaInicio": {
+        "label": "Vigente desde",
+        "helplabel": "Capture el inicio de la Vigencia",
+        "validaciones": {
+          "requerido": "La fecha de inicio de vigencia es requerida",
+          "menosigualque": "VIGENCIA, la fecha de inicio debe ser menor a la fecha de finalización"
+        }
+      },
+      "VigenciaFinal": {
+        "label": "Vigente hasta",
+        "helplabel": "Capture el fin de la Vigencia",
+        "validaciones": {
+          "requerido": "La fecha de terminación de vigencia es requerida",
+          "menosigualque": "VIGENCIA, la fecha de finalizaci�n debe ser mayor o igual a la fecha de inicio"
+        }
+      },
+      "TimeZone": {
+        "label": "Zona horaria",
+        "helpLabel": "Configuración de fecha y hora",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      }
+    },
+    "licencias": {
+      "grid": {
+        "headers": {
+          "clave": "Licencia",
+          "entidad": {
+            "Clave": "Clave Referencia",
+            "Nombre": "Referencia"
+          },
+          "hashLicencia": "Hash",
+          "tipo": { "Nombre": "Tipo" },
+          "estatus": { "Nombre": "Estatus" }
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "El dominio ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Dominio"
+    }
+  }
+}

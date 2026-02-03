@@ -1,0 +1,110 @@
+﻿{
+  "prototipos": {
+    "bc": {
+      "text": "Administración de Prototipos",
+      "link": "/scv/prototipos"
+    },
+    "consulta": {
+      "title": "Catálogo de Prototipos de Vivienda",
+      "grid": {
+        "headers": {
+          "id": "Prototipo",
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "descripcion": "Descripcion",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "editar": {
+      "title": "Modificar Prototipo"
+    },
+    "nuevo": {
+      "title": "Nuevo Prototipo"
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave del Prototipo es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre del Prototipo es requerido"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la Descripcion",
+        "validaciones": {
+          "requerida": "La Descripcion del Prototipo es requerido"
+        }
+      },
+      "FrenteMinimo": {
+        "label": "Frente Mínimo Requerido (m)",
+        "helplabel": "Capture el Frente Minimo (m) Requerido",
+        "validaciones": {
+          "requerida": "El Frente Minimo del Prototipo es requerido"
+        }
+      },
+      "Construccion": {
+        "label": "Construcción (m²)",
+        "helplabel": "Capture los m² de construcción",
+        "validaciones": {
+          "requerida": "Los m2 de Construccion del Prototipo son requeridos"
+        }
+      },
+      "Recamaras": {
+        "label": "Recamaras",
+        "helplabel": "Capture el número de Recamaras",
+        "validaciones": {
+          "requerida": "El número de Recamaras del Prototipo es requerido"
+        }
+      },
+      "Recamara": {
+        "label": "Recamara Adicional",
+        "helplabel": "Capture el tipo de Recamara Adicional"
+      },
+      "IdSalaTV": {
+        "label": "Sala TV",
+        "helplabel": "Capture si el prototipo incluye Sala TV"
+      },
+      "IdCuartoServicio": {
+        "label": "Cuarto de Servicios",
+        "helplabel": "Capture si el prototipo incluye Cuarto de Servicios"
+      },
+      "Banios": {
+        "label": "Baños",
+        "helplabel": "Capture la cantidad de Baños"
+      },
+      "Inmueble": {
+        "label": "Tipo de Inmueble",
+        "helplabel": "Capture el Tipo de Inmueble",
+        "validaciones": {
+          "requerida": "El Tipo de Inmueble del Prototipo es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "checked": {
+      "true": "Si",
+      "false": "No"
+    },
+    "mensajes": {
+      "exito": "El Prototipo ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "El Prototipo ha sido actualizado"
+    },
+    "titulo": {
+      "nuevo": "Nueva sindicato"
+    }
+  }
+}

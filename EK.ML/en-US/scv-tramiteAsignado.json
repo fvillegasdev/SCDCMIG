@@ -1,0 +1,47 @@
+{
+  "tramiteasignado": {
+    "bc": {
+      "text": "Asignación de trámites",
+      "link": "/scv/tramiteAsignado"
+    },
+    "form": {
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Selecciona un desarrollo"
+      },
+      "Prototipo": {
+        "label": "Prototipo",
+        "helplabel": "Selecciona un prototipo",
+        "list": {
+          "headers": {
+
+          }
+        }
+      }
+    },
+    "sections": {
+      "Tramites": {
+        "title": "Trámites"
+      }
+    },
+    "consulta": {
+      "title": "Asignación de trámites",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "titulo": {
+      "nuevo": "Nueva Asignación"
+    },
+    "editar": {
+      "title": "Modificar Asignación"
+    },
+    "mensajes": {
+      "exito": "La Asignación ha sido actualizada"
+    }
+  }
+}

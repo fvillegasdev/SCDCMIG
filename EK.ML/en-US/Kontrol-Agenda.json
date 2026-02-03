@@ -1,0 +1,80 @@
+﻿{
+    "Agenda": {
+        "bc": {
+            "text": "Agenda",
+            "link": "/kontrol/Agenda",
+            "cg": "/kontrol/Agenda/Agenda"
+        },
+        "consulta": {
+            "title": "Administracion de Agendas",
+            "grid": {
+                "headers": {
+                    "tipoAgenda": "Tipo de Agenda",
+                    "fechaInicio": "Fecha Inicio",
+                    "fechaFin": "Fecha Fin",
+                    "descripcion": "Descripcion",
+                    "geolocalizacion": "Geolocalizacion",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "TipoAgenda": {
+                "label": "Tipo de Agenda",
+                "helplabel": "Capture la Agenda",
+                "validaciones": {
+                    "requerido": "La Agenda es requerida"
+                }
+            },
+            "FechaInicio": {
+                "label": "Fecha Inicio",
+                "helplabel": "Capture la fecha inicio",
+                "validaciones": {
+                    "requerido": "La fecha inicio es requerida"
+                }
+            },
+            "FechaFin": {
+                "label": "Fecha Fin",
+                "helplabel": "Capture la fecha fin",
+                "validaciones": {
+                    "requerido": "La fecha fin es requerida"
+                }
+            },
+
+            "Geolocalizacion": {
+                "label": "Geolocalizacion"
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            },
+
+            "Descripcion": {
+                "label": "Descripción",
+                "helplabel": "Capture la descripcion",
+                "validaciones": {
+                    "requerido": "La descripcion es requerida"
+                }
+            },
+            "Localidad": {
+                "label": "Localidad",
+                "helplabel": "Capture la fecha fin",
+                "validaciones": {
+                    "requerido": "La fecha fin es requerida"
+                }
+            }
+        },
+
+        "sections": {
+            "Mapa": {
+                "title": "Lugar de la Agenda"
+            }
+        },
+        "mensajes": {
+            "exito": "La Agenda ha sido actualizado"
+        },
+        "titulo": {
+            "nuevo": "Nueva Agedna"
+        }
+    }
+  }

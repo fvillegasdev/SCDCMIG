@@ -1,0 +1,525 @@
+﻿{
+  "Tickets": {
+    "bc": {
+      "text": "Tickets",
+      "link": "/scv/pv/tickets"
+    },
+    "consulta": {
+      "title": "Tickets",
+      "grid": {
+        "headers": {
+          "ID": "ID",
+          "idExpediente": "Expediente",
+          "ubicacion": { "Nombre": "Ubicacion" },
+          "cliente": { "Nombre": "Cliente" },
+          "responsableConstruccion": { "Nombre": "Responsable" },
+          "estatusReporte": "Estatus Incidencia"
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "Folio"
+      },
+      "FullAnio": {
+        "label": "Año",
+        "helplabel": "Capture el año",
+        "validaciones": {
+          "requerida": "El año es requerido."
+        }
+      },
+      "Meses": {
+        "label": "Meses",
+        "helplabel": "Capture el mes",
+        "validaciones": {
+          "requerida": "El mes es requerido."
+        }
+      },
+      "EstatusTicket": {
+        "label": "Estatus",
+        "helplabel": "Capture el estatus",
+        "validaciones": {
+          "requerida": "El estatus es requerido."
+        }
+      },
+      "OrigenTickets": {
+        "label": "Origen Tickets",
+        "helplabel": "Capture el origen del tickets",
+        "validaciones": {
+          "requerida": "El mes es requerido."
+        }
+      },
+      "FolioCliente": {
+        "label": "Ticket/Cliente/Ubicación",
+        "helplabel": "Capture el cliente",
+        "validaciones": {
+          "requerida": "El cliente es requerido."
+        }
+      },
+      "Plazas": {
+        "label": "Plazas",
+        "helplabel": "Capture la plaza",
+        "validaciones": {
+          "requerida": "El plaza es requerida."
+        }
+      },
+      "Desarrollos": {
+        "label": "Desarrollos",
+        "helplabel": "Capture el desarrollo",
+        "validaciones": {
+          "requerida": "El desarrollo es requerido."
+        }
+      },
+      "Prototipos": {
+        "label": "Prototipos",
+        "helplabel": "Capture el prototipo",
+        "validaciones": {
+          "requerida": "El prototipo es requerido."
+        }
+      },
+      "Tags": {
+        "label": "Tags",
+        "helplabel": "Capture el tag",
+        "validaciones": {
+          "requerida": "El tag es requerido."
+        }
+      },
+      "Cliente": {
+        "label": "Cliente",
+        "helplabel": "Capture el cliente",
+        "validaciones": {
+          "requerida": "El cliente es requerido."
+        }
+      },
+      "Prereporte": {
+        "label": "Prereporte",
+        "helplabel": "Capture el número de prereporte.",
+        "validaciones": {
+          "requerida": "El número de prereporte es requerido."
+        }
+      },
+      "ReporteBuscador": {
+        "label": "Folio/Cliente",
+        "helplabel": "Capture el número de folio o el cliente del reporte a buscar.",
+        "validaciones": {
+          "requerida": "El número de folio o cliente son requeridos"
+        }
+      },
+      "EstatusReporte": {
+        "label": "Estatus Reporte"
+      },
+      "TelefonoCasa": {
+        "label": "Teléfono Casa",
+        "helplabel": "Capture el teléfono de casa de contacto",
+        "validaciones": {
+          "requerida": "El teléfono de casa es requerido"
+        }
+      },
+      "TelefonoOficina": {
+        "label": "Teléfono Oficina",
+        "helplabel": "Capture el teléfono de oficina de contacto",
+        "validaciones": {
+          "requerida": "El teléfono de oficina es requerido"
+        }
+      },
+      "TelefonoOtros": {
+        "label": "Teléfono Otros",
+        "helplabel": "Capture algún teléfono de contacto",
+        "validaciones": {
+          "requerida": "El teléfono es requerido"
+        }
+      },
+      "Ubicacion": {
+        "label": "Ubicación/lote",
+        "helplabel": "Capture la ubicación o lote",
+        "validaciones": {
+          "requerida": "La ubicación o lote es requerido"
+        }
+      },
+      "MedioSolicitud": {
+        "label": "Medio de Solicitud",
+        "helplabel": "Capture el medio de solicitud",
+        "validaciones": {
+          "requerida": "El medio de solicitud es requerido"
+        }
+      },
+      "ObservacionesContratista": {
+        "label": "Observaciones del Contratista",
+        "helplabel": "Capture las observaciones del contratista",
+        "validaciones": {
+          "requerida": "Las observaciones del contratista son requeridas"
+        }
+      },
+      "ObservacionesCliente": {
+        "label": "Observaciones del Cliente",
+        "helplabel": "Capture las observaciones del servicio al cliente",
+        "validaciones": {
+          "requerida": "Las observaciones del servicio al cliente son requeridas"
+        }
+      },
+      "SupervisorContratista": {
+        "label": "Supervisión Externa",
+        "helplabel": "Capture el contratista de supervisión externa.",
+        "validaciones": {
+          "requerida": "El contratista de supervisión externa es requerido"
+        }
+      },
+      "DiasContratista": {
+        "label": "Días Constratistas"
+      },
+      "DiasSolucion": {
+        "label": "Días Solución"
+      },
+      "FechaEntrega": {
+        "label": "Fecha de Entrega Vivienda"
+      },
+      "FechaReporte": {
+        "label": "Fecha del Reporte"
+      },
+      "DiasTranscurridos": {
+        "label": "Días transcurridos"
+      },
+      "FechaCaptura": {
+        "label": "Fecha Reporte"
+      },
+      "FechaPosibleSolucion": {
+        "label": "Fecha Compromiso",
+        "helplabel": "Capture la fecha de solución de reporte",
+        "validaciones": {
+          "requerida": "La fecha de solución de reporte es requerida"
+        }
+      },
+      "FechaSolucionTerminacion": {
+        "label": "Fecha Terminación",
+        "helplabel": "Capture la fecha de solución de terminación",
+        "validaciones": {
+          "requerida": "La fecha de solución de terminación es requerida"
+        }
+      },
+      "FechaContratistaInicial": {
+        "label": "Fecha Contratista Inicial",
+        "helplabel": "Capture la fecha de contratista inicial",
+        "validaciones": {
+          "requerida": "La fecha de contratista inicial es requerida"
+        }
+      },
+      "FechaContratistaFinal": {
+        "label": "Fecha Contratista Final",
+        "helplabel": "Capture la fecha de contratista inicial",
+        "validaciones": {
+          "requerida": "La fecha de contratista inicial es requerida"
+        }
+      },
+      "RecibidoPor": {
+        "label": "Modificado por"
+      },
+      "UsuarioProcesoInicio": {
+        "label": "Iniciado por"
+      },
+      "UsuarioProcesoFin": {
+        "label": "Finalizado por"
+      },
+      "ResponsableConstruccion": {
+        "label": "Responsable de Construcción",
+        "helplabel": "Capture el responsable de construcción",
+        "validaciones": {
+          "requerida": "El responsable de construcción es requerido"
+        }
+      },
+      "Calle": {
+        "label": "Dirección"
+      },
+      "Expediente": {
+        "label": "Expediente"
+      },
+      "ticket$ubicacion": {
+        "Calle": {
+          "label": "Dirección"
+        },
+        "Desarrollo": {
+          "label": "Fraccionamiento"
+        },
+        "Plaza": {
+          "label": "Plaza"
+        },
+        "Segmento": {
+          "label": "Segmento"
+        },
+        "Prototipo": {
+          "label": "Prototipo"
+        },
+        "Clave": {
+          "label": "Clave"
+        }
+      },
+      "ticket$ordenTrabajo": {
+        "Contratista": {
+          "label": "Contratista",
+          "helplabel": "Capture el contratista de la orden de trabajo",
+          "validaciones": {
+            "requerida": "El contratista es requerido"
+          }
+        },
+        "Observaciones": {
+          "label": "Observaciones",
+          "helplabel": "Capture las observaciones de la orden de trabajo",
+          "validaciones": {
+            "requerida": "Las observaciones son requeridas"
+          }
+        },
+        "DiasEstimadoCulminacion": {
+          "label": "Estimación en días",
+          "helplabel": "Capture estimación en días de la solución de la incidencia"
+        },
+        "FechaInicio": {
+          "label": "Inicio Estimado Trabajo",
+          "helplabel": "Capture la fecha estimada inicial de la reparación de la falla",
+          "validaciones": {
+            "requerida": "La fecha estimada inicial de la reparación es requerida"
+          }
+        },
+        "FechaFin": {
+          "label": "Fin Estimado Trabajo",
+          "helplabel": "Capture la fecha estimada final de la reparación de la incidencia",
+          "validaciones": {
+            "requerida": "La fecha estimada final de la reparación es requerida"
+          }
+        },
+        "FechaInicioReal": {
+          "label": "Inicio Real Trabajo",
+          "helplabel": "Capture la fecha inicial de la reparación de la incidencia",
+          "validaciones": {
+            "requerida": "La fecha inicial de la reparación es requerida"
+          }
+        },
+        "FechaFinReal": {
+          "label": "Fin Real Trabajo",
+          "helplabel": "Capture la fecha final de la reparación de la incidencia",
+          "validaciones": {
+            "requerida": "La fecha final de la reparación es requerida"
+          }
+        },
+        "CerrarRegistro": {
+          "label": "Cerrar Orden Trabajo",
+          "helplabel": "Indica si se cerrará la orden de trabajo"
+        },
+        "EstatusOrdenTrabajo": {
+          "label": "Estatus OT"
+        }
+      },
+      "ticket$ordenTrabajo$partidas": {
+        "TipoComponente": {
+          "label": "Tipo de componente",
+          "helplabel": "Búsqueda de Tipo de componente",
+          "validaciones": {
+            "requerida": "El Tipo de componente es requerida"
+          }
+        },
+        "Componente": {
+          "label": "Componente",
+          "helplabel": "Búsqueda de Componentes",
+          "validaciones": {
+            "requerida": "El componente es requerido"
+          }
+        },
+        "UbicacionComponente": {
+          "label": "Ubicación Incidencia",
+          "helplabel": "Selecciona la ubicación de la Incidencia"
+        },
+        "CausaIncidencia": {
+          "label": "Incidencia",
+          "helplabel": "Seleccione una Incidencia o causa de la Incidencia",
+          "validaciones": {
+            "requerida": "La Incidencia es requerida"
+          }
+        },
+        "FallaOrigen": {
+          "label": "Causa",
+          "helplabel": "Seleccione una causa de la Incidencia",
+          "validaciones": {
+            "requerida": "La causa es requerida"
+          }
+        }
+      },
+      "ticket$dictamenes": {
+        "Descripcion": {
+          "label": "Descripción",
+          "helplabel": "Capture la descripción del dictámen",
+          "validaciones": {
+            "requerida": "La descripción es requerida"
+          }
+        },
+        "EstatusDictamen": {
+          "label": "Estatus Dictámen",
+          "helplabel": "Capture el estatus del dictámen",
+          "validaciones": {
+            "requerida": "El estatus del dictámen es requerido"
+          }
+        }
+      },
+      "reporte$contacto": {
+        "TipoContacto": {
+          "label": "Tipo Contacto",
+          "helplabel": "Capture el tipo de contacto",
+          "validaciones": {
+            "requerida": "El tipo de contacto es requerido"
+          }
+        },
+        "TipoTelefono": {
+          "label": "Tipo Teléfono",
+          "helplabel": "Capture el tipo de teléfono",
+          "validaciones": {
+            "requerida": "El tipo de teléfono es requerido"
+          }
+        },
+        "Contacto": {
+          "label": "Contacto",
+          "helplabel": "Capture el contacto",
+          "validaciones": {
+            "requerida": "El contacto es requerido"
+          }
+        },
+        "Extension": {
+          "label": "Extensión",
+          "helplabel": "Capture la extensión del teléfono",
+          "validaciones": {
+            "requerida": "La extensión es requerida"
+          }
+        },
+        "Telefono": {
+          "label": "Teléfono",
+          "helplabel": "Capture el teléfono",
+          "validaciones": {
+            "requerida": "El teléfono es requerido"
+          }
+        },
+        "Titular": {
+          "label": "Principal",
+          "helplabel": "Capture si es el contacto titular"
+        }
+      },
+      "ticket$incidencias": {
+        "BusquedaComponente": {
+          "label": "Buscar",
+          "helplabel": "Búsqueda de componentes",
+          "validaciones": {
+            "requerida": "El campo es requerido"
+          }
+        },
+        "CausaIncidencia": {
+          "label": "Incidencia",
+          "helplabel": "Seleccione una Incidencia o causa de la Incidencia",
+          "validaciones": {
+            "requerida": "La Incidencia es requerida"
+          }
+        },
+        "Componente": {
+          "label": "Componente",
+          "helplabel": "Búsqueda de Componentes",
+          "validaciones": {
+            "requerida": "El componente es requerido"
+          }
+        },
+        "FallaOrigen": {
+          "label": "Causa",
+          "helplabel": "Seleccione una causa de la Incidencia",
+          "validaciones": {
+            "requerida": "La causa es requerida"
+          }
+        },
+        "TipoComponente": {
+          "label": "Tipo de Componente",
+          "helplabel": "Búsqueda de Componentes",
+          "validaciones": {
+            "requerida": "El tipo de componente es requerida"
+          }
+        },
+        "UbicacionComponente": {
+          "label": "Ubicación Incidencia",
+          "helplabel": "Selecciona la ubicación de la Incidencia"
+        },
+        "Observaciones": {
+          "label": "Observaciones del Cliente",
+          "helplabel": "Capture las observaciones",
+          "validaciones": {
+            "requerida": "Las observaciones son requeridas"
+          }
+        },
+        "Contratista": {
+          "label": "Contratista",
+          "helplabel": "Capture el contratista",
+          "validaciones": {
+            "requerida": "El contratista es requerido"
+          }
+        },
+        "ObservacionesContratista": {
+          "label": "Observaciones del Contratista",
+          "helplabel": "Capture las observaciones",
+          "validaciones": {
+            "requerida": "Las observaciones son requeridas"
+          }
+        },
+        "ProcedeBool": {
+          "label": "Procede"
+        },
+        "EstatusPartida": {
+          "label": "Estatus Incidencia"
+        },
+        "TerminoGarantia": {
+          "label": "Término Garantía"
+        },
+        "DiasGarantia": {
+          "label": "Garantía (días)"
+        },
+        "FechaCerrado": {
+          "label": "Fecha Cerrado"
+        }
+      }
+    },
+    "sections": {
+      "ticket$ubicacion": {
+        "title": "Expediente - Ubicacion"
+      },
+
+      "ticket$Expediente$Ubicacion": {
+        "title": "Expediente - Ubicacion"
+      },
+      "reporte$observaciones": {
+        "title": "Observaciones"
+      },
+      "reporte$contacto": {
+        "title": "Contacto al Cliente"
+      },
+      "ticket$ubicacion$contratistas": {
+        "title": "Contratistas de la Ubicación"
+      },
+      "ticket$incidencias": {
+        "title": "Incidencias reportadas"
+      },
+      "reporte$informacion": {
+        "title": "Información General"
+      },
+      "reporte$ubicacion": {
+        "title": "Ubicación"
+      },
+      "ticket$ordenTrabajo": {
+        "title": "Ordenes de Trabajo"
+      },
+      "reporte$ordenTrabajo$partidas": {
+        "title": "Detalle Orden Trabajo"
+      },
+      "ticket$dictamenes": {
+        "title": "Dictámenes"
+      }
+    },
+    "mensajes": {
+      "exito": "El ticket ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Editar Ticket"
+    },
+    "titulo": {
+      "Nuevo": "Creacion de Tickets"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+﻿{
+    "MotivosOrdenesCambio": {
+        "bc": {
+            "text": "Motivos Ordenes Cambio",
+            "link": "/scco/MotivosOrdenesCambio"
+        },
+        "consulta": {
+            "title": "Administración Motivos Ordenes Cambio",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+      "form": {
+        "Clave": {
+          "label": "Clave",
+          "helplabel": "Capture la clave",
+          "validaciones": {
+            "requerida": "La clave es requerida"
+          }
+        },
+        "Nombre": {
+          "label": "Nombre",
+          "helplabel": "Capture un Nombre",
+          "validaciones": {
+            "requerida": "El Nombre es requerido"
+          }
+        },
+        "Estatus": {
+          "label": "Activo",
+          "helplabel": "Estatus"
+        },
+        "TipoOrdenCambio": {
+          "label": "Tipo Orden de Cambio",
+          "helplabel": "Capture un Tipo"
+        }
+      },
+      "mensajes": {
+        "exito": "Motivo ha sido actualizado"
+      },
+    "edit": {
+      "titulo": "Nuevo Motivo Ordenes Cambio"
+    },
+        "titulo": {
+            "nuevo": "Nuevo Motivo Orden de Cambio"
+        }
+  }
+}

@@ -1,0 +1,47 @@
+﻿{
+  "tiposCaracteristica": {
+    "bc": {
+      "text": "Tipos de Características Adicionales",
+      "link": "/scv/tiposCaracteristica"
+    },
+    "consulta": { 
+      "title": "Tipos de Características Adicionales",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El tipo de característica ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de característica"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de característica"
+    }
+  }
+}

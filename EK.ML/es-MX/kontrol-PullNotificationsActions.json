@@ -1,0 +1,58 @@
+﻿{
+  "PullNotificationsActions": {
+    "bc": {
+      "text": "PullNotificationsActions",
+      "link": "/kontrol/PullNotificationsActions"
+    },
+    "consulta": {
+      "title": "PullNotificationsActions",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "La clave es un identificador único para la Acción",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Nombre descriptivo de Acción",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Entidad": {
+        "label": "Entidad",
+        "helpLabel": "Nombre Entidad de Acción",
+        "validaciones": {
+          "requerida": "La Entidad es requerida"
+        }
+      },
+      "RutaEnlace": {
+        "label": "Enlace",
+        "helpLabel": "Enlace de la Acción",
+        "validaciones": {
+          "requerida": "El Enlace es requerido"
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "Acción ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nueva Acción"
+    }
+  }
+}

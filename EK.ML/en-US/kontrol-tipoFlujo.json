@@ -1,0 +1,83 @@
+﻿{
+  "tipoFlujo": {
+    "bc": {
+      "text": "Tipos de Autorizaciónes",
+      "link": "/kontrol/workflows/tipos"
+    },
+    "consulta": {
+      "title": "Tipos de Autorizaciónes",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "mensajes": {
+      "update": "El tipo de autorización ha sido actualizado...",
+      "save": "El tipo de autorización se ha guardado con éxito.",
+      "savetitle": "Guardar tipo de autorización",
+      "exito": "El tipo de autorizacion ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+    },
+    "form": {
+      "ID": {
+        "label": "",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre del tipo de autorización",
+        "validations": "El nombre del tipo de autorización es requerido"
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave del tipo de autorización",
+        "validations": " "
+      },
+      "Ambito": {
+        "label": "Ámbito",
+        "helpLabel": "Seleccione el ámbito",
+        "validations": "Seleccionar el ámbito"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus del tipo de autorización",
+        "validations": ""
+      }
+    },
+    "sections": {
+      "flujoAutorizacion": {
+        "title": "Flujos de Autorización"
+      },
+      "Tareas": {
+        "title": "Tareas",
+        "Nombre": {
+          "label": "Nombre",
+          "helpLabel": "Capture el nombre del tipo de autorización",
+          "validations": "El nombre del tipo de autorización es requerido"
+        },
+        "Clave": {
+          "label": "Nombre",
+          "helpLabel": "Capture el nombre del tipo de autorización",
+          "validations": "El nombre del tipo de autorización es requerido"
+        }
+      },
+      "Notificadores": {
+        "title": "Notificadores"
+      },
+      "Autorizadores": {
+        "title": "Autorizadores"
+      }
+    },
+    "edit": {
+      "titulo": "Modificar el tipo de flujo"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo tipo de flujo"
+    }
+
+  }
+}

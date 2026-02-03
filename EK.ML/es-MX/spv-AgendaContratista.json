@@ -1,0 +1,28 @@
+﻿{
+  "DashBoardAgendaContratista": {
+    "bc": {
+      "text": "Agenda Contratista/Dictamen",
+      "link": "/scv/pv/DashBoardContractorCalendar"
+    },
+    "consulta": {
+      "title": "Reporte de Fallas",
+      "grid": {
+        "headers": {
+        }
+      }
+    },
+    "form": {
+    },
+    "sections": {
+    },
+    "mensajes": {
+      "exito": "La Agenda Contratista ha sido actualizada"
+    },
+    "edit": {
+      "titulo": "Agenda Contratista/Dictamen"
+    },
+    "titulo": {
+      "Nuevo": "Agenda Contratista/Dictamen"
+    }
+  }
+}

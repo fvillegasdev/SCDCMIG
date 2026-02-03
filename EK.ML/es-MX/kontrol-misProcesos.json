@@ -1,0 +1,26 @@
+{
+  "misProcesos": {
+    "grid": {
+      "headers": {
+        "nombreFlujo": "Nombre Flujo",
+        "nombre": "Nombre",
+        "alias": "Alias",
+        "status": "Status"
+      }
+    },
+    "opcionesConsulta": {
+      "creadospormi": "Creados por mi",
+      "asignadosami": "Asignados a mi",
+      "enlosqueparticipe": "En los que participé",
+      "aprobadas": "Aprobadas",
+      "cancelados": "Cancelados"
+
+    },
+    "title": "Mis Procesos",
+    "tipoConsultaDDL": {
+      "label": "Tipo Consulta",
+      "helpLabel": "Seleccione el tipo de consulta",
+      "validations": "Seleccionar el tipo de consulta"
+    }
+  }
+}

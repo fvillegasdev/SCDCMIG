@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{054F08A5-AB0D-4D31-8342-6FDC87A0AF10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EK.Modelo.SCV</RootNamespace>
+    <AssemblyName>EK.Modelo.SCV</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;*SYBASE17 MSSQL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RUBA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RUBA\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;RUBA</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BASE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE RELEASE|AnyCPU'">
+    <OutputPath>bin\BASE RELEASE\</OutputPath>
+    <DefineConstants>TRACE;BASE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE ALORA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE ALORA\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BASE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE DEMO|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE DEMO\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BASE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EMPORIUM|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EMPORIUM\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BASE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CONSULTE|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CONSULTE\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BASE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EK.Datos.SCV">
+      <HintPath>..\..\EK.App\Bin\EK.Datos.SCV.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector">
+      <HintPath>..\..\packages\SimpleInjector.4.0.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\EKCONNECT\IEKCChats.cs" />
+    <Compile Include="Interfaces\EKCONNECT\IEKCMensajes.cs" />
+    <Compile Include="Interfaces\EKCONNECT\IEKCUsuariosRedesSociales .cs" />
+    <Compile Include="Interfaces\IAgendaContratistaAreasComunes.cs" />
+    <Compile Include="Interfaces\IAgendaContratistaDetalleAreasComunes.cs" />
+    <Compile Include="Interfaces\IAgendaDictamenAreasComunes.cs" />
+    <Compile Include="Interfaces\IAgendaDictamenDetalle.cs" />
+    <Compile Include="Interfaces\IAgendaDictamen.cs" />
+    <Compile Include="Interfaces\IAgendaDictamenDetalleAreasComunes.cs" />
+    <Compile Include="Interfaces\IAgendaReuniones.cs" />
+    <Compile Include="Interfaces\IAnalisisProspecto.cs" />
+    <Compile Include="Interfaces\IAsociacionCivil.cs" />
+    <Compile Include="Interfaces\IAsociacionCivilParams.cs" />
+    <Compile Include="Interfaces\IBienesAdicionales.cs" />
+    <Compile Include="Interfaces\IBitacoraAutorizacionIncidencia.cs" />
+    <Compile Include="Interfaces\ICapturaFechaConstruccionExcel.cs" />
+    <Compile Include="Interfaces\IClasificacionViviendaPendienteEntrega.cs" />
+    <Compile Include="Interfaces\IClasificacionViviendaPendienteEntregaParam.cs" />
+    <Compile Include="Interfaces\IColaboradoresConsulta.cs" />
+    <Compile Include="Interfaces\IColaboradoresPPC.cs" />
+    <Compile Include="Interfaces\IComiteReunionesParam.cs" />
+    <Compile Include="Interfaces\IComites.cs" />
+    <Compile Include="Interfaces\IConfigCorreosEquipamientoParam.cs" />
+    <Compile Include="Interfaces\IConsultaPPC.cs" />
+    <Compile Include="Interfaces\IDesarrolloFaseGrupo.cs" />
+    <Compile Include="Interfaces\IEncuestaPoblacional.cs" />
+    <Compile Include="Interfaces\IEventos.cs" />
+    <Compile Include="Interfaces\IEventosActividades.cs" />
+    <Compile Include="Interfaces\IEventosActividadesCaptura.cs" />
+    <Compile Include="Interfaces\IEventosActividadesParam.cs" />
+    <Compile Include="Interfaces\IEventosActividadesPPC.cs" />
+    <Compile Include="Interfaces\IEventosActividadesReportPPC.cs" />
+    <Compile Include="Interfaces\IEvidenciaDiagnostico.cs" />
+    <Compile Include="Interfaces\IInformacionComite.cs" />
+    <Compile Include="Interfaces\IInformacionComiteParams.cs" />
+    <Compile Include="Interfaces\IIntegrantesAsociacionCivil.cs" />
+    <Compile Include="Interfaces\IIntegrantesInformacionComite.cs" />
+    <Compile Include="Interfaces\IInterface.cs" />
+    <Compile Include="Interfaces\IInterfaceDetalle.cs" />
+    <Compile Include="Interfaces\IInterfaceSaldoFacturaDetalle.cs" />
+    <Compile Include="Interfaces\IListaCatsCorreo .cs" />
+    <Compile Include="Interfaces\IMaterialesReunion.cs" />
+    <Compile Include="Interfaces\IMesaDirectiva.cs" />
+    <Compile Include="Interfaces\IMesaDirectivaParams.cs" />
+    <Compile Include="Interfaces\Interface1.cs" />
+    <Compile Include="Interfaces\IOpcionAbrirOT.cs" />
+    <Compile Include="Interfaces\IParticipantes.cs" />
+    <Compile Include="Interfaces\IParticipantesConsulta.cs" />
+    <Compile Include="Interfaces\IPatrocinadores.cs" />
+    <Compile Include="Interfaces\IPatrocinadoresConsulta.cs" />
+    <Compile Include="Interfaces\IPuntosVentaDesarrollos.cs" />
+    <Compile Include="Interfaces\IForecast.cs" />
+    <Compile Include="Interfaces\IComisionesTabuladoresExpedientes.cs" />
+    <Compile Include="Interfaces\IDesarrolloMotivoCancelacion.cs" />
+    <Compile Include="Interfaces\IDesarrolloConceptosPago.cs" />
+    <Compile Include="Interfaces\IPlanificacionSPVDashboard.cs" />
+    <Compile Include="Interfaces\IPlanificacionSPVDetalleTime.cs" />
+    <Compile Include="Interfaces\IPlanificacionSPVDetalle.cs" />
+    <Compile Include="Interfaces\IPlanificacionSPV .cs" />
+    <Compile Include="Interfaces\IComisionesComplementarias.cs" />
+    <Compile Include="Interfaces\IRadarCliente.cs" />
+    <Compile Include="Interfaces\IReconocimientosRuba.cs" />
+    <Compile Include="Interfaces\IReporteAnalisisComunidades.cs" />
+    <Compile Include="Interfaces\IReporteFallaDetalle2.cs" />
+    <Compile Include="Interfaces\IReporteFallasAreasComunes.cs" />
+    <Compile Include="Interfaces\IReporteFallasAreasComunesConsulta.cs" />
+    <Compile Include="Interfaces\IReporteFallasAreasComunesPartida.cs" />
+    <Compile Include="Interfaces\IUbicacionEstatus.cs" />
+    <Compile Include="Interfaces\ITiposUbicacion.cs" />
+    <Compile Include="Interfaces\IUbicacionFallaPrototipo.cs" />
+    <Compile Include="Interfaces\PlantillasMeta\IPlantillaMeta-Encuesta.cs" />
+    <Compile Include="Interfaces\PlantillasMeta\IPlantillaMeta.cs" />
+    <Compile Include="Interfaces\SCCO\ITestigoContrato.cs" />
+    <Compile Include="Interfaces\SCCO\IRegistroAnticipoRetencion.cs" />
+    <Compile Include="Interfaces\SCCO\IDesarrolloSCCO.cs" />
+    <Compile Include="Interfaces\SCCO\IInsumoMaterialToleranciaProceso.cs" />
+    <Compile Include="Interfaces\SCCO\IConvenio.cs" />
+    <Compile Include="Interfaces\SCCO\IContrato.cs" />
+    <Compile Include="Interfaces\SCCO\IBitacoraAD.cs" />
+    <Compile Include="Interfaces\SCCO\IObraCompania.cs" />
+    <Compile Include="Interfaces\SCCO\IObraIndirecto.cs" />
+    <Compile Include="Interfaces\SCCO\IObraIndirectoTarjeta.cs" />
+    <Compile Include="Interfaces\SCCO\IObraNivel.cs" />
+    <Compile Include="Interfaces\SCCO\IObraValidacion.cs" />
+    <Compile Include="Interfaces\SCCO\IResidenteObra.cs" />
+    <Compile Include="Interfaces\SCCO\ITabuladorInsumo.cs" />
+    <Compile Include="Interfaces\SCCO\IInsumoTarjetaDetalle.cs" />
+    <Compile Include="Interfaces\SCCO\IPresupuesto.cs" />
+    <Compile Include="Interfaces\SCCO\Presupuesto\IWBSComposite.cs" />
+    <Compile Include="Interfaces\SCCO\Presupuesto\IWBSInsumo.cs" />
+    <Compile Include="Interfaces\SCCO\Presupuesto\IWBSNivel.cs" />
+    <Compile Include="Interfaces\SCCO\Presupuesto\IWBSNodo.cs" />
+    <Compile Include="Interfaces\SCCO\Presupuesto\IWBSObra.cs" />
+    <Compile Include="Interfaces\SCCO\Presupuesto\IWBSTarjeta.cs" />
+    <Compile Include="Interfaces\SCP\IProveedorActaConstitutiva.cs" />
+    <Compile Include="Interfaces\SCP\IProveedorContactos.cs" />
+    <Compile Include="Interfaces\SCP\IProveedorRegistroPublicoPropiedad.cs" />
+    <Compile Include="Interfaces\SCP\ITipoMovimientoProveedor.cs" />
+    <Compile Include="Interfaces\SCP\ITipoProveedor.cs" />
+    <Compile Include="Interfaces\IChecklistControl.cs" />
+    <Compile Include="Interfaces\SGP\IReservaTerritorial.cs" />
+    <Compile Include="Interfaces\SGP\IColaboradores.cs" />
+    <Compile Include="Interfaces\SGP\ITareasDependencias.cs" />
+    <Compile Include="Interfaces\SGP\IWBS.cs" />
+    <Compile Include="Interfaces\SGP\ITareas.cs" />
+    <Compile Include="Interfaces\SGP\ITipoProyecto.cs" />
+    <Compile Include="Interfaces\SGP\IProyectos.cs" />
+    <Compile Include="Interfaces\SCCO\ITabulador.cs" />
+    <Compile Include="RUBA\Sybase17\IBitacoraClienteSPVAreasComunes.cs" />
+    <Compile Include="RUBA\Sybase17\ICatalogosSpv.cs" />
+    <Compile Include="RUBA\Sybase17\ICausaFallaAreaComun.cs" />
+    <Compile Include="RUBA\Sybase17\IDiagnosticosNotaCAT.cs" />
+    <Compile Include="RUBA\Sybase17\IDiagnosticosImagenesCAT.cs" />
+    <Compile Include="RUBA\Sybase17\IFallaAreaComun.cs" />
+    <Compile Include="RUBA\Sybase17\IFallasAreasComunes.cs" />
+    <Compile Include="RUBA\Sybase17\IFileToDownload.cs" />
+    <Compile Include="RUBA\Sybase17\IImpresionMasiva.cs" />
+    <Compile Include="RUBA\Sybase17\IOrdenTrabajoDetalleRUBAAreasComunes.cs" />
+    <Compile Include="RUBA\Sybase17\IOrdenTrabajoRUBAAreasComunes.cs" />
+    <Compile Include="RUBA\Sybase17\IReporteAreasComunesDictamen.cs" />
+    <Compile Include="RUBA\Sybase17\IReporteEncuestaSatisfaccion.cs" />
+    <Compile Include="RUBA\Sybase17\IReporteSeguimientoVivProg.cs" />
+    <Compile Include="RUBA\Sybase17\ISmFraccionamiento.cs" />
+    <Compile Include="RUBA\Sybase17\ISmFraccionamientoCat.cs" />
+    <Compile Include="RUBA\Sybase17\ISPVEncuestaSatisfaccionFija.cs" />
+    <Compile Include="RUBA\Sybase17\ISPVCoordinadores.cs" />
+    <Compile Include="RUBA\Sybase17\ISPVCoordinadoresSupervisores.cs" />
+    <Compile Include="Interfaces\IGestionDocumentos.cs" />
+    <Compile Include="Interfaces\IComisionesAjustesDetalle.cs" />
+    <Compile Include="Interfaces\IComisionesAjustes.cs" />
+    <Compile Include="Interfaces\IComisionesAprobacion.cs" />
+    <Compile Include="Interfaces\ICausaIncidencia.cs" />
+    <Compile Include="Interfaces\IComisionesRevision.cs" />
+    <Compile Include="Interfaces\IComisionesProcesoPeriodos.cs" />
+    <Compile Include="Interfaces\IComisionesRevisionDetalle.cs" />
+    <Compile Include="Interfaces\IComponenteIncidencia.cs" />
+    <Compile Include="Interfaces\IContratista.cs" />
+    <Compile Include="Interfaces\ICheckList.cs" />
+    <Compile Include="Interfaces\ICheckListPlanAccion.cs" />
+    <Compile Include="Interfaces\IComisionesTabuladores.cs" />
+    <Compile Include="Interfaces\IContratistaUbicacion.cs" />
+    <Compile Include="Interfaces\IDocumentoCategoriaFase.cs" />
+    <Compile Include="Interfaces\IExpedienteUbicacion.cs" />
+    <Compile Include="Interfaces\IFiniquito.cs" />
+    <Compile Include="Interfaces\IOrdenTrabajoDetalle.cs" />
+    <Compile Include="Interfaces\IPlanCompromisoIndicador.cs" />
+    <Compile Include="Interfaces\IPlanCompromisosEntrega.cs" />
+    <Compile Include="Interfaces\IReasignacion.cs" />
+    <Compile Include="Interfaces\ReporteConsultaProspectos.cs" />
+    <Compile Include="Interfaces\ReporteAnaliticoProspectos.cs" />
+    <Compile Include="Interfaces\IReporteProspectosClientes.cs" />
+    <Compile Include="Interfaces\IReporteExpedientes.cs" />
+    <Compile Include="Interfaces\IResponsableEntregaDesarrollo.cs" />
+    <Compile Include="Interfaces\IPlanCompromisosConstruccion.cs" />
+    <Compile Include="Interfaces\ITicketDictamen.cs" />
+    <Compile Include="Interfaces\ITicketIncideciaDetalle.cs" />
+    <Compile Include="Interfaces\ITiposExpediente.cs" />
+    <Compile Include="Interfaces\IReporteBoletasProspeccion.cs" />
+    <Compile Include="Interfaces\IUbicacionComponente.cs" />
+    <Compile Include="Interfaces\IVerificacion.cs" />
+    <Compile Include="Interfaces\SBO\IBancos.cs" />
+    <Compile Include="Interfaces\SBO\ICuentaBancaria.cs" />
+    <Compile Include="Interfaces\SCCO\IInsumoMaterial.cs" />
+    <Compile Include="Interfaces\SCCO\IInsumoTarjeta.cs" />
+    <Compile Include="Interfaces\SCCO\ICentroCosto.cs" />
+    <Compile Include="Interfaces\SCCO\IGrupoInsumo.cs" />
+    <Compile Include="Interfaces\SCCO\IAnticiposDeducciones.cs" />
+    <Compile Include="Interfaces\SCCO\IInsumo.cs" />
+    <Compile Include="Interfaces\SCCO\IMotivosOrdenesCambio.cs" />
+    <Compile Include="Interfaces\SCCO\IMovimientosPoliza.cs" />
+    <Compile Include="Interfaces\SCCO\INivelPresupuesto.cs" />
+    <Compile Include="Interfaces\SCCO\IObra.cs" />
+    <Compile Include="Interfaces\SCCO\IPoliza.cs" />
+    <Compile Include="Interfaces\SCCO\IResidentes.cs" />
+    <Compile Include="Interfaces\SCCO\ITipoInsumo.cs" />
+    <Compile Include="Interfaces\SCCO\ITipoNivelesPresupuesto.cs" />
+    <Compile Include="Interfaces\SCCO\ITipoObra.cs" />
+    <Compile Include="Interfaces\SCO\IOrdenesCompra.cs" />
+    <Compile Include="Interfaces\SCO\IOrdenesCompraImpuesto.cs" />
+    <Compile Include="Interfaces\SCO\IOrdenesCompraDetalle.cs" />
+    <Compile Include="Interfaces\SCP\IProveedor.cs" />
+    <Compile Include="Interfaces\SDC\IConceptosCuota.cs" />
+    <Compile Include="Interfaces\SDC\IEstadoCuenta.cs" />
+    <Compile Include="Interfaces\SDC\ITicketCliente.cs" />
+    <Compile Include="RUBA\Sybase17\IBitacoraClienteSPV.cs" />
+    <Compile Include="RUBA\Sybase17\IBitacoraCliente.cs" />
+    <Compile Include="RUBA\Sybase17\IBitacoraProceso.cs" />
+    <Compile Include="RUBA\Sybase17\IClienteSPVEtapa.cs" />
+    <Compile Include="RUBA\Sybase17\IClientesSPV.cs" />
+    <Compile Include="RUBA\Sybase17\IConsultaFallasTopIncidencia.cs" />
+    <Compile Include="Interfaces\IComisionCompania.cs" />
+    <Compile Include="Interfaces\IImpuestos.cs" />
+    <Compile Include="Interfaces\IRegimen.cs" />
+    <Compile Include="Interfaces\IRegimenCompania.cs" />
+    <Compile Include="Interfaces\ITipoMovimiento.cs" />
+    <Compile Include="RUBA\Sybase17\IContribucionPorPlaza.cs" />
+    <Compile Include="Interfaces\IOTIncidencia.cs" />
+    <Compile Include="Interfaces\ITabuladoresConfiguracion.cs" />
+    <Compile Include="Interfaces\IReporteFallaConsulta.cs" />
+    <Compile Include="RUBA\Sybase17\ISVPSupervisoresCAT.cs" />
+    <Compile Include="SCCO\CentroCosto.cs" />
+    <Compile Include="SCCO\MovimientosPoliza.cs" />
+    <Compile Include="SCCO\Poliza.cs" />
+    <Compile Include="Tickets.cs" />
+    <Compile Include="Interfaces\IAgendaContratista.cs" />
+    <Compile Include="Interfaces\IAgendaContratistaDetalle.cs" />
+    <Compile Include="Interfaces\IAgendaSPV.cs" />
+    <Compile Include="Interfaces\IDictamen.cs" />
+    <Compile Include="Interfaces\IOrdenTrabajo.cs" />
+    <Compile Include="Interfaces\ITicket.cs" />
+    <Compile Include="Interfaces\IIncidencia.cs" />
+    <Compile Include="Interfaces\IComisionesSeguimientoDetalle.cs" />
+    <Compile Include="Interfaces\IComisionesSeguimiento.cs" />
+    <Compile Include="Interfaces\IComisionesProceso.cs" />
+    <Compile Include="Interfaces\IDocumentosImpresion.cs" />
+    <Compile Include="Interfaces\IEntregaUbicacion.cs" />
+    <Compile Include="Interfaces\IEntregaUbicacionSeguimientoEtapa.cs" />
+    <Compile Include="Interfaces\IExpedienteTags.cs" />
+    <Compile Include="Interfaces\IFalla.cs" />
+    <Compile Include="Interfaces\IFallaTipoFalla.cs" />
+    <Compile Include="Interfaces\IFallaTipoInmueble.cs" />
+    <Compile Include="Interfaces\IIndicadores.cs" />
+    <Compile Include="Interfaces\IEntregaUbicacionResponsableFraccionamiento.cs" />
+    <Compile Include="Interfaces\IEntregaUbicacionResponsable.cs" />
+    <Compile Include="Interfaces\IPlanPagosConfiguracion.cs" />
+    <Compile Include="Interfaces\IPolizaFiniquito.cs" />
+    <Compile Include="Interfaces\IReporteFallaIndicador.cs" />
+    <Compile Include="Interfaces\ICampaniaPublicidadListaMkt.cs" />
+    <Compile Include="Interfaces\ICriterios.cs" />
+    <Compile Include="Interfaces\IListaMarketingCliente.cs" />
+    <Compile Include="Interfaces\IListasMkt.cs" />
+    <Compile Include="Interfaces\IListasMktDet.cs" />
+    <Compile Include="Interfaces\ILPExtensionVigencia.cs" />
+    <Compile Include="Interfaces\IOrigen.cs" />
+    <Compile Include="Interfaces\IPreparacionViviendaDocs.cs" />
+    <Compile Include="Interfaces\IPaquete.cs" />
+    <Compile Include="Interfaces\IPaqueteUbicaciones.cs" />
+    <Compile Include="Interfaces\IMotivosReprogramacion.cs" />
+    <Compile Include="Interfaces\IReporteFallaContacto.cs" />
+    <Compile Include="Interfaces\IReporteFallaDetalle.cs" />
+    <Compile Include="Interfaces\IReporteFalla.cs" />
+    <Compile Include="Interfaces\IPlaza.cs" />
+    <Compile Include="Interfaces\ISCVNotification.cs" />
+    <Compile Include="Interfaces\ISeguimientoCampaniaPublicidadEvento.cs" />
+    <Compile Include="Interfaces\ISeguimientoCampaniaPublicidad.cs" />
+    <Compile Include="Interfaces\ISeguimientoTecnico.cs" />
+    <Compile Include="Interfaces\ITabuladores.cs" />
+    <Compile Include="Interfaces\ITipoComercializacion.cs" />
+    <Compile Include="Interfaces\ITipoComponente.cs" />
+    <Compile Include="Interfaces\ITiposDeProceso.cs" />
+    <Compile Include="Interfaces\ITopReport.cs" />
+    <Compile Include="Interfaces\ITramiteAsignado.cs" />
+    <Compile Include="Interfaces\ITramiteAsignadoConfiguracion.cs" />
+    <Compile Include="RUBA\Sybase17\IFraccionamientos.cs" />
+    <Compile Include="RUBA\Sybase17\ISupervisorUbicacion.cs" />
+    <Compile Include="RUBA\Sybase17\IDocumentosImpresion.cs" />
+    <Compile Include="RUBA\Sybase17\IFalla.cs" />
+    <Compile Include="RUBA\Sybase17\IHorarioAtencion.cs" />
+    <Compile Include="RUBA\Sybase17\IOrdenTrabajoRUBA.cs" />
+    <Compile Include="RUBA\Sybase17\IOrdenTrabajoDetalleRUBA.cs" />
+    <Compile Include="RUBA\Sybase17\IPrereporte.cs" />
+    <Compile Include="RUBA\Sybase17\IPrereporteDetalle.cs" />
+    <Compile Include="RUBA\Sybase17\IReporteDictamen.cs" />
+    <Compile Include="RUBA\Sybase17\ITipoVivienda.cs" />
+    <Compile Include="PreparacionVivienda.cs" />
+    <Compile Include="Programados.cs" />
+    <Compile Include="Agente.cs" />
+    <Compile Include="CampaniaPublicidad.cs" />
+    <Compile Include="CaracteristicaAdicional.cs" />
+    <Compile Include="ClienteReferencia.cs" />
+    <Compile Include="CentralObrera.cs" />
+    <Compile Include="ClienteRefLaboral.cs" />
+    <Compile Include="ClientesAdicionales.cs" />
+    <Compile Include="Clientes.cs" />
+    <Compile Include="ComisionCalculo.cs" />
+    <Compile Include="ComisionConfiguracion.cs" />
+    <Compile Include="ComisionPlanEsquemaPeriodoDetalle.cs" />
+    <Compile Include="ComisionPlanEsquemaPeriodo.cs" />
+    <Compile Include="ComisionPeriodoDetalle.cs" />
+    <Compile Include="ComisionPeriodo.cs" />
+    <Compile Include="ConceptoPago.cs" />
+    <Compile Include="DesarrolloCuentas.cs" />
+    <Compile Include="DesarrolloEsquema.cs" />
+    <Compile Include="DesarrolloPrototipos.cs" />
+    <Compile Include="Desarrollos.cs" />
+    <Compile Include="DocumentoExpediente.cs" />
+    <Compile Include="Empresas.cs" />
+    <Compile Include="EntidadCaracteristica.cs" />
+    <Compile Include="Esquema.cs" />
+    <Compile Include="EsquemaEtapa.cs" />
+    <Compile Include="EsquemaEtapaDocumento.cs" />
+    <Compile Include="EsquemaEtapaProceso.cs" />
+    <Compile Include="EsquemaEtapaRequisito.cs" />
+    <Compile Include="EsquemaNivel.cs" />
+    <Compile Include="Etapa.cs" />
+    <Compile Include="Interfaces\IConceptosCredito.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaDetallesCitaAgendaResult .cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregablePersonalEntregaViv.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableDetallesReprog.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaAgendaEntregableResult.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableFraccionamiento.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableRezagosEntrega.cs" />
+    <Compile Include="Interfaces\IDesarrollosFinanciamiento.cs" />
+    <Compile Include="Interfaces\IDesarrolloFormatoClave.cs" />
+    <Compile Include="Interfaces\IEntregaPaquetes.cs" />
+    <Compile Include="Interfaces\ICapturaFechaConstruccion.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableEquipamiento.cs" />
+    <Compile Include="Interfaces\IConsultaPreparacionViviendaResult.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableResult.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableTipoVivienda.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableVivEntregadas.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableFinanciamiento.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableFracc.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregableHipotecaVerde.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregablePlazas.cs" />
+    <Compile Include="InstitucionEsquema.cs" />
+    <Compile Include="Interfaces\IAgente.cs" />
+    <Compile Include="Interfaces\IBoletasProspecccion.cs" />
+    <Compile Include="Interfaces\ICausasReprogramacion.cs" />
+    <Compile Include="Interfaces\IClienteAsesores.cs" />
+    <Compile Include="Interfaces\IClienteContactos.cs" />
+    <Compile Include="Interfaces\IClienteDesarrollos.cs" />
+    <Compile Include="Interfaces\IComisionConfiguracion.cs" />
+    <Compile Include="Interfaces\IComisionPlanEsquemaPeriodoDetalle.cs" />
+    <Compile Include="Interfaces\IComisionPlanEsquemaPeriodo.cs" />
+    <Compile Include="Interfaces\IComisionAniosPeriodos.cs" />
+    <Compile Include="Interfaces\IConfigViviendaEntregable.cs" />
+    <Compile Include="Interfaces\IConsultaPreparacionVivienda.cs" />
+    <Compile Include="Interfaces\IConsultaViviendaEntregable.cs" />
+    <Compile Include="Interfaces\ICotizacion.cs" />
+    <Compile Include="Interfaces\IDashBoardConfiguracion.cs" />
+    <Compile Include="Interfaces\IDesarrolloCentrosCosto.cs" />
+    <Compile Include="Interfaces\IDesarrolloCuentas.cs" />
+    <Compile Include="Interfaces\IDesarrollosTipoComercializacion.cs" />
+    <Compile Include="Interfaces\IExpediente.cs" />
+    <Compile Include="Interfaces\IDashBoardExpedienteIndicador.cs" />
+    <Compile Include="Interfaces\IExpedienteRelacionado.cs" />
+    <Compile Include="Interfaces\IExpedienteOwner.cs" />
+    <Compile Include="Interfaces\IExpedienteInstantanea.cs" />
+    <Compile Include="Interfaces\IFaseExpediente.cs" />
+    <Compile Include="Interfaces\IFechaComision.cs" />
+    <Compile Include="Interfaces\IInstitucionDetalle.cs" />
+    <Compile Include="Interfaces\IListaPreciosAvaluo.cs" />
+    <Compile Include="Interfaces\IListaPreciosVersiones.cs" />
+    <Compile Include="Interfaces\IMacroEtapa.cs" />
+    <Compile Include="Interfaces\IMap.cs" />
+    <Compile Include="Interfaces\IMonedaDestino.cs" />
+    <Compile Include="Interfaces\IMotivosCancelacionPV.cs" />
+    <Compile Include="Interfaces\IMotivoSuspension.cs" />
+    <Compile Include="Interfaces\IMotivoSuspensionNotificaciones.cs" />
+    <Compile Include="Interfaces\IOrigenFalla.cs" />
+    <Compile Include="Interfaces\IReestructuraVenta.cs" />
+    <Compile Include="Interfaces\IReestructuraPPConcepto.cs" />
+    <Compile Include="Interfaces\IReestructuraPPDocumento.cs" />
+    <Compile Include="Interfaces\IRezagosEntrega.cs" />
+    <Compile Include="Interfaces\ISeguimientoAutorizado.cs" />
+    <Compile Include="Interfaces\ISeguimientoEstados.cs" />
+    <Compile Include="Interfaces\ISeguimientoEtapa.cs" />
+    <Compile Include="Interfaces\IDesarrolloEsquema.cs" />
+    <Compile Include="Interfaces\IEntidadCaracteristica.cs" />
+    <Compile Include="Interfaces\ICampaniaPublicidad.cs" />
+    <Compile Include="Interfaces\ICaracteristicaAdicional.cs" />
+    <Compile Include="Interfaces\IClienteReferencia.cs" />
+    <Compile Include="Interfaces\ICentralObrera.cs" />
+    <Compile Include="Interfaces\IClienteRefLaboral.cs" />
+    <Compile Include="Interfaces\IConceptoPago.cs" />
+    <Compile Include="Interfaces\IDesarrolloPrototipo.cs" />
+    <Compile Include="Interfaces\IDesarrollos.cs" />
+    <Compile Include="Interfaces\IDocumentoExpediente.cs" />
+    <Compile Include="Interfaces\IEsquema.cs" />
+    <Compile Include="Interfaces\IEsquemaEtapa.cs" />
+    <Compile Include="Interfaces\IEsquemaEtapaDocumento.cs" />
+    <Compile Include="Interfaces\IEsquemaEtapaProceso.cs" />
+    <Compile Include="Interfaces\IEsquemaEtapaRequisito.cs" />
+    <Compile Include="Interfaces\IEsquemaNivel.cs" />
+    <Compile Include="Interfaces\IInfoAgente.cs" />
+    <Compile Include="Interfaces\IInstitucionEsquema.cs" />
+    <Compile Include="Interfaces\IListaPrecios.cs" />
+    <Compile Include="Interfaces\IMotivosCancelacion.cs" />
+    <Compile Include="Interfaces\IClientes.cs" />
+    <Compile Include="Interfaces\IClientesAdicional.cs" />
+    <Compile Include="Interfaces\IConyuge.cs" />
+    <Compile Include="Interfaces\IEmpresas.cs" />
+    <Compile Include="Interfaces\IEtapa.cs" />
+    <Compile Include="Interfaces\IInstitucion.cs" />
+    <Compile Include="Institucion.cs" />
+    <Compile Include="Interfaces\INotario.cs" />
+    <Compile Include="Interfaces\IPlanPagos.cs" />
+    <Compile Include="Interfaces\IPlanPagosConceptoPago.cs" />
+    <Compile Include="Interfaces\IProceso.cs" />
+    <Compile Include="Interfaces\IPrototipo.cs" />
+    <Compile Include="Interfaces\IRangosIngresos.cs" />
+    <Compile Include="Interfaces\IRequisito.cs" />
+    <Compile Include="Interfaces\IRequisitoCaracteristica.cs" />
+    <Compile Include="Interfaces\ISegmento.cs" />
+    <Compile Include="Interfaces\ISegmentosVigencia.cs" />
+    <Compile Include="Interfaces\ISeguimiento.cs" />
+    <Compile Include="Interfaces\ISeguimientoDocumento.cs" />
+    <Compile Include="Interfaces\ISeguimientoProceso.cs" />
+    <Compile Include="Interfaces\ISeguimientoRequisito.cs" />
+    <Compile Include="Interfaces\ISindicato.cs" />
+    <Compile Include="Interfaces\IPuntosVenta.cs" />
+    <Compile Include="Interfaces\ITipoContratista.cs" />
+    <Compile Include="Interfaces\ITipoFallaAreaComun.cs" />
+    <Compile Include="Interfaces\ITipoFinanciamiento.cs" />
+    <Compile Include="Interfaces\ITipoFinanciamientoInstitucion.cs" />
+    <Compile Include="Interfaces\ITiposCambio.cs" />
+    <Compile Include="Interfaces\IUbicacionComun.cs" />
+    <Compile Include="Interfaces\IUbicacionCoordenadas.cs" />
+    <Compile Include="Interfaces\IUbicaciones.cs" />
+    <Compile Include="Interfaces\IUbicacionesFalla.cs" />
+    <Compile Include="Interfaces\IVenta.cs" />
+    <Compile Include="Interfaces\IVentaCaracteristica.cs" />
+    <Compile Include="Interfaces\IVentaCredito.cs" />
+    <Compile Include="Interfaces\IVentaEsquema.cs" />
+    <Compile Include="Interfaces\IVentaFinanciamiento.cs" />
+    <Compile Include="Interfaces\IVentaFinanciamientoInstitucion.cs" />
+    <Compile Include="Interfaces\IVentaFInstitucionDetalle.cs" />
+    <Compile Include="Interfaces\IVentaPP.cs" />
+    <Compile Include="Interfaces\IVentaPPConcepto.cs" />
+    <Compile Include="Interfaces\IVentaPPDocumento.cs" />
+    <Compile Include="Interfaces\IVentaProceso.cs" />
+    <Compile Include="Interfaces\IVentaUbicacion.cs" />
+    <Compile Include="Interfaces\IVentaVersion.cs" />
+    <Compile Include="Interfaces\lTmComisiones.cs" />
+    <Compile Include="ListaPrecios.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="PlanPagos.cs" />
+    <Compile Include="PlanPagosConceptoPago.cs" />
+    <Compile Include="Proceso.cs" />
+    <Compile Include="ReestructuraVenta.cs" />
+    <Compile Include="ReestructuraPPConcepto.cs" />
+    <Compile Include="ReestructuraPPDocumento.cs" />
+    <Compile Include="Requisito.cs" />
+    <Compile Include="RequisitoCaracteristica.cs" />
+    <Compile Include="RUBA\Sybase17\ICausaFalla.cs" />
+    <Compile Include="RUBA\Sybase17\ICausasReprogramacion.cs" />
+    <Compile Include="RUBA\Sybase17\IComponente.cs" />
+    <Compile Include="RUBA\Sybase17\IContratista.cs" />
+    <Compile Include="RUBA\Sybase17\IContratistaUbicacion.cs" />
+    <Compile Include="RUBA\Sybase17\IMotivosCancelacionPV.cs" />
+    <Compile Include="RUBA\Sybase17\IOrigenFalla.cs" />
+    <Compile Include="RUBA\Sybase17\IResponsableConstruccion.cs" />
+    <Compile Include="RUBA\Sybase17\IRezagosEntrega.cs" />
+    <Compile Include="RUBA\Sybase17\ITipoContratista.cs" />
+    <Compile Include="RUBA\Sybase17\ITipoContrato.cs" />
+    <Compile Include="RUBA\Sybase17\ITipoComponente.cs" />
+    <Compile Include="RUBA\Sybase17\ITipoFallaAreaComun.cs" />
+    <Compile Include="RUBA\Sybase17\IUbicacionComun.cs" />
+    <Compile Include="RUBA\Sybase17\IUbicacionesFalla.cs" />
+    <Compile Include="RUBA\Sybase17\IVocacionSPV.cs" />
+    <Compile Include="Seguimiento.cs" />
+    <Compile Include="SeguimientoDocumento.cs" />
+    <Compile Include="SeguimientoEtapa.cs" />
+    <Compile Include="SeguimientoProceso.cs" />
+    <Compile Include="SeguimientoRequisito.cs" />
+    <Compile Include="Sindicato.cs" />
+    <Compile Include="Notarios.cs" />
+    <Compile Include="UbicacionCoordenadas.cs" />
+    <Compile Include="Ubicaciones.cs" />
+    <Compile Include="MotivosCancelacion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PuntosVenta.cs" />
+    <Compile Include="Prototipos.cs" />
+    <Compile Include="RangosIngresos.cs" />
+    <Compile Include="Segmento.cs" />
+    <Compile Include="SegmentosVigencia.cs" />
+    <Compile Include="Venta.cs" />
+    <Compile Include="VentaCaracteristica.cs" />
+    <Compile Include="VentaCredito.cs" />
+    <Compile Include="VentaEsquema.cs" />
+    <Compile Include="VentaFinanciamiento.cs" />
+    <Compile Include="VentaFinanciamientoInstitucion.cs" />
+    <Compile Include="VentaPP.cs" />
+    <Compile Include="VentaPPConcepto.cs" />
+    <Compile Include="VentaPPDocumento.cs" />
+    <Compile Include="VentaUbicacion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EK.Modelo.Kontrol\EK.Modelo.Kontrol.csproj">
+      <Project>{6dfbfa1a-70b1-4ae3-8f8e-0581986d7ad3}</Project>
+      <Name>EK.Modelo.Kontrol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MSSQL\" />
+    <Folder Include="RUBA\Sybase17\CONTRATISTAS\" />
+    <Folder Include="RUBA\Sybase17\SPV\" />
+    <Folder Include="SBO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+</Project>

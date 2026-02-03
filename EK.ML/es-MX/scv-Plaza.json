@@ -1,0 +1,47 @@
+﻿{
+    "Plaza": {
+        "bc": {
+            "text": "Plaza",
+            "link": "/scv/Plaza"
+        },
+        "consulta": {
+            "title": "Administración de Plaza",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helplabel": "Capture la Nombre",
+                "validaciones": {
+                    "requerida": "El Nombre es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            }
+        },
+    "mensajes": {
+        "exito": "La Plaza ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de Plaza"
+    },
+        "titulo": {
+            "nuevo": "Nuevo tipo Plaza"
+        }
+  }
+}

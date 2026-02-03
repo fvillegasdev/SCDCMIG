@@ -1,0 +1,136 @@
+﻿{
+  "comisiones": {
+    "bc": {
+      "text": "configuracionComisiones",
+      "link": "/scv/configuracionComisiones"
+    },
+    "titulo": {
+      "nuevo": "Configuracion Comisiones"
+    },
+    "consulta": {
+      "title": "Comisiones",
+      "grid": {
+        "config$Periodos": {
+          "title": "Períodos",
+          "tituloGeneral": "Configuración de Períodos",
+          "tituloDetalle": "Detalles del Período",
+          "headers": {
+            "id": "Id",
+            "clave": "Período",
+            "descripcion": "Descripción",
+            "fechaInicio": "Fecha Inicio",
+            "fechaFin": "Fecha Fin",
+            "estatus": "Estatus"
+          }
+        },
+        "config$PlanEsquemas": {
+          "title": "Períodos",
+          "tituloGeneral": "Configuración Plan de Comisiones por Esquema",
+          "tituloEsquema": "Plan del Esquema",
+          "tituloPeriodo": "del Período",
+          "tituloDetalle": "Detalles del Período",
+          "headers": {
+            "id": "Id",
+            "clave": "#",
+            "fechaInicio": "Inicio",
+            "fechaFin": "Fin",
+            "descripcion": "Descripción",
+            "categoria": "Categoría",
+            "etapa": "Etapa",
+            "tm": "TM",
+            "porcentaje": "Porcentaje",
+            "estatus": "Estatus",
+            "fechaComision": "Fecha Comisión"
+          }
+        },
+        "config$PorcentajeComision": {
+          "title": "Porcentaje de Comisiones",
+          "tituloGeneral": "Configuración Porcentaje de Comisiones",
+          "tituloDetalle": "Porcentaje de Comisiones",
+          "headers": {
+            "id": "Id",
+            "clave": "Clave",
+            "desarrollo": "Desarrollo",
+            "esquema": "Esquema",
+            "prototipo": "Prototipo",
+            "categoria": "Categoria",
+            "ubicacion": "Ubicación",
+            "tipo": "Tipo",
+            "valor": "Valor",
+            "estatus": "Estatus"
+          }
+        }
+      }
+    },
+    "form": {
+      "section": {
+        "config$Periodos": {
+          "id": "Id",
+          "clave": "Período",
+          "fechaInicio": "Fecha Inicio",
+          "fechaFin": "Fecha Fin",
+          "descripcion": "Descripción",
+          "estatus": {
+            "label": "Estatus",
+            "helplabel": "Estatus"
+          }
+        },
+        "config$PlanEsquemas": {
+          "id": "Id",
+          "clave": "Período",
+          "fechaInicio": "Fecha Inicio",
+          "fechaFin": "Fecha Fin",
+          "categoria": "Categoría",
+          "etapa": "Etapa",
+          "tm": "TM",
+          "descripcion": "Descripción",
+          "porcentaje": "Porcentaje",
+          "fechaComision": "Fecha Cálculo de Comisiones",
+          "estatus": {
+            "label": "Estatus",
+            "helplabel": "Estatus"
+          }
+        },
+        "config$PorcentajeComision": {
+          "id": "Id",
+          "clave": "Período",
+          "desarrollo": "Desarrollo",
+          "esquema": "Esquema",
+          "prototipo": "Prototipo",
+          "categoria": "Categoria",
+          "ubicacion": "Ubicación",
+          "importe": "Importe",
+          "porcentaje": "Porcentaje",
+          "estatus": {
+            "label": "Estatus",
+            "helplabel": "Estatus"
+          }
+        }
+      }
+    },
+    "validaciones": {
+      "config$Periodos": {
+        "fechaInicioMenor ": "La fecha de Inicio no puede ser mayor a la Fecha Final"
+      },
+      "config$PlanEsquemas": {
+        "fechaInicioMenor ": "La fecha de Inicio no puede ser mayor a la Fecha Final",
+        "categoria": "Debe indicar la Categoría",
+        "etapa": "Debe indicar la Etapa",
+        "tm": "Debe indicar el TM",
+        "fechaComision": "Fecha Cálculo de Comisiones"
+      }
+    },
+    "mensajes": {
+      "exito": "El período ha sido actualizado"
+    },
+    "guardarExito": {
+      "exito": "El período ha sido actualizado"
+    },
+    "eliminado": {
+      "exito": "El período fue eliminado"
+    },
+    "edit": {
+      "title": "Nuevo período"
+    }
+  }
+}

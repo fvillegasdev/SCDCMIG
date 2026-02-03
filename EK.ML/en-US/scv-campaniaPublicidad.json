@@ -1,0 +1,71 @@
+﻿{
+  "campaniasPublicidad": {
+    "bc": {
+      "text": "Campaña Publicidad",
+      "link": "/scv/campaniaPublicidad"
+    },
+    "consulta": {
+      "title": "Administración de campañas de publicidad",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "medioPublicidad": { "Nombre": "Medio de publicidad" },
+          "fechaInicial": "Fecha Inicial",
+          "fechaFinal": "Fecha Final",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la campaña de publicidad es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la campaña de publicidad es requerida"
+        }
+      },
+      "MedioPublicidad": {
+        "label": "Medio de publicidad",
+        "helplabel": "Capture el medio de publicidad",
+        "validaciones": {
+          "requerida": "El medio de publicidad es requerido"
+        }
+      },
+      "FechaInicial": {
+        "label": "Fecha Inicial",
+        "helplabel": "Capture la fecha inicial",
+        "validaciones": {
+          "requerida": "La fecha inicial es requerida"
+        }
+      },
+      "FechaFinal": {
+        "label": "Fecha final",
+        "helplabel": "Capture la fecha final",
+        "validaciones": {
+          "requerida": "La fecha final es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "La campaña de publicidad ha sido actualizado"
+    },
+    "editar": {
+      "title": "Modificar campaña de publicidad"
+    },
+    "titulo": {
+      "nuevo": "Nueva campaña de publicidad"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+﻿{
+    "SPVMEDIOSCOMUNICACION": {
+      "bc": {
+        "text": " Medios de Comunicación",
+        "link": "/scv/MediosComunicacion"
+      },
+        "consulta": {
+            "title": "Categorías de Medios de Comunicación",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Status"
+                }
+            }
+        },
+        "view": {
+            "title": "Medios de Comunicación",
+            "subtitle": "",
+            "grids": {
+                "headers": {}
+            }
+        },
+        "editar": {
+            "title": "Medios de Comunicación",
+            "subtitle": "Nuevo",
+            "href": "",
+            "grid": {
+                "headers": {}
+            }
+        },
+        "mensajes": {
+            "update": "Los Medios de Comunicación ha sido actualizado...",
+            "save": "Los Medios de Comunicación se ha guardado con éxito.",
+            "savetitle": "Guardar Medios de Comunicación",
+            "exito": "Los Medios de Comunicación han sido actualizada"
+        },
+        "form": {
+            "Id": {
+                "label": "",
+                "helpLabel": "",
+                "validaciones": ""
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helpLabel": "Capture el nombre de los Medios de Comunicación",
+                "validaciones": {
+                    "requerida": "El nombre de los Medios de Comunicación es requerido"
+                }
+            },
+            "Clave": {
+                "label": "Clave",
+                "helpLabel": "Capture la Clave del Medios de Comunicación",
+                "validaciones": {
+                    "requerida": "Capture la Clave del Medios de Comunicación"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helpLabel": "Estatus",
+                "validaciones": ""
+            }
+        },
+        "titulo": {
+            "nuevo": "Nuevo Medio de Comunicación"
+        },
+        "edit": {
+            "titulo": "El Medio de Comunicación ha sido actualizado"
+        }
+    }
+}

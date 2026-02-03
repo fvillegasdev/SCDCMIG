@@ -1,0 +1,19 @@
+﻿@using EK.Common.Reportes
+@{
+    Layout = "~/Views/Shared/_R3LetterPortrait.cshtml";
+
+    var reporte = new EK.Common.Reportes.Reporte();
+    reporte.Titulo = "Administración de Tipos de Característica Adicional para Viviendas";
+    reporte.SubTitulo = "HAVITAL COMERCIAL, S.A. DE C.V.";
+    reporte.FechaImpresion = System.DateTime.Now.ToString();
+
+    reporte.Columnas = new List<Reporte.Columna>();
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Clave",      Longitud = 120,      Campo = "ID" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Nombre",     Longitud = 160,     Campo = "Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Tipo",       Longitud = 160,     Campo = "TipoCaracteristica.Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Tipo Entidad", Longitud = 160, Campo = "TipoEntidad.Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Escriturado", Longitud = 120, Campo = "Escriturado" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Estatus",    Longitud = 120,      Campo = "Estatus.Nombre" });
+
+    ViewBag.Reporte = reporte;
+}

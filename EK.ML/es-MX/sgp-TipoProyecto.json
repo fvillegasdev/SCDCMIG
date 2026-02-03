@@ -1,0 +1,71 @@
+﻿{
+  "TipoProyectoSGP": {
+    "bc": {
+      "text": "Tipos de Proyectos",
+      "link": "/sgp/TipoProyecto"
+    },
+    "consulta": {
+      "title": "Tipos de Proyectos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Status"
+        }
+      }
+    },
+    "view": {
+      "title": "Tipo",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "editar": {
+      "title": "Tipo",
+      "subtitle": "Nuevo",
+      "href": "",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "update": "El tipo de proyecto ha sido actualizado...",
+      "save": "El tipo de proyecto se ha guardado con éxito.",
+      "savetitle": "Guardar tipo de proyecto",
+      "exito": "El tipo de proyecto ha sido actualizado"
+    },
+    "form": {
+      "Id": {
+        "label": "",
+        "helpLabel": "",
+        "validaciones": ""
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre del tipo de proyecto",
+        "validaciones": {
+          "requerida": "El nombre del tipo de proyecto es requerido"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave del tipo de proyecto",
+        "validaciones": {
+          "requerida": "Capture la Clave del tipo de proyecto"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus",
+        "validaciones": ""
+      }
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de proyecto"
+    },
+    "edit": {
+      "titulo": "El tipo de proyecto ha sido actualizado"
+    }
+  }
+}

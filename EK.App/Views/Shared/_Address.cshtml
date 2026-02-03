@@ -1,0 +1,196 @@
+﻿@using Newtonsoft.Json;
+@using System.Configuration;
+
+<style>
+    #adressMap {
+        height: 100%;
+    }
+</style>
+<input type="hidden" id="hdnGeoLatLng" value="" />
+<script type="text/javascript">
+    var initLat = 0, initLng = 0;
+    var map; var geocoder;
+    var clientAdress = '@Html.Raw((string)ViewBag.Address)';
+    var geoLatLng = '@Html.Raw((string)ViewBag.Geolocalizacion)';
+    var markers = [];
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+           alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        initLat = position.coords.latitude;
+        initLng = position.coords.longitude;
+        //map.setCenter({ lat: initLat, lng : initLng });
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred while getting the browser coordinates.")
+                break;
+        }
+    }
+
+    function initMap() {
+        getLocation();
+        if (!initLat > 0 || !initLng > 0) {
+            initLat = 19.5927571;
+            initLng = -98.9604482;
+        }
+
+        map = new google.maps.Map(document.getElementById('adressMap'), {
+            zoom: 8,
+            center: { lat: initLat, lng: initLng },
+            gestureHandling: 'greedy'
+        });
+        geocoder = new google.maps.Geocoder();
+
+        if (geoLatLng !== "") {
+            geocodeAddress(geocoder, map, null, geoLatLng);
+        }
+        else {
+            if (clientAdress !== "") {
+                geocodeAddress(geocoder, map, clientAdress);
+            }
+            else {
+
+                var updLocation = function (pos) {
+                    if (window.parent) {
+                        var p = window.parent;
+                        if (p.onMapLocationClicked) {
+                            p.onMapLocationClicked(pos.lat() + ", " + pos.lng());
+                        };
+                    };
+                };
+
+                map.addListener('click', function (event) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: event.latLng,
+                        draggable: true
+                    });
+
+                    if (markers.length >= 1) {
+                        deleteMarkers();
+                    }
+                    markers.push(marker);
+                    updLocation(event.latLng);
+
+                });
+
+                //if (navigator.geolocation) {
+                //    navigator.geolocation.getCurrentPosition(
+                //        function (position) {
+                //            geocodeAddress(geocoder, map, null, position.coords.latitude + ', ' + position.coords.longitude);
+                //        },
+                //        function (msg) {
+                //            alert('error: ' + msg);
+                //        },
+                //        { timeout: 10000 }
+                //    );
+                //} else {
+                //    alert('geolocation not supported');
+                //};
+            };
+        };
+    };
+
+    function geocodeAddress(geocoder, resultsMap, address, lat) {
+        var geoCodeSearch = null;
+        if (lat) {
+            var latlngStr = lat.split(',', 2);
+            var latlng = { lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1]) };
+
+            geocodeAddress = { 'location': latlng };
+        }
+        else {
+            geocodeAddress = { 'address': address };
+        }
+        /*
+        var latlngStr = input.split(',', 2);
+        var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+        geocoder.geocode({'location': latlng}, function(results, status) {
+        */
+        geocoder.geocode(geocodeAddress, function (results, status) {
+            if (status === 'OK') {
+                //for (j in results) {
+                //    //map.data.addGeoJson(geoJsn[j]);
+                //    var marker = new google.maps.Marker({
+                //        map: resultsMap,
+                //        position: results[j].geometry.location
+                //    });
+
+                //}
+                var fn = function (pos) {
+                    if (window.parent) {
+                        var p = window.parent;
+                        if (p.onMapLocationChanged) {
+                            p.onMapLocationChanged(pos.lat() + ", " + pos.lng());
+                        };
+                    };
+                };
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: resultsMap,
+                    position: results[0].geometry.location,
+                    draggable: true
+                });
+                fn(marker.position);
+                document.getElementById('hdnGeoLatLng').value = results[0].geometry.location;
+                google.maps.event.addListener(marker, 'dragend', function () {
+
+                    try {
+                        fn(marker.position);
+                        //if (window.parent && window.parent.window.parent) {
+                        //    var p = window.parent.window.parent.window;
+                        //    if (p.onMapLocationChanged) {
+                        //        p.onMapLocationChanged(marker.position.lat() + ", " + marker.position.lng());
+                        //    };
+                        //};
+                    }
+                    catch(e){
+                    }
+                    document.getElementById('hdnGeoLatLng').value = marker.getPosition();
+                });
+                //
+                map.setZoom(17);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+            //console.log(results);
+        });
+    }
+
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    function deleteMarkers() {
+        setMapOnAll(null);
+        markers = [];
+    };
+
+</script>
+@*<div id="floating-panel">
+        <input id="address" type="textbox" value="MX">
+        <input id="submit" type="button" value="Geocode">
+    </div>*@
+<div id="adressMap" style="min-height:600px; margin: auto;"></div>
+
+<script async defer src="@ConfigurationManager.AppSettings["drivers:maps:url"]?key=@ConfigurationManager.AppSettings["drivers:maps:key"]&libraries=@ConfigurationManager.AppSettings["drivers:maps:libraries"]&callback=initMap"></script>

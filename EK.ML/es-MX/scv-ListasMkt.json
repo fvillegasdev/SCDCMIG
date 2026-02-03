@@ -1,0 +1,145 @@
+﻿{
+  "ListasMkt": {
+    "bc": {
+      "text": "ListasMkt",
+      "link": "/kontrol/ListasMkt"
+    },
+    "consulta": {
+      "title": "Listas de Marketing",
+      "grid": {
+        "headers": {
+            "estatus": "Estatus",
+            "clave": "Clave",
+            "nombre": "Nombre"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerido": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "FechaNacimiento": {
+        "label": "Fecha Nacimiento",
+        "helplabel": "Fecha Nacimiento"
+      },
+      "FechaInicial": {
+        "label": "Fecha Nacimiento Inicial",
+        "helplabel": "Fecha Inicial"
+      },
+      "FechaFinal": {
+        "label": "Fecha Nacimiento Final",
+        "helplabel": "Fecha Final"
+      },
+      "VigenciaInicio": {
+        "label": "Fecha Vigencia Inicio",
+        "helplabel": "Fecha Vigencia Inicio"
+      },
+      "VigenciaFin": {
+        "label": "Fecha Vigencia Fin",
+        "helplabel": "Fecha Vigencia Fin"
+      },
+      "Genero": {
+        "label": "Género",
+        "helplabel": "Capture Género"
+      },
+      "Ciudad": {
+        "label": "Ciudad",
+        "helplabel": "Capture Ciudad"
+      },
+      "EstadoCivil": {
+        "label": "Estado Civil",
+        "helplabel": "Capture estado civil"
+      },
+      "Regimen": {
+        "label": "Régimen",
+        "helplabel": "Capture régimen"
+      },
+      "RangoIngresos": {
+        "label": "Rango de Ingresos",
+        "helplabel": "Capture rango de ingresos"
+      },
+      "Giro": {
+        "label": "Giro",
+        "helplabel": "Capture giro"
+      },
+      "Empresa": {
+        "label": "Empresa",
+        "helplabel": "Capture empresa"
+      },
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Capture desarrollo"
+      },
+      "TipoPersona": {
+        "label": "Tipo Persona",
+        "helplabel": "Capture tipo Persona"
+      },
+      "Etapa": {
+        "label": "Etapa",
+        "helplabel": "Capture Etapa"
+      },
+      "EstatusSeguimiento": {
+        "label": "Estatus Seguimiento",
+        "helplabel": "Capture Estatus Seguimiento"
+      },
+      "VctoCobranza": {
+        "label": "Vencimiento Cobranza",
+        "helplabel": "Capture Vencimiento Cobranza"
+      },
+      "AvanceConstruccion": {
+        "label": "Avance Construcción",
+        "helplabel": "Capture Avance Construccion"
+      },
+      "Origen": {
+        "label": "Origen",
+        "helplabel": "Capture Origen"
+      },
+      "Alcance": {
+        "label": "Alcance Total",
+        "helplabel": "Alcance Total"
+      },
+      "fGenerada": {
+        "label": "Fecha Generación",
+        "helplabel": "Fecha Generación"
+      },
+      "Posicion": {
+        "label": "Posición",
+        "helplabel": "Posición"
+      },
+      "AreaOrganizacion": {
+        "label": "Área Organización",
+        "helplabel": "Área Organización"
+      },
+      "Grupo": {
+        "label": "Grupo",
+        "helplabel": "Grupo"
+      }
+    },
+    "sections": {
+      "InfoTipoOrigen": {
+        "title": "Seleccione el tipo de origen"
+      }
+    },
+      "mensajes": {
+        "exito": "La lista ha sido actualizada"
+      },
+      "titulo": {
+        "nuevo": "Nueva Lista"
+      }
+    }
+  }

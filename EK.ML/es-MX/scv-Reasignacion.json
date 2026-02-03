@@ -1,0 +1,57 @@
+﻿{
+  "Reasignacion": {
+    "bc": {
+      "text": "Reasignar/Transferir prospectos y expedientes",
+      "link": "/scv/Reasignacion"
+    },
+    "consulta": {
+      "title": "Reasignar/Transferir prospectos y expedientes",
+      "grid": {
+        "headers": {
+          "estatus": "Estatus",
+          "clave": "Clave",
+          "nombre": "Nombre"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "activo": {
+        "label": "Activo",
+        "helplabel": "Seleccione el Activo",
+        "validaciones": {
+          "requerida": "El Activo es Requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "validaciones": {
+      "SeleccionarReasignacion": "Seleccionar un Cliente o Expediente para la Reasignación"
+    },
+    "mensajes": {
+      "exito": "La Reasignación ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Reasignación"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Reasignación"
+    }
+  }
+}

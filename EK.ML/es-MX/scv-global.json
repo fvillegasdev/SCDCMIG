@@ -1,0 +1,98 @@
+﻿{
+  "bc": {
+    "scv": {
+      "cg": {
+        "text": "Catálogos Globales",
+        "link": "/scv"
+      },
+      "categorias": {
+        "text": "Categorías",
+        "link": "/scv/categorias"
+      },
+      "tipoinmueble": {
+        "text": "Tipos de  Inmuebles",
+        "link": "/scv/tipoinmueble"
+      },
+      "estatusubicacion": {
+        "text": "Estatus de Ubicaciones",
+        "link": "/scv/estatusubicacion"
+      },
+      "estatusExpediente": {
+        "text": "Estatus de Seguimiento de Expediente",
+        "link": "/scv/estatusExpediente"
+      },
+      "tipofinanciamiento": {
+        "text": "Tipos de Financiamiento",
+        "link": "/scv/tipofinanciamiento"
+      },
+      "etapas": {
+        "text": "Etapas del Trámite",
+        "link": "/scv/etapas"
+      },
+      "segmentos": {
+        "text": "Segmentos de Vivienda",
+        "link": "/scv/segmentos"
+      },
+      "segmentosvigencia": {
+        "text": "Vigencia de Segmentos",
+        "link": "/scv/segmentosvigencia"
+      },
+      "instituciones": {
+        "text": "Instituciones de Crédito",
+        "link": "/scv/instituciones"
+      },
+      "sindicatos": {
+        "text": "Catálogo de Sindicatos",
+        "link": "/scv/sindicatos"
+      },
+      "centralesObreras": {
+        "text": "Catálogo de Centrales Obreras",
+        "link": "/scv/centralesObreras"
+      },
+      "tiposCaracteristica": {
+        "text": "Tipos de Característica Adicional",
+        "link": "/scv/tiposCaracteristica"
+      },
+      "planesPagos": {
+        "text": "Administración de Planes de Pagos",
+        "link": "/scv/planesPagos"
+      },
+      "conceptosPago": {
+        "text": "Administración de Conceptos de Pago",
+        "link": "/scv/conceptosPago"
+      },
+      "listaPrecios": {
+        "text": "Lista de Precios",
+        "link": "/scv/listaPrecios"
+      },
+      "requisitos": {
+        "text": "Catálogo de Requisitos",
+        "link": "/scv/requisitos"
+      },
+      "documentosExpediente": {
+        "text": "Catálogo de Documentos para el Expediente",
+        "link": "/scv/documentosExpediente"
+      },
+      "esquemas": {
+        "text": "Esquemas de Seguimiento",
+        "link": "/scv/esquemas"
+      },
+      "procesos": {
+        "text": "Procesos",
+        "link": "/scv/procesos"
+      },
+      "DashBoardConfigComisiones": {
+        "text": "DashBoard Configurar Comisiones",
+        "link": "/scv/comisiones/dashBoardConfigComisiones"
+      },
+      "comisionesCalculo": {
+        "text": "Cálculo de Comisiones",
+        "link": "/scv/comisiones/calculo"
+      },
+      "comisionesEstadoCuenta": {
+        "text": "Estado de Cuenta",
+        "link": "/scv/comisiones/EstadoCuenta"
+      }
+    }
+  }
+}

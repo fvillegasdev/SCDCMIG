@@ -1,0 +1,38 @@
+﻿{
+    "reporteexpedientes": {
+        "bc": {
+            "text": "Reportes de Expedientes",
+            "link": "/scv/reporteexpedientes"
+        },
+        "consulta": {
+            "title": "Reporte de Expedientes",
+            "grid": {
+                "headers": {
+                    "id": "ID",
+                    "cliente_nombre": "Nombre del Cliente"
+                }
+            }
+        },
+        "form": {
+            "Fase": {
+                "label": "Fase",
+                "helplabel": "Seleccione una Fase para la busqueda."
+            },
+            "Desarrollo": {
+                "label": "Desarrollo",
+                "helplabel": "Seleccione el Desarrollo a buscar."
+            },
+            "Comercializacion": {
+                "label": "Tipo de Comercializacion",
+                "helplabel": "Seleccione el Tipo de Comercializacion."
+            },
+            "Esquema": {
+                "label": "Esquema de Seguimiento",
+                "helplabel": "Selecciona el Esquema de Seguimiento"
+            }
+        }
+    },
+    "mensajes": {
+        "exito": "La etapa del trámite ha sido actualizado"
+    }
+}

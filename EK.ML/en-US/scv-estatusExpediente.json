@@ -1,0 +1,44 @@
+﻿{
+  "estatusExpediente": {
+    "bc": {
+      "text": "Estatus de Seguimiento Expediente",
+      "link": "/scv/estatusExpediente"
+    },
+    "consulta": {
+      "title": "Administración de Estatus Expediente",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "La clave es un identificador único para el estatus",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Nombre descriptivo del estatus",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El estatus fue actualizado"
+    },
+    "titulo": {
+      "nuevo": "Nuevo estatus"
+    }
+  }
+}

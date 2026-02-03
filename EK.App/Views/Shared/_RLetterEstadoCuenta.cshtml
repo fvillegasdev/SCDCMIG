@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @{
+        // https://fonts.google.com/specimen/Roboto+Mono
+        var reporte = (EK.Common.Reportes.Reporte)ViewBag.Reporte;
+        dynamic data = ViewBag.Data;
+
+        int maxLineas = 39;
+        int lineaActual = 0;
+        int totalLineas = Convert.ToInt32(data.Count);
+        int paginaActual = 0;
+        int totalPaginas = Convert.ToInt32(Math.Ceiling(data.Count / Convert.ToDouble(maxLineas)));
+    }
+    <title>@reporte.Titulo</title>
+    <meta charset="utf-8" />
+    <link href="//fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <style type="text/css">
+        .page-letter {
+            /*width: 216mm;
+                height: 279mm;*/
+        }
+
+        .pageBreak {
+            page-break-after: always;
+        }
+
+        .encabezado-reporte {
+            width: 910px;
+            height: 170px;
+        }
+
+        .encabezado-izquierda {
+            float: left;
+            width: 50%;
+        }
+
+        .encabezado-derecha {
+            width: 50%;
+            padding-top: 40px;
+        }
+
+        .piepagina-reporte {
+            width: 910px;
+            height: 60px;
+        }
+
+        .piepagina-izquierda {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10pt;
+            font-weight: 300;
+            font-style: normal;
+            color: #484848;
+            float: left;
+            width: 405px;
+            padding: 25px 25px;
+        }
+
+        .piepagina-derecha {
+            float: right;
+            width: 405px;
+            text-align: right;
+            padding: 15px 25px;
+        }
+
+        .titulo-reporte {
+            font-family: 'Roboto';
+            font-size: 25px;
+            font-weight: 400;
+            font-style: normal;
+            padding: 0px;
+        }
+
+        .subTitulo-reporte {
+            font-family: 'Roboto';
+            font-size: 18px;
+            font-weight: 300;
+            font-style: normal;
+            padding: 5px 0;
+        }
+
+        .fechaHora-reporte {
+            font-family: 'Roboto';
+            font-size: 12px;
+            font-weight: 300;
+            font-style: normal;
+            padding: 5px 0;
+        }
+
+        .logo-reporte {
+            width: 300px;
+            height: auto;
+        }
+
+        .logo-piepagina {
+            width: 150px;
+            height: auto;
+        }
+
+        .cuerpo-reporte {
+            width: 910px;
+            height: 985px;
+            /*border: 1px solid #f1f1f1;*/
+        }
+
+        .encabezados-columnas {
+            padding: 10px 25px 5px 25px;
+            height: 20px;
+            border-bottom: 2px solid #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        .encabezado-columna {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            font-weight: 300;
+            font-style: normal;
+            float: left;
+        }
+
+        .linea {
+            padding: 1px 25px 1px 25px;
+            /*height: 20px;
+            border-bottom: 1px solid #f1f1f1;*/
+            width: 860px;
+            display: inline-block;
+        }
+
+        .valor-columna {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10px !important;
+            font-weight: 200 !important;
+            font-style: normal;
+            padding: 0px;
+            float: left;
+        }
+
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    @RenderBody()
+    @while (paginaActual < totalPaginas)
+    {
+        var pageClass = "page-letter";
+        if (paginaActual + 1 < totalPaginas) {
+            pageClass = $"{pageClass} pageBreak";
+        }
+
+        <div class="@pageClass">
+            @{ ViewBag.Estatus = "HEADER"; }
+            @if (IsSectionDefined("EncabezadoReporte"))
+            {
+                RenderSection("EncabezadoReporte");
+            }
+            else
+            {
+                var Desarrollo = data[0].SelectToken("Venta.Desarrollo.Descripcion");
+                <div class="encabezado-reporte">
+                    <div class="titulo-reporte" style="text-align:center">@Desarrollo.Value</div>
+                    <div class="subTitulo-reporte" style="text-align:center">@reporte.SubTitulo</div>
+                    <div class="fechaHora-reporte">Fecha: @reporte.FechaImpresion</div>
+                </div>
+            }
+            @{ ViewBag.Estatus = "BODY"; }
+            <div class="cuerpo-reporte">
+                @if (IsSectionDefined("Encabezados"))
+                {
+                    RenderSection("Encabezados");
+                }
+                else
+                {
+                    var Agente = data[0].SelectToken("Agente.Nombre");
+                    <h5>Agente: @Agente.Value </h5>
+                    int Contador = 0;
+                    <div class="encabezados-columnas">
+                        @foreach (var c in reporte.Columnas)
+                        {
+                            if (Contador == 8) { break; }
+                            var style = $"width:{c.Longitud}px";
+                            <div class="encabezado-columna ellipsis" style="@style">@c.Titulo</div>
+                            Contador = Contador + 1;
+                        }
+                    </div>
+                }
+                @while (lineaActual < totalLineas)
+                {
+                    int Contador = 0;
+                    <div class="linea">
+                        @foreach (var c in reporte.Columnas)
+                        {
+                            if (Contador == 8)
+                            {
+                                break;
+                            }
+                            var style = $"width:{c.Longitud}px";
+                            var nodo = data[lineaActual].SelectToken(c.Campo);
+                            object value = null;
+
+                            if (nodo != null && nodo.Value != null)
+                            {
+                                value = nodo.Value;
+                            }
+
+                            if (value == null)
+                            {
+                                <div class="valor-columna ellipsis" style="@style">&nbsp;</div>
+                            }
+                            else
+                            {
+                                <div class="valor-columna ellipsis" style="@style">@value</div>
+                            }
+                            Contador = Contador + 1;
+                        }
+                    </div>
+                            lineaActual++;
+                            if (lineaActual >= maxLineas)
+                            {
+                                lineaActual = 0;
+                                paginaActual++;
+                                break;
+                            }
+                 }
+                @{
+                    var Saldo = data[0].SelectToken("MontoSaldo");
+                    <div class="col-md-12" style="float:right;font-family: 'Roboto Mono',monospace;">Saldo: @Saldo.Value</div>
+                }
+            </div>
+            @if (IsSectionDefined("PiePaginaReporte"))
+            {
+                RenderSection("PiePaginaReporte");
+            }
+            else
+            {
+                <div class="piepagina-reporte">
+                    <div class="piepagina-izquierda">
+                        <span>Página: </span><span style="font-weight: 400;">@(paginaActual + 1)</span><span> de </span><span style="font-weight: 400;">@totalPaginas</span>
+                    </div>
+                    <div class="piepagina-derecha">
+                        <img class="logo-piepagina" src="~/Content/Img/logo.png" />
+                    </div>
+                </div>
+            }
+            @if (lineaActual >= totalLineas)
+            {
+                lineaActual = 0;
+                paginaActual++;
+            }
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿{
+  "paquetes": {
+    "bc": {
+      "text": "Paquetes",
+      "link": "/scv/paquetes"
+    },
+    "titulo": {
+      "nuevo": "Paquete",
+      "cerrarPaquete": {
+        "titulo": "Cerrar Paquete",
+        "descripcion": "¿Esta seguro que desea Cerrar el Paquete?"
+      }
+    },
+    "consulta": {
+      "title": "Administración de Paquetes",
+      "grid": {
+        "headers": {
+          "iD": "No. Paquete",
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus",
+          "cantidadUbicaciones": "Ubicaciones"
+
+
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "#",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Capture el Desarrollo",
+        "validaciones": {
+          "requerida": "El Desarrollo es requerido"
+        }
+      },
+
+      "Estatus": {
+        "label": "Estatus",
+        "helpLabel": "Estatus",
+        "validaciones": ""
+      }
+    },
+    "sections": {
+      "PaqueteUbicaciones": {
+        "title": "Ubicaciones",
+        "form": {
+          "Ubicacion": "Ubicacion",
+          "Orden": "Orden",
+          "Estatus": "Estatus"
+        }
+      }
+    },
+    "mensajes": {
+      "save": "El Paquete ha sido actualizado",
+      "paqueteCerrado": "El Paquete ha sido Cerrado",
+      "exito": "El Paquete ha sido actualizado"
+    }
+  }
+}

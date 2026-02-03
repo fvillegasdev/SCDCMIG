@@ -1,0 +1,79 @@
+﻿{
+  "MotivosCancelacionPV": {
+    "bc": {
+      "text": "Motivos Reprogramación",
+      "link": "/scv/pv/MotivosCancelacionPV"
+    },
+    "consulta": {
+      "title": "Administración de Motivos Reprogramación",
+      "grid": {
+        "headers": {
+          "iD": "Id",
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "descripcion": "Descripción",
+          "uso": { "Nombre": "Uso" },
+          "motivo": { "Nombre": "Motivo" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "id_motivo": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la Descripción",
+        "validaciones": {
+          "requerida": "La Descripción es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Uso": {
+        "label": "Uso ",
+        "helplabel": "Capture el Uso ",
+        "validaciones": {
+          "requerida": "El Uso es requerida"
+        }
+      },
+      "Motivo": {
+        "label": "Motivo ",
+        "helplabel": "Capture el Motivo ",
+        "validaciones": {
+          "requerida": "El Motivo es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Motivos Reprogramación ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Motivos Reprogramación"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Motivos Reprogramación"
+    }
+  }
+}

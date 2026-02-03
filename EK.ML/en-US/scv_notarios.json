@@ -1,0 +1,102 @@
+﻿{
+  "notarios": {
+     "bc": {
+      "text": "Notarios",
+      "link": "/scv/notarios"
+    },
+    "consulta": {
+      "title": "Catálogo de Notarios",
+      "grid": {
+        "headers": {
+            "nombre": "Nombre",
+            "clave": "Clave",
+            "idContable": "IdContable",
+            "numNotaria": "Núm. Notaria",
+            "email": "Email",
+            "telefono1": "Teléfono",
+            "notaria": "No. Notaría",
+            "estatus": "Estatus"
+        }
+      }
+    },
+    "editar": {
+      "title": "Modificar Notario"
+    },
+    "nuevo": {
+      "title": "Nuevo Notario"
+    },
+    "form": {
+      "Id": {
+        "label": "No. Notario"
+      },
+      "Clave": {
+        "label": "Clave",
+          "helplable": "Capture la Clave"
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplable": "Capture el Nombre del Notario"
+      },
+      "NumNotaria": {
+        "label": "No. Notaría",
+        "helplabel": "Capture la Notaría",
+        "validaciones": {
+          "requerida": "El número de notaría es requerido"
+        }
+      },
+      "Suplente": {
+        "label": "Suplente",
+        "helplabel": "Indicar si el notario es Suplente"
+      },
+      "Direccion": {
+        "label": "Dirección",
+        "validaciones": {
+          "requerida": "La Dirección es requerida"
+        }
+      },
+      "Asentamiento": {
+        "label": "Localidad",
+        "helplabel": "Capture la Localidad",
+        "validaciones": {
+          "requerida": "La Localidad es requerida"
+        }
+      },
+      "Telefono1": {
+        "label": "Teléfono ",
+        "helplabel": "Capture el Teléfono",
+        "validaciones": {
+          "requerida": "El teléfono es requerido",
+          "length": "La longitud del teléfono es de 10 posiciones"
+        }
+      },
+      "Telefono2": {
+        "label": "Teléfono 2 ",
+        "helplabel": "Capture el Teléfono",
+        "validaciones": {
+          "length": "La longitud del teléfono es de 10 posiciones"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Email": {
+        "label": "Email",
+        "helplabel": "Capture el Email",
+        "validaciones": {
+          "requerida": "El email es requerida",
+          "formato": "el email no tiene el formato esperado"
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "El Notario ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Notario"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Notario"
+    }
+  } 
+}

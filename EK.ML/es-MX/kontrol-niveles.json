@@ -1,0 +1,59 @@
+﻿{
+  "niveles": {
+    "bc": {
+      "text": "Niveles",
+      "link": "/kontrol/niveles"
+    },
+    "consulta": {
+      "title": "Administración de niveles",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave que define al nivel",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture la descripción del nivel",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "sections": {
+      "Etapas": {
+        "title": "Configuración de etapas"
+      },
+      "EtapasNoAsignadas": {
+        "title": "Etapas no asignadas"
+      },
+      "EtapasAsignadas": {
+        "title": "Etapas asignadas"
+      }
+    },
+    "mensajes": {
+      "exito": "El nivel ha sido actualizado",
+      "error": "Los datos están incompletos, verificar campos requeridos y validaciones"
+    },
+    "edit": {
+      "titulo": "Nuevo nivel"
+    },
+    "titulo": {
+      "nuevo": "Nuevo nivel"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+﻿{
+  "notificaciones": {
+    "bc": {
+      "text": "Notificaciones",
+      "link": "/kontrol/notificaciones"
+    },
+    "consulta": {
+      "title": "Notificaciones",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Entidad": {
+        "label": "Para",
+        "helpLabel": "Seleccione el usuario que recibirá el mensaje",
+        "validaciones": {
+          "requerida": "El usuario es requerido"
+        }
+      },
+      "Nombre": {
+        "label": "Asunto",
+        "helpLabel": "Motivo del mensaje",
+        "validaciones": {
+          "requerida": "El asunto es requerido"
+        }
+      },
+      "Link": {
+        "label": "Referencia",
+        "helplabel": "referencia"
+      },
+      "Descripcion": {
+        "label": "Contenido",
+        "helplabel": "mensaje"
+      },
+      "LeidoEn": {
+        "label": "Leído en",
+        "helplabel": "Fecha de lectura del mensaje"
+      }
+    },
+    "mensajes": {
+      "exito": "El mensaje fué enviado con éxito"
+    },
+    "titulo": {
+      "nuevo": "Enviar notificación"
+    }
+  }
+}

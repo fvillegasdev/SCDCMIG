@@ -1,0 +1,155 @@
+﻿{
+  "ContribucionPorPlaza": {
+    "bc": {
+      "text": "Contribución por Plaza (5 Incidencias)",
+      "link": "/scv/pv/ContribucionPorPlaza"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        "headers": {
+        }
+      }
+    },
+    "consultas": {
+      "plaza": {
+        "consulta": {
+          "title": "",
+          "grid": {
+            "headers": {
+              "idPlaza": "Clave Plaza",
+              "plaza": { "Nombre": "Nombre Plaza" },
+              "cantidad": "Cantidad",
+              "tipoFalla": {
+                "Descripcion": "Incidencia"
+              }
+            }
+          }
+        }
+      },
+      "fraccionamiento": {
+        "consulta": {
+          "title": "",
+          "grid": {
+            "headers": {
+              "idFraccionamiento": "Clave Fraccionamiento",
+              "fraccionamiento": { "Nombre": "Fraccionamiento" },
+              "cantidad": "Cantidad",
+              "tipoFalla": {
+                "Descripcion": "Incidencia"
+              }
+            }
+          }
+        }
+      },
+      "contratista": {
+        "consulta": {
+          "title": "",
+          "grid": {
+            "headers": {
+              "idPlaza": "Clave Plaza",
+              "plaza": { "Nombre": "Nombre Plaza" },
+              "contratista": {
+                "ID": "Clave Contratista",
+                "Nombre": "Contratista"
+              },
+              "cantidad": "Cantidad",
+              "totalIncidencias": "Total Incidencias",
+              "tipoFalla": {
+                "Descripcion": "Incidencia"
+              }
+            }
+          }
+        }
+      }
+    },
+    "form": {
+      "PlazaInicial": {
+        "label": "Plazas",
+        "helplabel": "Seleccione las plazas",
+        "validaciones": {
+          "requerida": "La plaza es requerida"
+        }
+      },
+      "Vocacion": {
+        "label": "Vocaciones",
+        "helplabel": "Seleccione la vocación",
+        "validaciones": {
+          "requerida": "La vocación es requerida"
+        }
+      },
+      "Fraccionamientos": {
+        "label": "Fraccionamientos",
+        "helplabel": "Seleccione el fraccionamiento",
+        "validaciones": {
+          "requerida": "El fraccionamiento es requerido"
+        }
+      },
+      "FechaInicial": {
+        "label": "Fecha Inicial",
+        "helplabel": "Seleccione la fecha inicial",
+        "validaciones": {
+          "requerida": "La fecha inicial es requerida"
+        }
+      },
+      "FechaFinal": {
+        "label": "Fecha Final",
+        "helplabel": "Seleccione la fecha final",
+        "validaciones": {
+          "requerida": "La fecha final es requerida"
+        }
+      },
+      "Proceden": {
+        "label": "Estatus",
+        "helplabel": "Seleccione una opción",
+        "validaciones": {
+          "requerida": "La opción es requerida"
+        }
+      },
+      "TipoOrientacion": {
+        "label": "Tipo Orientación",
+        "helplabel": "Seleccione una opción",
+        "validaciones": {
+          "requerida": "La opción es requerida"
+        }
+      },
+      "AgrupadoPor": {
+        "label": "Agrupado Por",
+        "helplabel": "Seleccione una opción",
+        "validaciones": {
+          "requerida": "La opción es requerida"
+        }
+      },
+      "ContribucionPorPlaza": {
+        "Total5Incidencias": {
+          "label": "# Total de 5 Incidencias",
+          "helplabel": "# Total de 5 Incidencias"
+        },
+        "TotalIncidencias": {
+          "label": "# Total de Incidencias",
+          "helplabel": "# Total de Incidencias"
+        }
+      }
+    },
+    "sections": {
+      "reportesConsulta$opcionesPartidas": {
+        "title": "Opciones Partidas"
+      },
+      "reportesConsulta$opcionesFolios": {
+        "title": "Opciones Reportes"
+      },
+      "reportesConsulta$resultados": {
+        "title": "Resultados"
+      }
+    },
+    "mensajes": {
+      "exito": "La contribución por plaza ha sido actualizada"
+    },
+    "edit": {
+      "titulo": "Contribución por Plaza"
+    },
+    "titulo": {
+      "Nuevo": "Nueva Contribución por Plaza"
+    }
+  }
+}

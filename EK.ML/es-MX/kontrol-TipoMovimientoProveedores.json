@@ -1,0 +1,47 @@
+﻿{
+    "TipoMovimientoProveedores": {
+        "bc": {
+            "text": "Tipo de Movimiento Proveedores",
+            "link": "/kontrol/TipoMovimientoProveedores"
+        },
+        "consulta": {
+            "title": "Administración Tipo de Movimiento Proveedores",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helplabel": "Capture un Nombre",
+                "validaciones": {
+                    "requerida": "El Nombre es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            }
+        },
+    "mensajes": {
+        "exito": "Tipo de Movimiento actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Tipo de Movimiento Proveedor"
+    },
+        "titulo": {
+            "nuevo": "Nuevo Tipo de Movimiento Proveedor"
+        }
+  }
+}

@@ -1,0 +1,27 @@
+﻿{
+  "ListaMarketingCliente": {
+    "bc": {
+      "text": "ListaMarketingCliente",
+      "link": "/kontrol/ListaMarketingCliente"
+    },
+    "consulta": {
+      "title": "Lista Marketing Cliente",
+      "grid": {
+        "headers": {
+          "estatus": "Estatus",
+          "clave": "Clave",
+          "nombre": "Nombre"
+        }
+      }
+    },
+    "sections": {
+
+    },
+    "mensajes": {
+      "exito": "La lista ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Lista Marketing Cliente"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+﻿{
+  "Fallas": {
+    "bc": {
+      "text": "Catálogo de Componentes",
+      "link": "/scv/pv/Falla"
+    },
+    "consulta": {
+        "title": "Catalogo de Componentes",
+        "grid": {
+            "headers": {
+                "clave": "Clave",
+                "descripcion": "Descripción",
+                "impacto": { "Nombre": "Impacto" },
+                "estatus": "Estatus"
+            }
+        }
+    },
+    "form": {
+      "clave_tipo_falla": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "activo": {
+        "label": "Activo",
+        "helplabel": "Seleccione el Activo",
+        "validaciones": {
+          "requerida": "El Activo es Requerida"
+        }
+      },
+      "Descripcion": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Impacto": {
+        "label": "Impacto",
+        "helplabel": "Capture el Impacto",
+        "validaciones": {
+          "requerida": "El Impacto es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "TipoFalla": {
+        "label": "Tipo de Falla",
+        "helplabel": "Capture el Tipo de Falla",
+        "validaciones": {
+          "requerida": "El Tipo de Falla es requerida"
+        }
+
+      },
+      "TipoInmueble": {
+        "label": "Tipo de Ubicación",
+        "helplabel": "Capture el Tipo de Ubicación",
+        "validaciones": {
+          "requerida": "El Tipo de Ubicación es requerida"
+        }
+      },
+        "section": {
+          "general": {
+            "title": "Información General",
+            "form": {
+              "Impacto": {
+                "label": "Impacto",
+                "helplabel": "Capture el Impacto",
+                "validaciones": {
+                  "requerida": "El Impacto es requerido"
+                }
+              }
+            }
+          }
+        }
+      },
+      "mensajes": {
+        "exito": "El Componente ha sido actualizado"
+      },
+      "edit": {
+        "titulo": "Nuevo Componente"
+      },
+      "titulo": {
+        "nuevo": "Nuevo Componente"
+      }
+    }
+}

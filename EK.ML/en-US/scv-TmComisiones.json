@@ -1,0 +1,120 @@
+﻿{
+    "TMComisiones": {
+        "bc": {
+            "text": "Tipo de Movimiento de Comisiones",
+            "link": "/scv/TmComisiones"
+        },
+        "consulta": {
+            "title": "Tipos de Movimiento de Comisiones",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    // "naturaleza": { "Nombre": "Naturaleza" },
+                    "naturaleza": "Naturaleza",
+                    "compania": { "Nombre": "Compañía" },
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validacones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helplabel": "Capture la descripción",
+                "validaciones": {
+                    "requerida": "La descripción es requerida"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            },
+            "Descripcion": {
+                "label": "Descripción",
+                "helplabel": "Capture la descripción",
+                "validaciones": {
+                    "requerida": "La descripción es requerida"
+                }
+            },
+          "Naturaleza": {
+            "label": "Naturaleza",
+            "helplabel": "Capture la Naturaleza",
+            "validaciones": {
+              "requerida": "La Naturaleza es requerida"
+            }
+          },
+            "TipoMovimiento_OC": {
+                "label": "T.M. Orden de Compra",
+                "helplabel": "Capture el Tipo de Movimiento OC",
+                "validaciones": {
+                    "requerida": "El Tipo de Movimiento OC es requerida"
+                }
+            },
+            "TipoMovimiento_Cancelacion": {
+                "label": "T.M. Cancelacion",
+                "helplabel": "Capture el Tipo de Movimiento Cancelación",
+                "validaciones": {
+                    "requerida": "El Tipo de Movimiento Cancelación es requerida"
+                }
+            },
+            "Compania": {
+                "label": "Tipo de Compañía",
+                "helplabel": "Capture el Tipo de Compañía",
+                "validaciones": {
+                    "requerida": "El Tipo de Compañía es requerida"
+                }
+            },
+            "IdInsumo": {
+                "label": "Insumo",
+                "helplabel": "Capture El Insumo",
+                "validaciones": {
+                    "requerida": "El Insumo es requerida"
+                }
+            },
+            "Cancelar": {
+                "label": "Usar para Cancelar",
+                "helplabel": "Cancelación"
+            },
+
+            "section": {
+                "instituciones$Esquemas": {
+                    "titulo": "Esquemas de Financiamiento",
+                    "list": {
+                        "headers": {
+                            "clave": "Clave",
+                            "esquema": "Esquema",
+                            "opciones": ""
+                        }
+                    },
+
+                    "form": {
+                        "esquema": {
+                            "label": "Esquema",
+                            "helplabel": "Capture el esquema",
+                            "validaciones": {
+                                "requerida": "El esquema es requerido"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+                    "mensajes": {
+                        "exito": "El Tipo de Movimiento de Comisiones ha sido actualizada",
+                        "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+                    },
+        "edit": {
+            "titulo": "Modificar el Tipo de Movimiento de Comisiónes"
+        },
+        "titulo": {
+            "nuevo": "Nuevo Tipo de Movimiento de Comisiónes"
+        }
+                }
+}

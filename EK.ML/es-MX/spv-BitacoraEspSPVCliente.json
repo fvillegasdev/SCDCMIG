@@ -1,0 +1,195 @@
+﻿{
+  "BitacoraEspSPVCliente": {
+    "bc": {
+      "text": "Expediente del Cliente",
+      "link": "/scv/pv/BitacoraEspSPVCliente"
+    },
+    "consulta": {
+      "title": "Expediente del Cliente",
+      "grid": {
+        "headers": {
+          "iD": ""
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "",
+        "helplabel": ""
+      },
+      "Cliente": {
+        "label": "Cliente",
+        "helplabel": ""
+      },
+      "ReporteCliente": {
+        "label": "Reporte de Fallas",
+        "helplabel": "Capture el reporte de fallas",
+        "validaciones": {
+          "requerida": "El reporte de fallas es requerido"
+        }
+      },
+      "BitacoraEspSPVCliente$clienteInfo": {
+        "TelefonoCasa": {
+          "label": "Teléfono Casa"
+        },
+        "TelefonoOficina": {
+          "label": "Teléfono Trabajo"
+        },
+        "TelefonoOtros": {
+          "label": "Celular"
+        },
+        "CorreoElectronico": {
+          "label": "Correo Electrónico"
+        }
+      },
+      "BitacoraEspSPVCliente$reporte": {
+        "FechaCaptura": {
+          "label": "Fecha Reporte"
+        },
+        "FechaEntregaVivienda": {
+          "label": "Fecha de Entrega Vivienda"
+        },
+        "MesesTranscurridos": {
+          "label": "Días transcurridos"
+        },
+        "EstatusReporte": {
+          "label": "Estatus Reporte"
+        },
+        "DiasSolucion": {
+          "label": "Días Estimado Solución"
+        },
+        "DiasContratista": {
+          "label": "Días Trabajo Contratista"
+        },
+        "ResponsableConstruccion": {
+          "label": "Responsable de Construcción"
+        },
+        "FechaSolucionReporte": {
+          "label": "Fecha Reporte"
+        },
+        "FechaContratistaInicial": {
+          "label": "Fecha Contratista Inicial"
+        },
+        "MedioSolicitud": {
+          "label": "Medio de Solicitud"
+        },
+        "FechaSolucionTerminacion": {
+          "label": "Fecha Estimada Término"
+        },
+        "FechaContratistaFinal": {
+          "label": "Fecha Contratista Final"
+        },
+        "SupervisorContratista": {
+          "label": "Supervisión Externa"
+        },
+        "ObservacionesServicio": {
+          "label": "Observaciones del Cliente"
+        },
+        "ObservacionesContratista": {
+          "label": "Observaciones del Contratista"
+        }
+      },
+      "BitacoraEspSPVCliente$ubicacion": {
+        "Calle": {
+          "label": "Dirección"
+        },
+        "Desarrollo": {
+          "label": "Fraccionamiento"
+        },
+        "Plaza": {
+          "label": "Plaza"
+        },
+        "Segmento": {
+          "label": "Segmento"
+        },
+        "Prototipo": {
+          "label": "Prototipo"
+        },
+        "Superficie": {
+          "label": "Superficie m2"
+        },
+        "Exterior": {
+          "label": "Núm. Exterior"
+        }
+      },
+      "BitacoraEspSPVCliente$ubicacion$detalle": {
+        "Detalles_construccion": {
+          "label": "Detalle de Construcción"
+        },
+        "firma_escritura": {
+          "label": "Fecha de Escrituración"
+        },
+        "firma_liberacion": {
+          "label": "Fecha de Firma"
+        },
+        "fecha_construccion": {
+          "label": "Fecha de Entrega Construcción"
+        },
+        "fecha_entrega": {
+          "label": "Fecha de Entrega Cliente"
+        },
+        "fecha_reprogramacion": {
+          "label": "Fecha de Reprogramación"
+        },
+        "Personaentregavivienda": {
+          "label": "Responsable de Entrega"
+        },
+        "fecha_pago": {
+          "label": "Fecha de Pago"
+        }
+      },
+      "BitacoraEspSPVCliente$bitacora$cliente": {
+        "Etapa": {
+          "label": "Seguimiento"
+        },
+        "Esquema": {
+          "label": "Esquema"
+        },
+        "Contratista": {
+          "label": "Contratista"
+        },
+        "TerminoGarantia": {
+          "label": "Término Garantía"
+        },
+        "Entregado": {
+          "label": "Entregado"
+        },
+        "HasEquipamiento": {
+          "label": "Equipamiento"
+        }
+      }
+    },
+    "sections": {
+      "BitacoraEspSPVCliente$ubicacion": {
+        "title": "Ubicación"
+      },
+      "BitacoraEspSPVCliente$reporte": {
+        "title": "Información del Reporte de Fallas"
+      },
+      "BitacoraEspSPVCliente$reporte$ordenTrabajo": {
+        "title": "Ordenes de Trabajo"
+      },
+      "BitacoraEspSPVCliente$reportePartidas": {
+        "title": "Partidas Reportadas"
+      },
+      "BitacoraEspSPVCliente$ubicacion$detalle": {
+        "title": "Información Servicio al Cliente"
+      },
+      "BitacoraEspSPVCliente$seguimiento$expediente": {
+        "title": "Seguimiento del Expediente"
+      },
+      "BitacoraEspSPVCliente$equipamiento": {
+        "title": "Equipamiento"
+      }
+    },
+    "mensajes": {
+      "exito": "El Reporte de fallas ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Actualizar reporte de fallas"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo Reporte de Fallas"
+    }
+  }
+}

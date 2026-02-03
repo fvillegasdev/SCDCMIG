@@ -1,0 +1,38 @@
+﻿{
+  "reporteInformativoMacroEtapas": {
+    "bc": {
+      "text": "Reporte Informativo Macroetapas",
+      "link": "/scv/reporteInformativoMacroEtapas"
+    },
+    "consulta": {
+      "title": "Reporte Informativo Macroetapas",
+      "grid": {
+        "headers": {
+          "id": "id",
+          "desarrollo": "Desarrollo",
+          "inventario": "# Unid.",
+          "inventarioDTU": "# Unid. DTU",
+          "inventarioSinDTU": "# Unid. Sin DTU",
+          "inventarioDTUVC": "Inv DTU CE",
+          "inventarioDTUSV": "Inv DTU SE",
+          "sumaTotal": "T. En P",
+          "procesosEjecutados": "P. Periodos",
+          "procesoAcumuladoEnPeriodo": "Ac. Mes",
+          "procesoAcumuladoHistorico": "Ac. Hist",
+          "expCancelado": "Cancelados",
+          "expSeguimientoSuspendido": "Suspendido",
+          "totalReporte": "Total"
+        }
+      }
+    },
+    "filters": {
+      "procesoDesde": "Proceso Desde",
+      "procesoHasta": "Proceso Hasta",
+      "mes": "Mes (Acumulado)"
+    },
+    "alerts": {
+      "procesoDesde": "Alerta, la fecha de inicio debe ser menor a la fecha de finalización",
+      "ProcesoHasta": "Alerta, la fecha de fin debe ser menor a la fecha de inicio"
+    }
+  }
+}

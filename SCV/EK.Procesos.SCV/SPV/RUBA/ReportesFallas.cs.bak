@@ -1,0 +1,2792 @@
+﻿using System;
+using System.Configuration;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
+using System.Dynamic;
+using System.IO;
+using System.Net.Http;
+
+
+using m = EK.Modelo;
+using d = EK.Datos;
+using p = EK.Procesos;
+using NT = EK.Drivers.Notifications;
+
+namespace EK.Procesos.SCV
+{
+    public class ReportesFallas : p.Kontrol.BPBase<m.SCV.Interfaces.IReporteFalla, d.SCV.Interfaces.IReportesFallas>,
+        p.SCV.Interfaces.IReportesFallas
+    {
+        public ReportesFallas(m.Kontrol.Interfaces.IContainerFactory factory, d.SCV.Interfaces.IReportesFallas dao)
+            : base(factory, dao, "reportesFallas")
+        {
+        }
+
+        public override async Task<List<m.SCV.Interfaces.IReporteFalla>> GetAll(Dictionary<string, object> parametros)
+        {
+            parametros.Add("idUsuario", base.getUserId());
+            return await base.GetAll(parametros);
+        }
+
+        public override async Task<m.SCV.Interfaces.IReporteFalla> Save(m.SCV.Interfaces.IReporteFalla item)
+        {
+            var bpCG = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+            var bpCU = Get<p.SCV.Interfaces.IContratistasUbicaciones>();
+            var daoRL = Get<d.SCV.Interfaces.IClienteContacto>();
+            var daoOT = Get<d.SCV.Interfaces.IOrdenesTrabajoRUBA>();
+            var daoOTD = Get<d.SCV.Interfaces.IOrdenesTrabajoDetallesRUBA>();
+            var daoOTDTemp = Get<d.SCV.Interfaces.IOrdenesTrabajoDetallesRUBA>();
+            var daoDT = Get<d.Kontrol.Interfaces.IDateDifference>();
+            var bpPRE = Get<p.SCV.Interfaces.IPrereportes>();
+            var daoPRE = Get<d.SCV.Interfaces.IPrereportes>();
+            var daoDET = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            var daoCliente = Get<d.SCV.Interfaces.IClientesSPV>();
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            var bpFiles = Get<p.Kontrol.Interfaces.IKontrolFiles>();
+            var daoADET = Get<d.Kontrol.Interfaces.IAgendaEntVivienda>();
+            var bpMC = Get<p.SCV.Interfaces.IMotivosCancelacionPV>();
+
+            try
+            {
+                BeginTransaction();
+
+                int? idPrereporte = item.IdPrereporte;
+                bool isNew = item.ID == null || item.ID <= 0 || item.Estado == m.Kontrol.KontrolEstadosEnum.Nuevo;
+
+                if (item.Ubicacion == null)
+                {
+                    base.SetReturnInfo(1, "La ubicación no ha sido seleccionada. Por favor verifique e intente de nuevo.");
+                    return null;
+                }
+
+                if (item.Cliente == null)
+                {
+                    base.SetReturnInfo(1, "El cliente no ha sido seleccionado. Por favor verifique e intente de nuevo.");
+                    return null;
+                }
+
+                if (item.Cliente.IdUbicacion == null || item.Cliente.IdUbicacion <= 0)
+                {
+                    base.SetReturnInfo(1, "El cliente no tiene asignada una ubicación. Por favor verifique e intente de nuevo.");
+                    return null;
+                }
+
+                if (string.IsNullOrEmpty(item.Ubicacion.IdPlaza))
+                {
+                    base.SetReturnInfo(1, "La plaza no ha sido configurada correctamente. Por favor verifique e intente de nuevo.");
+                    return null;
+                }
+
+                int validaResponsablePlaza = await this.dao.ValidarResponsablePlaza(item.Ubicacion.IdPlaza);
+                if (validaResponsablePlaza == 0)
+                {
+                    item.SupervisorContratista = null;
+                    item.IdSupervisorContratista = null;
+                }
+
+                if (item.MedioSolicitud == null)
+                {
+                    base.SetReturnInfo(1, "El Medio de Solicitud no ha sido seleccionado. Por favor verifique e intente de nuevo.");
+                    return null;
+                }
+
+                var closeReportByOT = false;
+                var closeEstatus = string.Empty;
+                var closeReport = item.IdEstatusReporte == "T" || item.IdEstatusReporte == "X";
+                if (closeReport == true)
+                {
+                    closeEstatus = item.IdEstatusReporte;
+                }
+
+                if (item.ID == null || item.ID <= 0)
+                {
+                    item.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                    item.FechaCaptura = DateTime.Now;
+                    item.IdEstatusReporte = "N";
+                    item.EstatusReporte = await bpCG.Get("SPVESTATUSREPORTEFALLAS", "N");
+                    item.IdEstatusRevisado = "N";
+                    item.EsReprogramacion = 0;
+                    item.EsClienteNormal = "S";
+                    item.EsClientePerito = "N";
+                    item.EsClienteProblema = "N";
+                    item.EsClienteProfeco = "N";
+                    item.IdTipoCliente = "E";
+                    item.TipoCliente = await bpCG.Get("SPVTIPOSCLIENTE", "E");
+                    item.Activo = 1;
+                    item.Cancelado = "N";
+                    item.CostoBase = 0;
+                    item.CostoCubierto = "NO";
+                    item.CostoReal = 0;
+                    item.OC = string.Empty;
+                    item.IdRecibidoPor = base.getUserId();
+                    item.Recibido = DateTime.Now;
+
+                    var numReincidencias = await this.dao.GetClienteReportesCount(item.IdCliente);
+                    item.Reincidencia = string.Format("{0}-{1}", item.IdCliente, numReincidencias + 1);
+                }
+                else
+                {
+                    m.SCV.Interfaces.IReporteFalla bckp = item;
+                    item = await this.dao.GetById((int)item.ID);
+                    //if (item.EstatusReporte.Clave == "N")
+                    //{
+                    //    if (item.OrdenesTrabajo.Count > 0 )
+                    //    {
+                    //        // Esta sección es para hacer el cambio del estatus del reporte una vez que ya tenga OT asignadas... la idea es que pase a PROCESANDO 
+                    //        // hay que verificarlo 
+                    //        //item.IdEstatusReporte = "N";
+                    //        //item.EstatusReporte = await bpCG.Get("SPVESTATUSREPORTEFALLAS", "N");
+                    //        //item.IdEstatusRevisado = "N";
+                    //    }
+                    //}
+                    item.IdUbicacion = bckp.IdUbicacion;
+                    item.Ubicacion = bckp.Ubicacion;
+                    item.IdSupervisorContratista = bckp.IdSupervisorContratista;
+                    item.SupervisorContratista = bckp.SupervisorContratista;
+                    item.IdResponsableConstruccion = bckp.IdResponsableConstruccion;
+                    item.ResponsableConstruccion = bckp.ResponsableConstruccion;
+                    item.IdMedioSolicitud = bckp.IdMedioSolicitud;
+                    item.MedioSolicitud = bckp.MedioSolicitud;
+                    item.ObservacionesServicio = bckp.ObservacionesServicio;
+                    item.ObservacionesContratista = bckp.ObservacionesContratista;
+                    item.Contactos = bckp.Contactos;
+                    item.Partidas = bckp.Partidas;
+                    item.OrdenesTrabajo = bckp.OrdenesTrabajo;
+                    item.Dictamenes = bckp.Dictamenes;
+                    item.EstatusReporte = bckp.EstatusReporte;
+                    item.IdEstatusReporte = bckp.IdEstatusReporte;
+                    item.Estado = bckp.Estado;
+                    item.Version = bckp.Version;
+                }
+
+                var clienteInfo = await daoCliente.GetById(item.IdCliente);
+                var etapa = await this.GetClienteEtapa(item.IdCliente, (DateTime)item.FechaCaptura);
+                bool tieneGarantia = true;
+
+                int valida_vivienda_entregada = await this.dao.ValidarEntregaVivienda();
+                if (valida_vivienda_entregada == 1)
+                {
+                    if (etapa != null && etapa.FechaLiberacion == null)
+                    {
+                        base.SetReturnInfo(1, "Al cliente no se le ha entregado la vivienda. Por favor verifique la información e intente de nuevo.");
+                        return null;
+                    }
+                }
+
+                if (etapa != null && etapa.FechaLiberacion != null)
+                {
+                    var diff = await daoDT.GetDateDifference("yy", (DateTime)etapa.FechaLiberacion, (DateTime)item.FechaCaptura);
+                    if (diff.Year > 5)
+                    {
+                        tieneGarantia = false;
+                    }
+                }
+
+                var estatus = await bpCG.Get("ESTATUS", "A");
+                item.IdEstatus = estatus.ID;
+                item.Estatus = estatus;
+
+
+                if (etapa != null)
+                {
+                    item.FechaEntregaVivienda = etapa.FechaLiberacion;
+                }
+
+                item.IdMedio = item.MedioSolicitud.Clave;
+                item.IdMedioSolicitud = (int)item.MedioSolicitud.ID;
+
+                item.Calle = item.Ubicacion.Calle;
+                item.SuperManzana = item.Ubicacion.SuperManzana;
+                item.Manzana = item.Ubicacion.Manzana;
+                item.Exterior = item.Ubicacion.Exterior;
+                item.Interior = item.Ubicacion.Interior;
+                item.Lote = item.Ubicacion.Lote;
+                item.DesarrolloClave = item.Ubicacion.DesarrolloClave;
+                item.IdPlaza = item.Ubicacion.IdPlaza;
+                item.IdPrototipo = item.Ubicacion.IdPrototipo;
+                item.IdSupervisor = item.Ubicacion.IdSupervisor;
+                item.IdCoordinador = item.Ubicacion.IdCoordinador;
+                item.IdResponsable = item.IdResponsableConstruccion;
+
+                var cOrigen = await bpCU.GetContratistaDefault((int)item.IdUbicacion);
+                if (cOrigen != null)
+                {
+                    item.Contratista = cOrigen;
+                    item.IdContratista = cOrigen.ID;
+                }
+
+                if (item.Ubicacion.Segmento != null)
+                {
+                    item.IdTipoVivienda = item.Ubicacion.Segmento.IdTipoVivienda;
+                }
+
+                var contactos = item.Contactos;
+                var partidas = item.Partidas;
+                var ordenesTrabajo = item.OrdenesTrabajo;
+                var dictamenes = item.Dictamenes;
+
+                if (contactos != null)
+                {
+                    foreach (var c in contactos)
+                    {
+                        if (c.Estado != m.Kontrol.KontrolEstadosEnum.SinCambios)
+                        {
+                            if (c.TipoContacto.Clave == "TELEFONO")
+                            {
+                                if (c.TipoTelefono.Clave == "CS")
+                                {
+                                    if (c.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                                    {
+                                        item.TelefonoCasa = string.Empty;
+                                    }
+                                    else
+                                    {
+                                        item.TelefonoCasa = c.Contacto;
+                                    }
+                                }
+                                else if (c.TipoTelefono.Clave == "T")
+                                {
+                                    if (c.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                                    {
+                                        item.TelefonoOficina = string.Empty;
+                                    }
+                                    else
+                                    {
+                                        item.TelefonoOficina = c.Contacto;
+                                    }
+                                }
+                                else if (c.TipoTelefono.Clave == "O")
+                                {
+                                    if (c.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                                    {
+                                        item.TelefonoOtros = string.Empty;
+                                    }
+                                    else
+                                    {
+                                        item.TelefonoOtros = c.Contacto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                this.CalcularTiemposReparacion(ref item);
+
+                item = await this.saveModel(item);
+
+                //asignar el folio al prereporte correspondiente.
+                if (idPrereporte > 0 && isNew == true)
+                {
+                    var pprt = await bpPRE.GetById((int)idPrereporte);
+                    pprt.EstatusReporteId = 3;
+                    pprt.IdReporte = item.ID;
+                    pprt.Modificado = DateTime.Now;
+                    pprt.IdModificadoPor = base.getUserId();
+
+                    pprt.Changed("EstatusReporteId", true);
+                    pprt.Changed("IdReporte", true);
+                    pprt.Changed("Modificado", true);
+                    pprt.Changed("IdModificadoPor", true);
+
+                    pprt = await daoPRE.Save(pprt);
+
+                    item.Prereporte = pprt;
+                    item.IdPrereporte = pprt.ID;
+                }
+
+                if (contactos != null)
+                {
+                    foreach (var c in contactos)
+                    {
+                        if (c.Estado != m.Kontrol.KontrolEstadosEnum.SinCambios)
+                        {
+                            if (c.TipoContacto.Clave == "TELEFONO")
+                            {
+                                c.TipoTelefono = c.TipoTelefono;
+                                c.IdTipoTelefono = c.TipoTelefono.ID;
+                            }
+
+                            c.IdCliente = item.IdCliente;
+                            c.Estatus = estatus;
+                            c.IdEstatus = estatus.ID;
+                            c.Modificado = DateTime.Now;
+                            c.IdModificadoPor = base.getUserId();
+                            c.IdTipoContacto = (int)c.TipoContacto.ID;
+                            c.Estado = c.ID == null || c.ID <= 0 ? m.Kontrol.KontrolEstadosEnum.Nuevo : m.Kontrol.KontrolEstadosEnum.Modificado;
+
+                            if (c.Estado == m.Kontrol.KontrolEstadosEnum.Nuevo)
+                            {
+                                c.Creado = DateTime.Now;
+                                c.IdCreadoPor = base.getUserId();
+                            }
+
+                            if (c.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                            {
+                                await daoRL.Delete(c.ID.Value);
+                            }
+                            else
+                            {
+                                await daoRL.SaveEntity(c, false, true);
+                            }
+                        }
+                    }
+                }
+
+                if (partidas != null && partidas.Count > 0 && tieneGarantia == true)
+                {
+                    int result = await this.SavePartidas(partidas, item);
+                    if (result < 0)
+                    {
+                        Rollback();
+                        return null;
+                    }
+
+                    /*var contPartidasTerminadas = 0;
+                    foreach (var p in partidas)
+                    {
+                        if (p.EstatusPartidaValor == "T" || (p.EstatusPartidaValor == "D" && p.PartidaAutorizada == "R" && p.Procede == "N"))
+                            contPartidasTerminadas++;
+                    }
+
+                    closeReport = (contPartidasTerminadas == partidas.Count) ? true : false;
+                    if (closeReport == true)
+                    {
+                        closeEstatus = item.IdEstatusReporte;
+                    }*/
+                }
+
+                if (ordenesTrabajo != null && tieneGarantia == true)
+                {
+                    var estatusNuevo = await bpCG.Get("SPVESTATUSOT", "N");
+                    var estatusTerminado = await bpCG.Get("SPVESTATUSOT", "T");
+
+                    foreach (var o in ordenesTrabajo)
+                    {
+                        if (o.Estado != m.Kontrol.KontrolEstadosEnum.SinCambios)
+                        {
+                            o.Estatus = estatus;
+                            o.IdEstatus = estatus.ID;
+                            o.Modificado = DateTime.Now;
+                            o.IdModificadoPor = base.getUserId();
+                            o.IdReporte = (int)item.ID;
+
+                            if (o.ID == null || o.ID <= 0)
+                            {
+                                o.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                                o.Creado = DateTime.Now;
+                                o.IdCreadoPor = base.getUserId();
+                                o.EstatusOrdenTrabajo = estatusNuevo;
+                                o.IdEstatusOrdenTrabajo = estatusNuevo.ID;
+                                o.Autorizada = false;
+                            }
+
+                            //actualizar información de la orden de trabajo
+                            if (o.EstatusOrdenTrabajo.Clave == "N" || o.EstatusOrdenTrabajo.Clave == "C")
+                            {
+                                if (o.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                                {
+                                    if (o.Partidas != null)
+                                    {
+                                        foreach (var d in o.Partidas)
+                                        {
+                                            await daoOTD.Delete(d.ID.Value);
+                                        }
+                                    }
+
+                                    await daoOT.Delete(o.ID.Value);
+                                }
+                                else
+                                {
+                                    var ot = await daoOT.SaveEntity(o, false, true);
+
+                                    if (o.Partidas != null)
+                                    {
+                                        foreach (var d in o.Partidas)
+                                        {
+                                            if (d.Estado != m.Kontrol.KontrolEstadosEnum.SinCambios)
+                                            {
+                                                d.IdOrdenTrabajo = (int)ot.ID;
+                                                d.Estatus = estatus;
+                                                d.IdEstatus = estatus.ID;
+                                                d.Modificado = DateTime.Now;
+                                                d.IdModificadoPor = base.getUserId();
+
+                                                if (d.ID == null || d.ID <= 0)
+                                                {
+                                                    d.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                                                }
+
+                                                if (d.Estado == m.Kontrol.KontrolEstadosEnum.Nuevo)
+                                                {
+                                                    d.Creado = DateTime.Now;
+                                                    d.IdCreadoPor = base.getUserId();
+                                                }
+
+                                                if (d.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                                                {
+                                                    await daoOTD.Delete(d.ID.Value);
+                                                }
+                                                else
+                                                {
+                                                    await daoOTD.SaveEntity(d, false, true);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    //
+                                    if (o.EstatusOrdenTrabajo.Clave == "C" && o.IdAgenda > 0)
+                                    {
+                                        var estatusCancelado = await bpCG.Get("AgendaEstatus", "CAN");
+                                        var motivoCancelacion = await bpMC.GetByClave("OTC999");
+
+                                        var agendaDetalle = await daoADET.GetById((int)o.IdAgenda);
+                                        if (agendaDetalle != null)
+                                        {
+                                            agendaDetalle.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                                            agendaDetalle.IdEstatusAgenda = estatusCancelado.ID;
+                                            agendaDetalle.IdMotivo = motivoCancelacion.ID;
+                                            agendaDetalle.IdModificadoPor = base.getUserId();
+                                            agendaDetalle.Modificado = DateTime.Now;
+                                            agendaDetalle.Changed("IdEstatusAgenda", true);
+                                            agendaDetalle.Changed("IdModificadoPor", true);
+                                            agendaDetalle.Changed("IdMotivo", true);
+                                            agendaDetalle.Changed("Modificado", true);
+
+                                            await daoADET.SaveEntity(agendaDetalle);
+                                        }
+                                    }
+                                }
+                            }
+
+                            //actualizar trabajo de la orden de trabajo
+                            if (o.EstatusOrdenTrabajo.Clave == "E")
+                            {
+                                if (o.Partidas != null && o.Partidas.Count > 0)
+                                {
+                                    foreach (var p in o.Partidas)
+                                    {
+                                        if (p.Estado != m.Kontrol.KontrolEstadosEnum.SinCambios && p.Estado != m.Kontrol.KontrolEstadosEnum.Eliminado)
+                                        {
+                                            var partida = await daoDET.GetById(p.IdPartida);
+                                            partida.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                                            partida.IdCausaFalla = p.Partida.CausaFalla.IdCausaFalla;
+                                            partida.FechaInicioReal = o.FechaInicioReal;
+                                            partida.FechaTerminacion = o.FechaFinReal;
+                                            partida.IdModificadoPor = base.getUserId();
+                                            partida.Modificado = DateTime.Now;
+                                            partida.Changed("IdCausaFalla", true);
+                                            partida.Changed("FechaInicioReal", true);
+                                            partida.Changed("FechaTerminacion", true);
+                                            partida.Changed("IdModificadoPor", true);
+                                            partida.Changed("Modificado", true);
+
+                                            await daoDET.SaveEntity(partida, false, false);
+                                        }
+                                        else
+                                        {
+                                            if (p.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                                            {
+                                                await daoOTD.Delete(p.ID.Value);
+                                                var partida = await daoDET.GetById(p.IdPartida);
+                                                partida.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                                                partida.EstatusPartidaValor = "N";
+                                                partida.IdModificadoPor = base.getUserId();
+                                                partida.Modificado = DateTime.Now;
+                                                partida.Changed("EstatusPartidaValor", true);
+                                                partida.Changed("IdModificadoPor", true);
+                                                partida.Changed("Modificado", true);
+                                                await daoDET.SaveEntity(partida, false, false);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                o.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                                o.IdModificadoPor = base.getUserId();
+                                o.Modificado = DateTime.Now;
+                                o.Changed("FechaInicioReal", true);
+                                o.Changed("FechaFinReal", true);
+                                o.Changed("Observaciones", true);
+                                o.Changed("IdModificadoPor", true);
+                                o.Changed("Modificado", true);
+
+                                if (o.CerrarRegistro == true)
+                                {
+                                    closeReportByOT = true;
+
+                                    o.EstatusOrdenTrabajo = estatusTerminado;
+                                    o.IdEstatusOrdenTrabajo = estatusTerminado.ID;
+                                    o.Changed("IdEstatusOrdenTrabajo", true);
+
+                                    if (o.Partidas != null && o.Partidas.Count > 0)
+                                    {
+                                        foreach (var p in o.Partidas)
+                                        {
+                                            var partida = await daoDET.GetById(p.IdPartida);
+                                            partida.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                                            partida.FechaCerrado = o.FechaFinReal;
+                                            partida.EstatusPartidaValor = "T";
+                                            partida.IdModificadoPor = base.getUserId();
+                                            partida.Modificado = DateTime.Now;
+                                            partida.Changed("FechaCerrado", true);
+                                            partida.Changed("EstatusPartidaValor", true);
+                                            partida.Changed("IdModificadoPor", true);
+                                            partida.Changed("Modificado", true);
+
+                                            await daoDET.SaveEntity(partida, false, false);
+                                        }
+                                    }
+                                }
+
+                                await daoOT.SaveEntity(o, false, false);
+                            }
+                        }
+
+                        /*  reorgizar los estatus de las OTs y las Partidas
+                        var parametrosOTDetalle = new Dictionary<string, object>();
+                        parametrosOTDetalle.Add("IdOrdenTrabajo", o.ID);
+
+                        var partidasOTDetalles = await daoOTDTemp.GetAll(parametrosOTDetalle);
+                        if (partidasOTDetalles != null && partidasOTDetalles.Count > 0)
+                        {
+                            foreach (var rowPartidas in partidasOTDetalles)
+                            {
+                                var partida = await daoDET.GetById(rowPartidas.IdPartida);
+                                partida.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                                partida.EstatusPartidaValor = o.EstatusOrdenTrabajo.Clave;
+                                partida.Changed("EstatusPartidaValor", true);
+                                await daoDET.SaveEntity(partida, false, false);
+                            }
+                        }
+                        */
+                    }
+                }
+
+                if (dictamenes != null)
+                {
+                    foreach (var dm in dictamenes)
+                    {
+                        if (dm.Estado != m.Kontrol.KontrolEstadosEnum.SinCambios)
+                        {
+                            dm.Estatus = estatus;
+                            dm.IdEstatus = estatus.ID;
+                            dm.Modificado = DateTime.Now;
+                            dm.IdModificadoPor = base.getUserId();
+                            dm.EstatusDictamenValue = dm.EstatusDictamen.Clave;
+                            dm.IdEstatusDictamen = (int)dm.EstatusDictamen.ID;
+                            dm.IdResponsableDictamen = (int)dm.ResponsableDictamen.ID;
+
+                            if (dm.IdReporte <= 0)
+                            {
+                                dm.IdReporte = (int)item.ID;
+                            }
+
+                            if (dm.IdReporteDetalle <= 0)
+                            {
+                                if (dm.Partida != null)
+                                {
+                                    dm.IdReporteDetalle = (int)dm.Partida.ID;
+                                }
+                            }
+
+                            if (dm.ID == null || dm.ID <= 0)
+                            {
+                                dm.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                            }
+
+                            if (dm.Estado == m.Kontrol.KontrolEstadosEnum.Nuevo)
+                            {
+                                dm.Activo = true;
+                                dm.IdUsuarioCaptura = base.getUserId();
+                                dm.FechaDictamen = DateTime.Now;
+                                dm.Creado = DateTime.Now;
+                                dm.IdCreadoPor = base.getUserId();
+                            }
+
+                            if (dm.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                            {
+                                await daoDIC.Delete((int)dm.ID);
+
+                                var parametros = new Dictionary<string, object>();
+                                parametros.Add("entityId", (int)dm.ID);
+                                parametros.Add("entityType", string.Format("reporte$dictamenes${0}", item.ID));
+
+                                await bpFiles.DeleteByParams(parametros);
+                            }
+                            else
+                            {
+                                await daoDIC.SaveEntity(dm, false, true);
+                            }
+                        }
+                    }
+                }
+
+                if (closeReport == true)
+                {
+                    item = await this.TryCerrarReporte(item, closeEstatus, true);
+                }
+                else if (closeReportByOT == true)
+                {
+                    item = await this.TryCerrarReporte(item, "T", true);
+                }
+
+                item = await this.afterGetItem(item);
+
+                Commit();
+
+                idPrereporte = item.IdPrereporte;
+                if (idPrereporte > 0)
+                {
+                    partidas = item.Partidas;
+                    var pprtNotificacion = await bpPRE.GetById((int)idPrereporte);
+                    dynamic obj = new ExpandoObject();
+                    obj.pre_folio = pprtNotificacion.IdPrereporte;
+                    obj.client_code = item.Cliente.ID;
+                    obj.folio = item.ID;
+                    obj.date = DateTime.Now.ToString("yyyy'-'MM'-'dd HH:mm:ss");
+
+                    List<dynamic> listOfx = new List<dynamic>();
+                    var estatusNotificacion = "";
+                    foreach (var p in partidas)
+                    {
+                        estatusNotificacion = "";
+                        if (p.Procede == "N")
+                        {
+                            estatusNotificacion = "rejected";
+                        }
+                        else
+                        {
+                            switch (p.EstatusPartida.Clave)
+                            {
+                                case "N": //NUEVO
+                                    estatusNotificacion = "verified";
+                                    break;
+                                case "T": //TERMINADO
+                                    estatusNotificacion = "resolved";
+                                    break;
+                                case "P": //PENDIENTE
+                                    estatusNotificacion = "verified";
+                                    break;
+                                case "L": //EN PROCESO
+                                    estatusNotificacion = "verified";
+                                    break;
+                                case "A": //ASIGNADO
+                                    estatusNotificacion = "verified";
+                                    break;
+                                case "E": //ENTREGADO
+                                    estatusNotificacion = "verified";
+                                    break;
+                                case "R": //REVISADO
+                                    estatusNotificacion = "verified";
+                                    break;
+                                case "X": //CANCELADO
+                                    estatusNotificacion = "rejected";
+                                    break;
+                                case "D": //DICTAMEN
+                                    estatusNotificacion = "verified";
+                                    break;
+                                default:
+                                    estatusNotificacion = "verified";
+                                    break;
+                            }
+                        }
+                        dynamic x = new ExpandoObject();
+                        x.issue_number = p.Partida;
+                        x.status = estatusNotificacion;
+                        x.location = p.UbicacionFalla.Descripcion;
+                        x.description = p.Observaciones;
+
+                        listOfx.Add(x);
+                    }
+                    obj.issues = listOfx;
+                    await this.RequestURI("report/status", obj);
+                }
+            }
+            catch (Exception ex)
+            {
+                Rollback();
+                throw ex;
+            }
+
+            return item;
+        }
+
+        public async Task<m.SCV.Interfaces.IReporteFalla> ReverseReporteFallas(m.SCV.Interfaces.IReporteFalla item)
+        {
+            var bpCausaFalla = Get<p.SCV.Interfaces.ICausasFallas>();
+            var bpCG = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+            var daoDET = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            var daoOT = Get<d.SCV.Interfaces.IOrdenesTrabajoRUBA>();
+
+            try
+            {
+                BeginTransaction(true);
+
+                var ordenesTrabajo = item.OrdenesTrabajo;
+                if (ordenesTrabajo != null && ordenesTrabajo.Count > 0)
+                {
+                    var estatusNuevo = await bpCG.Get("SPVESTATUSOT", "N");
+                    var causaFalla = await bpCausaFalla.GetByClave("DIN");
+
+                    foreach (var ot in ordenesTrabajo)
+                    {
+                        var partidasOT = ot.Partidas;
+                        if (partidasOT != null && partidasOT.Count > 0)
+                        {
+                            foreach (var pp in partidasOT)
+                            {
+                                var p = await daoDET.GetById(pp.IdPartida);
+                                p.EstatusAutorizacion = "N";
+                                p.EstatusPartidaValor = "N";
+                                p.Procede = "S";
+                                p.IdCausaFalla = (int)causaFalla.ID;
+                                p.Modificado = DateTime.Now;
+                                p.IdModificadoPor = base.getUserId();
+                                p.Changed("EstatusAutorizacion", true);
+                                p.Changed("EstatusPartidaValor", true);
+                                p.Changed("Procede", true);
+                                p.Changed("IdCausaFalla", true);
+                                p.Changed("Modificado", true);
+                                p.Changed("IdModificadoPor", true);
+
+                                await daoDET.SaveEntity(p);
+                            }
+                        }
+
+                        ot.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                        ot.IdEstatusOrdenTrabajo = estatusNuevo.ID;
+                        ot.FechaInicio = null;
+                        ot.FechaInicioReal = null;
+                        ot.FechaFin = null;
+                        ot.FechaFinReal = null;
+                        ot.DiasEstimadoCulminacion = 0;
+                        ot.Autorizada = false;
+                        ot.Modificado = DateTime.Now;
+                        ot.IdModificadoPor = base.getUserId();
+                        ot.Changed("IdEstatusOrdenTrabajo", true);
+                        ot.Changed("FechaInicio", true);
+                        ot.Changed("FechaInicioReal", true);
+                        ot.Changed("FechaFin", true);
+                        ot.Changed("FechaFinReal", true);
+                        ot.Changed("DiasEstimadoCulminacion", true);
+                        ot.Changed("Autorizada", true);
+                        ot.Changed("Modificado", true);
+                        ot.Changed("IdModificadoPor", true);
+
+                        await daoOT.SaveEntity(ot);
+                    }
+
+                    item.IdEstatusReporte = "M";
+                }
+                else
+                {
+                    item.IdEstatusReporte = "N";
+                }
+
+                item.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                item.IdEstatusRevisado = "N";
+                item.Modificado = DateTime.Now;
+                item.IdModificadoPor = base.getUserId();
+                item.Changed("IdEstatusReporte", true);
+                item.Changed("IdEstatusRevisado", true);
+                item.Changed("Modificado", true);
+                item.Changed("IdModificadoPor", true);
+
+                int? id = item.IdFolio;
+                item.IdFolio = item.ID;
+                item.ID = id;
+
+                await this.dao.SaveEntity(item);
+
+                item.Estado = m.Kontrol.KontrolEstadosEnum.Exitoso;
+
+                Commit();
+
+                return item;
+            }
+            catch (Exception ex)
+            {
+                Rollback();
+                throw ex;
+            }
+        }
+
+        public override async Task<m.SCV.Interfaces.IReporteFalla> Delete(int id)
+        {
+            var daoDET = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            var bpFiles = Get<p.Kontrol.Interfaces.IKontrolFiles>();
+            m.SCV.Interfaces.IReporteFalla retValue = null;
+
+            try
+            {
+                BeginTransaction();
+
+                var parametros = new Dictionary<string, object>();
+                parametros.Add("idReporte", id);
+
+                var partidas = await daoDET.GetAll(parametros);
+                if (partidas != null && partidas.Count > 0)
+                {
+                    foreach (var p in partidas)
+                    {
+                        await daoDET.Delete((int)p.ID);
+                    }
+                }
+
+                var dictamenes = await daoDIC.GetAll(parametros);
+                if (dictamenes != null && dictamenes.Count > 0)
+                {
+                    foreach (var dm in dictamenes)
+                    {
+                        parametros.Clear();
+                        parametros.Add("entityId", (int)dm.ID);
+                        parametros.Add("entityType", string.Format("reporte$dictamenes${0}", id));
+
+                        await bpFiles.DeleteByParams(parametros);
+                        await daoDIC.Delete((int)dm.ID);
+                    }
+                }
+
+                retValue = await this.dao.GetById(id);
+
+                await this.dao.Delete((int)retValue.IdFolio);
+
+                var deletedItem = await this.dao.GetById(id);
+                if (deletedItem == null)
+                {
+                    retValue.Estado = m.Kontrol.KontrolEstadosEnum.Eliminado;
+                }
+                else
+                {
+                    retValue = deletedItem;
+                    retValue.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                }
+
+                await Log(retValue);
+
+                Commit();
+            }
+            catch (Exception ex)
+            {
+                Rollback();
+                throw ex;
+            }
+
+            return retValue;
+        }
+
+        public async Task<m.SCV.Interfaces.IReporteFalla> TryCerrarReporte(m.SCV.Interfaces.IReporteFalla item, string estatus, bool validate)
+        {
+            var daoOT = Get<d.SCV.Interfaces.IOrdenesTrabajoRUBA>();
+            var daoDET = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            m.SCV.Interfaces.IReporteFalla retValue = null;
+
+
+            try
+            {
+                var ordenesEstatus = new List<string> { "N", "P", "L", "S", "E" };
+                var partidasEstatus = new List<string> { "N", "P", "L", "A", "R", "D" };
+
+                bool pendingItems = false;
+
+                if (validate == true)
+                {
+                    var parametros = new Dictionary<string, object>();
+                    parametros.Add("idReporte", item.ID);
+
+                    var pendingOrdenes = await daoOT.GetAll(parametros);
+                    if (pendingOrdenes != null)
+                    {
+                        foreach (var po in pendingOrdenes)
+                        {
+                            if (ordenesEstatus.Contains(po.EstatusOrdenTrabajo.Clave, StringComparer.OrdinalIgnoreCase))
+                            {
+                                pendingItems = true;
+                            }
+                        }
+                    }
+
+                    var pendingPartidas = await daoDET.GetAll(parametros);
+                    if (pendingPartidas != null)
+                    {
+                        foreach (var pp in pendingPartidas)
+                        {
+                            if (partidasEstatus.Contains(pp.EstatusPartidaValor, StringComparer.OrdinalIgnoreCase))
+                            {
+                                pendingItems = true;
+                            }
+                        }
+                    }
+                }
+
+                if (!pendingItems)
+                {
+                    int _id = (int)item.IdFolio;
+                    item.IdFolio = item.ID;
+                    item.ID = _id;
+                    item.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                    item.IdEstatusReporte = estatus;
+                    item.IdModificadoPor = base.getUserId();
+                    item.Modificado = DateTime.Now;
+                    item.IdUsuarioProcesoFin = base.getUserId();
+                    //item.IdRecibidoPor = base.getUserId();
+                    //item.Recibido = DateTime.Now;
+                    item.FechaContratistaFinal = DateTime.Now;
+                    item.Changed("IdEstatusReporte", true);
+                    item.Changed("IdModificadoPor", true);
+                    item.Changed("Modificado", true);
+                    item.Changed("IdUsuarioProcesoFin", true);
+                    //item.Changed("IdRecibidoPor", true);
+                    //item.Changed("Recibido", true);
+                    item.Changed("FechaContratistaFinal", true);
+
+                    retValue = await this.dao.SaveEntity(item, false, false);
+                    retValue = await this.dao.GetByEntityId((int)retValue.ID);
+                    retValue = await this.afterGetItem(retValue);
+                    retValue.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                }
+                else
+                {
+                    retValue = item;
+                }
+
+                return retValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private async Task<int> SavePartidas(List<m.SCV.Interfaces.IReporteFallaDetalle> partidas, m.SCV.Interfaces.IReporteFalla reporte)
+        {
+            var bpCG = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+            var daoDET = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            var bpCausaFalla = Get<p.SCV.Interfaces.ICausasFallas>();
+            var bpMON = Get<p.Kontrol.Interfaces.IMonedas>();
+            try
+            {
+                var estatus = await bpCG.Get("ESTATUS", "A");
+
+                foreach (var p in partidas)
+                {
+                    if (p.Estado != m.Kontrol.KontrolEstadosEnum.SinCambios)
+                    {
+                        m.SCV.Interfaces.IReporteFallaDetalle row = p;
+
+                        if (row.TipoFalla == null)
+                        {
+                            base.SetReturnInfo(1, "No se capturó el Tipo de Falla en la partida " + row.Partida + ". Por favor verifique e intente de nuevo.");
+                            return -1;
+                        }
+
+                        if (row.Falla == null)
+                        {
+                            base.SetReturnInfo(1, "No se capturó la Falla en la partida " + row.Partida + ". Por favor verifique e intente de nuevo.");
+                            return -1;
+                        }
+
+                        if (row.UbicacionFalla == null)
+                        {
+                            base.SetReturnInfo(1, "No se capturó la Ubicación de la Falla en la partida " + row.Partida + ". Por favor verifique e intente de nuevo.");
+                            return -1;
+                        }
+
+                        if (row.ID == null || row.ID <= 0)
+                        {
+                            row.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                            row.Activo = 1;
+                            row.CostoBase = 0;
+                            row.Creado = DateTime.Now;
+                            row.IdModificadoPor = base.getUserId();
+                            row.EstatusAutorizacion = "N";
+                            row.EstatusPartidaValor = "N";
+
+                            if (row.CausaFalla == null)
+                            {
+                                var causaFalla = await bpCausaFalla.GetByClave("DIN");
+                                if (causaFalla != null)
+                                {
+                                    row.IdCausaFalla = (int)causaFalla.ID;
+                                    row.CausaFalla = causaFalla;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            m.SCV.Interfaces.IReporteFallaDetalle bckp = p;
+                            row = await daoDET.GetById((int)p.ID);
+                            row.Partida = bckp.Partida;
+                            row.Procede = bckp.Procede;
+                            row.IdTipoFalla = Convert.ToInt32(bckp.TipoFalla.ID); ;
+                            row.TipoFalla = bckp.TipoFalla;
+                            row.IdFalla = bckp.Falla.IdFalla;
+                            row.Falla = bckp.Falla;
+                            row.IdCausaFalla = bckp.IdCausaFalla;
+                            row.CausaFalla = bckp.CausaFalla;
+                            row.IdUbicacionFalla = bckp.IdUbicacionFalla;
+                            row.UbicacionFalla = bckp.UbicacionFalla;
+                            row.IdContratista = bckp.IdContratista;
+                            row.Contratista = bckp.Contratista;
+                            row.TerminoGarantia = bckp.TerminoGarantia;
+                            row.DiasGarantia = bckp.DiasGarantia;
+                            row.FechaCerrado = bckp.FechaCerrado;
+                            row.EstatusPartida = bckp.EstatusPartida;
+                            row.EstatusPartidaValor = bckp.EstatusPartidaValor;
+                            row.EstatusAutorizacion = bckp.EstatusAutorizacion;
+                            row.PartidaAutorizada = bckp.PartidaAutorizada;
+                            row.ObservacionesContratista = bckp.ObservacionesContratista;
+                            row.Observaciones = bckp.Observaciones;
+                            row.Dictamenes = bckp.Dictamenes;
+                            row.Estado = bckp.Estado;
+                            row.Version = bckp.Version;
+                        }
+
+                        if (p.Estado == m.Kontrol.KontrolEstadosEnum.Eliminado)
+                        {
+                            await daoDET.Delete((int)p.ID);
+                        }
+                        else
+                        {
+                            if (p.Estado == m.Kontrol.KontrolEstadosEnum.Nuevo)
+                            {
+                                row.Creado = DateTime.Now;
+                                row.IdCreadoPor = base.getUserId();
+                                row.ReincidenciaNotificada = true;
+                            }
+
+                            if (row.CausaFalla != null)
+                            {
+                                row.IdCausaFalla = row.CausaFalla.IdCausaFalla;
+                            }
+
+                            if (row.DiasGarantia > 0)
+                            {
+                                row.Procede = "S";
+                            }
+                            else
+                            {
+                                row.Procede = "N";
+                            }
+
+                            row.IdTipoFalla = Convert.ToInt32(row.TipoFalla.ID); ;
+                            row.TipoFalla = row.TipoFalla;
+                            row.IdFalla = row.Falla.IdFalla;
+                            row.IdUbicacionFalla = row.UbicacionFalla.IdUbicacionFalla;
+                            row.IdReporte = (int)reporte.ID;
+                            row.IdResponsable = row.IdContratista;
+                            row.DesarrolloClave = reporte.DesarrolloClave;
+                            row.IdEstatus = estatus.ID;
+                            row.Estatus = estatus;
+                            row.Modificado = DateTime.Now;
+                            row.IdModificadoPor = base.getUserId();
+
+                            var dictamenes = row.Dictamenes;
+                            if (dictamenes != null)
+                            {
+                                var dd = dictamenes.Where(d => d.Estado != m.Kontrol.KontrolEstadosEnum.Eliminado).ToList();
+                                if (dd != null && dd.Count > 0)
+                                {
+                                    var dictamen = dd.LastOrDefault();
+                                    if (dictamen.EstatusDictamen != null && dictamen.EstatusDictamen.Clave == "A")
+                                    {
+                                        row.Procede = "S";
+                                        row.EstatusPartidaValor = "N";
+                                    }
+                                    else
+                                    {
+                                        row.Procede = "N";
+                                        row.EstatusPartidaValor = "D";
+                                    }
+                                    if ((reporte.EstatusReporte.Clave == "T" || reporte.EstatusReporte.Clave == "C") && row.EstatusPartidaValor == "D")
+                                    {
+                                        row.EstatusPartidaValor = "X";
+                                    }
+                                }
+                            }
+
+                            if (row.Procede == "S")
+                            {
+                                row.PartidaAutorizada = "A";
+                            }
+                            else
+                            {
+                                row.PartidaAutorizada = "R";
+                            }
+
+                            row = await daoDET.SaveEntity(row, true, true);
+
+                            if (row.Reincidencias > 0 && p.Estado == m.Kontrol.KontrolEstadosEnum.Nuevo)
+                            {
+                                try
+                                {
+                                    var parametroNotificacionReincidencias = new Dictionary<string, object>();
+                                    parametroNotificacionReincidencias.Add("idCliente", reporte.IdCliente);
+                                    parametroNotificacionReincidencias.Add("idFalla", row.Falla.IdFalla);
+                                    parametroNotificacionReincidencias.Add("idTipoFalla", row.IdTipoFalla);
+                                    parametroNotificacionReincidencias.Add("idUbicacionFalla", row.IdUbicacionFalla);
+                                    // p.Add("proceden", "T");
+                                    var reincidencias = await this.dao.GetNotificacionReincidencias(parametroNotificacionReincidencias);
+
+                                    dynamic expando = new ExpandoObject();
+                                    expando.Cliente = reporte.Cliente;
+                                    expando.Ubicacion = await this.GetUbicacionById((int)reporte.IdUbicacion); ;
+                                    expando.Partidas = reincidencias;
+
+                                    object obj = Newtonsoft.Json.JsonConvert.DeserializeObject(Newtonsoft.Json.JsonConvert.SerializeObject(expando));
+                                    List<string> elementosEmails = new List<string>();
+                                    ///////////////////////////////////////////////////
+                                    var daoPlaza = Get<d.SCV.Interfaces.IPlaza>();
+                                    var parametrosPlaza = new Dictionary<string, object>();
+                                    List<m.Kontrol.Interfaces.IUsuario> correosNiveles = null;
+
+                                    parametrosPlaza.Add("IdPlaza", reporte.IdPlaza);
+                                    parametrosPlaza.Add("IdNivel", 65); //65 GCIA
+                                    correosNiveles = await daoPlaza.getGerentes(parametrosPlaza);
+                                    foreach (var correo in correosNiveles) { if (correo.Email != null) { elementosEmails.Add(correo.Email); } }
+
+                                    parametrosPlaza.Remove("IdNivel");
+                                    parametrosPlaza.Add("IdNivel", 84); //84 SCDC - GCIA
+                                    correosNiveles = await daoPlaza.getGerentes(parametrosPlaza);
+                                    foreach (var correo in correosNiveles) { if (correo.Email != null) { elementosEmails.Add(correo.Email); } }
+
+                                    parametrosPlaza.Remove("IdNivel");
+                                    parametrosPlaza.Add("IdNivel", 133); //DIRECTOR TECNICO
+                                    correosNiveles = await daoPlaza.getGerentes(parametrosPlaza);
+                                    foreach (var correo in correosNiveles) { if (correo.Email != null) { elementosEmails.Add(correo.Email); } }
+
+                                    parametrosPlaza.Remove("IdNivel");
+                                    parametrosPlaza.Add("IdNivel", 134); //CAT
+                                    correosNiveles = await daoPlaza.getGerentes(parametrosPlaza);
+                                    foreach (var correo in correosNiveles) { if (correo.Email != null) { elementosEmails.Add(correo.Email); } }
+                                    ///////////////////////////////////////////////////
+                                    var bpClientEmail = this.factory.GetInstance<NT.IClientEmail>();
+                                    var moneda = await bpMON.GetByClave("MXN");
+                                    Drivers.Emailing.Plantilla plantilla = await this.GetPlantilla("NOTIFICAR-REINCIDENCIAS-DOCUMENTO", obj, null, moneda);
+                                    Drivers.Common.IKontrolFiles documento = plantilla.GetDocument(false, plantilla, obj, this.factory, moneda);
+                                    EK.Drivers.Common.IKontrolFiles[] documentos = { documento };
+                                    var plantillaObj = await this.GetPlantilla("NOTIFICAR-REINCIDENCIAS", obj);
+                                    bpClientEmail.SendMessage(elementosEmails.ToArray(), null, plantillaObj.Titulo, plantillaObj.Plantilla_Contenido, documentos, true);
+                                }
+                                catch (FormatException)
+                                {
+                                    //base.SetReturnInfo(2, "No se pudo enviar la notificación, El correo no es válido.");
+                                }
+                                catch (Exception)
+                                {
+                                    ////base.SetReturnInfo(2, "No se pudo enviar la notificación:" + ex.Message);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return 0;
+        }
+
+        protected override async Task<m.SCV.Interfaces.IReporteFalla> saveModel(m.SCV.Interfaces.IReporteFalla item)
+        {
+            m.SCV.Interfaces.IReporteFalla retValue = null;
+
+            int? id = item.IdFolio;
+            item.IdFolio = item.ID;
+            item.ID = id;
+
+            item.IdFolio = item.IdFolio > 0 ? item.IdFolio : null;
+            item.ID = item.ID > 0 ? item.ID : -1;
+
+            item.Estado = item.ID == null || item.ID <= 0 ? m.Kontrol.KontrolEstadosEnum.Nuevo : m.Kontrol.KontrolEstadosEnum.Modificado;
+            if (item != null)
+            {
+                item.Modificado = DateTime.Now;
+                item.IdModificadoPor = base.getUserId();
+            }
+
+            if (item.Estado == m.Kontrol.KontrolEstadosEnum.Nuevo)
+            {
+                item.Creado = DateTime.Now;
+                item.IdCreadoPor = base.getUserId();
+            }
+
+            retValue = await this.dao.SaveEntity(item, false, true);
+            retValue = await this.dao.GetByEntityId((int)retValue.ID);
+            retValue.Estado = item.ID == null || item.ID <= 0 ? m.Kontrol.KontrolEstadosEnum.Nuevo : m.Kontrol.KontrolEstadosEnum.Modificado;
+
+            await this.afterSaveItem(retValue);
+            await this.afterSaveItem(retValue, item);
+            //await Log(retValue);
+
+            return retValue;
+        }
+
+        public async Task<m.SCV.Interfaces.IReporteFalla> LoadReporte(int idPrereporte)
+        {
+            var bpPRE = Get<p.SCV.Interfaces.IPrereportes>();
+            var daoDT = Get<d.Kontrol.Interfaces.IDateDifference>();
+            var daoCU = Get<d.SCV.Interfaces.IContratistasUbicaciones>();
+            var daoDET = Get<d.SCV.Interfaces.IPrereportesDetalles>();
+            var bpCGV = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+            var bpCU = Get<p.SCV.Interfaces.IContratistasUbicaciones>();
+            var bpCF = Get<p.SCV.Interfaces.ICausasFallas>();
+
+            try
+            {
+                var pprt = await bpPRE.GetById(idPrereporte);
+
+                var retValue = Get<m.SCV.Interfaces.IReporteFalla>();
+                retValue.IdCliente = pprt.IdCliente;
+                retValue.Cliente = pprt.Cliente;
+                retValue.Ubicacion = await this.GetUbicacionById((int)pprt.IdUbicacion);
+                retValue.Contactos = await this.GetContactoCliente(pprt.IdCliente);
+
+                DateTime fechaEntrega = DateTime.Now;
+
+                var etapa = await this.GetClienteEtapa(pprt.IdCliente, DateTime.Now);
+                if (etapa != null && etapa.FechaLiberacion != null)
+                {
+                    fechaEntrega = (DateTime)etapa.FechaLiberacion;
+                }
+
+                if (pprt.Cliente != null)
+                {
+                    var diff = await daoDT.GetDateDifference("yy", fechaEntrega, DateTime.Now);
+                    retValue.Cliente.Antiguedad = diff.Year;
+                }
+
+                var parametros = new Dictionary<string, object>();
+                parametros.Add("idUbicacion", pprt.IdUbicacion);
+                retValue.Contratistas = await daoCU.GetAll(parametros);
+
+                var cOrigen = await bpCU.GetContratistaDefault((int)pprt.IdUbicacion);
+                if (cOrigen != null)
+                {
+                    retValue.Contratista = cOrigen;
+                    retValue.IdContratista = cOrigen.ID;
+                }
+
+                var newPartidas = new List<m.SCV.Interfaces.IReporteFallaDetalle>();
+
+                parametros.Clear();
+                parametros.Add("idPrereporte", pprt.IdPrereporte);
+                parametros.Add("idCliente", pprt.IdCliente);
+                var prePartidas = await daoDET.GetAll(parametros);
+
+                if (prePartidas != null)
+                {
+                    for (int i = 0; i < prePartidas.Count; i++)
+                    {
+                        var pp = prePartidas[i];
+                        var np = Get<m.SCV.Interfaces.IReporteFallaDetalle>();
+                        np.IdUbicacionFalla = pp.IdUbicacionFalla;
+                        np.UbicacionFalla = pp.UbicacionFalla;
+                        np.IdCliente = pp.IdCliente;
+                        np.Cliente = pp.Cliente;
+                        np.Partida = pp.Partida;
+                        np.Observaciones = pp.Observaciones;
+                        np.TerminoGarantia = DateTime.Now;
+                        np.DiasGarantia = 0;
+                        np.PartidaAutorizada = "A";
+                        np.Procede = "S";
+                        np.EstatusAutorizacion = "N";
+                        np.EstatusPartidaValor = "N";
+                        np.EstatusPartida = await bpCGV.Get("SPVESTATUSREPORTEPARTIDA", "N");
+                        np.Reincidencias = 0;
+                        np.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                        np.ID = (i + 1) * -1;
+
+                        if (cOrigen != null)
+                        {
+                            np.Contratista = cOrigen;
+                            np.IdContratista = cOrigen.ID;
+                        }
+
+                        var causaFalla = await bpCF.GetByClave("DIN");
+                        if (causaFalla != null)
+                        {
+                            np.IdCausaFalla = (int)causaFalla.ID;
+                            np.CausaFalla = causaFalla;
+                        }
+
+                        newPartidas.Add(np);
+                    }
+                }
+
+                retValue.Partidas = newPartidas;
+                retValue.OrdenesTrabajo = new List<m.SCV.Interfaces.IOrdenTrabajoRUBA>();
+                retValue.IdPrereporte = idPrereporte;
+                retValue.Prereporte = pprt;
+                retValue.FechaEntregaVivienda = fechaEntrega;
+                retValue.FechaCaptura = DateTime.Now;
+                retValue.MesesTranscurridos = 0;
+                retValue.IdEstatusReporte = "N";
+                retValue.EstatusReporte = await bpCGV.Get("SPVESTATUSREPORTEFALLAS", "N");
+
+                if (fechaEntrega != null)
+                {
+                    var diff = await daoDT.GetDateDifference("dd", fechaEntrega, DateTime.Now);
+                    retValue.MesesTranscurridos = diff.Days;
+                }
+
+                retValue.DiasSolucion = 0;
+                retValue.DiasContratista = 0;
+
+                return retValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected override async Task<m.SCV.Interfaces.IReporteFalla> afterGetItem(m.SCV.Interfaces.IReporteFalla item)
+        {
+            var daoCU = Get<d.SCV.Interfaces.IContratistasUbicaciones>();
+            var daoRP = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            var daoOT = Get<d.SCV.Interfaces.IOrdenesTrabajoRUBA>();
+            var daoOTD = Get<d.SCV.Interfaces.IOrdenesTrabajoDetallesRUBA>();
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            var daoDT = Get<d.Kontrol.Interfaces.IDateDifference>();
+
+            item.Ubicacion = await this.GetUbicacionById((int)item.IdUbicacion);
+            item.Contactos = await this.GetContactoCliente(item.IdCliente);
+
+            var fechaLiberacion = DateTime.Now;
+            var etapa = await this.GetClienteEtapa(item.IdCliente, (DateTime)item.FechaCaptura);
+            if (etapa != null && etapa.FechaLiberacion != null)
+            {
+                fechaLiberacion = (DateTime)etapa.FechaLiberacion;
+            }
+
+            if (item.Cliente != null)
+            {
+                var diff = await daoDT.GetDateDifference("yy", fechaLiberacion, DateTime.Now);
+                item.Cliente.Antiguedad = diff.Year;
+            }
+
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("idUbicacion", item.IdUbicacion);
+            item.Contratistas = await daoCU.GetAll(parametros);
+
+            parametros.Clear();
+            parametros.Add("idReporte", item.ID);
+
+            item.Partidas = await daoRP.GetAll(parametros);
+            item.Dictamenes = await daoDIC.GetAll(parametros);
+            item.OrdenesTrabajo = await daoOT.GetAll(parametros);
+
+            if (item.Partidas != null && item.Partidas.Count > 0)
+            {
+                foreach (var pp in item.Partidas)
+                {
+                    var re = await this.CalcularReincidencias(pp);
+                    if (re != null)
+                    {
+                        pp.Reincidencias = re.Reincidencias;
+                        pp.ReincidenciasValues = re.ReincidenciasValues;
+                    }
+
+                    if (item.Dictamenes != null)
+                    {
+                        pp.Dictamenes = item.Dictamenes.FindAll(dm => dm.IdReporte == pp.IdReporte && dm.IdReporteDetalle == pp.ID);
+                    }
+                }
+            }
+
+            if (item.OrdenesTrabajo != null)
+            {
+                foreach (var ot in item.OrdenesTrabajo)
+                {
+                    parametros.Clear();
+                    parametros.Add("idOrdenTrabajo", ot.ID);
+                    ot.Partidas = await daoOTD.GetAll(parametros);
+                }
+            }
+
+            if (item.FechaCaptura == null)
+            {
+                item.FechaCaptura = DateTime.Now;
+            }
+
+            if (item.FechaEntregaVivienda != null)
+            {
+                var diff = await daoDT.GetDateDifference("dd", (DateTime)item.FechaEntregaVivienda, (DateTime)item.FechaCaptura);
+                item.MesesTranscurridos = diff.Days;
+            }
+            else
+            {
+                item.MesesTranscurridos = 0;
+            }
+
+            this.CalcularTiemposReparacion(ref item);
+
+            return await base.afterGetItem(item);
+        }
+
+        public void CalcularTiemposReparacion(ref m.SCV.Interfaces.IReporteFalla item)
+        {
+            item.DiasSolucion = 0;
+            item.FechaSolucionReporte = item.FechaCaptura.Value.Date;
+            item.DiasContratista = 0;
+
+            if (item.OrdenesTrabajo != null && item.OrdenesTrabajo.Count > 0)
+            {
+                var items = item.OrdenesTrabajo.Where(o => o.Estado != m.Kontrol.KontrolEstadosEnum.Eliminado).ToList();
+                if (items != null && items.Count > 0)
+                {
+                    DateTime? fechaFinal = items.Max(o => o.FechaFin);
+                    item.FechaSolucionTerminacion = fechaFinal;
+
+                    if (fechaFinal != null && item.FechaCaptura != null)
+                    {
+                        item.DiasSolucion = ((fechaFinal.Value.Date - item.FechaSolucionReporte.Value.Date).Days) + 1;
+                    }
+
+                    DateTime? fechaInicial = items.Min(o => o.FechaInicioReal);
+                    item.FechaContratistaInicial = fechaInicial;
+
+                    var terminadas = items.All(o => o.FechaFinReal != null && o.EstatusOrdenTrabajo.Clave == "T");
+                    if (terminadas == true)
+                    {
+                        fechaFinal = items.Max(o => o.FechaFinReal);
+                        item.FechaContratistaFinal = fechaFinal;
+
+                        if (fechaFinal != null && fechaInicial != null)
+                        {
+                            item.DiasContratista = ((fechaFinal.Value.Date - fechaInicial.Value.Date).Days) + 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        public async Task<List<m.SCV.Interfaces.IReporteFallaDetalle>> GetReincidencias(Dictionary<string, object> parametros)
+        {
+            return await this.dao.GetReincidencias(parametros);
+        }
+
+        public async Task<List<m.SCV.Interfaces.IReporteFallaDetalle>> GetNotificacionReincidencias(Dictionary<string, object> parametros)
+        {
+            return await this.dao.GetNotificacionReincidencias(parametros);
+        }
+
+        public async Task<List<m.SCV.Interfaces.IClienteContactos>> GetContactoCliente(int idCliente)
+        {
+            var daoRL = Get<d.SCV.Interfaces.IClienteContacto>();
+            var daoCSPV = Get<d.SCV.Interfaces.IClientesSPV>();
+            var bpCGV = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+
+            try
+            {
+                bool addTelefonoCasa = true;
+                bool addTelefonoOficina = true;
+                bool addTelefonoOtro = true;
+
+                var parametros = new Dictionary<string, object>();
+                parametros.Add("idCliente", idCliente);
+
+                var contactos = await daoRL.GetAll(parametros);
+                if (contactos != null)
+                {
+                    var contactosTelefono = contactos.FindAll(c => c.TipoContacto.Clave == "TELEFONO");
+                    if (contactosTelefono != null)
+                    {
+                        addTelefonoCasa = !contactosTelefono.Exists(c => c.TipoTelefono.Clave == "CS");
+                        addTelefonoOficina = !contactosTelefono.Exists(c => c.TipoTelefono.Clave == "T");
+                        addTelefonoOtro = !contactosTelefono.Exists(c => c.TipoTelefono.Clave == "O");
+                    }
+                }
+
+                var clienteSPV = await daoCSPV.GetById(idCliente);
+
+                if (addTelefonoCasa == true)
+                {
+                    if (!string.IsNullOrEmpty(clienteSPV.TelefonoCasa))
+                    {
+                        var item = Get<m.SCV.Interfaces.IClienteContactos>();
+                        item.ID = -1;
+                        item.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                        item.Contacto = clienteSPV.TelefonoCasa;
+                        item.TipoContacto = await bpCGV.Get("TIPOCONTACTO", "TELEFONO");
+                        item.TipoTelefono = await bpCGV.Get("TIPOTELEFONO", "CS");
+                        contactos.Add(item);
+                    }
+                }
+
+                if (addTelefonoOficina == true)
+                {
+                    if (!string.IsNullOrEmpty(clienteSPV.TelefonoOficina))
+                    {
+                        var item = Get<m.SCV.Interfaces.IClienteContactos>();
+                        item.ID = -2;
+                        item.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                        item.Contacto = clienteSPV.TelefonoOficina;
+                        item.TipoContacto = await bpCGV.Get("TIPOCONTACTO", "TELEFONO");
+                        item.TipoTelefono = await bpCGV.Get("TIPOTELEFONO", "T");
+                        contactos.Add(item);
+                    }
+                }
+
+                if (addTelefonoOtro == true)
+                {
+                    if (!string.IsNullOrEmpty(clienteSPV.TelefonoOtros))
+                    {
+                        var item = Get<m.SCV.Interfaces.IClienteContactos>();
+                        item.ID = -3;
+                        item.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                        item.Contacto = clienteSPV.TelefonoOtros;
+                        item.TipoContacto = await bpCGV.Get("TIPOCONTACTO", "TELEFONO");
+                        item.TipoTelefono = await bpCGV.Get("TIPOTELEFONO", "O");
+                        contactos.Add(item);
+                    }
+                }
+
+                return contactos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<m.SCV.Interfaces.IUbicaciones> GetUbicacionById(int id)
+        {
+            var daoUbicaciones = Get<d.SCV.Interfaces.IUbicaciones>();
+            var retValue = await daoUbicaciones.GetById(id);
+            retValue.Plaza = retValue.Plaza != null ? retValue.Plaza : Get<m.SCV.Interfaces.IPlaza>();
+            retValue.Plaza.ValidarResponsablePlaza = await this.dao.ValidarResponsablePlaza(retValue.IdPlaza);
+            return retValue;
+        }
+
+        public async Task<m.SCV.Interfaces.IClienteSPVEtapa> GetClienteEtapa(int idCliente, DateTime fechaReporte)
+        {
+            var daoDT = Get<d.Kontrol.Interfaces.IDateDifference>();
+            var daoCPV = Get<d.SCV.Interfaces.IClientesSPV>();
+            var daoUB = Get<d.SCV.Interfaces.IUbicaciones>();
+
+            var retValue = Get<m.SCV.Interfaces.IClienteSPVEtapa>();
+            retValue.MesesTranscurridos = 0;
+            retValue.MesesTranscurridosEntrega = 0;
+
+            var cliente = await daoCPV.GetById(idCliente);
+            if (cliente != null && cliente.IdUbicacion != null)
+            {
+                var ubicacion = await daoUB.GetById(cliente.IdUbicacion ?? 0);
+                if (ubicacion != null && ubicacion.FechaEntregaCalidad != null)
+                {
+                    var diff = await daoDT.GetDateDifference("dd", (DateTime)ubicacion.FechaEntregaCalidad, fechaReporte);
+                    var diffDias = await daoDT.GetDateDifference("mm", (DateTime)ubicacion.FechaEntregaCalidad, fechaReporte);
+                    retValue.MesesTranscurridos = diff.Days;
+                    retValue.MesesTranscurridosEntrega = diffDias.Month;
+                    retValue.FechaLiberacion = ubicacion.FechaEntregaCalidad;
+                }
+            }
+
+            return retValue;
+        }
+
+        public async Task<List<m.SCV.Interfaces.IComponente>> GetComponentes(Dictionary<string, object> parametros)
+        {
+            return await this.dao.GetComponentes(parametros);
+        }
+
+        private async Task<m.SCV.Interfaces.IReporteFallaDetalle> CalcularGarantia(m.SCV.Interfaces.IReporteFallaDetalle partida, int duracionGarantia, DateTime fechaEntrega, DateTime fechaCaptura)
+        {
+            var daoDT = Get<d.Kontrol.Interfaces.IDateDifference>();
+
+            try
+            {
+                DateTime terminoGarantia = fechaEntrega.AddMonths(duracionGarantia);
+                var diff = await daoDT.GetDateDifference("dd", fechaCaptura, terminoGarantia);
+                partida.DiasGarantia = diff.Days;
+                partida.TerminoGarantia = terminoGarantia;
+
+                return partida;
+            }
+            catch
+            {
+                throw new Exception("Error al calcular la garantía de la partida ");
+            }
+        }
+
+        public async Task<m.SCV.Interfaces.IReporteFallaDetalle> CalcularPartida(m.SCV.Interfaces.IReporteFallaDetalle partida, m.SCV.Interfaces.IReporteFalla reporte)
+        {
+            var bpEstatus = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+            var bpCausaFalla = Get<p.SCV.Interfaces.ICausasFallas>();
+
+            try
+            {
+                var falla = await this.dao.GetFallaPartida((int)partida.Falla.IdFalla, (int)partida.Falla.IdTipoFalla);
+                if (falla == null)
+                {
+                    base.SetReturnInfo(1, "La Falla seleccionada no corresponde con el Tipo de Falla o el Tipo de Vivienda Establecido.");
+                    return null;
+                }
+
+                int valida_vivienda_entregada = await this.dao.ValidarEntregaVivienda();
+                if (valida_vivienda_entregada == 1)
+                {
+                    if (reporte.FechaEntregaVivienda == null)
+                    {
+                        base.SetReturnInfo(1, "Al cliente no se le ha entregado la vivienda. Por favor verifique la información e intente de nuevo.");
+                        return null;
+                    }
+                }
+
+                if (reporte.FechaEntregaVivienda != null)
+                {
+                    if (reporte.ID <= 0 || reporte.Estado == m.Kontrol.KontrolEstadosEnum.Nuevo)
+                    {
+                        reporte.FechaCaptura = DateTime.Now;
+                    }
+
+                    partida = await this.CalcularGarantia(partida, (int)falla.DuracionGarantia, (DateTime)reporte.FechaEntregaVivienda, (DateTime)reporte.FechaCaptura);
+                }
+                else
+                {
+                    partida.TerminoGarantia = DateTime.Now;
+                    partida.DiasGarantia = 0;
+                }
+
+                if (partida.DiasGarantia > 0)
+                {
+                    partida.PartidaAutorizada = "A";
+                    partida.Procede = "S";
+                }
+                else
+                {
+                    partida.PartidaAutorizada = "R";
+                    partida.Procede = "N";
+                }
+
+                partida.EstatusAutorizacion = "N";
+                partida.EstatusPartidaValor = "N";
+                partida.EstatusPartida = await bpEstatus.Get("SPVESTATUSREPORTEPARTIDA", "N");
+
+                if (partida.ID == null || partida.ID <= 0)
+                {
+                    partida.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+
+                    var causaFalla = await bpCausaFalla.GetByClave("DIN");
+                    if (causaFalla != null)
+                    {
+                        partida.IdCausaFalla = (int)causaFalla.ID;
+                        partida.CausaFalla = causaFalla;
+                    }
+                }
+                else
+                {
+                    partida.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                }
+
+                return partida;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<m.SCV.Interfaces.IReporteFallaDetalle> CalcularReincidencias(m.SCV.Interfaces.IReporteFallaDetalle item)
+        {
+            try
+            {
+                var p = new Dictionary<string, object>();
+                p.Add("idCliente", item.IdCliente);
+                p.Add("idFalla", item.Falla.IdFalla);
+                p.Add("idTipoFalla", item.IdTipoFalla);
+                p.Add("idUbicacionFalla", item.UbicacionFalla.IdUbicacionFalla);
+                p.Add("idReporte", item.IdReporte);
+                p.Add("proceden", "T");
+
+                var reincidencias = await this.dao.GetReincidencias(p);
+                if (reincidencias != null)
+                {
+                    dynamic values = new ExpandoObject();
+                    values.ProcedenSi = reincidencias.Where(r => r.Procede == "S").Count();
+                    values.ProcedenNo = reincidencias.Where(r => r.Procede == "N").Count();
+
+                    item.Reincidencias = reincidencias.Count;
+                    item.ReincidenciasValues = Newtonsoft.Json.JsonConvert.SerializeObject(values);
+                }
+
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<m.SCV.Interfaces.IOrdenTrabajoDetalleRUBA>> CalcularPartidasOT(int idReporte, int idContratista, m.SCV.Interfaces.IOrdenTrabajoRUBA orden, List<m.SCV.Interfaces.IOrdenTrabajoRUBA> ordenes)
+        {
+            var daoDET = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            var bpCGV = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+            var estatus = await bpCGV.Get("ESTATUS", "A");
+
+            // validar que las ordenes sean del contratista en edición.
+            ordenes = ordenes != null ? ordenes : new List<m.SCV.Interfaces.IOrdenTrabajoRUBA>();
+            ordenes = ordenes.Where(o => o.IdContratista == idContratista).ToList();
+
+            // colocar las partidas capturadas en la sección en el array de ordenes
+            int ordenIndex = ordenes.FindIndex(o => o.ID == orden.ID);
+            if (ordenIndex != -1)
+            {
+                ordenes[ordenIndex].Partidas = orden.Partidas;
+            }
+            else
+            {
+                ordenes.Add(orden);
+                ordenIndex = ordenes.FindIndex(o => o.ID == orden.ID);
+            }
+
+            // partidas disponibles para agregar a la edición del contratista.
+            var freePartidas = new List<m.SCV.Interfaces.IOrdenTrabajoDetalleRUBA>();
+
+            // consultar las partidas autorizadas del reporte de fallas.
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("idReporte", idReporte);
+            parametros.Add("idContratista", idContratista);
+            parametros.Add("autorizado", "A");
+
+            var partidas = await daoDET.GetAll(parametros);
+            if (partidas != null)
+            {
+                foreach (var p in partidas)
+                {
+                    bool pFound = false;
+
+                    foreach (var ot in ordenes)
+                    {
+                        if (ot.Estado != m.Kontrol.KontrolEstadosEnum.Eliminado)
+                        {
+                            if (ot.Partidas != null)
+                            {
+                                var otPartidas = ot.Partidas.Where(d => d.Estado != m.Kontrol.KontrolEstadosEnum.Eliminado).ToList();
+                                if (otPartidas.Any(d => d.IdPartida == p.ID) == true)
+                                {
+                                    pFound = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    // agregar la partida como disponible si no es utilizada en una OT
+                    if (pFound == false)
+                    {
+                        var det = Get<m.SCV.Interfaces.IOrdenTrabajoDetalleRUBA>();
+                        det.ID = null;
+                        det.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                        det.IdPartida = (int)p.ID;
+                        det.Partida = p;
+                        det.IdOrdenTrabajo = (int)orden.ID;
+                        det.Observaciones = string.Empty;
+                        det.IdModificadoPor = base.getUserId();
+                        det.IdCreadoPor = base.getUserId();
+                        det.IdEstatus = estatus.ID;
+                        det.Estatus = estatus;
+
+                        freePartidas.Add(det);
+                    }
+                }
+            }
+
+            var retValue = new List<m.SCV.Interfaces.IOrdenTrabajoDetalleRUBA>();
+
+            if (ordenIndex != -1)
+            {
+                var otPartidas = ordenes[ordenIndex].Partidas;
+                if (otPartidas != null)
+                {
+                    retValue = otPartidas;
+                }
+            }
+
+            retValue.AddRange(freePartidas);
+
+            foreach (var p in retValue)
+            {
+                if (p.Partida == null)
+                {
+                    p.Partida = await daoDET.GetById(p.IdPartida);
+                }
+            }
+
+            return retValue.OrderBy(p => p.Partida.Partida).ToList();
+        }
+
+        #region DASHBOARD  REPORTE DE FALLAS
+        public async Task<List<m.SCV.Interfaces.IReporteFalla>> getGridDashBoard(Dictionary<string, object> parametros)
+        {
+            parametros.Add("OperacionEspecificaSP", "REPORTE-FALLAS-DASHBOARD-GRID");
+            parametros.Add("IdUsuario", getUserId());
+            return await this.dao.getGridDashBoard(parametros);
+        }
+
+        public async Task<List<m.SCV.Interfaces.IReporteFallaIndicador>> getStateDashBoard(Dictionary<string, object> parametros)
+        {
+            parametros.Add("OperacionEspecificaSP", "REPORTE-FALLAS-DASHBOARD-ESTADOS");
+            parametros.Add("IdUsuario", getUserId());
+            return await this.dao.getStateDashBoard(parametros);
+        }
+
+        public async Task<List<m.SCV.Interfaces.IReporteFallaIndicador>> getUsersDashBoard(Dictionary<string, object> parametros)
+        {
+            parametros.Add("OperacionEspecificaSP", "REPORTE-FALLAS-DASHBOARD-USUARIOS");
+            parametros.Add("IdUsuario", getUserId());
+            return await this.dao.getUsersDashBoard(parametros);
+        }
+
+        public async Task<List<m.SCV.Interfaces.ITopReport>> getTopReportDashBoard(Dictionary<string, object> parametros)
+        {
+            parametros.Add("OperacionEspecificaSP", "REPORTE-FALLAS-DASHBOARD-TOP-REPORT");
+            parametros.Add("IdUsuario", getUserId());
+            return await this.dao.getTopReportDashBoard(parametros);
+        }
+
+        public async override Task<object[]> Search(string criteria)
+        {
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("IdUsuario", getUserId());
+            parametros.Add("search", criteria);
+
+            return await this.dao.Search(parametros);
+        }
+        #endregion
+
+        public async Task<Drivers.Common.IKontrolFiles> GetDocumentOT(int id)
+        {
+            var bpMON = Get<p.Kontrol.Interfaces.IMonedas>();
+            var bpCU = Get<p.SCV.Interfaces.IContratistasUbicaciones>();
+            var daoDET = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            var daoOT = Get<d.SCV.Interfaces.IOrdenesTrabajoRUBA>();
+            var daoOTD = Get<d.SCV.Interfaces.IOrdenesTrabajoDetallesRUBA>();
+            var daoRL = Get<d.SCV.Interfaces.IClienteContacto>();
+            var daoCF = Get<d.SCV.Interfaces.ICausasFallas>();
+            var daoAG = Get<d.SCV.Interfaces.IAgendaSPV>();
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+
+            try
+            {
+                var ordenTrabajo = await daoOT.GetById(id);
+
+                var reporte = await this.dao.GetById(ordenTrabajo.IdReporte);
+                var ubicacion = await this.GetUbicacionById((int)reporte.IdUbicacion);
+                var moneda = await bpMON.GetByClave("MXN");
+
+                var parametros = new Dictionary<string, object>();
+                parametros.Add("idReporte", ordenTrabajo.IdReporte);
+                parametros.Add("idContratista", ordenTrabajo.IdContratista);
+
+                var partidas = await daoDET.GetAll(parametros);
+                var dictamenesTotalPartidas = Get<m.SCV.Interfaces.IReporteFalla>();
+                dictamenesTotalPartidas.Dictamenes = await daoDIC.GetAll(parametros);
+
+                parametros.Clear();
+                parametros.Add("idOrdenTrabajo", ordenTrabajo.ID);
+
+                var partidasOT = await daoOTD.GetAll(parametros);
+                var partidasTable = new List<m.SCV.Interfaces.IReporteFallaDetalle>();
+
+                foreach (var p in partidas)
+                {
+                    if (partidasOT.FirstOrDefault(d => d.IdPartida == p.ID) != null)
+                    {
+                        partidasTable.Add(p);
+                    }
+                }
+
+                var cOrigen = await bpCU.GetContratistaDefault((int)reporte.IdUbicacion);
+                if (cOrigen == null)
+                {
+                    cOrigen = Get<m.SCV.Interfaces.IContratista>();
+                }
+
+                parametros.Clear();
+                parametros.Add("idCliente", reporte.IdCliente);
+
+                string telefonoCasa = reporte.TelefonoCasa;
+                string telefonoOficina = reporte.TelefonoOficina;
+                string telefonoCelular = string.Empty;
+                string telefonoOtros = reporte.TelefonoOtros;
+
+                var contactos = await daoRL.GetAll(parametros);
+                if (contactos != null)
+                {
+                    var telefonos = contactos.FindAll(c => c.TipoContacto.Clave == "TELEFONO");
+                    if (telefonos != null)
+                    {
+                        foreach (var t in telefonos)
+                        {
+                            if (t.TipoTelefono.Clave == "CS")
+                            {
+                                telefonoCasa = t.Contacto;
+                            }
+                            else if (t.TipoTelefono.Clave == "T")
+                            {
+                                telefonoOficina = t.Contacto;
+                            }
+                            else if (t.TipoTelefono.Clave == "C")
+                            {
+                                telefonoCelular = t.Contacto;
+                            }
+                            else if (t.TipoTelefono.Clave == "O")
+                            {
+                                telefonoOtros = t.Contacto;
+                            }
+                        }
+                    }
+                }
+
+                var citas = await daoAG.GetAgendaDetalleHistorial("Contratista", id, null);
+                if (citas != null && citas.Count > 0)
+                {
+                    // citas = citas.FindAll(c => c.EstatusAgenda.Clave == "ACT" || c.EstatusAgenda.Clave == "REP" || c.EstatusAgenda.Clave == "SEG");
+                    if (citas[citas.Count - 1].EstatusAgenda.Clave != "ATE")
+                        citas[citas.Count - 1].EstatusAgenda.Nombre += "       *** última actualización ***";
+                }
+
+                var dictamenesPartidas = new List<m.SCV.Interfaces.IReporteDictamen>();
+                if (partidas != null && partidas.Count > 0)
+                {
+                    var partidasDictamenes = Get<m.SCV.Interfaces.IReporteDictamen>();
+
+                    foreach (var pp in partidas)
+                    {
+
+                        partidasDictamenes = dictamenesTotalPartidas.Dictamenes.FindLast(dm => dm.Partida.Partida == pp.Partida);
+                        if (partidasDictamenes != null)
+                        {
+                            dictamenesPartidas.Add(partidasDictamenes);
+                        }
+                    }
+
+
+                }
+
+                dynamic expando = new ExpandoObject();
+                expando.ID = reporte.ID;
+                expando.Folio = reporte.IdFolio;
+                expando.OrdenTrabajo = ordenTrabajo;
+                expando.FechaEntregaVivienda = reporte.FechaEntregaVivienda;
+                expando.FechaCaptura = reporte.FechaCaptura;
+                expando.Cliente = reporte.Cliente;
+                expando.Ubicacion = ubicacion;
+                expando.CreadoPor = reporte.CreadoPor;
+                expando.ModificadoPor = reporte.ModificadoPor;
+                expando.TelefonoCasa = telefonoCasa;
+                expando.TelefonoOficina = telefonoOficina;
+                expando.TelefonoCelular = telefonoCelular;
+                expando.TelefonoOtros = telefonoOtros;
+                expando.DesarrolloClave = reporte.DesarrolloClave;
+                expando.SuperManzana = reporte.SuperManzana;
+                expando.Manzana = reporte.Manzana;
+                expando.Lote = reporte.Lote;
+                expando.Interior = reporte.Interior;
+                expando.Exterior = reporte.Exterior;
+                expando.Coordinador = reporte.Coordinador;
+                expando.ResponsableConstruccion = reporte.ResponsableConstruccion;
+                expando.ObservacionesSC = reporte.ObservacionesServicio;
+                expando.ObservacionesCAT = reporte.ObservacionesContratista;
+                expando.Contratista = ordenTrabajo.Contratista;
+                expando.ContratistaOrigen = cOrigen;
+                expando.Citas = citas;
+                expando.Partidas = partidasTable;
+                expando.Dictamenes = dictamenesPartidas;
+                expando.IdFolio = reporte.ID;
+                var pm = await GetGlobalParameters("INSTALACION");
+                string linkTarea = $"{pm.Value<string>("SitioWeb")}{"/scv/pv/reportesFallas/"}{reporte.ID}";
+                var parametros2 = new Dictionary<string, object>()
+                        {
+                            { "Link", linkTarea
+                            }
+                        };
+
+                //notificacion supervisor asignado
+                object obj = Newtonsoft.Json.JsonConvert.DeserializeObject(Newtonsoft.Json.JsonConvert.SerializeObject(expando));
+                //notificación UAT
+                var bpAgenda = Get<p.SCV.Interfaces.IAgendaSPV>();
+                var daoPlaza = Get<d.SCV.Interfaces.IPlaza>();
+                var parametrosPlaza = new Dictionary<string, object>();
+                parametrosPlaza.Add("IdPlaza", reporte.IdPlaza);
+                parametrosPlaza.Add("IdNivel", 134);
+                List<m.Kontrol.Interfaces.IUsuario> correosNiveles = null;
+                correosNiveles = await daoPlaza.getGerentes(parametrosPlaza);
+                foreach (var integrantes in correosNiveles)
+                {
+                    if (integrantes.Email != null)
+                    {
+                        await bpAgenda.SendNotificationNewKalendar(integrantes, "NOTIFICAR-NUEVA-AGENDA-CONTRATISTA", linkTarea, obj, parametros2);
+                    }
+                }
+
+                Drivers.Emailing.Plantilla plantilla = await this.GetPlantilla("REP-FALLAS-RUBA", obj, null, moneda);
+                Drivers.Common.IKontrolFiles documento = plantilla.GetDocument(false, plantilla, obj, this.factory, moneda);
+
+                return documento;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        // Freddy - Modificacion: Validacion en estatus de las citas de la OT
+        public async Task<string> GetEncodedDocumentOT(int id)
+        {
+            try
+            {
+                string retValue = null;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    var documento = await this.GetDocumentOT(id);
+                    documento.Content.Position = 0;
+                    documento.Content.CopyTo(ms);
+
+                    retValue = Convert.ToBase64String(ms.ToArray());
+                }
+
+                return retValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<string> GetEncodedDocumentDiagnostico(int id)
+        {
+            try
+            {
+                string retValue = null;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    var documento = await this.GetDocumentDiagnostico(id);
+                    documento.Content.Position = 0;
+                    documento.Content.CopyTo(ms);
+
+                    retValue = Convert.ToBase64String(ms.ToArray());
+                }
+
+                return retValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Drivers.Common.IKontrolFiles> GetDocumentDiagnostico(int id)
+        {
+            var bpMON = Get<p.Kontrol.Interfaces.IMonedas>();
+            var daoRF = Get<d.SCV.Interfaces.IReportesFallas>();
+            var daoDET = Get<d.SCV.Interfaces.IReportesFallasDetalles>();
+            var daoAG = Get<d.SCV.Interfaces.IAgendaSPV>();
+            var daoAgenda = Get<d.SCV.Interfaces.IAgendasContratistas>();
+            var daoAgendaDetalle = Get<d.Kontrol.Interfaces.IAgendaEntVivienda>();
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+
+            try
+            {
+                var moneda = await bpMON.GetByClave("MXN");
+
+                var dictamen = await daoDIC.GetById(id);
+                var reporteFalla = await this.dao.GetById((int)dictamen.IdReporte);
+                var ubicacion = await this.GetUbicacionById((int)reporteFalla.IdUbicacion);
+                var citas = await daoAG.GetAgendaDetalleHistorial("Dictamen", id, null);
+
+                m.SCV.Interfaces.IReporteDictamen dictamenUpdate = await daoDIC.GetById(id);
+
+                var daoCliente = Get<d.SCV.Interfaces.IClientesSPV>();
+                var cliente = await daoCliente.GetById((int)dictamenUpdate.IdCliente);
+                var IdAgendaDetalle = 0;
+                if (dictamenUpdate.IdAgenda != null)
+                {
+                    IdAgendaDetalle = (int)dictamenUpdate.IdAgenda;
+                }
+                var model = await daoAgendaDetalle.GetById(IdAgendaDetalle);
+
+                var IdAgenda = 0;
+                if (model != null)
+                {
+                    IdAgenda = (int)model.IdAgenda;
+                }
+                var agenda = await daoAgenda.GetById(IdAgenda);
+
+
+                var parametrosFolioDetalle = new Dictionary<string, object>();
+                parametrosFolioDetalle.Add("idReporte", dictamenUpdate.IdReporte);
+                //parametrosFolioDetalle.Add("ID", dictamenUpdate.Partida.ID.Value);
+                var partidas = await daoDET.GetAll(parametrosFolioDetalle);
+                int[] arrayPartidas = new int[partidas.Count];
+                for (int i = 0; i < partidas.Count; i++)
+                    arrayPartidas[i] = partidas[i].ID.Value;
+
+                /*for (int i = 0; i < arrayPartidas.Length; i++)
+                {
+                    int IdPartida = arrayPartidas[i];
+                    if (!dictamen.IdPartidas.Contains(IdPartida.ToString()))
+                    {
+                        for (int j = 0; j < partidas.Count; j++)
+                            if (partidas[j].ID == IdPartida) partidas.RemoveAt(j);
+                    }
+
+                }*/
+
+                List<dynamic> listOfDiagnosticos = new List<dynamic>();
+                List<dynamic> listOfCitas = new List<dynamic>();
+                List<dynamic> listOfPartidas = new List<dynamic>();
+                listOfDiagnosticos.Add(dictamenUpdate);
+
+                dynamic expando = new ExpandoObject();
+                expando.Agenda = agenda;
+                expando.Citas = citas;
+                expando.Cliente = cliente;
+                expando.Ubicacion = ubicacion;
+                expando.Dictamenes = listOfDiagnosticos;
+                expando.Responsable = dictamenUpdate.ResponsableDictamen;
+                expando.Partidas = partidas;
+                expando.Folio = reporteFalla;
+                expando.IdDictamen = dictamenUpdate.ID;
+
+
+
+                object obj = Newtonsoft.Json.JsonConvert.DeserializeObject(Newtonsoft.Json.JsonConvert.SerializeObject(expando));
+
+                Drivers.Emailing.Plantilla plantilla = await this.GetPlantilla("NOTIFICAR-DIAGNOSTICO-DOCUMENTO", obj, null, moneda);
+                Drivers.Common.IKontrolFiles documento = plantilla.GetDocument(false, plantilla, obj, this.factory, moneda);
+
+                return documento;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<Drivers.Common.IKontrolFiles> GetFormalizacionVenta(int idCliente)
+        {
+            var bpMON = Get<p.Kontrol.Interfaces.IMonedas>();
+
+            try
+            {
+                var moneda = await bpMON.GetByClave("MXN");
+                dynamic encabezado = await this.dao.GetEncabezadoFormalizacionVenta(idCliente);
+                dynamic descuentos = await this.dao.GetDescuentosFormalizacionVenta(idCliente);
+                dynamic creditos = await this.dao.GetCreditosFormalizacionVenta(idCliente);
+                dynamic subsidios = await this.dao.GetSubsidiosFormalizacionVenta(idCliente);
+                //
+                decimal precioVenta = 0;
+                decimal descuento = 0;
+                decimal tAbono = 0;
+                //
+                encabezado.monto_avaluo_edita = Convert.ToDecimal(encabezado.monto_avaluo_edita);
+                encabezado.monto_avaluo = Convert.ToDecimal(encabezado.monto_avaluo);
+                encabezado.precio_vta = Convert.ToDecimal(encabezado.precio_vta);
+                encabezado.otros_descuentos = Convert.ToDecimal(encabezado.otros_descuentos);
+                encabezado.id_segmento = Convert.ToInt32(encabezado.id_segmento);
+                encabezado.monto_abo_cxc = Convert.ToDecimal(encabezado.monto_abo_cxc);
+                encabezado.monto_pago_cte = Convert.ToDecimal(encabezado.monto_pago_cte);
+                encabezado.monto_abonos_ant = Convert.ToDecimal(encabezado.monto_abonos_ant);
+                encabezado.monto_credito_dec = Convert.ToDecimal(encabezado.monto_credito_dec);
+                encabezado.total_gastos_ruba = Convert.ToDecimal(encabezado.total_gastos_ruba);
+                encabezado.credito_cofinavit = Convert.ToDecimal(encabezado.credito_cofinavit);
+                encabezado.monto_subsidio = Convert.ToDecimal(encabezado.monto_subsidio);
+                //
+                if (encabezado.monto_avaluo_edita > encabezado.precio_vta)
+                {
+                    encabezado.PrecioVenta = encabezado.monto_avaluo_edita;
+                    precioVenta = encabezado.monto_avaluo_edita;
+                }
+                else
+                {
+                    encabezado.PrecioVenta = encabezado.precio_vta;
+                    precioVenta = encabezado.precio_vta;
+                }
+
+                try
+                {
+                    if (encabezado.monto_avaluo_edita > 0)
+                    {
+                        if (encabezado.monto_avaluo_edita > encabezado.precio_vta)
+                        {
+                            descuento = encabezado.monto_avaluo_edita - encabezado.precio_vta;
+                        }
+                        else
+                        {
+                            descuento = 0;
+                        }
+                    }
+                    else if (encabezado.monto_avaluo > encabezado.precio_vta)
+                    {
+                        descuento = encabezado.monto_avaluo - encabezado.precio_vta;
+                    }
+                    else
+                    {
+                        descuento = 0;
+                    }
+                }
+                catch
+                {
+                    descuento = 0;
+                }
+
+                encabezado.Descuento = descuento;
+                encabezado.PrecioVentaDescuento = (precioVenta - (descuento + encabezado.otros_descuentos));
+
+                if (encabezado.id_segmento != 14)
+                {
+                    encabezado.MontoAbonoCXC = encabezado.monto_abo_cxc;
+                    tAbono = encabezado.monto_abo_cxc;
+                }
+                else
+                {
+                    tAbono = encabezado.monto_abo_cxc + encabezado.monto_pago_cte;
+                    encabezado.MontoAbonoCXC = tAbono;
+                }
+                //
+                encabezado.TotalAbonos = (encabezado.monto_abonos_ant + tAbono);
+                encabezado.DiferenciaPagar = ((encabezado.PrecioVentaDescuento + encabezado.total_gastos_ruba) - (encabezado.monto_credito_dec + encabezado.credito_cofinavit + encabezado.monto_subsidio + encabezado.TotalAbonos));
+                //
+                dynamic expando = new ExpandoObject();
+                expando = encabezado;
+                expando.Descuentos = descuentos;
+                expando.Creditos = creditos;
+                expando.Subsidios = subsidios;
+                //
+                dynamic obj = Newtonsoft.Json.JsonConvert.DeserializeObject(Newtonsoft.Json.JsonConvert.SerializeObject(expando));
+                Drivers.Emailing.Plantilla plantilla = await this.GetPlantilla("FORMALIZACION-VENTA-RUBA", obj, null, moneda);
+                Drivers.Common.IKontrolFiles documento = plantilla.GetDocument(false, plantilla, obj, this.factory, moneda);
+
+                return documento;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Drivers.Common.IKontrolFiles> GetEquipamientoVivienda(int idCliente)
+        {
+            var bpMON = Get<p.Kontrol.Interfaces.IMonedas>();
+
+            try
+            {
+                var moneda = await bpMON.GetByClave("MXN");
+                dynamic encabezado = await this.dao.GetEncabezadoEquipamientoVivienda(idCliente);
+                dynamic detalle = await this.dao.GetDetalleEquipamientoVivienda(idCliente);
+                //
+                dynamic expando = new ExpandoObject();
+                expando = encabezado;
+                expando.Detalle = detalle;
+                //
+                dynamic obj = Newtonsoft.Json.JsonConvert.DeserializeObject(Newtonsoft.Json.JsonConvert.SerializeObject(expando));
+                Drivers.Emailing.Plantilla plantilla = await this.GetPlantilla("EQUIPAMIENTO-RUBA", obj, null, moneda);
+                Drivers.Common.IKontrolFiles documento = plantilla.GetDocument(false, plantilla, obj, this.factory, moneda);
+
+                return documento;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<string> GetEncodedDocumento(string accion, int id)
+        {
+            try
+            {
+                string retValue = null;
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    Drivers.Common.IKontrolFiles documento = null;
+
+                    switch (accion)
+                    {
+                        case "FormalizacionVenta": documento = await this.GetFormalizacionVenta(id); break;
+                        case "EquipamientoVivienda": documento = await this.GetEquipamientoVivienda(id); break;
+                    };
+
+                    if (documento != null)
+                    {
+                        documento.Content.Position = 0;
+                        documento.Content.CopyTo(ms);
+                    }
+
+                    retValue = Convert.ToBase64String(ms.ToArray());
+                }
+
+                return retValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<m.SCV.Interfaces.IContratista>> GetContratistas(int idReporte)
+        {
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("operacion", "CONSULTAR_REPORTE_CONTRATISTAS");
+            parametros.Add("idReporte", idReporte);
+
+            return await this.dao.GetContratistas(parametros);
+        }
+
+        public async Task<string> RequestURI(string uri, object obj)
+        {
+            string retValue = string.Empty;
+            try
+            {
+                var pathServices = ConfigurationManager.AppSettings["servicesPostSale"] + uri;
+                string token = ConfigurationManager.AppSettings["servicesPostSaleToken"] == null ? "" : ConfigurationManager.AppSettings["servicesPostSaleToken"];
+                Uri requestUri = new Uri(pathServices);
+                string sJson = Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+                var objClient = new System.Net.Http.HttpClient();
+                objClient.DefaultRequestHeaders.Add("enk-token", token);
+                System.Net.Http.HttpResponseMessage respon = await objClient.PostAsync(requestUri, new StringContent(sJson, System.Text.Encoding.UTF8, "application/json"));
+
+                retValue = await respon.Content.ReadAsStringAsync();
+                return retValue;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
+        public override async Task<object[]> Export(Dictionary<string, object> parametros)
+        {
+            parametros.Add("OperacionEspecificaSP", "REPORTE-FALLAS-DASHBOARD-GRID");
+            parametros.Add("IdUsuario", getUserId());
+
+            dynamic retValue = new List<dynamic>();
+
+            var reportes = await this.dao.getGridDashBoard(parametros);
+            if (reportes != null && reportes.Count > 0)
+            {
+                retValue = reportes.Select(r => new
+                {
+                    r.ID,
+                    r.Cliente,
+                    r.ResponsableConstruccion,
+                    r.Ubicacion,
+                    r.EstatusReporte,
+                    r.IdPrereporte,
+                    r.Creado,
+                    r.IdCreadoPor,
+                    r.CreadoPor,
+                    r.Modificado,
+                    r.IdModificadoPor,
+                    r.ModificadoPor,
+                    r.IdEstatus,
+                    r.Estatus,
+                    r.Version
+                }).ToList<dynamic>();
+            }
+
+            return retValue.ToArray();
+        }
+
+        public async Task<object> ValidateSecurityQuestions(int idCliente, Dictionary<string, object> questions)
+        {
+            var daoRL = Get<d.SCV.Interfaces.IClienteContacto>();
+            var daoCLI = Get<d.SCV.Interfaces.IClientesSPV>();
+            var daoUB = Get<d.SCV.Interfaces.IUbicaciones>();
+
+            var cliente = await daoCLI.GetById(idCliente);
+            var ubicacion = await daoUB.GetById((int)cliente.IdUbicacion);
+
+            int correctAnswers = 0;
+            object[] answers = new object[3];
+
+            if (questions.TryGetValue("FechaNacimiento", out answers[0]) &&
+                questions.TryGetValue("DireccionVivienda", out answers[1]) &&
+                questions.TryGetValue("AnioCompra", out answers[2]))
+            {
+                DateTime fechaNacimiento = Convert.ToDateTime(answers[0]);
+                string direccionVivienda = Convert.ToString(answers[1]);
+                int anioCompra = Convert.ToInt32(answers[2]);
+                DateTime fechaEntrega = (DateTime)ubicacion.FechaEntregaCalidad;
+
+                //validacion de la fecha de nacimiento del cliente.
+                DateTime date1 = new DateTime(fechaNacimiento.Year, fechaNacimiento.Month, fechaNacimiento.Day);
+                DateTime date2 = new DateTime(cliente.FechaNacimiento.Year, cliente.FechaNacimiento.Month, cliente.FechaNacimiento.Day);
+                if (DateTime.Compare(date1, date2) == 0)
+                {
+                    correctAnswers++;
+                }
+
+                //validacion para la direccion de la vivienda.
+                if (direccionVivienda.IndexOf(ubicacion.Interior, 0, StringComparison.InvariantCultureIgnoreCase) != 1 &&
+                    direccionVivienda.IndexOf(ubicacion.Calle, 0, StringComparison.InvariantCultureIgnoreCase) != 1 &&
+                    direccionVivienda.IndexOf(ubicacion.Desarrollo.Nombre, 0, StringComparison.InvariantCultureIgnoreCase) != 1)
+                {
+                    correctAnswers++;
+                }
+
+                //validacion para el año de compra de la vivienda.
+                if ((anioCompra - fechaEntrega.Year == -1) ||
+                    (anioCompra - fechaEntrega.Year == 0) ||
+                    (anioCompra - fechaEntrega.Year == -1))
+                {
+                    correctAnswers++;
+                }
+            }
+
+            dynamic retValue = new ExpandoObject();
+            retValue.success = false;
+            retValue.currentEmail = string.Empty;
+
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("idCliente", idCliente);
+            parametros.Add("ClaveTipoContacto", "CORREO");
+
+            //obtener el correo actual del cliente.
+            var contactos = await daoRL.GetAll(parametros);
+            if (contactos != null && contactos.Count > 0)
+            {
+                var contactoEmail = contactos.FirstOrDefault(c => c.Titular == true);
+                if (contactoEmail != null)
+                {
+                    retValue.currentEmail = contactoEmail.Contacto;
+                }
+            }
+
+            if (correctAnswers >= 3)
+            {
+                retValue.success = true;
+            }
+            else
+            {
+                base.SetReturnInfo(1, "Algunas respuestas son incorrectas. Verifique la información e intente de nuevo.");
+            }
+
+            return retValue;
+        }
+
+        public async Task<m.SCV.Interfaces.IClienteContactos> SaveEmailGarantias(m.SCV.Interfaces.IClienteContactos item)
+        {
+            var bpCG = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+            var daoRL = Get<d.SCV.Interfaces.IClienteContacto>();
+
+            try
+            {
+                var tipoCorreo = await bpCG.Get("TIPOCONTACTO", "CORREO");
+                var estatus = await bpCG.Get("ESTATUS", "A");
+
+                var parametros = new Dictionary<string, object>();
+                parametros.Add("idCliente", item.IdCliente);
+                parametros.Add("ClaveTipoContacto", "CORREO");
+
+                m.SCV.Interfaces.IClienteContactos retValue = null;
+                m.SCV.Interfaces.IClienteContactos emailGarantia = null;
+
+                var contactos = await daoRL.GetAll(parametros);
+                if (contactos != null && contactos.Count > 0)
+                {
+                    emailGarantia = contactos.FirstOrDefault(c => c.Titular == true);
+                }
+
+                if (emailGarantia == null)
+                {
+                    emailGarantia = Get<m.SCV.Interfaces.IClienteContactos>();
+                    emailGarantia.Estado = m.Kontrol.KontrolEstadosEnum.Nuevo;
+                    emailGarantia.Creado = DateTime.Now;
+                    emailGarantia.IdCreadoPor = base.getUserId();
+                }
+                else
+                {
+                    emailGarantia.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                }
+
+                emailGarantia.IdCliente = item.IdCliente;
+                emailGarantia.Contacto = item.Contacto;
+                emailGarantia.IdTipoContacto = (int)tipoCorreo.ID;
+                emailGarantia.Titular = true;
+                emailGarantia.IdEstatus = (int)estatus.ID;
+                emailGarantia.Modificado = DateTime.Now;
+                emailGarantia.IdModificadoPor = base.getUserId();
+
+                retValue = await daoRL.SaveEntity(emailGarantia, false);
+                retValue.Estado = m.Kontrol.KontrolEstadosEnum.Exitoso;
+
+                return retValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<m.SCV.Interfaces.IOrdenTrabajoRUBA>> GetOrdenesTrabajo(Dictionary<string, object> parametros)
+        {
+            var daoOT = Get<d.SCV.Interfaces.IOrdenesTrabajoRUBA>();
+            var daoOTD = Get<d.SCV.Interfaces.IOrdenesTrabajoDetallesRUBA>();
+
+            try
+            {
+                var retValue = await daoOT.GetAll(parametros);
+                if (retValue != null)
+                {
+                    foreach (var ot in retValue)
+                    {
+                        parametros.Clear();
+                        parametros.Add("idOrdenTrabajo", ot.ID);
+                        ot.Partidas = await daoOTD.GetAll(parametros);
+                    }
+                }
+
+                return retValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<m.SCV.Interfaces.IReporteFalla> CerrarReporte(int id)
+        {
+            var bpCGV = Get<p.Kontrol.Interfaces.ICatalogosGeneralesValores>();
+            m.SCV.Interfaces.IReporteFalla retValue = null;
+
+            try
+            {
+                bool pFinished = false;
+
+                retValue = await this.GetById(id);
+
+                var partidas = retValue.Partidas;
+                var contPartidasTerminadas = 0;
+                if (partidas != null && partidas.Count > 0)
+                {
+                    foreach (var p in partidas)
+                    {
+                        if (p.EstatusPartidaValor == "T" || (p.EstatusPartidaValor == "D" && p.PartidaAutorizada == "R" && p.Procede == "N"))
+                        {
+                            contPartidasTerminadas++;
+                            if (contPartidasTerminadas == partidas.Count)
+                                pFinished = true;
+                        }
+                        else
+                        {
+                            p.EstatusPartidaValor = "X";
+                            p.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                        }
+                    }
+                }
+
+                var ordenesTrabajo = retValue.OrdenesTrabajo;
+                if (ordenesTrabajo != null && ordenesTrabajo.Count > 0)
+                {
+                    var estatusOT = await bpCGV.Get("SPVESTATUSOT", "C");
+
+                    foreach (var o in ordenesTrabajo)
+                    {
+                        if (o.EstatusOrdenTrabajo.Clave != "T")
+                        {
+                            o.IdEstatusOrdenTrabajo = estatusOT.ID;
+                            o.EstatusOrdenTrabajo = estatusOT;
+                            o.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                        }
+                    }
+                }
+
+                retValue.Partidas = partidas;
+                retValue.OrdenesTrabajo = ordenesTrabajo;
+
+                if (pFinished == true)
+                {
+                    retValue.IdEstatusReporte = "T";
+                    retValue.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                }
+                else
+                {
+                    retValue.IdEstatusReporte = "X";
+                    retValue.Estado = m.Kontrol.KontrolEstadosEnum.Modificado;
+                }
+
+                retValue = await this.Save(retValue);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return retValue;
+        }
+
+
+        public async Task<List<m.SCV.Interfaces.IAgendaDictamenDetalle>> GetDictamenes(Dictionary<string, object> parametros)
+        {
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            try
+            {
+                return await daoDIC.GetDictamenes(parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<m.SCV.Interfaces.IDiagnosticosImagenesCAT>> GetDiagnosticateImageCAT(Dictionary<string, object> parametros)
+        {
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            try
+            {
+                parametros.Add("OperacionEspecificaSP", "IMAGENES-DIAGNOSTICOS");
+                return await daoDIC.GetDiagnosticateImageCAT(parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<m.SCV.Interfaces.IDiagnosticosNotaCAT>> GetDiagnosticateNoteCAT(Dictionary<string, object> parametros)
+        {
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            try
+            {
+                parametros.Add("OperacionEspecificaSP", "NOTAS-DIAGNOSTICOS");
+                return await daoDIC.GetDiagnosticateNoteCAT(parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public async Task<List<m.SCV.Interfaces.IReporteDictamen>> GetDictamenesReporte(Dictionary<string, object> parametros)
+        {
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            try
+            {
+                return await daoDIC.GetAll(parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public async Task<object[]> GetClienteReportes(int idCliente)
+        {
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            var drd = new Dictionary<int, List<m.SCV.Interfaces.IReporteDictamen>>();
+
+            try
+            {
+                var retValue = await this.dao.GetClienteReportes(idCliente);
+                if (retValue != null && retValue.Count() > 0)
+                {
+                    foreach (dynamic pp in retValue)
+                    {
+                        int idDetalle = Convert.ToInt32(pp.ID);
+                        int idReporte = Convert.ToInt32(pp.IdReporte);
+
+                        if (!drd.ContainsKey(idReporte))
+                        {
+                            var parametros = new Dictionary<string, object>() { { "idReporte", idReporte } };
+                            var dictamenes = await daoDIC.GetAll(parametros);
+
+                            drd.Add(idReporte, dictamenes);
+                        }
+
+                        var rrDictamenes = new List<m.SCV.Interfaces.IReporteDictamen>();
+
+                        if (drd.TryGetValue(idReporte, out rrDictamenes))
+                        {
+                            pp.Dictamenes = new ExpandoObject();
+                            pp.Dictamenes = rrDictamenes.FindAll(dm => dm.IdReporte == idReporte && dm.IdReporteDetalle == idDetalle);
+                        }
+                    }
+                }
+
+                return retValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private string getFullFileName(string dirName, string fileName)
+        {
+            string retValue = null;
+
+            var fName = fileName;
+            var dName = dirName;
+
+            if (!string.IsNullOrEmpty(fName))
+            {
+                fName = fName.Trim();
+                if (fName.Contains("/"))
+                {
+                    fName = fName.Replace('/', '\\');
+                }
+                if (!fName.StartsWith(@"\"))
+                {
+                    fName = $"\\{fName}";
+                }
+            }
+            if (!string.IsNullOrEmpty(dName))
+            {
+                dName = dName.Trim();
+                if (dName.Contains("/"))
+                {
+                    dName = dName.Replace('/', '\\');
+                }
+                if (dName.EndsWith(@"\"))
+                {
+                    dName = dName.Remove(dName.Length - 1, 1);
+                }
+            }
+            retValue = $"{dName}{fName}";
+            return retValue;
+        }
+
+
+
+        public async Task<List<m.SCV.Interfaces.IDiagnosticosImagenesCAT>> GetPathDiagnosticateImageCAT(int id)
+        {
+            var daoDIC = Get<d.SCV.Interfaces.IReportesDictamenes>();
+            List<m.SCV.Interfaces.IDiagnosticosImagenesCAT> DiagnosticateValue;
+            try
+            {
+                var parameterDiagnosticate = new Dictionary<string, object>();
+                parameterDiagnosticate.Add("ID", id);
+                parameterDiagnosticate.Add("OperacionEspecificaSP", "IMAGENES-DIAGNOSTICOS-ID");
+                DiagnosticateValue = await daoDIC.GetDiagnosticateImageCAT(parameterDiagnosticate);
+
+                if (DiagnosticateValue != null)
+                {
+                    DiagnosticateValue[0].PathImageDiagnosticate = this.getFullFileName(DiagnosticateValue[0].PathImageDiagnosticate, "");
+                }
+                else
+                {
+                    return DiagnosticateValue;
+                }
+
+                return DiagnosticateValue;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+    }
+}

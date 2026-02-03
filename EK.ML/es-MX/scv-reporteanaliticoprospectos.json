@@ -1,0 +1,83 @@
+﻿{
+    "reporteanaliticoprospectos": {
+        "bc": {
+            "text": "Reporte Analítico de Prospectos",
+            "link": "/scv/reporteanaliticoprospectos"
+        },
+        "consulta": {
+            "title": "Reporte Analítico de Prospectos",
+            "grid": {
+              "headers": {
+                "iD":"Expediente",
+                "asesor": { "Nombre": "Asesor" },
+                "cliente": { "Nombre": "Cliente" },
+                "desarrollo": { "Descripcion": "Desarrollo" },
+                "fechaContacto": "Fecha Contacto"
+
+              }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Desarrollo": {
+                "label": "Agente que Captura",
+                "helplabel": "Seleccione el Agente que Captura.",
+                "validaciones": {
+                    "requerida": "El Desarrollo es Requerido."
+                }
+            },
+            "FechaContactoInicial": {
+                "label": "Fecha Contacto Inicial",
+                "helplabel": "Seleccione la Fecha Inicial para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda.."
+                }
+            },
+            "FechaContactoFinal": {
+                "label": "Fecha Contacto Final",
+                "helplabel": "Seleccione la Fecha Final para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "TotalOportunidades": {
+                "label": "Oportunidades",
+                "helplabel": "Seleccione el total de oportunidades"
+            },
+            "TotalProspectos": {
+                "label": "Prospectos",
+                "helplabel": "Seleccione la Fecha Inicial para la busqueda."
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            },
+            "reporteanaliticoprospectos": {
+                "TotalBoletas": {
+                    "label": "Total Boletas",
+                    "helplabel": "Seleccione el Código Postal a Buscar"
+                },
+                "TotalProspectos": {
+                    "label": "Total Prospectos",
+                    "helplabel": "Seleccione la Fecha Inicial para la busqueda."
+                }
+            }
+
+        }
+    },
+    "mensajes": {
+        "exito": "La etapa del trámite ha sido actualizado"
+    },
+    "edit": {
+        "titulo": "Nuevo etapa de trámite"
+    },
+    "titulo": {
+        "nuevo": "Nuevo etapa de trámite"
+    }
+} 

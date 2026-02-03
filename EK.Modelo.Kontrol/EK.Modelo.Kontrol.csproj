@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DFBFA1A-70B1-4AE3-8F8E-0581986D7AD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EK.Modelo.Kontrol</RootNamespace>
+    <AssemblyName>EK.Modelo.Kontrol</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MSSQL SYBASE17*</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE|AnyCPU'">
+    <OutputPath>bin\BASE\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RUBA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RUBA\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE RELEASE|AnyCPU'">
+    <OutputPath>bin\BASE RELEASE\</OutputPath>
+    <DefineConstants>TRACE;MSSQL</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE ALORA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE ALORA\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE DEMO|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE DEMO\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>EK.Modelo.Kontrol.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EMPORIUM|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EMPORIUM\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CONSULTE|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CONSULTE\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EK.Modelo.SCV">
+      <HintPath>..\EK.App\Bin\EK.Modelo.SCV.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.0.0\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.1\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abono.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="EKCONNECT\EKCRequest.cs" />
+    <Compile Include="EKCONNECT\EKCRequestData.cs" />
+    <Compile Include="EKCONNECT\ImageBase64.cs" />
+    <Compile Include="EKCONNECT\TextMessageText.cs" />
+    <Compile Include="EKCONNECT\UbicacionEKCData.cs" />
+    <Compile Include="ek\modelo\kontrol\BaseKontrol.cs" />
+    <Compile Include="GeoJsonMap.cs" />
+    <Compile Include="INotificacionMarcadores.cs" />
+    <Compile Include="Interfaces\IAgendaEntVivienda.cs" />
+    <Compile Include="Interfaces\IAgenda.cs" />
+    <Compile Include="Interfaces\IAgendaFechaBloqueo.cs" />
+    <Compile Include="Interfaces\IClienteComentarios.cs" />
+    <Compile Include="Interfaces\IGantt.cs" />
+    <Compile Include="Interfaces\IGanttTask.cs" />
+    <Compile Include="Interfaces\IConfiguracionFormularioEntidad.cs" />
+    <Compile Include="Interfaces\IConfiguracionFormulario.cs" />
+    <Compile Include="Interfaces\IBitacoraEventos.cs" />
+    <Compile Include="Interfaces\IBitacora.cs" />
+    <Compile Include="Interfaces\INotificacionUsuario.cs" />
+    <Compile Include="Interfaces\IPersonalizarCamposSecciones.cs" />
+    <Compile Include="Interfaces\IPersonalizarCampoConfiguracion.cs" />
+    <Compile Include="Interfaces\IUsuariosGrupoDetalle.cs" />
+    <Compile Include="Interfaces\IKontrolFilesVersiones.cs" />
+    <Compile Include="Interfaces\IAnios.cs" />
+    <Compile Include="Interfaces\IBlogCategoria.cs" />
+    <Compile Include="Interfaces\IBlogPost.cs" />
+    <Compile Include="Interfaces\IDocumentoCategorias.cs" />
+    <Compile Include="Interfaces\IEvento.cs" />
+    <Compile Include="Interfaces\IPeriodicidad.cs" />
+    <Compile Include="Interfaces\IPeriodicidadDetalle.cs" />
+    <Compile Include="Interfaces\IDateDifference.cs" />
+    <Compile Include="Interfaces\ILicencia.cs" />
+    <Compile Include="Interfaces\INivelesEtapas.cs" />
+    <Compile Include="Interfaces\INivelesReportes.cs" />
+    <Compile Include="Interfaces\IOpcion.cs" />
+    <Compile Include="Interfaces\IPersonaEntregaVivienda.cs" />
+    <Compile Include="Interfaces\IKontrolDocument.cs" />
+    <Compile Include="Interfaces\IPersonalizarCampoOpcion.cs" />
+    <Compile Include="Interfaces\ICalendar.cs" />
+    <Compile Include="Interfaces\ICalendarEvent.cs" />
+    <Compile Include="Interfaces\ICatalogosGenerales.cs" />
+    <Compile Include="Interfaces\ICentroCosto.cs" />
+    <Compile Include="Interfaces\IPersonalizarCampo.cs" />
+    <Compile Include="Interfaces\ICitas.cs" />
+    <Compile Include="Interfaces\IClasificador.cs" />
+    <Compile Include="Interfaces\IEntidad.cs" />
+    <Compile Include="Interfaces\IGeoJsonMap.cs" />
+    <Compile Include="Interfaces\IGruposUsuario.cs" />
+    <Compile Include="Interfaces\IEntidadCampo.cs" />
+    <Compile Include="Interfaces\IGruposUsuarioDetalle.cs" />
+    <Compile Include="Interfaces\INivelesOpciones.cs" />
+    <Compile Include="Interfaces\INotificadores.cs" />
+    <Compile Include="Interfaces\INotificadoresInstancia.cs" />
+    <Compile Include="Interfaces\IPersonalizarCampo_Valor.cs" />
+    <Compile Include="Interfaces\IPlantillasLeads.cs" />
+    <Compile Include="Interfaces\IPullNotificationsFiles.cs" />
+    <Compile Include="Interfaces\IPullNotificationsEntities.cs" />
+    <Compile Include="Interfaces\IPullNotificationsActions.cs" />
+    <Compile Include="Interfaces\IPullNotifications.cs" />
+    <Compile Include="Interfaces\IQuery.cs" />
+    <Compile Include="Interfaces\IReporte.cs" />
+    <Compile Include="Interfaces\IReporteCampo.cs" />
+    <Compile Include="Interfaces\IReporteFiltro.cs" />
+    <Compile Include="Interfaces\ITable.cs" />
+    <Compile Include="Interfaces\ITableCondition.cs" />
+    <Compile Include="Interfaces\ITableField.cs" />
+    <Compile Include="Interfaces\ITableJoin.cs" />
+    <Compile Include="Interfaces\ITareaManual.cs" />
+    <Compile Include="Interfaces\ITipoCambio.cs" />
+    <Compile Include="Interfaces\ITipoCitas.cs" />
+    <Compile Include="Interfaces\ITipoEntidad.cs" />
+    <Compile Include="Interfaces\ITipoEvento.cs" />
+    <Compile Include="Interfaces\IUnidadMedida.cs" />
+    <Compile Include="Interfaces\IUsuarioKontrol.cs" />
+    <Compile Include="Interfaces\IUsuarioToken.cs" />
+    <Compile Include="Interfaces\IVistaElemento.cs" />
+    <Compile Include="Interfaces\IVistas.cs" />
+    <Compile Include="Interfaces\TableJoinTypeEnum.cs" />
+    <Compile Include="KontrolFile.cs" />
+    <Compile Include="BaseKontrol.cs" />
+    <Compile Include="BaseKontrolMM.cs" />
+    <Compile Include="BaseUsuario.cs" />
+    <Compile Include="CatalogoClasificador.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Claims.cs" />
+    <Compile Include="ConfigurarParametros.cs" />
+    <Compile Include="Asentamientos.cs" />
+    <Compile Include="DocumentoPago.cs" />
+    <Compile Include="Favorito.cs" />
+    <Compile Include="Interfaces\IAbono.cs" />
+    <Compile Include="Interfaces\IKontrolFile.cs" />
+    <Compile Include="Interfaces\IAsentamientos.cs" />
+    <Compile Include="Interfaces\IBaseDAO.cs" />
+    <Compile Include="Interfaces\IBaseKontrolMM.cs" />
+    <Compile Include="Interfaces\IBPBase.cs" />
+    <Compile Include="Interfaces\ICatalogoClasificador.cs" />
+    <Compile Include="Interfaces\ICategoria.cs" />
+    <Compile Include="Interfaces\IConfigurarParametros.cs" />
+    <Compile Include="Interfaces\IDocumentoPago.cs" />
+    <Compile Include="Interfaces\IFavorito.cs" />
+    <Compile Include="Interfaces\IItemGeneralValores.cs" />
+    <Compile Include="Interfaces\IModulo.cs" />
+    <Compile Include="Interfaces\IMoneda.cs" />
+    <Compile Include="Interfaces\IOpciones.cs" />
+    <Compile Include="Interfaces\IPlantillasMails.cs" />
+    <Compile Include="Interfaces\IPosicion.cs" />
+    <Compile Include="Interfaces\IPuesto.cs" />
+    <Compile Include="Interfaces\IStorageTarea.cs" />
+    <Compile Include="Interfaces\ITareaAsignado.cs" />
+    <Compile Include="Interfaces\ITareaInstancia.cs" />
+    <Compile Include="Interfaces\ITareaInstanciaDocumentos.cs" />
+    <Compile Include="Interfaces\ITipoClasificador.cs" />
+    <Compile Include="Interfaces\ITipoWorkflow.cs" />
+    <Compile Include="Interfaces\IWorkflowReference.cs" />
+    <Compile Include="ItemGeneral.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="CommandQuery.cs" />
+    <Compile Include="Compania.cs" />
+    <Compile Include="Interfaces\IBaseKontrol.cs" />
+    <Compile Include="Interfaces\IBaseProceso.cs" />
+    <Compile Include="Interfaces\IBaseUsuario.cs" />
+    <Compile Include="Interfaces\IItemGeneral.cs" />
+    <Compile Include="Interfaces\IDominios.cs" />
+    <Compile Include="Interfaces\ICommandQuery.cs" />
+    <Compile Include="Interfaces\ICommandResult.cs" />
+    <Compile Include="Interfaces\ICompania.cs" />
+    <Compile Include="Interfaces\ILocalidades.cs" />
+    <Compile Include="Interfaces\INiveles.cs" />
+    <Compile Include="Interfaces\INotificador.cs" />
+    <Compile Include="Interfaces\INotification.cs" />
+    <Compile Include="Interfaces\IParametro.cs" />
+    <Compile Include="Interfaces\IParametros.cs" />
+    <Compile Include="Interfaces\IContainerFactory.cs" />
+    <Compile Include="Interfaces\ITarea.cs" />
+    <Compile Include="Interfaces\ITareas.cs" />
+    <Compile Include="Interfaces\IUsuario.cs" />
+    <Compile Include="Interfaces\IUsuarioNivelCompania.cs" />
+    <Compile Include="Interfaces\IWorkflow.cs" />
+    <Compile Include="Interfaces\IWorkflowInstance.cs" />
+    <Compile Include="ItemGeneralValores.cs" />
+    <Compile Include="KontrolNameAttribute.cs" />
+    <Compile Include="Interfaces\Servicios\IKontrolService.cs" />
+    <Compile Include="KontrolEstadosEnum.cs" />
+    <Compile Include="Localidades.cs" />
+    <Compile Include="Modulo.cs" />
+    <Compile Include="Moneda.cs" />
+    <Compile Include="Niveles.cs" />
+    <Compile Include="NotificacionMarcadores.cs" />
+    <Compile Include="NotificacionUsuario.cs" />
+    <Compile Include="Notificador.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="NotificationItem.cs" />
+    <Compile Include="Opciones.cs" />
+    <Compile Include="Parametro.cs" />
+    <Compile Include="Parametros.cs" />
+    <Compile Include="ContainerFactory.cs" />
+    <Compile Include="PlantillasMails.cs" />
+    <Compile Include="Posicion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CommandResult.cs" />
+    <Compile Include="Puesto.cs" />
+    <Compile Include="RUBAS17\IAgendaIndicadores.cs" />
+    <Compile Include="RUBAS17\CompromisosConstruccion.cs" />
+    <Compile Include="RUBAS17\AgendaEntVivienda.cs" />
+    <Compile Include="RUBAS17\IAgenda.cs" />
+    <Compile Include="RUBAS17\IHistorialCambioAgenda.cs" />
+    <Compile Include="RUBAS17\IModificarAgenda.cs" />
+    <Compile Include="StorageTarea.cs" />
+    <Compile Include="Tarea.cs" />
+    <Compile Include="TareaAsignado.cs" />
+    <Compile Include="TareaInstancia.cs" />
+    <Compile Include="TareaInstanciaDocumentos.cs" />
+    <Compile Include="Tareas.cs" />
+    <Compile Include="TipoCambio.cs" />
+    <Compile Include="TipoClasificador.cs" />
+    <Compile Include="TipoReferenciaEnum.cs" />
+    <Compile Include="TipoWorkflow.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioNivelCompania.cs" />
+    <Compile Include="Workflow.cs" />
+    <Compile Include="WorkflowInstance.cs" />
+    <Compile Include="WorkflowReference.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="EK.Modelo.Kontrol.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ek\modelo\kontrol\Interfaces\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

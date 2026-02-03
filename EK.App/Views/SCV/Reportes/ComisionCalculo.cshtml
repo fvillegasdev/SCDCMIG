@@ -1,0 +1,27 @@
+﻿@using EK.Common.Reportes
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+
+@{
+    Layout = "~/Views/Shared/_RLetterEstadoCuenta.cshtml";
+
+    var reporte = new EK.Common.Reportes.Reporte();
+    reporte.SubTitulo = "Reporte de Estado de Cuenta de Comisiones de Agentes";
+    reporte.FechaImpresion = System.DateTime.Now.ToString();
+    reporte.Columnas = new List<Reporte.Columna>();
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Cliente", Longitud = 170, Campo = "Cliente.Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Ubicacion", Longitud = 105, Campo = "Ubicacion.Clave" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Etapa", Longitud = 50, Campo = "Etapa.Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "F. Mov.", Longitud = 70, Campo = "Fecha" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Tm de comisiòn", Longitud = 200, Campo = "TMComision.Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Orden compra", Longitud = 90, Campo = "IdVenta" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Calculado", Longitud = 70, Campo = "MontoCalculado" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Pagado", Longitud = 90, Campo = "MontoPagado" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "MontoSaldo", Longitud = 90, Campo = "MontoSaldo" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "MontoSaldo", Longitud = 90, Campo = "Venta.Desarrollo.Descripcion" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "MontoSaldo", Longitud = 90, Campo = "Agente.Nombre" });
+
+
+
+    ViewBag.Reporte = reporte;
+}

@@ -1,0 +1,176 @@
+﻿{
+  "Consultas": {
+    "Prereporte": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "ubicacion": {
+              "ClaveFormato": "Ubicación",
+              "IdPlaza": "Plaza"
+            },
+            "idCliente": "No. Cliente",
+            "cliente": { "Nombre": "Cliente" },
+            "fechaCaptura": "Fecha Reporte",
+            "estatusReporte": "Estatus"
+          }
+        }
+      }
+    },
+    "SupervisorContratista": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "iD": "ID",
+            "descripcion": "Descripción",
+            "ciudad": "Ciudad",
+            "direccion": "Dirección",
+            "tipoContrato": {
+              "Nombre": "Tipo Contrato"
+            }
+          }
+        }
+      }
+    },
+    "TipoFalla": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "iD": "Clave",
+            "clave": "Siglas",
+            "nombre": "Nombre",
+            "duracionGarantia": "Duración Garantía"
+          }
+        }
+      }
+    },
+    "TipoComponente": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "iD": "Clave",
+            "clave": "Siglas",
+            "nombre": "Nombre",
+            "duracionGarantia": "Duración Garantía"
+          }
+        }
+      }
+    },
+    "Falla": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "idFalla": "Clave Componente",
+            "descripcion": "Descripción Componente",
+            "tipoFalla": {
+              "ID": "Clave Tipo",
+              "Clave": "Siglas Tipo",
+              "Nombre": "Tipo Componente"
+            },
+            "duracionGarantia": "Duración",
+            "impactoFalla": { "Nombre": "Impacto Incidencia" }
+          }
+        }
+      }
+    },
+    "Componente": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "idFalla": "Clave Componente",
+            "descripcion": "Descripción Componente",
+            "tipoComponente": {
+              "ID": "Clave Tipo",
+              "Clave": "Siglas Tipo",
+              "Nombre": "Tipo Componente"
+            },
+            "duracionGarantia": "Duración",
+            "impactoFalla": { "Nombre": "Impacto Incidencia" }
+          }
+        }
+      }
+    },
+
+    "CausaFalla": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "idCausaFalla": "Clave Incidencia",
+            "descripcion": "Descripción Incidencia",
+            "abreviatura": "Abreviatura",
+            "fallaOrigen": {
+              "Clave": "Clave Causa",
+              "Descripcion": "Descripción Causa"
+            }
+          }
+        }
+      }
+    },
+    "FallaOrigen": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "idCausaFalla": "Clave Causa",
+            "descripcion": "Descripción Causa",
+            "fallaOrigen": {
+              "Clave": "Clave Origen",
+              "Descripcion": "Descripción Origen"
+            }
+          }
+        }
+      }
+    },
+    "BusquedaComponente": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "iD": "Folio",
+            "tipoFalla": {
+              "ID": "Clave Tipo",
+              "Clave": "Siglas Tipo",
+              "Nombre": "Tipo Componente",
+              "DuracionGarantia": "Duración Garantía"
+            },
+            "falla": {
+              "ID": "Clave Incidencia",
+              "Descripcion": "Incidencia",
+              "TiempoRespuesta": "Tiempo Respuesta",
+              "DuracionGarantia": "Duración Garantía",
+              "ImpactoFalla": { "Nombre": "Impacto Incidencia" }
+            }
+          }
+        }
+      }
+    },
+    "Contratista": {
+      "consulta": {
+        "grid": {
+          "headers": {
+
+            "iD": "ID",
+            "descripcion": "Descripción",
+            "ciudad": "Ciudad",
+            "direccion": "Dirección",
+            "tipoContrato": {
+              "Nombre": "Tipo Contrato"
+            }
+          }
+        }
+      }
+    },
+    "Reincidencias": {
+      "consulta": {
+        "grid": {
+          "headers": {
+            "idReporte": "Folio",
+            "idTicket": "Ticket",
+            "cliente": { "Nombre": "Cliente" },
+            "falla": { "Descripcion": "Componente" },
+            "ubicacionFalla": { "Descripcion": "Ubicación" },
+            "Componente": { "Nombre": "Componente" },
+            "ubicacionComponente": { "Nombre": "Ubicación" }
+          }
+        }
+      }
+    }
+  }
+}

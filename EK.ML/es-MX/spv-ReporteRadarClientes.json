@@ -1,0 +1,14 @@
+{
+  "ReporteRadarClientes": {
+    "bc": {
+      "text": "Reporte de radar de clientes",
+      "link": "/scv/pv/ReporteRadarClientes"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        
+      }
+    }
+  }
+}

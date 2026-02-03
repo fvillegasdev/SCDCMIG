@@ -1,0 +1,128 @@
+﻿{
+  "listaPrecios": {
+    "bc": {
+      "text": "Lista de Precios",
+      "link": "/scv/listaPrecios"
+    },
+    "consulta": {
+      "title": "Lista de Precios Ubicaciones",
+      "grid": {
+        "headers": {
+          "nVersion": "Versión",
+          "tipoOperacion": { "Nombre": "Tipo de Comercialización" },
+          "desarrollo": { "Clave": "Desarrollo" },
+          "estatus": "Estatus",
+          "vigenteDesde": "Vigente Desde",
+          "vigenteHasta": "Vigente Hasta"
+        }
+      }
+    },
+    "form": {
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Capture el Desarrollo"
+      },
+      "claveUbicacion": {
+        "label": "Clave Ubicación",
+        "helplabel": "Clave Ubicación"
+      },
+      "vigenteHastaOriginal": {
+        "label": "Vigente Hasta Original",
+        "helplabel": "Vigente Hasta Original"
+      },
+      "VigenciaInicio": {
+        "label": "Vigencia Inicio",
+        "helplabel": "Capture la nueva vigencia del inicio de la ubicación"
+      },
+      "VigenciaFin": {
+        "label": "Vigencia Fin",
+        "helplabel": "Capture la vigencia fin de la ubicación"
+      },
+      "ValorAutorizado": {
+        "label": "Valor Autorizado",
+        "helplabel": "Capture el valor de autotizacion"
+      },
+      "ValorCalculado": {
+        "label": "Valor Calculado",
+        "helplabel": "Capture el valor actual"
+      },
+      "PrecioExcedenteM2": {
+        "label": "Precio M2 Actual",
+        "helplabel": "Capture el precio excedente"
+      },
+      "PrecioExcedenteM2Version": {
+        "label": "Precio M2",
+        "helplabel": "Capture el precio excedente"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Capture el estatus"
+      },
+      "Ubicacion": {
+        "label": "Ubicación",
+        "helplabel": "Capture el estatus"
+      },
+      "Caracteristicas": {
+        "label": "Caracteristicas Ubicación",
+        "helplabel": "Caracteristicas Ubicación"
+      },
+      "nuevoValor": {
+        "label": "Precio por Autorizar",
+        "helplabel": "Capture el nuevo precio de la ubicación",
+        "validaciones": {
+          "numero": "El precio no es válido"
+        }
+      },
+      "useValor": {
+        "checked": "Utilizar Precio por Autorizar",
+        "unchecked": "Utilizar Precio Calculado"
+      },
+      "VigenteDesde": {
+        "label": "Vigente Desde",
+        "helplabel": "Capture la vigencia"
+      },
+      "VigenteHasta": {
+        "label": "Vigente Hasta",
+        "helplabel": "Capture la vigencia"
+      },
+      "NVersion": {
+        "label": "Versión",
+        "helplabel": "Capture la versión de la lista de precios",
+        "validaciones": {
+          "numero": "La Versión no es válido"
+        }
+      },
+      "TipoOperacion": {
+        "label": "Tipo de Comercialización",
+        "helplabel": "Capture el tipo de comercialización"
+      }
+    },
+    "sections": {
+      "listaPreciosUbicaciones": {
+        "title": "Ubicaciones"
+      }
+    },
+    "mensajes": {
+      "exito": "La lista de precios ha sido actualizada",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones",
+      "validacionFormulario": "Seleccione un Desarrollo y Tipo de Comercialización",
+      "validacionEstatus": "Ya existe una lista de precios con estatus DRAFT para este desarrollo y tipo de comercialización",
+      "fechaVigente": "La fecha Vigente desde, debe ser mayor a la ultima versión registrada para este desarrollo y tipo de comercialización",
+      "pendingAuthorization": "Solicitud de Autorización enviada",
+      "validacionValorAvaluo": "El Valor Avalúo y vigencia son requeridos",
+      "alertaRecalcularPrecio": "Se actualizará el precio autorizado con el nuevo precio calculado, ¿desea continuar?",
+      "validacionUbicacion": "Este Desarrollo no contiene ubicaciones",
+      "extensioVigencia": "Existe una solicitud de extensión de vigecia en curso  de la lista de precios, en proceso de autorización al"
+    },
+    "edit": {
+      "titulo": "Modificar Lista de Precios"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Precio",
+      "autorizacionLP": {
+        "titulo": "Solicitar Autorización",
+        "descripcion": "Presione Confirmar para solicitar la autorización de la lista de precios"
+      }
+    }
+  }
+}

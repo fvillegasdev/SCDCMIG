@@ -1,0 +1,227 @@
+﻿{
+  "seguimientos": {
+    "bc": {
+      "text": "Expedientes",
+      "link": "/scv/expedientes"
+    },
+    "consulta": {
+      "title": "Seguimientos de Expediente",
+      "grid": {
+        "headers": {
+          "id": "Folio Expediente",
+          "folioVenta": "Folio Venta",
+          "noCliente": "No. Cliente",
+          "nombreCliente": "Cliente",
+          "NumeroExpediente": "Expediente",
+          "esquemaVenta": "Esquema de Seguimiento",
+          "estatusSeguimiento": "Estatus Seguimiento",
+          "IdProspectacion": "Prospectación",
+          "IdVenta": "Venta",
+          "IdPostVenta": "Post-Venta",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "section": {
+        "expediente": {
+          "title": "Expediente",
+          "form": {
+            "folio": "Folio",
+            "clave": "Clave",
+            "cliente": "Cliente",
+            "estatusExpediente": "Estatus Expediente"
+          }
+        },
+        "seguimiento": {
+          "title": "Seguimiento de Expediente",
+          "info": "Seleccionar un seguimiento de expediente."
+        },
+        "esquemas$Niveles": {
+          "titulo": "Niveles del Esquema",
+          "list": {
+            "orden": "",
+            "etapas": "Etapa(s)",
+            "opciones": ""
+          }
+        },
+        "etapas$Requisitos": {
+          "titulo": "Requisitos",
+          "titulototal": "Requisitos de todas las Etapas",
+          "tituloindividual": "Requisitos de la Etapa",
+          "list": {
+            "requisito": "Requisito",
+            "descripcion": "Nombre",
+            "observacion": "Descripción",
+            "fechaactivacion": "Activación",
+            "fecharecepcionposible": "Vencimiento",
+            "fechavencimiento": "Vencimiento",
+            "fecharecepcion": "Recepción",
+            "obligatorio": "Obligatorio",
+            "plazodias": "Plazo",
+            "valor": "Valor",
+            "tipo": "Tipo",
+            "opciones": ""
+          },
+          "popover": {
+            "titles": {
+              "NUM": "Requisito Número",
+              "TEX": "Requisito Texto",
+              "LOG": "Requisito Lógico",
+              "LIS": "Requisito Opción",
+              "FEC": "Requisito Fecha",
+              "ARCH": "Requisito Archivo",
+              "PROC": "Requisito Proceso",
+              "ENT": "Requisito Entidad(es)",
+              "undefined": "Requisito no definidor"
+            },
+            "download": "descargar archivo",
+            "nodata": "No hay información para mostrar"
+          }
+        },
+        "etapas$Procesos": {
+          "titulo": "Procesos",
+          "titulototal": "Procesos de todas las Etapas",
+          "tituloindividual": "Procesos de la Etapa",
+          "list": {
+            "nombre": "Nombre",
+            "responsable": "Responsable",
+            "evento": "Evento",
+            "fechaEjecucion": "Fecha Ejecución",
+            "estatus": "Estatus",
+            "accion": "Acción",
+            "opciones": ""
+          }
+        },
+        "etapas$Documentos": {
+          "titulo": "Documentos",
+          "titulototal": "Documentos de todas las Etapas",
+          "tituloindividual": "Documentos de la Etapa",
+          "list": {
+            "nombre": "Nombre",
+            "plantilla": "Plantilla",
+            "numerocopias": "Número de Copias",
+            "opciones": ""
+          }
+        },
+        "informacion": {
+          "titulo": "Información del Seguimiento",
+          "id": "Folio",
+          "folioVenta": "Folio Venta",
+          "desarrollo": "Desarrollo",
+          "faseExpediente": "Fase de Expediente",
+          "fechaInicio": "Fecha Creación",
+          "estatusSeguimiento": "Estatus Seguimiento",
+          "motivoSuspension": "Motivo de Suspensión",
+          "estatus": {
+            "label": "Estatus",
+            "helplabel": "Estatus"
+          }
+        },
+        "cliente": {
+          "titulo": "Cliente",
+          "noCliente": "No. Cliente",
+          "nombreCliente": "Cliente",
+          "agente": "Agente",
+          "domicilio": "Domicilio",
+          "email": "Email",
+          "telefono": "Telefono",
+          "celular": "Celular"
+        },
+        "venta": {
+          "titulo": "Venta",
+          "folio": "Folio",
+          "moneda": "Moneda",
+          "estatusVenta": "Estatus de Venta",
+          "agente": "Agente",
+          "puntoVenta": "Punto de Venta",
+          "gradoInteres": "Grado Interés",
+          "clienteRecomienda": "Recomendó",
+          "desarrollo": "Desarrollo"
+        },
+        "motivo": {
+          "suspension": "Motivo de Suspensión",
+          "cancelacion": "Motivo de Cancelación",
+          "reanudacion": "Motivo de Reanudación",
+          "vigenciaEstatus": "Vigencia Estatus",
+          "justificacion": "Justificación",
+          "helpLabel": {
+            "vigenciaEstatus": "Capturar la vigencia del estado",
+            "motivo": "Capturar el motivo",
+            "justificacion": "Capturar la justificación"
+          }
+        },
+        "ubicaciones": {
+          "importe": "Importe",
+          "comisionable": "Comisionable",
+          "interior": "Interior",
+          "prototipo": "Prototipo",
+          "tipoubicacion": "Tipo de Ubicación",
+          "titulo": "Ubicaciones",
+          "ubicacion": "Ubicación",
+          "validaciones": {
+            "requerida": "La Ubicación es requerida."
+          }
+        },
+        "etapas": {
+          "titulo": "Etapas",
+          "validaciones": {
+            "requerida": "La Etapa es requerida."
+          }
+        },
+        "institucion": {
+          "titulo": "Institución de Crédito",
+          "nombre": "Institución de Crédito",
+          "validaciones": {
+            "requerida": "La Institución es requerida."
+          }
+        },
+        "documentos": {
+          "titulo": "Documentos",
+          "validaciones": {
+            "requerida": "El Documento es requerido."
+          }
+        },
+        "procesos": {
+          "titulo": "Procesos",
+          "validaciones": {
+            "requerida": "El Procesos es requerido."
+          }
+        },
+        "esquema": {
+          "titulo": "Esquema de Seguimiento",
+          "Nombre": "Esquema de Seguimiento",
+          "label": "Esquema de Seguimiento",
+          "institucion": "Institución de Crédito"
+        }
+      }
+
+    },
+    "mensajes": {
+      "proceso": "El proceso ha sido ejecutado",
+      "exito": "El Seguimiento de Expediente ha sido actualizado",
+      "reanudado": "El Seguimiento de Expediente ha sido reanudado",
+      "suspendido": "El Seguimiento de Expediente ha sido suspendido",
+      "finalizado": "El Seguimiento de Expediente ha sido finalizado",
+      "cancelado": "El Seguimiento de Expediente ha sido cancelado",
+      "requisito": "El requisito ha sido actualizado",
+      "archivo": "El tamaño máximo permitido del archivo es de: ",
+      "cargando": "cargando...",
+      "reanudar": {
+        "message": "Presione Confirmar para reanudar el Seguimiento...",
+        "title": "Seguimiento de Expediente"
+      },
+      "suspender": {
+        "message": "Presione Confirmar para suspender el Seguimiento...",
+        "title": "Seguimiento de Expediente"
+      },
+      "cancelar": {
+        "message": "Presione Confirmar para cancelar el Seguimiento...",
+        "title": "Seguimiento de Expediente"
+      }
+    },
+    "edit": {
+      "title": "Nuevo Seguimiento de Expediente"
+    }
+  }
+}

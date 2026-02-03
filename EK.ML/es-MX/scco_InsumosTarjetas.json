@@ -1,0 +1,89 @@
+﻿{
+  "InsumosTarjetas": {
+    "bc": {
+      "text": "InsumoTarjeta",
+      "link": "/scco/InsumosTarjetas"
+    },
+    "consulta": {
+      "title": "Catálogo de Tarjetas.",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "Estatus": "Estatus",
+          "unidadMedida": { "Nombre": "Unidad Medida" },
+          "tipoTarjeta": { "Nombre": "TipoTarjeta" },
+          "Obra": { "Nombre": "Obra" },
+          "TipoPresupuesto": { "Nombre": "Presupuesto" },
+          "Tabulador": { "Nombre": "Tabulador" },
+          "descripcion": "Descripcion",
+          "CostoDirecto": "Costo Directo"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la Tarjeta",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "UnidadMedida": {
+        "label": "Unidad Medida",
+        "helplabel": "Capture la Unidad de Medida"
+      },
+      "TipoTarjeta": {
+        "label": "Tipo de Tarjeta",
+        "helplabel": "Capture el Tipo de Tarjeta"
+      },
+      "ClaveInsumo": {
+        "label": "Clave Tarjeta"
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la Descripción"
+      },
+      "CostoDirecto": {
+        "label": "Costo Directo",
+        "helplabel": "Capture el Costo Directo"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Capture el Estatus de la Tarjeta"
+      },
+      "InsumosTarjetas": {
+        "CostoDirecto": {
+          "label": "Costo Directo",
+          "helplabel": "Capture el Costo Directo"
+        }
+      }
+    },
+    "sections": {
+      "TarjetaInsumos": {
+        "title": "Insumos Tarjeta"
+      },
+      "tabulador$filter": {
+        "title": "Filtro Tabulador"
+      }
+    },
+    "mensajes": {
+      "exito": "La Tarjeta ha sido actualizada",
+      "save": "La Tarjeta ha sido Creado",
+      "nodata": "No existe registros"
+    },
+    "edit": {
+      "titulo": "Editar Tarjeta"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Tarjeta"
+    }
+  }
+}

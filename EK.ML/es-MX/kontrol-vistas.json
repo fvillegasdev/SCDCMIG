@@ -1,0 +1,55 @@
+﻿{
+  "GISVistas": {
+    "bc": {
+      "text": "Vistas",
+      "link": "/kontrol/gis/vistas"
+    },
+    "consulta": {
+      "title": "Administración de Vistas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre":  "Nombre",
+          "descripcion": "Descripción",
+          "estatus": "Estatus",
+          "sP":  "Stored Procedure"
+        }
+
+      }
+    },
+    "form": {
+      "Nombre": {
+        "label": "Nombre"
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Clave Vista"
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Descripcion de Vista"
+      },
+      "SP": {
+        "label": "SP",
+        "helplabel": "Stored Procedure Relacionado"
+      },
+      "Elementos": {
+        "titulo": "Elementos",
+        "caracteristicas": "Colores para las vistas",
+        "label": "Elementos: "
+      }
+    },
+    "sections": {
+      "Elementos": {
+        "title": "Elementos"
+      }
+    },
+    "mensajes": {
+      "exito": "La vista ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nueva Vista"
+    }
+
+  }
+}

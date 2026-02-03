@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using m = EK.Modelo;
+using d = EK.Datos;
+using p = EK.Procesos;
+
+namespace EK.Procesos.SCV
+{
+    public class DocumentosImpresion
+        : p.Kontrol.BPBase<m.SCV.Interfaces.IDocumentosImpresion, d.SCV.Interfaces.IDocumentosImpresion>, p.SCV.Interfaces.IDocumentosImpresion
+
+    {
+        public DocumentosImpresion(m.Kontrol.Interfaces.IContainerFactory factory, d.SCV.Interfaces.IDocumentosImpresion dao)
+            : base(factory, dao, "DocumentosImpresion")
+        {
+        }
+
+    }
+}

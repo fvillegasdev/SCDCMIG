@@ -1,0 +1,80 @@
+﻿{
+  "GestionDocumentos": {
+    "bc": {
+      "text": "Gestión Documentos",
+      "link": "/scv/GestionDocumentos"
+    },
+    "consulta": {
+      "title": "Gestión de Documentos",
+      "grid": {
+        "headers": {
+          "categoria": { "Nombre": "Categoria" },
+          "kontrolFile": {
+            "Nombre": "Documento",
+            "Version": "Versión"
+          },
+          "seguimiento":  "Responsable" ,
+          "estatus":  "Estatus" ,
+          "folio": "Folio"
+
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "Folio",
+        "helplabel": "Capture el Folio",
+        "validaciones": {
+          "requerida": "El Folio es requerido"
+        }
+      },
+      "Responsable": {
+        "label": "Responsable",
+        "helplabel": "Capture el Responsable",
+        "validaciones": {
+          "requerida": "El Responsable es requerido"
+        }
+      },
+      "CreadoPor": {
+        "label": "Propietario",
+        "helplabel": "Capture el Propietario",
+        "validaciones": {
+          "requerida": "El Propietario es requerido"
+        }
+      },
+
+      "Entidad": {
+        "label": "Entidad",
+        "helplabel": "Capture la Entidad",
+        "validaciones": {
+          "requerida": "La Entidad es requerido"
+        }
+      },
+      "Categoria": {
+        "label": "Categoría",
+        "helplabel": "Categoría"
+      },
+      "KontrolFile": {
+        "label": "KontrolFile",
+        "helplabel": "KontrolFile"
+      },
+      "Documento": {
+        "label": "Documento",
+        "helplabel": "Documento"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Documento ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Documento"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Documento"
+    }
+  }
+}

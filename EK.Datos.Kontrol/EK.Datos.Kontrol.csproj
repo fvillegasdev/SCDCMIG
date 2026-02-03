@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D419E7E9-B99F-4124-8B4D-28514159EC6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EK.Datos.Kontrol</RootNamespace>
+    <AssemblyName>EK.Datos.Kontrol</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LEGACY MSSQL SYBASE17*</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RUBA|AnyCPU'">
+    <OutputPath>bin\RUBA\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LEGACY MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE|AnyCPU'">
+    <OutputPath>bin\BASE\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LEGACY MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE RELEASE|AnyCPU'">
+    <OutputPath>bin\BASE RELEASE\</OutputPath>
+    <DefineConstants>TRACE;LEGACY MSSQL</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE ALORA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE ALORA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LEGACY MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE DEMO|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE DEMO\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LEGACY MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>EK.Datos.Kontrol.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EMPORIUM|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EMPORIUM\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LEGACY MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CONSULTE|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CONSULTE\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LEGACY MSSQL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EK.Drivers.Common">
+      <HintPath>..\packages\EnKontrol\EK.Drivers.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="EK.Drivers.Log">
+      <HintPath>..\packages\EnKontrol\EK.Drivers.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sap.Data.SQLAnywhere.v4.5, Version=17.0.7.33994, Culture=neutral, PublicKeyToken=f222fc4333e0d400, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sap.Data.SQLAnywhere.17.0.7.3399\lib\net45\Sap.Data.SQLAnywhere.v4.5.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAOBaseGeneric.cs" />
+    <Compile Include="ICG.cs" />
+    <Compile Include="Interfaces\IAgendaEntVivienda.cs" />
+    <Compile Include="Interfaces\IAgenda.cs" />
+    <Compile Include="Interfaces\INotificacionMarcadores.cs" />
+    <Compile Include="Interfaces\INotificacionUsuario.cs" />
+    <Compile Include="Interfaces\IPersonalizarCamposValores.cs" />
+    <Compile Include="Interfaces\IPersonalizarCamposSecciones.cs" />
+    <Compile Include="Interfaces\IConfiguracionFormularioEntidad.cs" />
+    <Compile Include="Interfaces\IConfiguracionFormulario.cs" />
+    <Compile Include="Interfaces\IBitacoraEventos.cs" />
+    <Compile Include="Interfaces\IBitacora.cs" />
+    <Compile Include="Interfaces\IBlogPostCategorias.cs" />
+    <Compile Include="Interfaces\IBlogPost.cs" />
+    <Compile Include="Interfaces\IAnios.cs" />
+    <Compile Include="Interfaces\IDocumentoCategorias.cs" />
+    <Compile Include="Interfaces\IEventos.cs" />
+    <Compile Include="Interfaces\IKontrolFilesVersiones.cs" />
+    <Compile Include="Interfaces\IPeriodicidad.cs" />
+    <Compile Include="Interfaces\IPeriodicidadDetalle.cs" />
+    <Compile Include="Interfaces\IDateDifference.cs" />
+    <Compile Include="Interfaces\IDBHelper.cs" />
+    <Compile Include="Interfaces\ILicencias.cs" />
+    <Compile Include="Interfaces\INivelesEtapas.cs" />
+    <Compile Include="Interfaces\INivelesReportes.cs" />
+    <Compile Include="Interfaces\IOpcionSistema.cs" />
+    <Compile Include="Interfaces\IPersonaEntregaVivienda.cs" />
+    <Compile Include="Interfaces\IPersonalizarCamposConfiguracion.cs" />
+    <Compile Include="Interfaces\IPersonalizarCamposOpciones.cs" />
+    <Compile Include="Interfaces\IPersonalizarCampos.cs" />
+    <Compile Include="Interfaces\ICitas.cs" />
+    <Compile Include="Interfaces\IAsentamientos.cs" />
+    <Compile Include="Interfaces\ICategorias.cs" />
+    <Compile Include="Interfaces\ICentroCosto.cs" />
+    <Compile Include="Interfaces\ICGValores.cs" />
+    <Compile Include="Interfaces\IClasificadores.cs" />
+    <Compile Include="Interfaces\IEntidades.cs" />
+    <Compile Include="Interfaces\IGruposUsuario.cs" />
+    <Compile Include="Interfaces\IGrupoUsuarioDetalle.cs" />
+    <Compile Include="Interfaces\IKontrolFiles.cs" />
+    <Compile Include="Interfaces\ICatalogosClasificadores.cs" />
+    <Compile Include="Interfaces\ICatalogosGeneralesValores.cs" />
+    <Compile Include="Interfaces\IClientesModulos.cs" />
+    <Compile Include="Interfaces\IConfigurarParametros.cs" />
+    <Compile Include="Interfaces\IDAOBase.cs" />
+    <Compile Include="Interfaces\IDAOBaseGeneric.cs" />
+    <Compile Include="Interfaces\ILocalidades.cs" />
+    <Compile Include="Interfaces\IModulos.cs" />
+    <Compile Include="Interfaces\IMoneda.cs" />
+    <Compile Include="Interfaces\INiveles.cs" />
+    <Compile Include="Interfaces\INivelesOpciones.cs" />
+    <Compile Include="Interfaces\INotificadores.cs" />
+    <Compile Include="Interfaces\INotificadoresInstancia.cs" />
+    <Compile Include="Interfaces\INotification.cs" />
+    <Compile Include="Interfaces\ICatalogosGenerales.cs" />
+    <Compile Include="Interfaces\IOpciones.cs" />
+    <Compile Include="Interfaces\IParametros.cs" />
+    <Compile Include="Interfaces\IPlantillasLeads.cs" />
+    <Compile Include="Interfaces\IPlantillasMails.cs" />
+    <Compile Include="Interfaces\IPosiciones.cs" />
+    <Compile Include="Interfaces\IPuestos.cs" />
+    <Compile Include="Interfaces\IPullNotificationsFiles.cs" />
+    <Compile Include="Interfaces\IPullNotificationsEntities.cs" />
+    <Compile Include="Interfaces\IPullNotificationsActions.cs" />
+    <Compile Include="Interfaces\IPullNotifications.cs" />
+    <Compile Include="Interfaces\IReportes.cs" />
+    <Compile Include="Interfaces\ITarea.cs" />
+    <Compile Include="Interfaces\ITareaInstance.cs" />
+    <Compile Include="Interfaces\ITareasManuales.cs" />
+    <Compile Include="Interfaces\ITipoCitas.cs" />
+    <Compile Include="Interfaces\ITiposClasificador.cs" />
+    <Compile Include="Interfaces\ITiposEntidad.cs" />
+    <Compile Include="Interfaces\ITiposEvento.cs" />
+    <Compile Include="Interfaces\ITipoWorkflow.cs" />
+    <Compile Include="Interfaces\IUnidadMedida.cs" />
+    <Compile Include="Interfaces\IUsuarioNivelesCompania.cs" />
+    <Compile Include="Interfaces\IUsuarios.cs" />
+    <Compile Include="Interfaces\IUsuariosToken.cs" />
+    <Compile Include="Interfaces\IVistaElemento.cs" />
+    <Compile Include="Interfaces\IVistas.cs" />
+    <Compile Include="Interfaces\IWorkflowInstance.cs" />
+    <Compile Include="Interfaces\IWorkflowManager.cs" />
+    <Compile Include="MSSQL\PersonalizarCamposValores.cs" />
+    <Compile Include="MSSQL\PersonalizarCamposSecciones.cs" />
+    <Compile Include="MSSQL\ConfiguracionFormularioEntidad.cs" />
+    <Compile Include="MSSQL\ConfiguracionFormulario.cs" />
+    <Compile Include="MSSQL\BitacoraEventos.cs" />
+    <Compile Include="MSSQL\Bitacora.cs" />
+    <Compile Include="MSSQL\BlogPostCategorias.cs" />
+    <Compile Include="MSSQL\BlogPost.cs" />
+    <Compile Include="MSSQL\Asentamientos.cs" />
+    <Compile Include="MSSQL\Categorias.cs" />
+    <Compile Include="MSSQL\CentroCosto.cs" />
+    <Compile Include="MSSQL\CG.cs" />
+    <Compile Include="MSSQL\CGValores.cs" />
+    <Compile Include="MSSQL\Anios.cs" />
+    <Compile Include="MSSQL\DocumentoCategorias.cs" />
+    <Compile Include="MSSQL\Eventos.cs" />
+    <Compile Include="MSSQL\KontrolFilesVersiones.cs" />
+    <Compile Include="MSSQL\Periodicidad.cs" />
+    <Compile Include="MSSQL\PeriodicidadDetalle.cs" />
+    <Compile Include="MSSQL\Licencias.cs" />
+    <Compile Include="MSSQL\NivelesEtapas.cs" />
+    <Compile Include="MSSQL\NivelesReportes.cs" />
+    <Compile Include="MSSQL\OpcionSistema.cs" />
+    <Compile Include="MSSQL\PersonaEntregaVivienda.cs" />
+    <Compile Include="MSSQL\PersonalizarCamposConfiguracion.cs" />
+    <Compile Include="MSSQL\PersonalizarCamposOpciones.cs" />
+    <Compile Include="MSSQL\PersonalizarCampos.cs" />
+    <Compile Include="MSSQL\Citas.cs" />
+    <Compile Include="MSSQL\Clasificadores.cs" />
+    <Compile Include="MSSQL\Entidades.cs" />
+    <Compile Include="MSSQL\GruposUsuario.cs" />
+    <Compile Include="MSSQL\GruposUsuarioDetalle.cs" />
+    <Compile Include="MSSQL\KontrolFiles.cs" />
+    <Compile Include="MSSQL\CatalogosClasificadores.cs" />
+    <Compile Include="MSSQL\CatalogosGeneralesValores.cs" />
+    <Compile Include="MSSQL\ConfigurarParametros.cs" />
+    <Compile Include="MSSQL\Localidades.cs" />
+    <Compile Include="MSSQL\CatalogosGenerales.cs" />
+    <Compile Include="Interfaces\IWorkflow.cs" />
+    <Compile Include="MSSQL\Companias.cs" />
+    <Compile Include="Interfaces\ICompania.cs" />
+    <Compile Include="MSSQL\Dominios.cs" />
+    <Compile Include="Interfaces\IDominios.cs" />
+    <Compile Include="MSSQL\Modulos.cs" />
+    <Compile Include="MSSQL\Monedas.cs" />
+    <Compile Include="MSSQL\Niveles.cs" />
+    <Compile Include="MSSQL\DBHelper.cs" />
+    <Compile Include="MSSQL\NivelesOpciones.cs" />
+    <Compile Include="MSSQL\Notificadores.cs" />
+    <Compile Include="MSSQL\NotificadoresInstancia.cs" />
+    <Compile Include="MSSQL\Notification.cs" />
+    <Compile Include="MSSQL\Opciones.cs" />
+    <Compile Include="MSSQL\Parametros.cs" />
+    <Compile Include="MSSQL\PlantillasLeads.cs" />
+    <Compile Include="MSSQL\PlantillasMails.cs" />
+    <Compile Include="MSSQL\Posicion.cs" />
+    <Compile Include="MSSQL\Puestos.cs" />
+    <Compile Include="MSSQL\PullNotificationsFiles.cs" />
+    <Compile Include="MSSQL\PullNotificationsEntities.cs" />
+    <Compile Include="MSSQL\PullNotificationsActions.cs" />
+    <Compile Include="MSSQL\PullNotifications.cs" />
+    <Compile Include="MSSQL\Reportes.cs" />
+    <Compile Include="MSSQL\Tarea.cs" />
+    <Compile Include="MSSQL\TareaInstance.cs" />
+    <Compile Include="MSSQL\TareasManuales.cs" />
+    <Compile Include="MSSQL\TipoCitas.cs" />
+    <Compile Include="MSSQL\TiposClasificador.cs" />
+    <Compile Include="MSSQL\TiposEntidad.cs" />
+    <Compile Include="MSSQL\TiposEvento.cs" />
+    <Compile Include="MSSQL\TipoWorkflow.cs" />
+    <Compile Include="MSSQL\UnidadMedida.cs" />
+    <Compile Include="MSSQL\UsuarioNivelesCompania.cs" />
+    <Compile Include="MSSQL\UsuariosToken.cs" />
+    <Compile Include="MSSQL\VistaElemento.cs" />
+    <Compile Include="MSSQL\Vistas.cs" />
+    <Compile Include="MSSQL\Workflow.cs" />
+    <Compile Include="MSSQL\WorkflowInstance.cs" />
+    <Compile Include="MSSQL\WorkflowManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MSSQL\Usuarios.cs" />
+    <Compile Include="SYBASE17\Agenda.cs" />
+    <Compile Include="SYBASE17\AgendasEntregasViviendas.cs" />
+    <Compile Include="SYBASE17\Asentamientos.cs" />
+    <Compile Include="SYBASE17\CatalogosClasificadores.cs" />
+    <Compile Include="SYBASE17\CatalogosGenerales.cs" />
+    <Compile Include="SYBASE17\CatalogosGeneralesValores.cs" />
+    <Compile Include="SYBASE17\Categorias.cs" />
+    <Compile Include="SYBASE17\CentroCosto.cs" />
+    <Compile Include="SYBASE17\CG.cs" />
+    <Compile Include="SYBASE17\CGValores.cs" />
+    <Compile Include="SYBASE17\Citas.cs" />
+    <Compile Include="SYBASE17\Clasificadores.cs" />
+    <Compile Include="SYBASE17\DateDifference.cs" />
+    <Compile Include="SYBASE17\NivelesEtapas.cs" />
+    <Compile Include="SYBASE17\NivelesReportes.cs" />
+    <Compile Include="SYBASE17\Companias.cs" />
+    <Compile Include="SYBASE17\ConfigurarParametros.cs" />
+    <Compile Include="SYBASE17\DAOBase2.cs" />
+    <Compile Include="SYBASE17\DBHelper.cs" />
+    <Compile Include="SYBASE17\Dominios.cs" />
+    <Compile Include="SYBASE17\Entidades.cs" />
+    <Compile Include="SYBASE17\NotificacionMarcadores.cs" />
+    <Compile Include="SYBASE17\NotificacionUsuario.cs" />
+    <Compile Include="SYBASE17\OpcionSistema.cs" />
+    <Compile Include="SYBASE17\PersonaEntregaVivienda.cs" />
+    <Compile Include="SYBASE17\GruposUsuario.cs" />
+    <Compile Include="SYBASE17\GruposUsuarioDetalle.cs" />
+    <Compile Include="SYBASE17\KontrolFiles.cs" />
+    <Compile Include="SYBASE17\Localidades.cs" />
+    <Compile Include="SYBASE17\Modulos.cs" />
+    <Compile Include="SYBASE17\Monedas.cs" />
+    <Compile Include="SYBASE17\Niveles.cs" />
+    <Compile Include="SYBASE17\NivelesOpciones.cs" />
+    <Compile Include="SYBASE17\Notificadores.cs" />
+    <Compile Include="SYBASE17\NotificadoresInstancia.cs" />
+    <Compile Include="SYBASE17\Notification.cs" />
+    <Compile Include="SYBASE17\Opciones.cs" />
+    <Compile Include="SYBASE17\Parametros.cs" />
+    <Compile Include="SYBASE17\PersonalizarCampos.cs" />
+    <Compile Include="SYBASE17\PersonalizarCamposOpciones.cs" />
+    <Compile Include="SYBASE17\PlantillasMails.cs" />
+    <Compile Include="SYBASE17\Posicion.cs" />
+    <Compile Include="SYBASE17\Puestos.cs" />
+    <Compile Include="SYBASE17\Reportes.cs" />
+    <Compile Include="SYBASE17\Tarea.cs" />
+    <Compile Include="SYBASE17\TareaInstance.cs" />
+    <Compile Include="SYBASE17\TareasManuales.cs" />
+    <Compile Include="SYBASE17\TipoCitas.cs" />
+    <Compile Include="SYBASE17\TiposClasificador.cs" />
+    <Compile Include="SYBASE17\TipoWorkflow.cs" />
+    <Compile Include="SYBASE17\UsuarioNivelesCompania.cs" />
+    <Compile Include="SYBASE17\Usuarios.cs" />
+    <Compile Include="SYBASE17\VistaElemento.cs" />
+    <Compile Include="SYBASE17\Vistas.cs" />
+    <Compile Include="SYBASE17\Workflow.cs" />
+    <Compile Include="SYBASE17\WorkflowInstance.cs" />
+    <Compile Include="SYBASE17\WorkflowManager.cs" />
+    <Compile Include="Sybase\CatalogosClasificadores.cs" />
+    <Compile Include="Sybase\CatalogosGenerales.cs" />
+    <Compile Include="Sybase\CatalogosGeneralesValores.cs" />
+    <Compile Include="Sybase\Cliente.cs" />
+    <Compile Include="Sybase\Companias.cs" />
+    <Compile Include="Sybase\ConfigurarParametros.cs" />
+    <Compile Include="DAOBase.cs" />
+    <Compile Include="Sybase\DBHelper.cs" />
+    <Compile Include="Sybase\Localidades.cs" />
+    <Compile Include="Sybase\Modulos.cs" />
+    <Compile Include="Sybase\Niveles.cs" />
+    <Compile Include="Sybase\Notification.cs" />
+    <Compile Include="Sybase\Opciones.cs" />
+    <Compile Include="Sybase\Parametros.cs" />
+    <Compile Include="Sybase\PlantillasMails.cs" />
+    <Compile Include="Sybase\Tarea.cs" />
+    <Compile Include="Sybase\TareaInstance.cs" />
+    <Compile Include="Sybase\TiposClasificador.cs" />
+    <Compile Include="Sybase\TipoWorkflow.cs" />
+    <Compile Include="Sybase\Usuarios.cs" />
+    <Compile Include="Sybase\Workflow.cs" />
+    <Compile Include="Sybase\WorkflowInstance.cs" />
+    <Compile Include="Sybase\WorkflowManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EK.Modelo.Kontrol\EK.Modelo.Kontrol.csproj">
+      <Project>{6dfbfa1a-70b1-4ae3-8f8e-0581986d7ad3}</Project>
+      <Name>EK.Modelo.Kontrol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="EK.Datos.Kontrol.snk" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,50 @@
+
+/.vs/*
+/EK.App/bin
+/EK.App/obj
+/EK.Common/bin
+/EK.Common/obj
+/EK.Datos.Kontrol/bin
+/EK.Datos.Kontrol/obj
+/EK.ML/bin
+/EK.ML/obj
+/EK.Modelo.Kontrol/bin
+/EK.Modelo.Kontrol/obj
+/EK.Procesos.Kontrol/bin
+/EK.Procesos.Kontrol/obj
+/EK.Utils/bin
+/EK.Utils/obj
+/EK.Web.Kontrol/bin
+/EK.Web.Kontrol/obj
+/SCV/EK.Datos.SCV/bin
+/SCV/EK.Datos.SCV/obj
+/SCV/EK.Modelo.SCV/bin
+/SCV/EK.Modelo.SCV/obj
+/SCV/EK.Procesos.SCV/bin
+/SCV/EK.Procesos.SCV/obj
+/SCV/EK.Web.SCV/bin
+/SCV/EK.Web.SCV/obj
+/EK.App/*.user
+/EK.App/Scripts/components/**/*.js
+/EK.App/Scripts/components/**/*.map
+/EK.App/Scripts/modulos/**/*.js
+/EK.App/Scripts/modulos/**/*.map
+/EK.App/Scripts/custom/**/*.js
+/EK.App/Scripts/custom/**/*.map
+/EK.App/Scripts/typings/react/**/*.js
+/EK.App/Scripts/typings/react/**/*.map
+/EK.ML/en-US.json
+/EK.ML/es-MX.json
+!/EK.App/Scripts/components/DataTableFunctions.js
+/EK.App/**/*.user
+/EK.Console/obj/BASE RELEASE
+/EK.Console/obj/BASE RELEASE
+/EK.KontrolService/obj/BASE DEMO/EK.KontrolService.csprojAssemblyReference.cache
+/EK.Modelo.SBO/obj/BASE/EK.Modelo.SBO.csprojAssemblyReference.cache
+/EK.Modelo.SBO/obj/BASE DEMO/EK.Modelo.SBO.csprojAssemblyReference.cache
+/EK.Modelo.SBO/obj/BASE/EK.Modelo.SBO.csprojAssemblyReference.cache
+/EK.Procesos.SBO/obj
+/EK.Tasks.CP/obj/BASE
+/EK.WebJobs.APIWorkflow/obj/BASE
+/SCO
+/SCP/EK.Datos.SCP/obj/BASE ALORA

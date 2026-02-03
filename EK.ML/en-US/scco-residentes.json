@@ -1,0 +1,60 @@
+﻿{
+  "Residentes": {
+    "bc": {
+      "text": "Residentes",
+      "link": "/scco/Residentes"
+    },
+    "consulta": {
+      "title": "Administración de Residentes",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture un Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Asignado": {
+        "label": "Usuario",
+        "helplabel": "Ingresa Usuario"
+      },
+      "Obra": {
+        "label": "Obra",
+        "helplabel": "Seleccione una Obra"
+      }
+    },
+    "sections": {
+      "ResidenteObras": {
+        "title": "Obras"
+      }
+    },
+    "mensajes": {
+      "exito": "Residente ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Residente"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Residente"
+    }
+  }
+}

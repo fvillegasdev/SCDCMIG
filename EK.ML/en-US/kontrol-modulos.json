@@ -1,0 +1,70 @@
+﻿{
+  "modulos": {
+    "bc": {
+      "text": "Modulos",
+      "link": "/kontrol/modulos"
+    },
+    "titulo": "Módulo",
+    "subtitulo": "Nuevo",
+    "consulta": {
+      "title": "Administración de módulos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo"
+      },
+      "Nombre": {
+        "label": "Módulo",
+        "validaciones": {
+          "requerida": "El nombre del módulo es requerido"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "validaciones": {
+          "requerida": "La Descripción es requerida"
+        }
+      },
+      "opciones": {
+        "label": "Opciones y secciones del módulo"
+      },
+      "updating": {
+        "text": "actualizando opciones..."
+      }
+    },
+    "mensajes": {
+      "exito": "El módulo ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo estatus"
+    },
+    "view": {
+      "titulo": ""
+    },
+    "nuevo": {
+      "titulo": "Nuevo modulo"
+    },
+    "editar": {
+      "title": "Modificar modulo"
+    },
+    "sections": {
+      "ModulosOpciones": {
+        "title": "Opciones"
+      }
+    }
+  }
+}

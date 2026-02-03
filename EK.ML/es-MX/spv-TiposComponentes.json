@@ -1,0 +1,93 @@
+﻿{
+  "TiposComponentes": {
+    "bc": {
+        "text": "Familia (Tipos Componentes)",
+        "link": "/scv/pv/TiposComponentes"
+    },
+    "consulta": {
+        "title": "Administración de Familia (Tipos de Componentes)",
+        "grid": {
+          "headers": {
+            "clave": "Clave",
+            "siglas": "Siglas",
+            "nombre": "Nombre",
+            "descripcion": "Nombre",
+            "duracionGarantia": "Dur. Garantía",
+            "usoFalla": { "Nombre": "Uso" },
+            "estatus": "Estatus"
+          }
+        }
+    },
+    "form": {
+      "clave_tipo_falla": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "activo": {
+        "label": "Activo",
+        "helplabel": "Seleccione el Activo",
+        "validaciones": {
+          "requerida": "El Activo es Requerida"
+        }
+      },
+      "Siglas": {
+        "label": "Siglas",
+        "helplabel": "Capture las Siglas",
+        "validaciones": {
+          "requerida": "Las Siglas es requerida"
+        }
+      },
+      "Descripcion": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "DuracionGarantia": {
+        "label": "Duración Garantía",
+        "helplabel": "Capture la Duración Garantiía",
+        "validaciones": {
+          "requerida": "La Duración Garantia es requerida"
+        }
+      },
+      "UsoFalla": {
+        "label": "Uso Incidencia",
+        "helplabel": "Capture el Uso",
+        "validaciones": {
+          "requerida": "El Uso Incidencia es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "La familia (Tipo de Componente) ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nueva familia (tipo de Componente)"
+    },
+    "titulo": {
+      "nuevo": "Nueva familia (tipo de Componente)"
+    }
+  }
+}

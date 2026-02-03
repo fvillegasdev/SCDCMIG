@@ -1,0 +1,301 @@
+﻿{
+  "boletasProspeccion": {
+    "bc": {
+      "text": "Boleta de Prospección",
+      "link": "/scv/boletaProspectos"
+    },
+    "titulo": {
+      "nuevo": "Prospecto nuevo"
+    },
+    "consulta": {
+      "title": "Administración de boletas de prospección",
+      "grid": {
+        "headers": {
+          "iD": "No. B",
+          "nombre": "Nombre",
+          "creado": "Creado En",
+          "tipoPersona": { "Nombre": "Tipo de persona" },
+          "desarrollo": "Desarrollo" ,
+          "rFC": "RFC",
+          "creadoPor": { "Nombre": "Usuario" },
+          "correo": "Correo",
+          "celular": "Celular",
+          "estatus": "Estatus"
+
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "#",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Nombre": {
+        "label": "Nombre(s)",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "ApellidoPaterno": {
+        "label": "Apellido Paterno",
+        "helplabel": "Capture el apellido paterno",
+        "validaciones": {
+          "requerida": "El apellido paterno es requerido"
+        }
+      },
+      "ApellidoMaterno": {
+        "label": "Apellido Materno",
+        "helplabel": "Capture el apellido materno",
+        "validaciones": {
+          "requerida": "El apellido materno es requerido"
+        }
+      },
+      "APaterno": {
+        "label": "Apellido Paterno",
+        "helplabel": "Capture el apellido paterno",
+        "validaciones": {
+          "requerida": "El apellido paterno es requerido"
+        }
+      },
+      "AMaterno": {
+        "label": "Apellido Materno",
+        "helplabel": "Capture el apellido materno",
+        "validaciones": {
+          "requerida": "El apellido materno es requerido"
+        }
+      },
+      "Domicilio": {
+        "label": "Domicilio",
+        "helplabel": "Capture el Domicilio",
+        "validaciones": {
+          "requerida": "El Domicilio es requerida",
+          "formato": "el Domicilio no tiene el formato esperado"
+        }
+      },
+      "NumeroExterior": {
+        "label": "Exterior",
+        "helplabel": "Capture el numero exterior de su domicilio",
+        "validaciones": {
+          "formato": "El numero exterior no tiene el formato esperado"
+        }
+      },
+      "Asentamiento": {
+        "label": "C.P. / Colonia / Municipio",
+        "helplabel": "Capture el C.P. / Colonia / Municipio",
+        "validaciones": {
+          "requerida": "El C.P. / Colonia / Municipio es requerido",
+          "formato": "El C.P. / Colonia / Municipio no tiene el formato esperado"
+        }
+      },
+      "Correo": {
+        "label": "Correo",
+        "helplabel": "Capture el Correo",
+        "validaciones": {
+          "requerida": "El Correo es requerida",
+          "formato": "el Correo no tiene el formato esperado"
+        }
+      },
+      "Celular": {
+        "label": "Celular",
+        "helplabel": "Capture el Celular",
+        "validaciones": {
+          "requerida": "El Celular es requerida",
+          "formato": "el Celular no tiene el formato esperado"
+        }
+      },
+      "Telefono": {
+        "label": "Teléfono",
+        "helplabel": "Capture el número de teléfono",
+        "validaciones": {
+          "requerida": "El teléfono es requerido",
+          "length": "la longitud del teléfono es de 10 posiciones"
+        }
+      },
+      "Genero": {
+        "label": "Género",
+        "helplabel": "Capture el Genero",
+        "validaciones": {
+          "requerida": "El Genero es requerido"
+        }
+      },
+      "FechaNacimiento": {
+        "label": "Fecha Nacimiento",
+        "helplabel": "Captura la Fecha Nacimiento",
+        "validaciones": {
+          "requerida": "La Fecha Nacimiento es requerida"
+        }
+      },
+      "NSS": {
+        "label": "NSS",
+        "helplabel": "Capture el NSS",
+        "validaciones": {
+          "requerida": "El número de NSS es requerido"
+        }
+      },
+      "RFC": {
+        "label": "RFC",
+        "helplabel": "Capture el RFC",
+        "validaciones": {
+          "requerida": "El RFC es requerido"
+        }
+      },
+      "CURP": {
+        "label": "CURP",
+        "helplabel": "Capture CURP",
+        "validaciones": {
+          "requerida": "El CURP es requerido"
+        }
+      },
+      "MontoPrecalificado": {
+        "label": "Monto Precalificado",
+        "helplabel": "Capture el Monto Precalificado",
+        "validaciones": {
+          "requerida": "El Monto Precalificado es requerido"
+        }
+      },
+      "MontoCredito": {
+        "label": "Monto Crédito",
+        "helplabel": "Capture el Monto Crédito",
+        "validaciones": {
+          "requerida": "El Monto Crédito es requerido"
+        }
+      },
+      "Giro": {
+        "label": "Giro",
+        "helplabel": "Capture el Giro",
+        "validaciones": {
+          "requerida": "El Giro es requerido"
+        }
+      },
+      "LugarProspeccion": {
+        "label": "Lugar de Prospección",
+        "helplabel": "Capture el Lugar Prospección",
+        "validaciones": {
+          "requerida": "El Lugar Prospección es requerido"
+        }
+      },
+      "ResidenciaActual": {
+        "label": "Actualmente vive en",
+        "helplabel": "Capture la residencia actual",
+        "validaciones": {
+          "requerida": "La residencia actual es requerida"
+        }
+      },
+      "MedioPublicidad": {
+        "label": "Medio Publicidad",
+        "helplabel": "Capture el Medio de publicidad"
+      },
+      "CampaniaPublicidad": {
+        "label": "Campaña de publicidad",
+        "helplabel": "Capture la campaña de publicidad"
+      },
+      "PuntoVenta": {
+        "label": "Punto de Venta",
+        "helplabel": "Punto de prospección"
+      },
+      "TipoPersona": {
+        "label": "Tipo de persona",
+        "helplabel": "Tipo de persona",
+        "validaciones": {
+          "requerida": "El Tipo de persona es requerido"
+        }
+      },
+      "CreadoPor": {
+        "label": "Usuario",
+        "helplabel": "Capture el Asesor",
+        "validaciones": {
+          "requerida": "El Usuario es requerido"
+        }
+      },
+      "Desarrollo": {
+        "label": "Desarrollo de interés",
+        "helplabel": "Capture el desarrollo de interes",
+        "validaciones": {
+          "requerida": "El desarrollo de interes es requerido"
+        }
+      },
+      "EstadoOrigen": {
+        "label": "Ciudad y Estado de origen",
+        "helplabel": "Seleccione un estado de origen",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "PaisOrigen": {
+        "label": "Pais de Origen",
+        "helplabel": "Seleccione un país de origen",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helpLabel": "Estatus",
+        "validaciones": ""
+      },
+      "Propietario": {
+        "label": "Asignar al agente",
+        "helplabel": "Asignar al agente"
+      },
+      "Titular": {
+        "label": "Titular",
+        "helplabel": "Titular"
+      },
+      "MotivoRechazo": {
+        "label": "Motivo Rechazo",
+        "helplabel": "Motivo Rechazo"
+      },
+      "Creado": {
+        "label": "Fecha Creación",
+        "helplabel": "Fecha Creación"
+      },
+      "Cliente": {
+        "label": "Seleccione un Cliente",
+        "helplabel": "Cliente"
+      },
+      "TipoFinanciamiento": {
+        "label": "Tipo Financiamiento",
+        "helplabel": "Tipo Financiamiento"
+      },
+      "CienteCoincidencia": {
+        "label": "Cliente con coincidencia",
+        "helplabel": "Cliente"
+      },
+
+      "edit": {
+        "titulo": "Nuevo Prospecto"
+      }
+    },
+    "sections": {
+      "prospectoExistente": "¿A quién quieres asociar esta boleta?",
+      "descartarProspecto": "Descartar prospecto Cliente"
+    },
+    "validaciones": {
+      "RegistrarDesarrollo": "Indique el prospecto cliente al cual se aisgnará la boleta",
+      "DescartarBoleta": "Indique el motivo por el cual se descarta la boleta"
+    },
+    "mensajes": {
+      "save": "La boleta de prospección ha sido actualizado",
+      "nodata": "No existe registros",
+      "exito": "La boleta de prospección ha sido actualizada",
+      "boletaDescartada": "Boleta descartada",
+      "boletaAsignada": "Boleta asignada",
+      "boletaAsignadaDesarrollo": "Boleta asociada a Prospecto-Cliente",
+      "sinCoincidencias": "No Existen Coincidencias"
+    },
+    "buttons": {
+      "cancelar": "Cancelar",
+      "descartar": "Descartar",
+      "aceptar": "Aceptar"
+    },
+    "panelAsociacion": {
+      "coincidencia": "Asociar a prospecto con coincidencia",
+      "catalogo": "Asociar a catalgo General de prospecto"
+    }
+
+  }
+}

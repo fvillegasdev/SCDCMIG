@@ -1,0 +1,47 @@
+﻿{
+  "niveles": {
+    "bc": {
+      "text": "Niveles",
+      "link": "/kontrol/niveles"
+    },
+    "consulta": {
+      "title": "Administración de niveles",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave que define al nivel",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture la descripción del nivel",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El nivel ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo nivel"
+    },
+    "titulo": {
+      "nuevo": "Nuevo nivel"
+    }
+  }
+}

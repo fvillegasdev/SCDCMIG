@@ -1,0 +1,139 @@
+﻿{
+  "Contratistas": {
+    "bc": {
+        "text": "Contratistas",
+        "link": "/scco/Contratistas"
+    },
+    "consulta": {
+        "title": "Administración de Contratista",
+        "grid": {
+            "headers": {
+                "iD": "ID" ,
+                "nombre": "Nombre",
+                "descripcion": "Descripción",
+                "estatus": "Estatus"
+            }
+        }
+    },
+    "form": {
+        "Clave": {
+            "label": "NUMPRO",
+            "helplabel": "Capture la NumPro",
+            "validaciones": {
+                "requerida": "La NumPro es requerida"
+            }
+        },
+        "ID": {
+            "label": "Id",
+            "helplabel": "Capture la NumPro",
+            "validaciones": {
+                "requerida": "La NumPro es requerida"
+            }
+        },
+        "Descripcion": {
+            "label": "Descripción",
+            "helplabel": "Capture la Descripción",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "Nombre": {
+            "label": "Nombre",
+            "helplabel": "Capture el Nombre",
+            "validaciones": {
+                "requerida": "El Nombre es requerido"
+            }
+        },
+        "REG_IMSS": {
+            "label": "REG. IMSS",
+            "helplabel": "Capture el Registro del IMSS",
+            "validaciones": {
+                "requerida": "El Registro del IMSS es requerida"
+            }
+        },
+        "TIPO_CONTRATO": {
+            "label": "TIPO CONTRATO",
+            "helplabel": "Capture el Tipo de Contrato",
+            "validaciones": {
+                "requerida": "El Tipo de Contrato es requerido"
+            }
+        },
+        "IVA": {
+            "label": "IVA",
+            "helplabel": "Capture el IVA",
+            "validaciones": {
+                "requerida": "El IVA es requerido"
+            }
+        },
+        "ISR": {
+            "label": "ISR",
+            "helplabel": "Capture el ISR",
+            "validaciones": {
+                "requerida": "El ISR es requerido"
+            }
+        },
+        "IVA_RETENIDO": {
+            "label": "IVA RETENIDO",
+            "helplabel": "Capture el IVA RETENIDO",
+            "validaciones": {
+                "requerida": "El IVA RETENIDO es requerido"
+            }
+        },
+        "ISR_RETENIDO": {
+            "label": "ISR RETENIDO",
+            "helplabel": "Capture el ISR RETENIDO",
+            "validaciones": {
+                "requerida": "El ISR RETENIDO es requerido"
+            }
+        },
+        "DIRECCION": {
+            "label": "DIRECCION",
+            "helplabel": "Capture la Descripción",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "CIUDAD": {
+            "label": "CIUDAD",
+            "helplabel": "Capture la Ciudad",
+            "validaciones": {
+                "requerida": "La Ciudad es requerida"
+            }
+        },
+        "ESTADO": {
+            "label": "ESTADO",
+            "helplabel": "Capture el Estado",
+            "validaciones": {
+                "requerida": "El Estado es requerido"
+            }
+        },
+        "RFC": {
+            "label": "RFC",
+            "helplabel": "Capture el RFC",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "correo_electronico": {
+            "label": "Email",
+            "helplabel": "Capture el Email",
+            "validaciones": {
+                "requerida": "El Email es requerido"
+            }
+        },
+        "Estatus": {
+            "label": "Activo",
+            "helplabel": "Estatus"
+        }
+    },
+    "mensajes": {
+        "exito": "El Contratista ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de Contratista"
+    },
+    "titulo": {
+        "nuevo": "Nuevo tipo de Contratista"
+    }
+  }
+}

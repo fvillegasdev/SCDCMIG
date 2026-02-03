@@ -1,0 +1,28 @@
+{
+  "AgendaAreasComunes": {
+    "bc": {
+      "text": "Agenda Contratista/Dictamen Areas Comunes",
+      "link": "/scv/pv/AgendaAreasComunes"
+    },
+    "consulta": {
+      "title": "Reporte de Fallas Areas Comunes",
+      "grid": {
+        "headers": {
+        }
+      }
+    },
+    "form": {
+    },
+    "sections": {
+    },
+    "mensajes": {
+      "exito": "La Agenda Contratista ha sido actualizada"
+    },
+    "edit": {
+      "titulo": "Agenda Contratista/Dictamen Areas Comunes"
+    },
+    "titulo": {
+      "Nuevo": "Agenda Contratista/Dictamen Areas Comunes"
+    }
+  }
+}

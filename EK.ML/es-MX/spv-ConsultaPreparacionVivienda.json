@@ -1,0 +1,177 @@
+﻿{
+  "ConsultaPreparacionVivienda": {
+    "bc": {
+      "text": "Reporte de Equipamientos",
+      "link": "/scv/pv/ConsultaPreparacionVivienda"
+    },
+    "consulta": {
+      "title": "Administración de Reporte de Equipamientos",
+      "grid": {
+        "headers": {
+            "clave": "Clave",
+            "nombre": "Cliente",
+            "dir_casa": "Dirección",
+            "dir_email": "Email",
+            "CURP": "CURP",
+            "Celular": "Celular",
+            "tel_casa": "Teléfono",
+            "tel_oficina": "Tel. Oficina",
+            "desc_tipo_vivienda": "Segmento",
+            "nom_fracc": "Fraccionamiento",
+            "Prototipo": "Prototipo",
+            "ET": "ET",
+            "M": "M",
+            "L": "L",
+            "I": "I",
+            "No_Exterior": "Ext.",
+            "nom_financinst": "Financiamiento",
+            "subsidio": "Subsidio",
+            "Ecocasa": "Ecocasa",
+            "Equipamiento": "Equipamiento",
+            "cve_Equipamiento": "Cve. Eq.",
+            "Desc_Equipamiento": "Desc. Equipamiento",
+            "Firma_Escritura": "Firma Escritura",
+            "Firmo": "Liberación",
+            "Etapa_Firma": "Etapa de Liberación",
+            "Pend_Pago": "Pend. Pago",
+            "Fec_Pend_Pago": "F. Pend. Pago",
+            "pago": "Pago",
+            "fec_pago": "Fecha Pago",
+            "Cve_Contra": "Cve. Contratista",
+            "Nom_Contra": "Nom. Contratista",
+            "dias_firma": "Días trans. Firma",
+            "monto_seguro": "Seguro",
+            "descripcion": "Descripción",
+            "estatus": "Estatus",
+            "FraccInicial": "Fraccionamiento Inicial",
+            "PlazaInicial": "Plaza Inicial",
+            "PlazaFinal": "Plaza Final",
+            "HipotecaVerde": "Hipoteca Verde",
+            "ClienteInicial": "Cliente Inicial",
+            "ClienteFinal": "Cliente Final",
+            "ViviendaEntregable": "Vivienda Entregable",
+            "Segmentos": "Vocaciones",
+            "Financiamiento": "Financiamiento",
+            "ViviendasEntregadas": "Viviendas Entregadas",
+            "RFC": "RFC",
+            "FechaEscrituracion": "Fecha Escrituración",
+            "DiasDesdeEscrituracion": "Días Desde Escrituración"
+
+        }
+      }
+    },
+    "form": {
+      "ViviendaEntregable": {
+        "label": "Viviendas Entregadas",
+        "helplabel": "Capture La Vivienda Entregada",
+        "validaciones": {
+          "requerida": "La Vivienda Entregada es Requerido"
+        }
+      },
+      "Financiamiento": {
+        "label": "Financiamiento",
+        "helplabel": "Capture el Financiamiento",
+        "validaciones": {
+          "requerida": "El Financiamiento es Requerido"
+        }
+      },
+      "Segmentos": {
+        "label": "Vocaciones",
+        "helplabel": "Capture Vocaciones",
+        "validaciones": {
+          "requerida": "Vocacion es Requerida"
+        }
+      },
+      "ClienteInicial": {
+        "label": "Cliente Inicial",
+        "helplabel": "Capture al Cliente Inicial",
+        "validaciones": {
+          "requerida": "El Cliente Inicial es Requerido"
+        }
+      },
+      "ClienteFinal": {
+        "label": "Cliente Final",
+        "helplabel": "Capture el Cliente Final",
+        "validaciones": {
+          "requerida": "El Cliente Final es Requerido"
+        }
+      },
+      "HipotecaVerde": {
+        "label": "Hipoteca Verde",
+        "helplabel": "Capture la Hipoteca Verde",
+        "validaciones": {
+          "requerida": "La Hipoteca Verde es Requerido"
+        }
+      },
+      "Equipamiento": {
+        "label": "Equipamiento",
+        "helplabel": "Capture el Equipamiento",
+        "validaciones": {
+          "requerida": "El Equipamiento es Requerido"
+        }
+      },
+      "PlazaInicial": {
+        "label": "Plaza Inicial",
+        "helplabel": "Capture el Plaza Inicial",
+        "validaciones": {
+          "requerida": "El Plaza Inicial es Requerido"
+        }
+      },
+      "PlazaFinal": {
+        "label": "Plaza Final",
+        "helplabel": "Capture el Plaza Final",
+        "validaciones": {
+          "requerida": "El Plaza Final es Requerido"
+        }
+      },
+      "FechaInicio": {
+        "label": "Fecha Inicial",
+        "helplabel": "Capture la Fecha Inicial",
+        "validaciones": {
+          "requerida": "La Fecha Inicial es Requerido"
+        }
+      },
+      "FechaFinal": {
+        "label": "Fecha Final",
+        "helplabel": "Capture la Fecha Final",
+        "validaciones": {
+          "requerida": "La Fecha Final es Requerido"
+        }
+      },
+      "FraccInicial": {
+        "label": "Fraccionamientos",
+        "helplabel": "Capture el Plaza Inicial",
+        "validaciones": {
+          "requerida": "El Fraccionamiento es Requerido"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la Descripción",
+        "validaciones": {
+          "requerida": "La Descripci�n es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "La Causas de Consulta de Vivienda Entregable ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+    }
+  }
+}

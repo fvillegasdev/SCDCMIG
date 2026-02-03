@@ -1,0 +1,93 @@
+﻿{
+    "tiposcambio": {
+        "bc": {
+            "text": "Movimiento de Tipos de Cambio",
+            "link": "/scv/TiposCambio"
+        },
+        "consulta": {
+            "title": "Administración de tipos de cambio",
+            "grid": {
+                "headers": {
+                    "monedaOrigen": { "Clave": "Clave","Nombre": "Moneda Origen" },
+                    "monedaDestino": { "Clave": "Clave","Nombre": "Moneda Destino" },
+                    "fecha": "Fecha Desde",
+                    "fechaHasta": "Fecha Hasta",
+                    "valor": "Tipo de Cambio",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "MonedaClave": {
+                "label": "Moneda Clave",
+                "helplabel": "Seleccione la moneda",
+                "validaciones": {
+                    "requerida": "La moneda es requerida"
+                }
+            },
+            "MonedaOrigen": {
+                "label": "Moneda Origen",
+                "helplabel": "Seleccione la moneda",
+                "validaciones": {
+                    "requerida": "La moneda es requerida"
+                }
+            },
+            "MonedaDestino": {
+                "label": "Moneda Destino",
+                "helplabel": "Seleccione la moneda",
+                "validaciones": {
+                    "requerida": "La moneda es requerida"
+                }
+            },
+            "MonedaNombre": {
+                "label": "Moneda Origen",
+                "helplabel": "Seleccione la moneda",
+                "validaciones": {
+                    "requerida": "La moneda es requerida"
+                }
+            },
+            "MonedaNombreDestino": {
+                "label": "Moneda Destino",
+                "helplabel": "Seleccione la moneda",
+                "validaciones": {
+                    "requerida": "La moneda es requerida"
+                }
+            },
+            "Fecha": {
+                "label": "Fecha Desde",
+                "helplabel": "Capture la fecha",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida"
+                }
+            },
+            "FechaHasta": {
+                "label": "Fecha Hasta",
+                "helplabel": "Capture la fecha",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida"
+                }
+            },
+            "Valor": {
+                "label": "Tipo de Cambio",
+                "helplabel": "Capture el tipo de cambio",
+                "validaciones": {
+                    "requerida": "El tipo de cambio es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            }
+        },
+        "mensajes": {
+            "exito": "El tipo de cambio ha sido actualizado",
+            "warning": "Los datos están incompletos, verificar campos requeridos y validaciones "
+        },
+        "edit": {
+            "titulo": "Nuevo tipo de cambio"
+        },
+        "titulo": {
+            "nuevo": "Nuevo Tipos de cambio"
+        }
+    }
+}

@@ -1,0 +1,105 @@
+{
+  "Tabuladores": {
+    "bc": {
+      "text": "Tabuladores de comisiones",
+      "link": "/scv/Tabuladores"
+    },
+    "consulta": {
+      "title": "Administración de tabuladores",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "porcentaje": "Porcentaje",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido."
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus"
+      },
+      "Minimo": {
+        "label": "Mínimo",
+        "helpLabel": "Capture un monto mínimo"
+      },
+      "Maximo": {
+        "label": "Máximo",
+        "helpLabel": "Capture un monto máximo"
+      },
+      "Porcentaje": {
+        "label": "Porcentaje",
+        "helplabel": "Captura un porcentaje"
+      },
+      "Importe": {
+        "label": "Importe",
+        "helplabel": "Captura un importe"
+      },
+      "UsaPorcentaje": {
+        "label": "Usar porcentaje",
+        "helplabel": "Uso de porcentaje, al desactivarlo, se utilizaran los montos mínimo y máximo"
+      },
+      "Indicador": {
+        "label": "Indicador",
+        "helplabel": "Seleccione un indicador"
+      },
+      "Plaza": {
+        "label": "Plaza",
+        "helplabel": "Seleccione una plaza"
+      },
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Seleccione un desarrollo"
+      },
+      "Fase": {
+        "label": "Fase",
+        "helplabel": "Seleccione una fase de expediente"
+      },
+      "Categoria": {
+        "label": "Categoria",
+        "helplabel": "Seleccione una categoria"
+      },
+      "MontoBase": {
+        "label": "Monto Base",
+        "helplabel": "Introduce un monto comisionable"
+      },
+      "Periodicidad": {
+        "label": "Periodicidad",
+        "helpLabel": "Periodicidad"
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helpLabel": "Moneda"
+      }
+    },
+    "sections": {
+      "Configuracion": {
+        "title": "Detalle"
+      }
+    },
+    "editar": {
+      "title": "Modificar Tabulador"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Tabulador"
+    },
+    "mensajes": {
+      "exito": "El Tabulador ha sido actualizado"
+    }
+  }
+}

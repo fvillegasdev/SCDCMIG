@@ -1,0 +1,133 @@
+﻿{
+  "procesos": {
+    "bc": {
+      "text": "Procesos",
+      "link": "/scv/Procesos"
+    },
+    "consulta": {
+      "title": "Catálogo de Procesos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "accionProceso": { "Nombre": "Acción" },
+          "estatus": "Estatus",
+          "evento": "Evento",
+          "responsable": "Responsable"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave del Proceso es requerida"
+        }
+      },
+
+      "Sistema": {
+        "label": "Sistema",
+        "helplabel": "Capture el Sistema",
+        "validaciones": {
+          "requerida": "El Sistema del Proceso es requerida"
+        }
+      },
+      "Usuario": {
+        "label": "Usuario",
+        "helplabel": "Capture el Usuario",
+        "validaciones": {
+          "requerida": "El Usuario del Proceso es requerida"
+        }
+      },
+      "Iniciar-Etapa": {
+        "label": "Al iniciar la Etapa",
+        "helplabel": "Capture si el proceso se ejecutará al iniciar la etapa"
+      },
+      "Durante-Etapa": {
+        "label": "Durante la etapa",
+        "helplabel": "Capture si el proceso se ejecutará durante la etapa"
+      },
+      "Finalizar-Etapa": {
+        "label": "Al finalizar la Etapa",
+        "helplabel": "Capture si el proceso se ejecutará al finalizar la etapa"
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre del Proceso es requerido"
+        }
+      },
+      "AccionProceso": {
+        "label": "Acción",
+        "helplabel": "Capture la Acción del Proceso",
+        "validaciones": {
+          "requerida": "La Acción del Proceso es requerida"
+        }
+      },
+      "Responsable": {
+        "label": "Responsable",
+        "helplabel": "Capture el Responsable del Proceso",
+        "validaciones": {
+          "requerida": "El Responsable del Proceso es requerida"
+        }
+      },
+      "Evento": {
+        "label": "Evento",
+        "helplabel": "Capture el Evento del Proceso",
+        "validaciones": {
+          "requerida": "El Evento del Proceso es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Estatus del Proceso"
+      },
+      "section": {
+        "responsable": {
+          "title": "Responsable del Proceso",
+          "radio": {
+            //"sistema": {
+            //    "label": "Sistema",
+            //    "helplabel": "Capture si el sistema ejecutará el proceso"
+            //},
+            //"usuario": {
+            //    "label": "Usuario",
+            //    "helplabel": "Capture si el usuario ejecutará el proceso"
+            //}
+          }
+        },
+        "evento": {
+          "title": "Ejecución del Proceso",
+          "radio": {
+            "iniciar": {
+              "label": "Al iniciar la Etapa",
+              "helplabel": "Capture si el proceso se ejecutará al iniciar la etapa"
+            },
+            "durante": {
+              "label": "Durante la etapa",
+              "helplabel": "Capture si el proceso se ejecutará durante la etapa"
+            },
+            "finalizar": {
+              "label": "Al finalizar la Etapa",
+              "helplabel": "Capture si el proceso se ejecutará al finalizar la etapa"
+            }
+          }
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "El Proceso ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones",
+      "responsable": "El Responsable que ejecutará el proceso es el ",
+      "evento": "El proceso se ejecutará "
+    },
+    "edit": {
+      "titulo": "Modificar el Tipo de Citas"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo tipo de citas"
+    }
+  }
+}

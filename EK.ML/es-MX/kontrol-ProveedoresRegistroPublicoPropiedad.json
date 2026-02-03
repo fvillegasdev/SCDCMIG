@@ -1,0 +1,71 @@
+﻿{
+    "RegistroPublicoPropiedad": {
+        "bc": {
+            "text": "Registro Público de Propiedad",
+            "link": "/kontrol/RegistroPublicoPropiedad"
+        },
+        "consulta": {
+            "title": "Registro Público de Propiedad",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+      "form": {
+        "Clave": {
+          "label": "Clave",
+          "helplabel": "Capture la clave",
+          "validaciones": {
+            "requerida": "La clave es requerida"
+          }
+        },
+        "Nombre": {
+          "label": "Nombre",
+          "helplabel": "Capture un Nombre",
+          "validaciones": {
+            "requerida": "El Nombre es requerido"
+          }
+        },
+        "Estatus": {
+          "label": "Activo",
+          "helplabel": "Estatus"
+        },
+        "Partida": {
+          "label": "Incidencia",
+          "helplabel": "El campo Incidencia es requerido"
+        },
+        "Folio": {
+          "label": "Folio",
+          "helplabel": "Campo Folio requerido"
+        },
+        "Libro": {
+          "label": "Libro",
+          "helplabel": "Campo libro es requerido"
+        },
+        "Seccion": {
+          "label": "Sección",
+          "helplabel": "Campo Sección requerido"
+        },
+        "Ciudad": {
+          "label": "Ciudad",
+          "helplabel": "Campo Ciudad requerido"
+        },
+        "FechaInscripcion": {
+          "label": "Fecha de Inscripción",
+          "helplabel": "El campo Fecha de Inscripción es requerido"
+        }
+      },
+    "mensajes": {
+        "exito": "Registro Púublico de Propiedad actualizado"
+    },
+      "edit": {
+        "titulo": "Registro Púublico de Propiedad"
+      },
+      "titulo": {
+        "nuevo": "Registro Púublico de Propiedad"
+      }
+  }
+}

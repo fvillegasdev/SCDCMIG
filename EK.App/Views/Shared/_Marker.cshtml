@@ -1,0 +1,95 @@
+﻿<style>
+    #adressMap {
+        height: 100%;
+    }
+</style>
+<input type="hidden" id="hdnGeoLatLng" value="" />
+<script type="text/javascript">
+    var initLat = 0, initLng = 0;
+    var map; var geocoder;
+    var markers = [];
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+           alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        initLat = position.coords.latitude;
+        initLng = position.coords.longitude;
+        //map.setCenter({ lat: initLat, lng : initLng });
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred while getting the browser coordinates.")
+                break;
+        }
+    }
+
+    function initMap() {
+        getLocation();
+        if (!initLat > 0 || !initLng > 0) {
+            initLat = 19.5927571;
+            initLng = -98.9604482;
+        }
+
+        map = new google.maps.Map(document.getElementById('adressMap'), {
+            zoom: 8,
+            center: { lat: initLat, lng: initLng }
+        });
+
+        var fn = function (pos) {
+            if (window.parent && window.parent.window.parent) {
+                var p = window.parent.window.parent.window;
+                if (p.onMapLocationClicked) {
+                    p.onMapLocationClicked(pos.lat() + ", " + pos.lng());
+                };
+            };
+        };
+
+        map.addListener('click', function (event) {
+            var marker = new google.maps.Marker({
+                map: map,
+                position: event.latLng,
+                draggable: false
+            });
+
+            if (markers.length >= 1) {
+                deleteMarkers();                
+            }
+            markers.push(marker);
+            fn(event.latLng);
+            
+        });
+
+    };
+
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    function deleteMarkers() {
+        setMapOnAll(null);
+        markers = [];
+    };
+
+</script>
+<div id="adressMap" style="min-height:600px; margin: auto;"></div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVm1BxY9W3jlFhmKR64ZtrKL_Wxk-QAtA&callback=initMap"></script>

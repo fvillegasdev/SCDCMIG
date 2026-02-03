@@ -1,0 +1,169 @@
+﻿{
+    "sgp_tareas": {
+        "bc": {
+            "text": "Tareas",
+            "link": "/sgp/Tareas"
+        },
+        "consulta": {
+            "title": "Tareas",
+            "subTitle": "Administración de Tareas",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helpLabel": "La clave es un identificador único para el proyecto",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helpLabel": "Nombre descriptivo del proyecto",
+                "validaciones": {
+                    "requerida": "El nombre es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Estatus",
+                "helplabel": "Estatus",
+                "checkedLabel": "Estatus"
+            },
+            "Completada": {
+                "label": "Tarea Completada",
+                "helplabel": "Tarea Completada",
+                "checkedLabel": "Tarea Completada"
+            },
+            "PresentacionGantt": {
+                "label": "Presentación Gantt",
+                "helplabel": "Presentación Gantt",
+                "checkedLabel": "Presentación Gantt"
+            },
+            "CreadoPor": {
+                "label": "Creado Por"
+            },
+            "Creado": {
+                "label": "Creado"
+            },
+            "Modificado": {
+                "label": "Modificado"
+            },
+            "FechaEstimadaInicio": {
+                "label": "Fecha inicio estimada",
+                "helpLabel": "Fecha de inicio de la tarea",
+                "validaciones": {
+                    "requerida": "Es necesario seleccionar una fecha de Inicio"
+                }
+            },
+            "FechaEstimadaFin": {
+                "label": "Fecha finalizacción estimada",
+                "helpLabel": "Fecha de finalización de la tarea",
+                "validaciones": {
+                    "requerida": "Es necesario seleccionar una fecha Final"
+                }
+            },
+            "DiasDuracion": {
+                "label": "Duración"
+            },
+            "AsignadoA": {
+                "label": "Asignado A",
+                "helpLabel": "Es el colaborador al cual se le asignara el proyecto",
+                "validaciones": {
+                    "requerida": "Es necesario asignar a un colaborador"
+                }
+            },
+            "FlujoAvance": {
+                "label": "Estatus tarea",
+                "helpLabel": "Estatus de la tarea.",
+                "validaciones": {
+                    "requerida": "Estatus de la tarea requerido."
+                }
+            },
+            "TipoAvance": {
+                "label": "Tipo avance",
+                "helpLabel": "Tipo de avance para la tarea",
+                "validaciones": {
+                    "requerida": "Tipo de avance de la tarea requerido."
+                }
+            },
+            "Contemplaravance": {
+                "label": "Contemplar avance",
+                "helpLabel": "Sera contemplado para el avance",
+                "validaciones": {
+                    "requerida": "Contemplado para el avance."
+                }
+            },
+            "Descripcion": {
+                "label": "Descripción",
+                "helpLabel": "Descripción de la tarea",
+                "validaciones": {
+                    "requerida": "Descripción de la tarea"
+                }
+            },
+            "WorkFlow": {
+                "label": "Flujo de autorización",
+                "helpLabel": "Autorización de la tarea",
+                "validaciones": {
+                    "requerida": "Autorización de la tarea"
+                }
+            },
+            "MaximoValor": {
+                "label": "Max Avance",
+                "helpLabel": "Máximo Avance",
+                "validaciones": {
+                    "requerida": "Requiere que coloque el máximo de avance"
+                }
+            },
+            "Prioridad": {
+                "label": "Prioridad de tarea",
+                "helpLabel": "Nivel de prioridad para la tarea",
+                "validaciones": {
+                    "requerida": "Nivel de prioridad de la tarea requerido."
+                }
+            },
+            "DependenciasAlInicio": {
+                "label": "Dependencias al iniciar tarea",
+                "icon": "fal fa-fast-backward",
+                "helpLabel": "Tareas que dependen para iniciar la tarea"
+            },
+            "DependenciasAlFin": {
+                "label": "Dependencias al finalizar tarea",
+                "icon": "fal fa-fast-forward",
+                "helpLabel": "Tareas que dependen al finalizar la tarea"
+            }
+        },
+        "sections": {
+            "Info": {
+                "title": "Información General"
+            },
+            "ConfiguracionTarea": {
+                "title": "Configuración Tarea"
+            },
+            "ConfiguracionAvance": {
+                "title": "Configuración Avance"
+            }
+        },
+        "mensajes": {
+            "exito": "El proyecto ha sido actualizado"
+        },
+        "titulo": {
+            "nuevo": "Nuevo proyecto"
+        },
+        "IniciarTarea": {
+            "titulo": "Iniciar tarea",
+            "descripcion": "¿Desea iniciar la tarea seleccionada?",
+            "mensaje": "Tarea iniciada correctamente."
+        },
+        "PausarTarea": {
+            "titulo": "Pausar tarea",
+            "descripcion": "¿Desea pausar la tarea seleccionada?",
+            "mensaje": "Tarea pausada correctamente."
+        }
+    }
+}

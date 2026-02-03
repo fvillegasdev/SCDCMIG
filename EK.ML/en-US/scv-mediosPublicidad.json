@@ -1,0 +1,47 @@
+﻿{
+  "mediosPublicidad": {
+    "bc": {
+      "text": "Administración de Medios de Publicidad",
+      "link": "/scv/mediosPublicidad"
+    },
+    "consulta": {
+      "title": "Administración de Medios de Publicidad",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave del medio es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre del medio es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El medio de publicidad ha sido actualizado"
+    },
+    "editar": {
+      "title": "Modificar medio de publicidad"
+    },
+    "titulo": {
+      "nuevo": "Nuevo medio de publicidad"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+﻿{
+  "SeguimientoCampaniaPublicidad": {
+    "bc": {
+      "text": "Seguimiento Campaña Publicidad",
+      "link": "/scv/SeguimientoCampaniaPublicidad"
+    },
+    "consulta": {
+      "title": "Seguimiento de campañas de publicidad",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "MedioPublicidad": { "Nombre": "Medio Publicidad" },
+          "EstadoCampania": { "Nombre": "Estado Campaña" }
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la campaña de publicidad es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la campaña de publicidad es requerida"
+        }
+      },
+      "EstadoCampania": {
+        "label": "Estado Campaña",
+        "helplabel": "Capture el estado de la campaña de publicidad",
+        "validaciones": {
+          "requerida": "El estado de la campaña es requerido"
+        }
+      },
+      "MedioPublicidad": {
+        "label": "Medio Publicidad",
+        "helplabel": "Capture el medio de publicidad",
+        "validaciones": {
+          "requerida": "El medio de publicidad de la campaña es requerido"
+        }
+      },
+      "PropietarioC": {
+        "label": "Propietario Campaña",
+        "helplabel": "Capture el Propietario de la campaña"
+      },
+
+      "mensajes": {
+        "exito": "La campaña de publicidad ha sido actualizado"
+      },
+      "editar": {
+        "title": "Modificar campaña de publicidad"
+      },
+      "titulo": {
+        "nuevo": "Nueva campaña de publicidad"
+      }
+    }
+  }
+}

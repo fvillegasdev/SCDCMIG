@@ -1,0 +1,742 @@
+﻿/*DataTable*/    
+
+.dataTableExtended {
+        display: flex !important;
+        flex-direction: row;
+        position: relative !important;
+        width: 100%;
+    }
+
+    .dataTableExtended .dteFixed {
+        display: flex;
+        border-right: 2px solid #ECEFF1;
+    }
+
+    .dataTableExtended .dteScroll {
+        flex-direction: row;
+        flex-grow: 2;
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: visible;
+        border: 0px solid #333;
+        padding: 0px;
+        position: relative;
+    }
+
+    .dataTableExtended .dteScrollContainer {
+        flex-direction: column;
+        display: flex;
+        margin: 0px;
+        flex-grow: 1;
+    }
+
+    .dteScroll::-webkit-scrollbar {
+        width: .5em;
+        height: 5px;
+    }
+
+    .dteScroll::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: #FFF3E0;
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+
+    .dteScroll::-webkit-scrollbar-thumb {
+        background-color: #FF8F00;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 0 1px #FFF3E0;
+    }
+
+    .dataTableExtended .dteScrollRowHeader .dteCell, .dataTableExtended .dteFixedRowHeader {
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 30px;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 8px 30px 8px 8px;
+        position: relative;
+    }
+
+    .dataTableExtended .dteScrollRowHeader .dteCell {
+        background-color: #2196F3;
+    }
+
+    .dataTableExtended .dteFixedRowHeader {
+        background-color: #304FFE;
+    }
+
+    .dataTableExtended .dteRow .dteCell {
+        height: 21px;
+    }
+
+    .dataTableExtended .dteColumn .dteFixedCell {
+        height: 21px;
+    }
+
+.dataTableExtended .dteRow .dteCell,
+.dataTableExtended .dteRow .dteGroupCell,
+.dataTableExtended .dteColumn .dteFixedCell,
+.dataTableExtended .dteColumn .dteGroupCell {
+    font-size: 10px;
+    overflow: hidden;
+    padding: 2px 5px 0px 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition-duration: 0.2s;
+}
+
+.dataTableExtended .dteGroupCell .dteGroupBadge {
+    background-color: #FF8F00;
+    font-weight: bold;
+    height: 18px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 4px !important;
+    padding: 1px 6px;
+}
+
+.dataTableExtended .dteGroupCell > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.dataTableExtended .dteGroupCell .dteGroupArrow {
+    font-size: 21px;
+    display: inline-block;
+    margin-top: 2px;
+    margin-right: 8px;
+    transform: rotate(90deg) scaleX(1);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.dataTableExtended .dteGroupCell .dteGroupArrow.dteGroupArrowCollapsed {
+    transform: rotate(0deg) scaleX(1);
+}
+
+.dataTableExtended .dteCellCollapsed {
+    transition-duration: 0.2s;
+    height: 0px !important;
+    padding-top: 0px !important;
+}
+
+.dataTableExtended .dteGroupCell .dteGroupText {
+    margin-top: 1px;
+    margin-left: 8px;
+}
+    .dataTableExtended .dteFirstCell {
+        border-top-left-radius: 4px !important;
+    }
+
+    .dataTableExtended .dteLastCell {
+        border-top-right-radius: 4px !important;
+    }
+
+    .dataTableExtended .dteColumn {
+        flex-direction: column;
+    }
+
+.dataTableExtended .dteGroupCell {
+    background-color: #CFD8DC;
+    color: #01579B;
+    font-weight: bold;
+    height: 21px;
+}
+
+    .dataTableExtended .dteRow, .dteScrollRowHeader {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dataTableExtended .dteRow {
+        /*border-top: solid 1px rgb(231, 236, 241);*/
+    }
+
+    .dataTableExtended .dteRow:hover {
+        background: #f3f4f6 !important;
+    }
+
+        .dataTableExtended .dteRow.dteOdd {
+            background-color: #F5F5F5;
+            color: #777;
+        }
+
+    .dataTableExtended .dteRow.dteEven {
+        background-color: #fff;
+        color: #777;
+    }
+
+        .dataTableExtended .dteRow.dteSelected {
+            background-color: #FFF9C4 !important;
+            font-weight: bold;
+        }
+
+    .dataTableExtended .dteFixedCell {
+        /*border-top: solid 1px rgb(231, 236, 241);*/
+    }
+
+    .dataTableExtended .dteFixedCell.dteEven {
+        background-color: #fff;
+        color: #777;
+        font-weight: 600;
+    }
+
+        .dataTableExtended .dteFixedCell.dteOdd {
+            background-color: #F5F5F5;
+            color: #777;
+            font-weight: 600;
+        }
+
+        .dataTableExtended .dteFixedCell.dteSelected {
+            background-color: #FFF9C4 !important;
+            font-weight: bold;
+        }
+
+    .dataTableExtended .dteIconSort {
+        position: absolute;
+        right: 5px;
+        cursor: pointer;
+    }
+    .dataTableExtended .dteIconSort.fa-sort {
+        color: #ddd;
+        font-size: 16px;
+        top: 9px;
+    }
+    .dataTableExtended .dteIconSort.fa-sort-down {
+        color: #FFB74D;
+        font-size: 20px;
+        top: 5px;
+    }
+    .dataTableExtended .dteIconSort.fa-sort-up {
+        color: #FFB74D;
+        font-size: 20px;
+        top: 14px;
+    }
+
+    .dataTableExtended.dtePagingContainer {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0px;
+    }
+
+    .dataTableExtended.dtePagingContainer .dteNavigation {
+        background-color: #f1f1f1;
+        display: flex;
+        justify-content: flex-end;
+        padding: 4px;
+        border-bottom-right-radius: 4px !important;
+        width: 50%;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingTotals {
+        background-color: #f1f1f1;
+        display: flex;
+        justify-content: flex-start;
+        padding: 8px 8px;
+        border-bottom-left-radius: 4px !important;
+        width: 50%;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingTotals .dtePageLabel {
+        font-size: 11px;
+        font-weight: bold;
+        padding-top: 4px;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingTotals .dtePageCount {
+        font-size: 10px;
+        font-weight: bold;
+        background-color: #304FFE;
+        color: #fff;
+        padding: 5px 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 4px !important;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingTotals .dteResultsLabel {
+        font-size: 11px;
+        font-weight: bold;
+        padding-top: 4px;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingTotals .dteResultsCount {
+        font-size: 10px;
+        font-weight: bold;
+        background-color: #304FFE;
+        color: #fff;
+        padding: 5px 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 4px !important;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingBlock {
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        padding: 4px;
+        border-radius: 4px !important;
+        width: 300px;
+        justify-content: center;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingPage {
+        background-color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 4px !important;
+        padding-top: 6px;
+        text-align: center;
+        font-size: 10px;
+        font-weight: bold;
+        margin: 0px 3px;
+        cursor: pointer;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingPage:hover {
+        background-color: #2196F3;
+        color: #fff;
+        transform: scale(1.1);
+        transition: all 0.3s;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingPageSelected {
+        background-color: #304FFE;
+        color: #fff;
+        transform: scale(1.1);
+        transition: all 0.3s;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingNav {
+        width: 25px;
+        height: 25px;
+        border-radius: 4px !important;
+        padding-top: 0px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 4px 3px;
+        cursor: pointer;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingNavBack, .dataTableExtended.dtePagingContainer .dtePagingNavNext {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingNav:hover {
+        background-color: #FF9100;
+        color: #fff;
+        transform: scale(1.1);
+        transition: all 0.3s;
+    }
+
+    /*
+        
+        List
+
+    */
+
+.dataListExtended {
+    display: flex !important;
+    flex-direction: row;
+    position: relative !important;
+    width: 100%;
+}
+
+    .dataListExtended .dteFixed {
+        display: flex;
+        border-right: 2px solid #ECEFF1;
+    }
+
+    .dataListExtended .dteScroll {
+        flex-direction: row;
+        flex-grow: 2;
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: visible;
+        border: 0px solid #333;
+        padding: 0px;
+        position: relative;
+    }
+
+    .dataListExtended .dteScrollContainer {
+        flex-direction: column;
+        display: flex;
+        margin: 0px;
+        flex-grow: 1;
+    }
+
+    .dataListExtended .dteScroll::-webkit-scrollbar {
+        width: 1em;
+        height: 10px;
+    }
+
+    .dataListExtended .dteScroll::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: #E3F2FD;
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+
+    .dataListExtended .dteScroll::-webkit-scrollbar-thumb {
+        background-color: #82B1FF;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 0 1px #FFF3E0;
+    }
+
+    .dataListExtended .dteScrollRowHeader .dteCell, .dataListExtended .dteFixedRowHeader {
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 30px;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 8px 30px 8px 8px;
+        position: relative;
+    }
+
+    .dataListExtended .dteScrollRowHeader .dteCell {
+        background-color: transparent;
+        border-bottom: 2px solid #FF8F00;
+        color: #333;
+    }
+
+    .dataListExtended .dteFixedRowHeader {
+        background-color: transparent;
+        border-bottom: 2px solid #FF8F00;
+        color: #333;
+    }
+
+    .dataListExtended .dteRow .dteCell {
+        height: 21px;
+    }
+
+    .dataListExtended .dteColumn .dteFixedCell {
+        height: 21px;
+    }
+
+    .dataListExtended .dteRow .dteCell,
+    .dataListExtended .dteRow .dteGroupCell,
+    .dataListExtended .dteColumn .dteFixedCell,
+    .dataListExtended .dteColumn .dteGroupCell {
+        font-size: 10px;
+        overflow: hidden;
+        padding: 2px 5px 0px 5px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition-duration: 0.2s;
+    }
+
+    .dataListExtended .dteGroupCell .dteGroupBadge {
+        background-color: #FF8F00;
+        font-weight: bold;
+        height: 18px;
+        color: #fff;
+        display: inline-block;
+        border-radius: 4px !important;
+        padding: 1px 6px;
+    }
+
+.dataListExtended .dteGroupCell > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.dataListExtended .dteGroupCell .dteGroupArrow {
+    font-size: 21px;
+    display: inline-block;
+    margin-top: 2px;
+    margin-right: 8px;
+    transform: rotate(90deg) scaleX(1);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.dataListExtended .dteGroupCell .dteGroupArrow.dteGroupArrowCollapsed {
+    transform: rotate(0deg) scaleX(1);
+}
+
+.dataListExtended .dteCellCollapsed {
+    transition-duration: 0.2s;
+    height: 0px !important;
+    padding-top: 0px !important;
+}
+
+.dataListExtended .dteGroupCell .dteGroupText {
+    margin-top: 1px;
+    margin-left: 8px;
+}
+
+    .dataListExtended .dteFirstCell {
+        border-top-left-radius: 4px !important;
+    }
+
+    .dataListExtended .dteLastCell {
+        border-top-right-radius: 4px !important;
+    }
+
+    .dataListExtended .dteColumn {
+        flex-direction: column;
+    }
+
+    .dataListExtended .dteGroupCell {
+        background-color: #CFD8DC;
+        color: #01579B;
+        font-weight: bold;
+        height: 21px;
+    }
+
+    .dataListExtended .dteRow, .dteScrollRowHeader {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dataListExtended .dteRow {
+        /*border-top: solid 1px rgb(231, 236, 241);*/
+    }
+
+    .dataListExtended .dteRow:hover {
+        background: #f3f4f6 !important;
+    }
+
+        .dataListExtended .dteRow.dteOdd {
+            background-color: #F5F5F5;
+            color: #777;
+        }
+
+        .dataListExtended .dteRow.dteEven {
+            background-color: #fff;
+            color: #777;
+        }
+
+        .dataListExtended .dteRow.dteSelected {
+            background-color: #FFF9C4 !important;
+            font-weight: bold;
+        }
+
+    .dataListExtended .dteFixedCell {
+        border-top: solid 1px rgb(231, 236, 241);
+    }
+
+        .dataListExtended .dteFixedCell.dteEven {
+            background-color: #fff;
+            color: #777;
+            font-weight: 600;
+        }
+
+        .dataListExtended .dteFixedCell.dteOdd {
+            background-color: #ECEFF1;
+            color: #777;
+            font-weight: 600;
+        }
+
+        .dataListExtended .dteFixedCell.dteSelected {
+            background-color: #FFF9C4 !important;
+            font-weight: bold;
+        }
+
+    .dataListExtended .dteIconSort {
+        position: absolute;
+        right: 5px;
+        cursor: pointer;
+    }
+
+        .dataListExtended .dteIconSort.fa-sort {
+            color: #ddd;
+            font-size: 16px;
+            top: 9px;
+        }
+
+        .dataListExtended .dteIconSort.fa-sort-down {
+            color: #FFB74D;
+            font-size: 20px;
+            top: 5px;
+        }
+
+        .dataListExtended .dteIconSort.fa-sort-up {
+            color: #FFB74D;
+            font-size: 20px;
+            top: 14px;
+        }
+
+    .dataListExtended.dtePagingContainer {
+        background-color: #fff;
+        flex-direction: row;
+        justify-content: center;
+        padding: 8px;
+    }
+
+        .dataListExtended.dtePagingContainer .dteNavigation {
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            padding: 8px;
+            width: 50%;
+        }
+
+        .dataListExtended.dtePagingContainer .dtePagingTotals {
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-start;
+            padding: 16px 8px;
+            width: 50%;
+        }
+
+            .dataListExtended.dtePagingContainer .dtePagingTotals .dtePageLabel {
+                font-size: 11px;
+                font-weight: bold;
+                padding-top: 4px;
+            }
+
+            .dataListExtended.dtePagingContainer .dtePagingTotals .dtePageCount {
+                font-size: 11px;
+                font-weight: bold;
+                background-color: #304FFE;
+                color: #fff;
+                padding: 5px 10px;
+                margin-left: 5px;
+                margin-right: 5px;
+                border-radius: 4px !important;
+            }
+
+            .dataListExtended.dtePagingContainer .dtePagingTotals .dteResultsLabel {
+                font-size: 11px;
+                font-weight: bold;
+                padding-top: 4px;
+            }
+
+            .dataListExtended.dtePagingContainer .dtePagingTotals .dteResultsCount {
+                font-size: 11px;
+                font-weight: bold;
+                background-color: #304FFE;
+                color: #fff;
+                padding: 5px 10px;
+                margin-left: 5px;
+                margin-right: 5px;
+                border-radius: 4px !important;
+            }
+
+        .dataListExtended.dtePagingContainer .dtePagingBlock {
+            display: flex;
+            flex-direction: row;
+            background-color: #f1f1f1;
+            padding: 5px;
+            border-radius: 4px !important;
+            width: 300px;
+            justify-content: center;
+        }
+
+        .dataListExtended.dtePagingContainer .dtePagingPage {
+            background-color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px !important;
+            padding-top: 7px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            margin: 0px 3px;
+            cursor: pointer;
+        }
+
+            .dataListExtended.dtePagingContainer .dtePagingPage:hover {
+                background-color: #2196F3;
+                color: #fff;
+                transform: scale(1.1);
+                transition: all 0.3s;
+            }
+
+        .dataListExtended.dtePagingContainer .dtePagingPageSelected {
+            background-color: #304FFE;
+            color: #fff;
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+
+        .dataListExtended.dtePagingContainer .dtePagingNav {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px !important;
+            padding-top: 3px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 4px 3px;
+            cursor: pointer;
+        }
+
+        .dataListExtended.dtePagingContainer .dtePagingNavBack, .dataListExtended.dtePagingContainer .dtePagingNavNext {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .dataListExtended.dtePagingContainer .dtePagingNav:hover {
+            background-color: #FF9100;
+            color: #fff;
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+
+        /*
+
+            things
+
+        */
+.dteSelectItemFalse {
+    font-size: 14px;
+    color: #eee;
+    cursor: pointer;
+    padding: 1px 5px;
+    background-color: #fff;
+    border: #eee solid 1px;
+    border-radius: 3px;
+}
+    .dteSelectItemFalse:hover {
+        color: #B2FF59;
+        font-size: 16px;
+        transition: all 0.3s;
+    }
+.dteSelectItemTrue {
+    color: #00E676;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 1px 5px;
+    background-color: #fff;
+    border: #eee solid 1px;
+    border-radius: 3px;
+}
+
+
+@media (max-width: 480px) {
+    .dataTableExtended.dtePagingContainer {
+        flex-direction: column;
+    }
+    .dataTableExtended.dtePagingContainer .dtePagingTotals {
+        justify-content: center;
+        width: 100%;
+    }
+    .dataTableExtended.dtePagingContainer .dteNavigation {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) {
+    .dataTableExtended.dtePagingContainer {
+        flex-direction: row;
+    }
+
+    .dataTableExtended.dtePagingContainer .dtePagingTotals {
+        justify-content: flex-start;
+        width: 50%;
+    }
+
+    .dataTableExtended.dtePagingContainer .dteNavigation {
+        justify-content: flex-start;
+        width: 50%;
+    }
+}

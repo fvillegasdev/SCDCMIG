@@ -1,0 +1,59 @@
+{
+  "flujoInstancia": {
+    "consulta": {
+      "title": "Administración de procesos de autorización",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "view": {
+      "title": "Procesos de autorización",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "deactivate": "El registro de la instancia de flujo ha sido cancelado...",
+      "deactivateTitle": "Cancelar Instancia",
+      "update": "El registro de la instancia de flujo ha sido actualizado..."
+    },
+    "form": {
+      "title": "Procesos de autorización",
+      "textUpdate": "Actualizando información",
+      "btnViewInstance": "Ver Tarea Instancia",
+      "btnReference": "Referencia",
+      "btnDeactivate": "Cancelar",
+      "titleTareas": "Tareas de la instancia",
+      "id": {
+        "label": "ID",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "alias": {
+        "label": "Alias",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "referencia": {
+        "label": "Referencia",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "estado": {
+        "label": "Estado",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "status": {
+        "label": "Status",
+        "helpLabel": "",
+        "validations": ""
+      }
+    }
+  }
+}

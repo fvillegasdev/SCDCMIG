@@ -1,0 +1,59 @@
+﻿{
+    "Regimen": {
+      "bc": {
+        "text": "Regimen",
+        "link": "/scv/Regimen"
+      },
+        "consulta": {
+            "title": "Regimen",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+      "form": {
+        "Clave": {
+          "label": "Clave",
+          "helplabel": "Capture la clave",
+          "validacones": {
+            "requerida": "La clave es requerida"
+          }
+        },
+        "Nombre": {
+          "label": "Nombre",
+          "helplabel": "Capture la descripción",
+          "validaciones": {
+            "requerida": "La descripción es requerida"
+          }
+        },
+        "Estatus": {
+          "label": "Activo",
+          "helplabel": "Estatus"
+        },
+        "Compania": {
+          "label": "Tipo de Compañía",
+          "helplabel": "Capture el Tipo de Compañía",
+          "validaciones": {
+            "requerida": "El Tipo de Compañía es requerida"
+          }
+        },
+        "Porcentaje": {
+          "label": "",
+          "helplabel": "Capture el Porcentaje"
+        }
+      },
+      "mensajes": {
+           "exito": "El Regimen ha sido actualizada",
+            "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+           },
+      "edit": {
+            "titulo": "Modificar el Regimen"
+        },
+      "titulo": {
+            "nuevo": "Nuevo Regimen"
+        }
+    }
+}

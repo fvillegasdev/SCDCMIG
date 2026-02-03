@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86B91830-A051-47FE-8F61-848F2723B547}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EK.ML</RootNamespace>
+    <AssemblyName>EK.ML</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RUBA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RUBA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE RELEASE|AnyCPU'">
+    <OutputPath>bin\BASE RELEASE\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE ALORA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE ALORA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BASE DEMO|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BASE DEMO\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EMPORIUM|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EMPORIUM\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CONSULTE|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CONSULTE\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="es-MX.json" />
+    <EmbeddedResource Include="es-MX\kontrol-usuarios.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="es-MX\kontrol-usuarios-clasificadores.json" />
+    <EmbeddedResource Include="es-MX\global.json" />
+    <EmbeddedResource Include="es-MX\kontrol-global.json" />
+    <EmbeddedResource Include="en-US.json" />
+    <None Include="en-US\flujoInstancia.json" />
+    <None Include="en-US\global.json" />
+    <None Include="en-US\kontrol-admin.json" />
+    <None Include="en-US\Kontrol-Agenda.json" />
+    <None Include="en-US\Kontrol-AgendaNew.json" />
+    <None Include="en-US\kontrol-AgrupadorParametros.json" />
+    <None Include="en-US\kontrol-areas.json" />
+    <None Include="en-US\kontrol-botones.json" />
+    <None Include="en-US\kontrol-centrocosto.json" />
+    <None Include="en-US\kontrol-citas.json" />
+    <None Include="en-US\Kontrol-companias.json" />
+    <None Include="en-US\kontrol-configurarparametros.json" />
+    <None Include="en-US\kontrol-dashboards.json" />
+    <None Include="en-US\kontrol-dominios.json" />
+    <None Include="en-US\kontrol-estatus.json" />
+    <None Include="en-US\kontrol-fileManager.json" />
+    <None Include="en-US\kontrol-flujoEstatus.json" />
+    <None Include="en-US\kontrol-flujoInstancia.json" />
+    <None Include="en-US\kontrol-flujoTrabajo.json" />
+    <None Include="en-US\kontrol-flujoTrabajoInstancia.json" />
+    <None Include="en-US\kontrol-global.json" />
+    <None Include="en-US\kontrol-GruposUsuario.json" />
+    <None Include="en-US\kontrol-misProcesos.json" />
+    <None Include="en-US\kontrol-misTareas.json" />
+    <None Include="en-US\kontrol-modulos.json" />
+    <None Include="en-US\kontrol-niveles.json" />
+    <None Include="en-US\kontrol-notificaciones.json" />
+    <None Include="en-US\kontrol-parametros.json" />
+    <None Include="en-US\kontrol-personalizarCampos.json" />
+    <None Include="en-US\kontrol-personalizarCamposOpciones.json" />
+    <None Include="en-US\kontrol-plantillas.json" />
+    <None Include="en-US\kontrol-plantillasLeads.json" />
+    <None Include="en-US\kontrol-posicion.json" />
+    <None Include="en-US\kontrol-ProveedoresActasConstitutivas.json" />
+    <None Include="en-US\kontrol-ProveedoresRegistroPublicoPropiedad.json" />
+    <None Include="en-US\kontrol-puestos.json" />
+    <None Include="en-US\kontrol-PullNotificationsActions.json" />
+    <None Include="en-US\kontrol-reportes.json" />
+    <None Include="en-US\kontrol-tareaEstatus.json" />
+    <None Include="en-US\kontrol-tareaInstancia.json" />
+    <None Include="en-US\kontrol-tareas.json" />
+    <None Include="en-US\kontrol-tareasManuales.json" />
+    <None Include="en-US\kontrol-TipoCitas.json" />
+    <None Include="en-US\kontrol-tipoComercializacion.json" />
+    <None Include="en-US\kontrol-tipodatos.json" />
+    <None Include="en-US\kontrol-tipoFlujo.json" />
+    <None Include="en-US\kontrol-tipomoneda.json" />
+    <None Include="en-US\kontrol-TipoMovimientoProveedores.json" />
+    <None Include="en-US\kontrol-tiposClasificador.json" />
+    <None Include="en-US\kontrol-UnidadMedida.json" />
+    <None Include="en-US\kontrol-usuarios-clasificadores.json" />
+    <None Include="en-US\kontrol-usuarios.json" />
+    <None Include="en-US\kontrol-vistas.json" />
+    <None Include="en-US\kontrol-wfm.json" />
+    <None Include="en-US\sbo-cuentasbancarias.json" />
+    <None Include="en-US\sbo-monedas.json" />
+    <None Include="en-US\sbo-tipomoneda.json" />
+    <None Include="en-US\scco-Contatista.json" />
+    <None Include="en-US\scco-Desarrollos.json" />
+    <None Include="en-US\scco-MotivosOrdenesCambio.json" />
+    <None Include="en-US\scco-NivelesPresupuesto.json" />
+    <None Include="en-US\scco-residentes.json" />
+    <None Include="en-US\scco-TipoInsumo.json" />
+    <None Include="en-US\scco-tiponivelespresupuesto.json" />
+    <None Include="en-US\scco-TipoObra.json" />
+    <None Include="en-US\scco_GrupoInsumo.json" />
+    <None Include="en-US\scco_InsumosMateriales.json" />
+    <None Include="en-US\scco_Obra.json" />
+    <None Include="en-US\kontrol-Proveedores.json" />
+    <None Include="en-US\kontrol-TipoProveedores.json" />
+    <None Include="en-US\scv-bitacora.json" />
+    <None Include="en-US\scv-boletasProspeccion.json" />
+    <None Include="en-US\scv-calculoComision.json" />
+    <None Include="en-US\scv-campaniaPublicidad.json" />
+    <None Include="en-US\scv-caracteristicaAdicional.json" />
+    <None Include="en-US\scv-categorias-Bitacora.json" />
+    <None Include="en-US\scv-categorias.json" />
+    <None Include="en-US\scv-centralesObreras.json" />
+    <None Include="en-US\scv-clientes.json" />
+    <None Include="en-US\scv-comisiones.json" />
+    <None Include="en-US\scv-comisionesCalculo.json" />
+    <None Include="en-US\scv-conceptosCredito.json" />
+    <None Include="en-US\scv-conceptosPago.json" />
+    <None Include="en-US\scv-consultas.json" />
+    <None Include="en-US\scv-desarrollos.json" />
+    <None Include="en-US\scv-documentosExpediente.json" />
+    <None Include="en-US\scv-empresas.json" />
+    <None Include="en-US\scv-esquemas.json" />
+    <None Include="en-US\scv-estatusExpediente.json" />
+    <None Include="en-US\scv-estatusubicacion.json" />
+    <None Include="en-US\scv-etapas.json" />
+    <None Include="en-US\scv-expedienteEscrituracion.json" />
+    <None Include="en-US\scv-expedienteFiniquito.json" />
+    <None Include="en-US\scv-expedientes.json" />
+    <None Include="en-US\scv-expedientesGenerarPoliza.json" />
+    <None Include="en-US\scv-fasesExpediente.json" />
+    <None Include="en-US\scv-global.json" />
+    <None Include="en-US\scv-gradosInteres.json" />
+    <None Include="en-US\scv-indicador.json" />
+    <None Include="en-US\scv-instituciones.json" />
+    <None Include="en-US\scv-ListaMarketingCliente.json" />
+    <None Include="en-US\scv-listaPrecios.json" />
+    <None Include="en-US\scv-ListasMkt.json" />
+    <None Include="en-US\scv-macroEtapas.json" />
+    <None Include="en-US\scv-mediosPublicidad.json" />
+    <None Include="en-US\scv-modelosPaquete.json" />
+    <None Include="en-US\scv-motivoreanudacion.json" />
+    <None Include="en-US\scv-motivoscancelacion.json" />
+    <None Include="en-US\scv-motivosDescartarBoleta.json" />
+    <None Include="en-US\scv-motivosuspension.json" />
+    <None Include="en-US\scv-origenProspeccion.json" />
+    <None Include="en-US\scv-paquetes.json" />
+    <None Include="en-US\scv-planesPagos.json" />
+    <None Include="en-US\scv-Plaza.json" />
+    <None Include="en-US\scv-procesos.json" />
+    <None Include="en-US\scv-prototipos.json" />
+    <None Include="en-US\scv-rangosIngresos.json" />
+    <None Include="en-US\scv-referenciaslaborales.json" />
+    <None Include="en-US\scv-referenciasPersonales.json" />
+    <None Include="en-US\scv-reporteanaliticoprospectos.json" />
+    <None Include="en-US\scv-reporteprospectosclientes.json" />
+    <None Include="en-US\scv-requisitos.json" />
+    <None Include="en-US\scv-segmentos.json" />
+    <None Include="en-US\scv-segmentosvigencia.json" />
+    <None Include="en-US\scv-SeguimientoCampaniaPublicidad.json" />
+    <None Include="en-US\scv-seguimientos.json" />
+    <None Include="en-US\scv-sindicatos.json" />
+    <None Include="en-US\scv-tabuladores.json" />
+    <None Include="en-US\scv-tipoorigen.json" />
+    <None Include="en-US\scv-tiposComercializacion.json" />
+    <None Include="en-US\scv-tramiteAsignado.json" />
+    <None Include="en-US\scv-tramites.json" />
+    <None Include="en-US\scv_giros.json" />
+    <None Include="en-US\kontrol-BlogPostCategorias.json" />
+    <None Include="en-US\sgp-reservaterritorial.json" />
+    <None Include="en-US\sgp-TipoProyecto.json" />
+    <None Include="en-US\sgp-proyectos.json" />
+    <None Include="en-US\spv-AgendaContratistaAreasComunes.json" />
+    <None Include="en-US\spv-BitacoraEspSPVCliente.json" />
+    <None Include="en-US\spv-CapturaFechaConstruccion.json" />
+    <None Include="en-US\spv-CausasReprogramacion.json" />
+    <None Include="en-US\spv-CheckLists.json" />
+    <None Include="en-US\spv-ClasificacionViviendaPendienteEntrega.json" />
+    <None Include="en-US\spv-ConfigViviendaEntregable.json" />
+    <None Include="en-US\spv-ConsultaClasificacionViviendaPendienteEntrega.json" />
+    <None Include="en-US\spv-ConsultaComparativaincidencias.json" />
+    <None Include="en-US\spv-ConsultaFallasIncidencias.json" />
+    <None Include="en-US\spv-ConsultaPreparacionVivienda.json" />
+    <None Include="en-US\spv-ConsultaReincidencias.json" />
+    <None Include="en-US\spv-ConsultaReporteAnalisisComunidades.json" />
+    <None Include="en-US\spv-ConsultaViviendaEntregable.json" />
+    <None Include="en-US\spv-ContratistasUbicaciones.json" />
+    <None Include="en-US\spv-ContribucionPorPlaza - Copia.json" />
+    <None Include="en-US\spv-ContribucionPorPlaza.json" />
+    <None Include="en-US\spv-DocumentosImpresion.json" />
+    <None Include="en-US\spv-EntregaPaquetes.json" />
+    <None Include="en-US\spv-ComponentesIncidencias.json" />
+    <None Include="en-US\spv-Falla.json" />
+    <None Include="en-US\spv-MediosComunicacion.json" />
+    <None Include="en-US\spv-MotivosCancelacionPV.json" />
+    <None Include="en-US\spv-OrigenFalla.json" />
+    <None Include="en-US\spv-PersonalEntregaUbicacion.json" />
+    <None Include="en-US\spv-PlanCompromisosEntrega.json" />
+    <None Include="en-US\spv-Prereportes.json" />
+    <None Include="en-US\spv-ReporteApp.json" />
+    <None Include="en-US\spv-ReporteDatosSega.json" />
+    <None Include="en-US\spv-ReporteEncuestaSatisfaccion.json" />
+    <None Include="en-US\spv-ReporteFallasAreasComunes.json" />
+    <None Include="en-US\spv-ReporteFallasAreasComunesActualizador.json" />
+    <None Include="en-US\spv-ReportePredictivo.json" />
+    <None Include="en-US\spv-ReporteSeguimientoVivProg.json" />
+    <None Include="en-US\spv-ReportesFallas.json" />
+    <None Include="en-US\spv-ReportesFallasActualizador.json" />
+    <None Include="en-US\spv-ReportesFallasConsulta.json" />
+    <None Include="en-US\spv-ResponsableEntregaDesarrollos.json" />
+    <None Include="en-US\spv-ReversarEntregaUbicacion.json" />
+    <None Include="en-US\spv-RezagosEntrega.json" />
+    <None Include="en-US\spv-SupervisoresUbicaciones.json" />
+    <None Include="en-US\spv-PlanCompromisosConstruccion.json" />
+    <None Include="en-US\spv-Tickets.json" />
+    <None Include="en-US\scv-tipocaracteristica.json" />
+    <None Include="en-US\scv-tipoFinanciamiento.json" />
+    <None Include="en-US\scv-tipoinmueble.json" />
+    <None Include="en-US\scv-tiposcambio.json" />
+    <None Include="en-US\scv-tiposUbicacion.json" />
+    <None Include="en-US\scv-TmComisiones.json" />
+    <None Include="en-US\scv-ubicaciones.json" />
+    <None Include="en-US\scv-ventas.json" />
+    <None Include="en-US\scv_notarios.json" />
+    <None Include="en-US\scv_puntosVenta.json" />
+    <None Include="en-US\spv-TipoContratista.json" />
+    <None Include="en-US\spv-TipoFallaAreaComun.json" />
+    <None Include="en-US\spv-TiposComponentes.json" />
+    <None Include="en-US\spv-UbicacionComun.json" />
+    <None Include="en-US\spv-UbicacionesFalla.json" />
+    <None Include="es-MX\kontrol-BlogPostCategorias.json" />
+    <None Include="es-MX\kontrol-consultas.json" />
+    <None Include="es-MX\kontrol-eventos.json" />
+    <None Include="es-MX\kontrol-ProveedoresActasConstitutivas.json" />
+    <None Include="es-MX\kontrol-ProveedoresRegistroPublicoPropiedad.json" />
+    <None Include="es-MX\kontrol-TipoMovimientoProveedores.json" />
+    <None Include="es-MX\ReporteEncuestaEntregaVivienda.json" />
+    <None Include="es-MX\scco-Desarrollos.json" />
+    <None Include="es-MX\scco-MotivosOrdenesCambio.json" />
+    <None Include="es-MX\scco-NivelesPresupuesto.json" />
+    <None Include="es-MX\scco-Presupuestos.json" />
+    <None Include="es-MX\scco-residentes.json" />
+    <None Include="es-MX\scco-TabuladoresInsumos.json" />
+    <None Include="es-MX\scco-tiponivelespresupuesto.json" />
+    <None Include="es-MX\scco_Contratos.json" />
+    <None Include="es-MX\scco_InsumosTarjetas.json" />
+    <None Include="es-MX\scco_GrupoInsumo.json" />
+    <None Include="es-MX\scco_AnticiposDeducciones.json" />
+    <None Include="es-MX\kontrol-Proveedores.json" />
+    <None Include="es-MX\kontrol-TipoProveedores.json" />
+    <None Include="es-MX\scco_InsumosMateriales.json" />
+    <None Include="es-MX\OrigenLead.json" />
+    <None Include="es-MX\scco_Obra.json" />
+    <None Include="es-MX\Interface.json" />
+    <None Include="es-MX\scv-AnalisisProspecto.json" />
+    <None Include="es-MX\scv-consultaUbicaciones.json" />
+    <None Include="es-MX\scv-EncuestaPoblacional.json" />
+    <None Include="es-MX\scv-expedientes-AnalisisPorEtapas.json" />
+    <None Include="es-MX\scv-expedientesCancelados-Suspendidos.json" />
+    <None Include="es-MX\scv-GestionDocumentos.json" />
+    <None Include="es-MX\scv-comisionesAjustes.json" />
+    <None Include="es-MX\scv-ComisionesAprobacion.json" />
+    <None Include="es-MX\scv-expedientesDocumentos.json" />
+    <None Include="es-MX\scv-reporteForecast.json" />
+    <None Include="es-MX\scv-reporteFuerzaVentas.json" />
+    <None Include="es-MX\scv-reporteInformativoMacroEtapas.json" />
+    <None Include="es-MX\scv-Reasignacion.json" />
+    <None Include="es-MX\scv-reporteanaliticoprospectos.json" />
+    <None Include="es-MX\scv-reporteExpedientes.json" />
+    <None Include="es-MX\scv-reporteprospectosclientes.json" />
+    <None Include="es-MX\scv-reporteboletasprospeccion.json" />
+    <None Include="es-MX\sdc-AsociacionCivil.json" />
+    <None Include="es-MX\sdc-ComiteAreaGeografica.json" />
+    <None Include="es-MX\sdc-ComiteInformacionComite.json" />
+    <None Include="es-MX\sdc-ComiteReuniones.json" />
+    <None Include="es-MX\sdc-ComiteReunionesAgenda.json" />
+    <None Include="es-MX\sdc-ComiteReunionesGraficas.json" />
+    <None Include="es-MX\sdc-ConsultaEventosActAltaPPC.json" />
+    <None Include="es-MX\sdc-ConsultaEventosActCaptura.json" />
+    <None Include="es-MX\sdc-dasboardDesarrolloComunitario.json" />
+    <None Include="es-MX\scv-tiposProceso.json" />
+    <None Include="es-MX\sdc-Eventos.json" />
+    <None Include="es-MX\sdc-MesaDirectiva.json" />
+    <None Include="es-MX\sdc-ReconocimientosRuba.json" />
+    <None Include="es-MX\sdc_ConsultaEncuentaPoblacional.json" />
+    <None Include="es-MX\sdc_ConsultaEventosActAlta.json" />
+    <None Include="es-MX\sgp-tareas.json" />
+    <None Include="es-MX\sgp-reservaterritorial.json" />
+    <None Include="es-MX\sgp-TipoProyecto.json" />
+    <None Include="es-MX\sgp-proyectos.json" />
+    <None Include="es-MX\spv-AgendaContratistaAreasComunes.json" />
+    <None Include="es-MX\spv-CatComponentes.json" />
+    <None Include="es-MX\spv-CatConfiguracionDocumentos.json" />
+    <None Include="es-MX\spv-catCoordinadores.json" />
+    <None Include="es-MX\spv-catFallasAreasComunes.json" />
+    <None Include="es-MX\spv-CatFallasNuevoCat.json" />
+    <None Include="es-MX\spv-ClasificacionViviendaPendienteEntrega.json" />
+    <None Include="es-MX\spv-ComponentesIncidencias.json" />
+    <None Include="es-MX\spv-ConfigCorreoEquipamiento.json" />
+    <None Include="es-MX\spv-ConsultaClasificacionViviendaPendienteEntrega.json" />
+    <None Include="es-MX\spv-ConsultaComparativaincidencias.json" />
+    <None Include="es-MX\spv-ConsultaDiasPromedioAtencion.json" />
+    <None Include="es-MX\spv-ConsultaPromedioDiasEntrega.json" />
+    <None Include="es-MX\spv-ConsultaReincidencias.json" />
+    <None Include="es-MX\spv-ConsultaReporteAnalisisComunidades.json" />
+    <None Include="es-MX\spv-PlanificacionComponentAtencion.json" />
+    <None Include="es-MX\spv-PlanificacionComponentDashboard.json" />
+    <None Include="es-MX\spv-PlanificacionComponent.json" />
+    <None Include="es-MX\spv-ReporteApp.json" />
+    <None Include="es-MX\spv-ReporteDatosSega.json" />
+    <None Include="es-MX\spv-ReporteEncuestaSatisfaccion.json" />
+    <None Include="es-MX\spv-ReporteFallasAreasComunes.json" />
+    <None Include="es-MX\spv-ReporteFallasAreasComunesActualizador.json" />
+    <None Include="es-MX\spv-ReportePredictivo.json" />
+    <None Include="es-MX\spv-ReporteSeguimientoVivProg.json" />
+    <None Include="es-MX\spv-SupervisoresCoordinadores.json" />
+    <None Include="es-MX\spv-PlanCompromisosEntrega.json" />
+    <None Include="es-MX\spv-PlanCompromisosConstruccion.json" />
+    <None Include="es-MX\spv-ConsultaFallasIncidencias.json" />
+    <None Include="es-MX\spv-BitacoraEspSPVCliente.json" />
+    <None Include="es-MX\spv-AgendaContratista.json" />
+    <None Include="es-MX\spv-ResponsableEntregaDesarrollos.json" />
+    <None Include="es-MX\spv-ModificarDatosCliente.json" />
+    <None Include="es-MX\spv-Tickets.json" />
+    <None Include="es-MX\scv-calculoComision.json" />
+    <None Include="es-MX\scv-Impuestos.json" />
+    <None Include="es-MX\scv-Regimen.json" />
+    <None Include="es-MX\spv-ContribucionPorPlaza.json" />
+    <None Include="es-MX\spv-ReportesFallasConsulta.json" />
+    <None Include="es-MX\spv-ReportesFallasActualizador.json" />
+    <None Include="es-MX\spv-ReversarEntregaUbicacion.json" />
+    <None Include="es-MX\scv-indicador.json" />
+    <None Include="es-MX\scv-tabuladores.json" />
+    <None Include="es-MX\spv-SupervisoresUbicaciones.json" />
+    <None Include="es-MX\spv-PersonalEntregaUbicacion.json" />
+    <EmbeddedResource Include="es-MX\scv-expedientesGenerarPoliza.json" />
+    <None Include="es-MX\flujoInstancia.json" />
+    <None Include="es-MX\kontrol-admin.json" />
+    <EmbeddedResource Include="es-MX\scv_giros.json" />
+    <None Include="es-MX\Kontrol-AgendaNew.json" />
+    <None Include="es-MX\Kontrol-Agenda.json" />
+    <None Include="es-MX\kontrol-botones.json" />
+    <None Include="es-MX\kontrol-plantillasLeads.json" />
+    <None Include="es-MX\kontrol-tareaInstancia.json" />
+    <EmbeddedResource Include="es-MX\scv-expedienteEscrituracion.json" />
+    <None Include="es-MX\scv-SeguimientoCampaniaPublicidad.json" />
+    <None Include="es-MX\scv-ListaMarketingCliente.json" />
+    <None Include="es-MX\scv-ListasMkt.json" />
+    <None Include="es-MX\kontrol-citas.json" />
+    <None Include="es-MX\kontrol-dashboards.json" />
+    <None Include="es-MX\kontrol-flujoTrabajoInstancia.json" />
+    <None Include="es-MX\kontrol-configurarparametros.json" />
+    <None Include="es-MX\kontrol-AgrupadorParametros.json" />
+    <EmbeddedResource Include="es-MX\sbo-cuentasbancarias.json" />
+    <None Include="es-MX\kontrol-dominios.json" />
+    <None Include="es-MX\Kontrol-companias.json" />
+    <None Include="es-MX\kontrol-estatus.json" />
+    <None Include="es-MX\kontrol-fileManager.json" />
+    <None Include="es-MX\kontrol-flujoInstancia.json" />
+    <None Include="es-MX\kontrol-flujoTrabajo.json" />
+    <None Include="es-MX\kontrol-modulos.json" />
+    <None Include="es-MX\kontrol-niveles.json" />
+    <None Include="es-MX\kontrol-notificaciones.json" />
+    <None Include="es-MX\kontrol-parametros.json" />
+    <None Include="es-MX\kontrol-personalizarCamposOpciones.json" />
+    <None Include="es-MX\kontrol-personalizarCampos.json" />
+    <None Include="es-MX\kontrol-plantillas.json" />
+    <None Include="es-MX\kontrol-posicion.json" />
+    <None Include="es-MX\kontrol-puestos.json" />
+    <None Include="es-MX\kontrol-reportes.json" />
+    <None Include="es-MX\kontrol-tareasManuales.json" />
+    <None Include="es-MX\kontrol-TipoCitas.json" />
+    <None Include="es-MX\kontrol-tipoComercializacion.json" />
+    <None Include="es-MX\kontrol-tipodatos.json" />
+    <None Include="es-MX\kontrol-flujoEstatus.json" />
+    <None Include="es-MX\kontrol-misProcesos.json" />
+    <None Include="es-MX\kontrol-misTareas.json" />
+    <None Include="es-MX\kontrol-tareaEstatus.json" />
+    <None Include="es-MX\kontrol-tipoFlujo.json" />
+    <None Include="es-MX\scv-tipoorigen.json" />
+    <None Include="es-MX\kontrol-tipomoneda.json" />
+    <None Include="es-MX\kontrol-tiposClasificador.json" />
+    <EmbeddedResource Include="es-MX\kontrol-areas.json" />
+    <None Include="es-MX\kontrol-vistas.json" />
+    <None Include="es-MX\kontrol-wfm.json" />
+    <None Include="es-MX\sbo-monedas.json" />
+    <None Include="es-MX\sbo-tipomoneda.json" />
+    <None Include="es-MX\scv-bitacora.json" />
+    <None Include="es-MX\scv-centralesObreras.json" />
+    <None Include="es-MX\scv-boletasProspeccion.json" />
+    <None Include="es-MX\scv-paquetes.json" />
+    <None Include="es-MX\scv-conceptosCredito.json" />
+    <None Include="es-MX\scv-conceptosPago.json" />
+    <None Include="es-MX\scv-expedientes.json" />
+    <None Include="es-MX\kontrol-GruposUsuario.json" />
+    <None Include="es-MX\scv-categorias-Bitacora.json" />
+    <None Include="es-MX\scv-macroEtapas.json" />
+    <None Include="es-MX\scv-fasesExpediente.json" />
+    <None Include="es-MX\scv-esquemas.json" />
+    <None Include="es-MX\scv-listaPrecios.json" />
+    <None Include="es-MX\scv-documentosExpediente.json" />
+    <None Include="es-MX\scv-motivoreanudacion.json" />
+    <None Include="es-MX\scv-motivosuspension.json" />
+    <None Include="es-MX\scv-Plaza.json" />
+    <None Include="es-MX\scv-requisitos.json" />
+    <None Include="es-MX\scv-planesPagos.json" />
+    <None Include="es-MX\scv-seguimientos.json" />
+    <None Include="es-MX\scv-sindicatos.json" />
+    <None Include="es-MX\scv-tipocaracteristica.json" />
+    <None Include="es-MX\scv-TmComisiones.json" />
+    <None Include="es-MX\scv-tramiteAsignado.json" />
+    <None Include="es-MX\scv-tramites.json" />
+    <None Include="es-MX\scv-ubicaciones.json" />
+    <None Include="es-MX\scv-prototipos.json" />
+    <None Include="es-MX\scv-referenciaslaborales.json" />
+    <None Include="es-MX\scv-etapas.json" />
+    <None Include="es-MX\scv-campaniaPublicidad.json" />
+    <None Include="es-MX\scv-gradosInteres.json" />
+    <None Include="es-MX\scv-ubicacionEstatus.json" />
+    <None Include="es-MX\scv-instituciones.json" />
+    <None Include="es-MX\scv-mediosPublicidad.json" />
+    <None Include="es-MX\scv-categorias.json" />
+    <None Include="es-MX\scv-global.json" />
+    <None Include="es-MX\scv-rangosIngresos.json" />
+    <None Include="es-MX\scv-referenciasPersonales.json" />
+    <None Include="es-MX\scv-segmentos.json" />
+    <None Include="es-MX\scv-segmentosvigencia.json" />
+    <None Include="es-MX\scv-tipoFinanciamiento.json" />
+    <None Include="es-MX\scv-tipoinmueble.json" />
+    <None Include="es-MX\scv-modelosPaquete.json" />
+    <None Include="es-MX\scv-tiposcambio.json" />
+    <None Include="es-MX\scv-caracteristicaAdicional.json" />
+    <None Include="es-MX\scv-estatusExpediente.json" />
+    <None Include="es-MX\scv-tiposUbicacion.json" />
+    <None Include="es-MX\scv-clientes.json" />
+    <None Include="es-MX\scv-motivoscancelacion.json" />
+    <None Include="es-MX\scv-ventas.json" />
+    <EmbeddedResource Include="es-MX\scv-origenProspeccion.json" />
+    <EmbeddedResource Include="es-MX\scv-motivosDescartarBoleta.json" />
+    <EmbeddedResource Include="es-MX\scv-expedienteFiniquito.json" />
+    <None Include="es-MX\scv_puntosVenta.json" />
+    <None Include="es-MX\scv-desarrollos.json" />
+    <None Include="es-MX\scv_notarios.json" />
+    <None Include="es-MX\scv-procesos.json" />
+    <None Include="es-MX\kontrol-centrocosto.json" />
+    <None Include="es-MX\spv-CausasReprogramacion.json" />
+    <None Include="es-MX\scco-Contratista.json" />
+    <None Include="es-MX\spv-DocumentosImpresion.json" />
+    <None Include="es-MX\spv-EntregaPaquetes.json" />
+    <None Include="es-MX\spv-ConfigViviendaEntregable.json" />
+    <None Include="es-MX\spv-CapturaFechaConstruccion.json" />
+    <None Include="es-MX\spv-ConsultaPreparacionVivienda.json" />
+    <None Include="es-MX\spv-ConsultaViviendaEntregable.json" />
+    <None Include="es-MX\spv-MediosComunicacion.json" />
+    <None Include="es-MX\spv-MotivosCancelacionPV.json" />
+    <None Include="es-MX\spv-OrigenFalla.json" />
+    <None Include="es-MX\spv-Prereportes.json" />
+    <None Include="es-MX\spv-ContratistasUbicaciones.json" />
+    <None Include="es-MX\spv-ReportesFallas.json" />
+    <None Include="es-MX\spv-RezagosEntrega.json" />
+    <None Include="es-MX\spv-CheckLists.json" />
+    <None Include="es-MX\spv-TipoContratista.json" />
+    <None Include="es-MX\scco-TipoObra.json" />
+    <None Include="es-MX\scco-TipoInsumo.json" />
+    <None Include="es-MX\scv-TipoMovimiento.json" />
+    <None Include="es-MX\spv-TiposComponentes.json" />
+    <None Include="es-MX\spv-TipoFallaAreaComun.json" />
+    <None Include="es-MX\spv-UbicacionComun.json" />
+    <None Include="es-MX\spv-UbicacionesFalla.json" />
+    <None Include="es-MX\scv-tiposComercializacion.json" />
+    <None Include="es-MX\kontrol-tiposEvento.json" />
+    <None Include="es-MX\SPVFraccionamientosCAT.json" />
+    <None Include="es-MX\SPVSupervisoresCat.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>$(SolutionDir)packages\JsonMerge.Cli.1.0.1\tools\JsonMerge.Cli.exe -i $(ProjectDir)es-MX\ -file $(ProjectDir)es-MX.json
+$(SolutionDir)packages\JsonMerge.Cli.1.0.1\tools\JsonMerge.Cli.exe -i $(ProjectDir)en-US\ -file $(ProjectDir)en-US.json</PreBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties es-MX_4scv-calculoComision_1json__JSONSchema="NomNom" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

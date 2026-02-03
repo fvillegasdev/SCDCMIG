@@ -1,0 +1,62 @@
+﻿{
+  "flujoEstatus": {
+    "bc": {
+      "text": "flujoEstatus",
+      "link": "/kontrol/flujoEstatus"
+    },
+    "consulta": {
+      "title": "Administración de estatus de flujos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "view": {
+      "title": "Estatus de flujo",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "editar": {
+      "title": "Estatus de flujo",
+      "subtitle": "Nuevo",
+      "href": "kontrol/flujoestatus/editar",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "update": "El estatus del flujo ha sido actualizado...",
+      "save": "El estatus del flujo se ha guardado con éxito.",
+      "savetitle": "Guardar estatus del flujo"
+    },
+    "form": {
+      "title": "Estatus de flujo",
+      "textUpdate": "Actualizando información",
+      "id": {
+        "label": "ID",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la clave",
+        "validations": "La clave del estatus de flujo es requerida"
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre",
+        "validations": "El nombre del estatus de flujo es requerido"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus del registro",
+        "validations": ""
+      }
+    }
+  }
+}

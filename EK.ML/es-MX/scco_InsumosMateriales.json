@@ -1,0 +1,123 @@
+﻿{
+  "InsumosMateriales": {
+    "bc": {
+      "text": "InsumosMateriales",
+      "link": "/scco/InsumosMateriales"
+    },
+    "consulta": {
+      "title": "Administración de Insumo",
+      "grid": {
+        "headers": {
+          "claveInsumo": "Clave Insumo",
+          "nombre": "Nombre",
+          "unidadMedida": { "Nombre": "Unidad Medida" },
+          "tipoInsumo": { "Nombre": "Tipo Insumo" },
+          "grupoInsumo": { "Nombre": "Grupo Insumo" },
+          "Estatus": "Estatus",
+          "productoTerminado": "Producto Terminado",
+          "materiaPrima": "Materia Prima",
+          "facturable": "Facturable",
+          "numeroEconomico": "Número Económico",
+          "diasPromedioE": "Días Promedio Entrega"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "TipoInsumo": {
+        "label": "Tipo Insumo",
+        "helplabel": "Capture tipo Insumo"
+      },
+      "ClaveInsumo": {
+        "label": "Clave Insumo"
+      },
+      "GrupoInsumo": {
+        "label": "Grupo Insumo",
+        "helplabel": "Capture el Grupo Insumo"
+      },
+      "FechaInicio": {
+        "label": "Vigencia Desde",
+        "helplabel": "Vigencia Desde"
+      },
+      "FechaFin": {
+        "label": "Vigencia Hasta",
+        "helplabel": "Vigencia Hasta"
+      },
+      "Descripcion": {
+        "label": "Descripcion",
+        "helplabel": "Descripcion"
+      },
+      "UnidadMedida": {
+        "label": "Unidad Medida",
+        "helplabel": "Capture Unidad Medida"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Capture el Estatus del Insumo"
+      },
+      "ProductoTerminado": {
+        "label": "Producto Terminado",
+        "helplabel": "Capture el Estatus del Insumo"
+      },
+      "MateriaPrima": {
+        "label": "Materia Prima",
+        "helplabel": "Capture la Materia Prima"
+      },
+      "Facturable": {
+        "label": "Facturable",
+        "helplabel": "Capture si es facturable",
+        "validaciones": {
+          "requerido": "El campo Facturable es requerido"
+        }
+      },
+      "NumeroEconomico": {
+        "label": "Número Económico",
+        "helplabel": "Capture el Número Económico",
+        "validaciones": {
+          "requerido": "El campo Número Económico es requerido"
+        }
+      },
+      "DiasPromedioE": {
+        "label": "Días Promedio de Entrega",
+        "helplabel": "Capture el numero de días"
+      },
+      "Proceso": {
+        "label": "Tipo de Proceso",
+        "helplabel": "Seleccione un Proceso"
+      },
+      "Tolerancia": {
+        "label": "Tolerancia",
+        "helplabel": "Capture campo Tolerancia"
+      }
+    },
+    "sections": {
+      "ToleranciaProcesos": {
+        "title": "Tolerancia Procesos"
+      }
+    },
+    "mensajes": {
+      "exito": "El Insumo ha sido actualizado",
+      "save": "El Insumo ha sido Creado",
+      "nodata": "No existe registros"
+    },
+    "edit": {
+      "titulo": "Editar Insumo"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Insumo"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+﻿{
+  "OrigenFalla": {
+    "bc": {
+      "text": "Origen Incidencia",
+      "link": "/scv/pv/OrigenFalla"
+    },
+    "consulta": {
+        "title": "Administración de Origen Incidencia",
+        "grid": {
+            "headers": {
+                "clave": "Clave",
+                "descripcion": "Descripción",
+                "abreviatura": "Abreviatura",
+                "procede": "Procede",
+                "estatus": "Estatus"
+            }
+        }
+    },
+    "form": {
+        "clave_origen": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Clave": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Descripcion": {
+            "label": "Descripción",
+            "helplabel": "Capture la Descripción",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "Abreviatura": {
+            "label": "Abreviatura",
+            "helplabel": "Capture la Abreviatura",
+            "validaciones": {
+                "requerida": "La Abreviatura es requerida"
+            }
+        },
+        "Procede": {
+            "label": "Procede",
+            "helplabel": "Capture la Abreviatura"
+        },
+        "Estatus": {
+            "label": "Activo",
+            "helplabel": "Estatus"
+        }
+    },
+    "mensajes": {
+      "exito": "El Origen Incidencia ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo  Origen Incidencia"
+    },
+    "titulo": {
+      "nuevo": "Nuevo  Origen Incidencia"
+    }
+  }
+}

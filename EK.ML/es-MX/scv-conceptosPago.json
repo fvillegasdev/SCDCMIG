@@ -1,0 +1,95 @@
+﻿{
+  "conceptosPago": {
+    "bc": {
+      "text": "Administración de Conceptos de Pago",
+      "link": "/scv/conceptosPago"
+    },
+    "consulta": {
+      "title": "Administración de Conceptos de Pago",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "tipoConceptoPago": { "Nombre": "Tipo Concepto" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave del concepto de pago",
+        "validaciones": {
+          "requerida": "La clave del concepto de pago es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre del concepto de pago",
+        "validaciones": {
+          "requerida": "El nombre del concepto de pago es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "section": {
+        "general": {
+          "title": "Información General",
+          "form": {
+            "TipoConceptoPago": {
+              "label": "Tipo Concepto de Pago",
+              "helplabel": "Capture el tipo de concepto de pago",
+              "validaciones": {
+                "requerida": "El tipo de concepto de pago es requerido"
+              }
+            }
+          }
+        },
+        "tiposMovimiento": {
+          "title": "Tipos de Movimiento del Cliente",
+          "form": {
+            "Capital": {
+              "label": "Movimiento Capital",
+              "helplabel": "Capture el Tipo Movimiento Capital"
+            },
+            "Interes": {
+              "label": "Movimiento Interés",
+              "helplabel": "Capture el Tipo Movimiento Interés"
+            },
+            "Moratorio": {
+              "label": "Movimiento Moratorio",
+              "helplabel": "Capture el Tipo Movimiento Moratorio"
+            },
+            "CapitalCancelacion": {
+              "label": "Movimiento Capital Cancelación",
+              "helplabel": "Capture el Tipo Movimiento Capital Cancelación"
+            },
+            "InteresCancelacion": {
+              "label": "Movimiento Interés Cancelación",
+              "helplabel": "Capture el Tipo Movimiento Interés Cancelación"
+            },
+            "PagoAnticipo": {
+              "label": "Movimiento Pagos Ant./Descto",
+              "helplabel": "Capture el Tipo Movimiento Aplicado en Pagos Anticipo"
+            },
+            "TraspasoCredito": {
+              "label": "Movimiento Traspaso Inst de Crédito",
+              "helplabel": "Capture el Tipo Movimiento Traspaso Inst de Crédito"
+            }
+          }
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "El concepto de pago ha sido actualizado"
+    },
+    "titulo": {
+      "nuevo": "Nuevo concepto de pago"
+    },
+    "editar": {
+      "title": "Modificar concepto de pago"
+    }
+  }
+}

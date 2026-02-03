@@ -1,0 +1,30 @@
+﻿{
+  "taskinstance": {
+    "bc": {
+      "text": "Administración de tareas de procesos de autorización",
+      "link": "/kontrol/workflows/misTareas"
+    },
+    "consulta": {
+      "title": "Administración de tareas de procesos de autorización",
+      "grid": {
+        "headers": {
+          "id": "ID",
+          "fechaAsignacion": "Fecha Asignación",
+          "estatus": "Estatus",
+          "instancia": {
+            "Clave": "Tipo",
+            "Workflow": { "Tipo": { "Clave": "Flujo de Trabajo" } },
+            "UserOwner": { "Nombre": "Popietario" }
+          }
+        }
+
+      }
+    },
+    "mensajes": {
+      "exito": "El Tarea ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nueva Tarea Instancia"
+    }
+  }
+}

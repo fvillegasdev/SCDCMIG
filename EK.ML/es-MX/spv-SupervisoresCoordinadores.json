@@ -1,0 +1,85 @@
+{
+  "SPVSupervisoresCoordinadores": {
+    "bc": {
+      "text": "Relacion Supervisores Coordinadores",
+      "link": "/scv/pv/SPVSupervisoresCoordinadores"
+    },
+    "consulta": {
+      "title": "Administración de Relación de Supervisores Coordinadores",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Status"
+        }
+      }
+    },
+    "view": {
+      "title": "Relación de Supervisores Coordinadores",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "editar": {
+      "title": "Relación de Supervisores Coordinadores",
+      "subtitle": "Nuevo",
+      "href": "",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "update": "La Relacion de Supervisores Coordinadores ha sido actualizada...",
+      "save": "La Relacion de Supervisores Coordinadores se ha guardada con éxito.",
+      "savetitle": "Guardar la Relacion de Supervisores Coordinadores",
+      "exito": "La Relacion de Supervisores Coordinadores ha sido actualizada"
+    },
+    "form": {
+      "Id": {
+        "label": "",
+        "helpLabel": "",
+        "validaciones": ""
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus",
+        "validaciones": ""
+      }
+    },
+    "sections": {
+      "SPVSupervisoresCoordinadores$usuarios": {
+        "title": "Coordinadores por Plazas"
+      },
+      "SPVSupervisoresCoordinadores$plazas": {
+        "title": "Plazas"
+      },
+      "SPVSupervisoresCoordinadores$fraccionamientosNoAsignados": {
+        "title": "Supervisores Disponibles"
+      },
+      "SPVSupervisoresCoordinadores$fraccionamientosAsignados": {
+        "title": "Supervisores Asignados"
+      }
+    },
+    "titulo": {
+      "nuevo": "Nueva Relación de Supervisores Coordinadores"
+    },
+    "edit": {
+      "titulo": "La Relación de Supervisores Coordinadores ha sido actualizada"
+    }
+  }
+}

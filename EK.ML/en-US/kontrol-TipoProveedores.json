@@ -1,0 +1,47 @@
+﻿{
+    "TipoProveedores": {
+        "bc": {
+            "text": "Tipo de Proveedores",
+            "link": "/kontrol/TipoProveedores"
+        },
+        "consulta": {
+            "title": "Administración Tipo de Proveedores",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helplabel": "Capture un Nombre",
+                "validaciones": {
+                    "requerida": "El Nombre es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            }
+        },
+    "mensajes": {
+        "exito": "Tipo de Proveedor actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo Tipo de Proveedor"
+    },
+        "titulo": {
+            "nuevo": "Nuevo Tipo de Proveedor"
+        }
+  }
+}

@@ -1,0 +1,86 @@
+﻿{
+  "GrupoInsumo": {
+    "bc": {
+      "text": "Grupos de Insumos",
+      "link": "/scco/GrupoInsumo"
+    },
+    "consulta": {
+      "title": "Administración de Grupos de Insumos",
+      "grid": {
+        "headers": {
+          "estatus": "Estatus",
+          "tipoInsumo": { "Nombre": "Tipo Insumo" },
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "inventariadoGrupoInsumo": { "Nombre": "Inventariado Grupo Insumo" },
+          "presupuestoGrupoInsumo": { "Nombre": "Presupuesto Grupo Insumo" },
+          "validaPresupuesto": { "Nombre": "Valida Presupuesto" }
+        }
+      }
+    },
+    "form": {
+      "InventariadoGrupoInsumo": {
+        "label": "Inventariado",
+        "helplabel": "Capture el Inventariado del Insumo"
+      },
+      "PresupuestoGrupoInsumo": {
+        "label": "Presupuesto",
+        "helplabel": "Capture el Presupuesto del Insumo"
+      },
+      "ValidaPresupuesto": {
+        "label": "Valida Presupuesto",
+        "helplabel": "Capture el Valida Presupuesto del Insumo"
+      },
+      "TransfierePoliza": {
+        "label": "Transfiere Póliza",
+        "helplabel": "Capture Transfiere Póliza del Insumo"
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "ValidaPresupuestoImporte": {
+        "label": "Valida Presupuesto Importe",
+        "helplabel": "Capture Valida Presupuesto Importe"
+      },
+      "TipoInsumo": {
+        "label": "Tipo Insumo",
+        "helplabel": "Capture Tipo Insumo"
+      },
+      "ValidaPresupuestoPrecio": {
+        "label": "Valida Presupuesto Precio",
+        "helplabel": "Valida Presupuesto Precio"
+      },
+      "ValidaPresupuestoCantidad": {
+        "label": "Valida Presupuesto Cantidad",
+        "helplabel": "Valida Pruesupuesto Cantidad"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Capture el Estatus del Grupo Insumo"
+      }
+    },
+
+    "mensajes": {
+      "exito": "El Grupo Insumo ha sido actualizado",
+      "save": "El Grupo Insumo ha sido Creado",
+      "nodata": "No existe registros"
+    },
+    "edit": {
+      "titulo": "Editar El Grupo Insumo"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Grupo Insumo"
+    }
+  }
+}

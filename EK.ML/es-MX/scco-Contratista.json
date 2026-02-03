@@ -1,0 +1,121 @@
+﻿{
+  "Contratistas": {
+    "bc": {
+        "text": "Contratistas",
+        "link": "/scco/Contratistas"
+    },
+    "consulta": {
+        "title": "Administración de Contratista",
+        "grid": {
+          "headers": {
+            "iD": "ID",
+            "nombre": "Nombre",
+            "descripcion": "Descripción",
+            "tipoConvenio": { "Nombre": "Tipo de Convenio" },
+            "proveedor": { "Nombre": "Proveedor" },
+            "estatus": "Estatus"
+          }
+        }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La Clave es requerida"
+        }
+      },
+      "ID": {
+        "label": "Id",
+        "helplabel": "Capture la Id",
+        "validaciones": {
+          "requerida": "La NumPro es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "RFC": {
+        "label": "RFC",
+        "helplabel": "Capture el RFC",
+        "validaciones": {
+          "requerida": "El Registro del RFC es requerido"
+        }
+      },
+      "TipoConvenio": {
+        "label": "Tipo de Convenio",
+        "helplabel": "Capture el Tipo de Convenio",
+        "validaciones": {
+          "requerida": "el Tipo de Convenio es requerida"
+        }
+      },
+      "NSS": {
+        "label": "Registro del Imss",
+        "helplabel": "Capture el NSS",
+        "validaciones": {
+          "requerida": "El Registro del NSS es requerido"
+        }
+      },
+      "Asentamiento": {
+        "label": "c.p., Colonia,municipio",
+        "helplabel": "Capture el c.p.",
+        "validaciones": {
+          "requerida": "El c.p. es requerido"
+        }
+      },
+      "Representante": {
+        "label": "Representante",
+        "helplabel": "Capture el Representante",
+        "validaciones": {
+          "requerida": "El Representante es requerido"
+        }
+      },
+      "Direccion": {
+        "label": "Direccion",
+        "helplabel": "Capture la Direccion",
+        "validaciones": {
+          "requerida": "La Direccion es requerida"
+        }
+      },
+      "Proveedor": {
+        "label": "Proveedor",
+        "helplabel": "Capture el Proveedor",
+        "validaciones": {
+          "requerida": "el Proveedor es requerido"
+        }
+      },
+      "Regimen": {
+        "label": "Regimen",
+        "helplabel": "Seleccione un Regimen",
+        "validaciones": {
+          "requerida": "Regimen es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "sections": {
+      "InfoDomicilio": {
+        "title": "Domicilio"
+      },
+      "Impuestos": {
+        "title": "Impuestos"
+      }
+    },
+    "mensajes": {
+        "exito": "El Contratista ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de Contratista"
+    },
+    "titulo": {
+        "nuevo": "Nuevo tipo de Contratista"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+﻿{
+  "wmAutorizaciones": {
+    "bc": {
+      "text": "Autorizaciones",
+      "link": "/kontrol/autorizaciones"
+    },
+    "consulta": {
+      "title": "Aprobación de tareas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "InstanciaClave": {
+        "label": "Clave"
+      },
+      "InstanciaNombre": {
+        "label": "Tipo de flujo de autorización"
+      },
+      "InstanciaEstado": {
+        "label": "Estado autorización"
+      },
+      "InstanciaEstatus": {
+        "label": "Estatus flujo"
+      },
+      "Nombre": {
+        "label": "Tarea"
+      },
+      "FechaAsignacion": {
+        "label": "Asignación"
+      },
+      "EstatusVigencia": {
+        "label": "Vigencia"
+      },
+      "Comentarios": {
+        "label": "Comentarios"
+      },
+      "Referencia": {
+        "label": "Referencia"
+      },
+      "EstatusTarea": {
+        "label": "Estatus tarea"
+      }
+    },
+    "sections": {
+      "Referencia": {
+        "title": "Referencia"
+      },
+      "Comentarios": {
+        "title": "Comentarios"
+      }
+    },
+    "mensajes": {
+      "exito": "La respuesta fue registrada"
+    }
+  },
+  "wmInstancias": {
+    "bc": {
+      "text": "Flujos de autorización",
+      "link": "/kontrol/workflows/procesos"
+    },
+    "consulta": {
+      "title": "Flujos de autorización",
+      "grid": {
+        "headers": {
+          "iD": "ID",
+          "idReferencia":  "Ref",
+          "clave": "Clave",
+          "nombre": "Flujo",
+          "estatus": "Estatus",
+          "estadoWF": "Estado actual",
+          "userOwner": {
+            "Nombre": "Propietario"
+          },
+          "workflow": {
+            "Tipo": {
+              "Nombre": "Tipo"
+            }
+          }
+        }
+      }
+    },
+    "form": {
+      "InstanciaClave": {
+        "label": "Clave"
+      },
+      "InstanciaNombre": {
+        "label": "Tipo de flujo de autorización"
+      },
+      "InstanciaEstado": {
+        "label": "Estado autorización"
+      },
+      "InstanciaEstatus": {
+        "label": "Estatus flujo"
+      },
+      "Nombre": {
+        "label": "Tarea"
+      },
+      "FechaAsignacion": {
+        "label": "Asignación"
+      },
+      "EstatusVigencia": {
+        "label": "Vigencia"
+      },
+      "Comentarios": {
+        "label": "Comentarios"
+      },
+      "Referencia": {
+        "label": "Referencia"
+      },
+      "EstatusTarea": {
+        "label": "Estatus tarea"
+      }
+    },
+    "sections": {
+      "Referencia": {
+        "title": "Referencia"
+      },
+      "Comentarios": {
+        "title": "Comentarios"
+      }
+    },
+    "mensajes": {
+      "exito": "El flujo fué actualizado"
+    }
+  }
+}

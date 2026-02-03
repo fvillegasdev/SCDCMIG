@@ -1,0 +1,55 @@
+﻿{
+    "BlogPostCategorias": {
+        "bc": {
+            "text": "BlogPostCategorias",
+            "link": "/kontrol/BlogPostCategorias"
+        },
+        "consulta": {
+            "title": "BlogPost Categorías",
+            "subTitle": "Administración de las categorías del BlogPost",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helpLabel": "La clave es un identificador único para el proyecto",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helpLabel": "Nombre descriptivo de la categoría",
+                "validaciones": {
+                    "requerida": "El nombre es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            },
+            "CreadoPor": {
+                "label": "Creado Por"
+            },
+            "TipoEntidad": {
+                "label": "Tipo Entidad",
+                "helpLabel": "Tipo de entidad de la categoría",
+                "validaciones": {
+                    "requerida": "Tipo de entidad requerida"
+                }
+            }
+        },
+        "mensajes": {
+            "exito": "La categoría ha sido actualizado"
+        },
+        "titulo": {
+            "nuevo": "Nueva categoría"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+﻿{
+    "posiciones": {
+        "bc": {
+            "text": "Posiciones",
+            "link": "/kontrol/posiciones"
+        },
+        "consulta": {
+            "title": "posiciones",
+            "grid": {
+                "headers": {
+                    "padre": { "Nombre": "Padre" },
+                    "categoria": { "Nombre": "Categoría" },
+                    "usuario": "Usuario",
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": { "Nombre": "Estatus" }
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerido": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helplabel": "Capture el nombre de Posiciones",
+                "validaciones": {
+                    "requerido": "Las Posición es requerida"
+                }
+            },
+            "Padre": {
+                "label": "Padre",
+                "helplabel": "Capture el Padre",
+                "validaciones": {
+                    "requerido": "El Padre es requerido"
+                }
+            },
+            "Categoria": {
+                "label": "Categoría",
+                "helplabel": "Capture la Categoría",
+                "validaciones": {
+                    "requerido": "La Categoría es requerido"
+                }
+            },
+            "Usuario": {
+                "label": "Usuario",
+                "helplabel": "Capture el Usuario",
+                "validaciones": {
+                    "requerido": "El Usuario es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            }
+        },
+        "mensajes": {
+            "exito": "La Posición ha sido actualizado"
+        },
+        "titulo": {
+            "nuevo": "Nueva Posición"
+        }
+    }
+}

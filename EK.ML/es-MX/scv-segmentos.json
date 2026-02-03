@@ -1,0 +1,63 @@
+﻿{
+  "segmentos": {
+    "bc": {
+      "text": "Administración de Segmentos",
+      "link": "/scv/Segmentos"
+    },
+    "consulta": {
+      "title": "Administración de segmentos de vivienda",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "descripcion": "Descripción",
+          "idContable": "Id. Contable",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La descripción es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "La descripción es requerida"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la descripción",
+        "validaciones": {
+          "requerida": "La descripción es requerida"
+        }
+      },
+      "IdContable": {
+        "label": "Id. Contable",
+        "helplabel": "Capture el Id. contable",
+        "validaciones": {
+          "requerida": "Capture el Id Contable"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El segmento de vivienda ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo segmento de vivienda"
+    },
+    "titulo": {
+      "nuevo": "Nueva segmento de vivienda"
+    }
+  }
+}

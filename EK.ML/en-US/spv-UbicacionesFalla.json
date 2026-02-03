@@ -1,0 +1,63 @@
+﻿{
+  "UbicacionesFalla": {
+    "bc": {
+      "text": "Ubicaciones Incidencia",
+      "link": "/scv/pv/UbicacionesFalla"
+    },
+    "consulta": {
+      "title": "Administración de Ubicaciones Incidencia",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "descripcion": "Descripción",
+          "usoFalla": { "Nombre": "Uso Incidencia" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la Descripción",
+        "validaciones": {
+          "requerida": "La Descripción es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "UsoFalla": {
+        "label": "Uso Incidencia",
+        "helplabel": "Capture el Uso de Incidencia",
+        "validaciones": {
+          "requerida": "El Uso Incidencia es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "La Ubicacion de la Incidencia ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de la Ubicacion de la Incidencia"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de la Ubicacion de la Incidencia"
+    }
+  }
+}

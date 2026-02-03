@@ -1,0 +1,276 @@
+﻿{
+  "Proveedores": {
+    "bc": {
+      "text": "Proveedores",
+      "link": "/kontrol/Proveedores"
+    },
+    "consulta": {
+      "title": "Administración Proveedores",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "TipoPersona": { "Nombre": "Tipo de persona" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture un Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "NombreCorto": {
+        "label": "Nombre Corto",
+        "helplabel": "Capture un nombre Corto",
+        "validaciones": {
+          "requerida": "El Nombre Corto es requerido"
+        }
+      },
+      "ApellidoPaterno": {
+        "label": "Apellido Paterno",
+        "helplabel": "Capture Apellido",
+        "validaciones": {
+          "requerida": "El apellido es requerido"
+        }
+      },
+      "ApellidoMaterno": {
+        "label": "Apellido Materno",
+        "helplabel": "Capture Apellido",
+        "validaciones": {
+          "requerida": "El apellido es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "TipoPersona": {
+        "label": "Tipo de Persona",
+        "helplabel": "Tipo de Persona"
+      },
+      "EstadoOrigen": {
+        "label": "Ciudad y estado de Origen",
+        "helplabel": "Tipo de Persona"
+      },
+      "RFC": {
+        "label": "RFC",
+        "helplabel": "Capture RFC",
+        "validaciones": {
+          "requerida": "El RFC es requerido"
+        }
+      },
+      "CURP": {
+        "label": "CURP",
+        "helplabel": "Capture CURP",
+        "validaciones": {
+          "requerida": "El CURP es requerido"
+        }
+      },
+      "Domicilio": {
+        "label": "Calle",
+        "helplabel": "Capture una Calle",
+        "validaciones": {
+          "requerida": "El campo Calle es requerido"
+        }
+      },
+      "Geolocalizacion": {
+        "label": "Geolocalización",
+        "helplabel": "Seleccione la ubicación",
+        "validaciones": {
+          "requerida": "La campo geolocalizción es requerido"
+        }
+      },
+      "NumInterior": {
+        "label": "Int",
+        "helplabel": "Ingrese un número interior",
+        "validaciones": {
+          "requerida": "La campo Exterior es requerido"
+        }
+      },
+      "NumExterior": {
+        "label": "Ext",
+        "helplabel": "Ingrese un número Exterior",
+        "validaciones": {
+          "requerida": "La campo Exterior es requerido"
+        }
+      },
+      "Asentamiento": {
+        "label": "C.P. / Colonia / Municipio",
+        "helplabel": "Seleccione su colonia, puede buscarla por código postal, nombre, municipio",
+        "validaciones": {
+          "requerida": "La colonia y municipio son requeridos"
+        }
+      },
+      "TipoProveedor": {
+        "label": "Tipo de Proveedor",
+        "helplabel": "Seleccione un Proveedor",
+        "validaciones": {
+          "requerida": "Es requerido el tipo de Proveedor"
+        }
+      },
+      "TipoMovimientoProveedor": {
+        "label": "Tipo de Movimiento Base",
+        "validaciones": {
+          "requerida": "Es requerido el tipo de movimiento"
+        }
+      },
+      "Compania": {
+        "label": "Compañia",
+        "validaciones": {
+          "requerida": "Es requerido el campo Compañia"
+        }
+      },
+      "NombreContacto": {
+        "label": "Nombre del Contacto",
+        "validaciones": {
+          "requerida": "Es requerido el Nombre de Contacto"
+        }
+      },
+      "LimiteCredito": {
+        "label": "Límite de Crédito",
+        "validaciones": {
+          "requerida": "Es requerido el límite de crédito"
+        }
+      },
+      "CondicionesPago": {
+        "label": "Condiciones de Pago",
+        "validaciones": {
+          "requerida": "Condiciones de Pago es requerido"
+        }
+      },
+      "Pyme": {
+        "label": "Pyme",
+        "validaciones": {
+          "requerida": "Es requerido el campo Pyme"
+        }
+      },
+      "IdentificacionFiscal": {
+        "label": "Identificacion Fiscal",
+        "validaciones": {
+          "requerida": "El campo Identificación Fiscal es requerido"
+        }
+      },
+      "Sociedad": {
+        "label": "Tipo de Sociedad",
+        "validaciones": {
+          "requerida": "Seleccione un Tipo de Sociedad"
+        }
+      },
+      "Operacion": {
+        "label": "Tipo de Operación",
+        "validaciones": {
+          "requerida": "Seleccione un Tipo de Operación"
+        }
+      },
+      "Tercero": {
+        "label": "Tipo de Tercero",
+        "validaciones": {
+          "requerida": "Seleccione un Tipo Tercero"
+        }
+      },
+      "VolumenActa": {
+        "label": "Volumen Acta",
+        "helplabel": "El campo Volumen Acta es requerido"
+      },
+      "NombreNotario": {
+        "label": "Nombre Notario",
+        "helplabel": "Es requerido el campo Nombre Notario"
+      },
+      "NumNotario": {
+        "label": "Número del Notario",
+        "helplabel": "Es requerido el campo Número del Notario"
+      },
+      "FechaActa": {
+        "label": "Fecha Acta",
+        "helplabel": "Es requerido el campo Fecha"
+      },
+      "Partida": {
+        "label": "Incidencia",
+        "helplabel": "El campo Incidencia es requerido"
+      },
+      "Folio": {
+        "label": "Folio",
+        "helplabel": "Campo Folio requerido"
+      },
+      "Libro": {
+        "label": "Libro",
+        "helplabel": "Campo libro es requerido"
+      },
+      "Seccion": {
+        "label": "Sección",
+        "helplabel": "Campo Sección requerido"
+      },
+      "Ciudad": {
+        "label": "Ciudad",
+        "helplabel": "Campo Ciudad requerido"
+      },
+      "Regimen": {
+        "label": "Regimen",
+        "helplabel": "Seleccione un Regimen",
+        "validaciones": {
+          "requerida": "Regimen es requerido"
+        }
+      },
+      "FechaInscripcion": {
+        "label": "Fecha de Inscripción",
+        "helplabel": "El campo Fecha de Inscripción es requerido"
+      },
+      "Nacionalidad": {
+        "label": "Nacionalidad",
+        "helplabel": "Selecione nacionalidad"
+      }
+    },
+    "sections": {
+      "InfoDomicilio": {
+        "title": "Domicilio"
+      },
+      "Telefonos": {
+        "title": "Teléfono(s)"
+      },
+      "InfoCorreos": {
+        "title": "Correo(s)"
+      },
+      "InfoFiscal": {
+        "title": "Datos Fiscales"
+      },
+      "InfoRetenciones": {
+        "title": "Retenciones"
+      },
+      "ActaConstitutiva": {
+        "title": "Acta Constitutiva"
+      },
+      "RegistroPublicoPropiedad": {
+        "title": "Registro Público de la Propiedad"
+      },
+      "InfoTipoPersona": {
+        "title": "Tipo de Persona"
+      },
+      "Contratistas": {
+        "title": "Contratistas"
+      }
+    },
+    "mensajes": {
+      "exito": "Proveedor actualizado",
+      "validacionTelefono": "Este Teléfono ya fue añadido",
+      "validacionCorreo": "Este Correo ya fue añadido",
+      "validacion": "Elija otra clave"
+    },
+    "edit": {
+      "titulo": "Nuevo Proveedor"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Proveedor"
+    }
+  }
+}

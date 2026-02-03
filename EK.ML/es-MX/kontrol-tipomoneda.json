@@ -1,0 +1,59 @@
+﻿{
+  "monedas": {
+    "bc": {
+      "text": "Monedas",
+      "link": "/kontrol/monedas"
+    },
+    "consulta": {
+      "title": "Administración de monedas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus",
+          "decimalDigits": "# Decimales",
+          "decimalSeparator": "S. Decimal",
+          "groupSeparator": "S. Grupo"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "La clave es un identificador único para la moneda",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Nombre descriptivo de la moneda",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "DecimalDigits": {
+        "label": "# decimales",
+        "helplabel": "Número de posiciones decimales"
+      },
+      "DecimalSeparator": {
+        "label": "S. decimal",
+        "helplabel": "Separador decimal"
+      },
+      "GroupSeparator": {
+        "label": "S. grupos",
+        "helplabel": "Separador grupos de miles"
+      }
+    },
+    "mensajes": {
+      "exito": "La moneda ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nueva Moneda"
+    }
+  }
+}

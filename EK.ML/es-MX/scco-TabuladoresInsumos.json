@@ -1,0 +1,82 @@
+﻿{
+  "TabuladoresInsumos": {
+    "bc": {
+      "text": "TabuladoresInsumos",
+      "link": "/scco/TabuladoresInsumos"
+    },
+    "consulta": {
+      "title": "Administración Tabulador de Insumos",
+      "grid": {
+        "headers": {
+          "Estatus": "Estatus",
+          "clave": "Clave",
+          "Nombre": "Nombre",
+          "VigenciaDesde": "Vigencia Desde",
+          "VigenciaHasta": "Vigencia Hasta",
+          "Moneda": { "Nombre": "Moneda" }
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerida"
+        }
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helplabel": "Capture la Moneda"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Capture el Estatus del Tabulador"
+      },
+      "tabulador$insumos": {
+        "Insumo": {
+          "label": "Insumo",
+          "helplabel": "Capture el insumo",
+          "validaciones": {
+            "requerida": "El insumo es requerido"
+          }
+        },
+        "PrecioMoneda": {
+          "label": "Precio",
+          "helplabel": "Capture el precio",
+          "validaciones": {
+            "requerida": "El precio es requerido"
+          }
+        },
+        "Moneda": {
+          "label": "Moneda",
+          "helplabel": "Capture la moneda",
+          "validaciones": {
+            "requerida": "La moneda es requerida"
+          }
+        }
+      }
+    },
+    "sections": {
+      "tabulador$insumos": {
+        "title": "Insumos Tabulador"
+      }
+    },
+    "mensajes": {
+      "exito": "El Tabulador ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Tabulador Actualizado"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Tabulador"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+﻿{
+  "tipoElementoBitacora": {
+    "bc": {
+      "text": "Categorías de Bitácora",
+      "link": "/scv/fasesExpediente"
+    },
+    "consulta": {
+      "title": "Categorías de Bitácora",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "origen": {"Nombre": "Origen"},
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la fase es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la fase",
+        "validaciones": {
+          "requerida": "El nombre de la fase es requerido"
+        }
+      },
+      "Color": {
+        "label": "Color",
+        "helplabel": "Capture el color",
+        "validaciones": {
+          "requerida": "El color es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "La Categoría de Bitácora ha sido actualizada"
+    },
+    "editar": {
+      "title": "Modificar la Categoría de Bitácora"
+    },
+    "titulo": {
+      "nuevo": "Nueva categoría de Bitácora"
+    }
+  }
+}

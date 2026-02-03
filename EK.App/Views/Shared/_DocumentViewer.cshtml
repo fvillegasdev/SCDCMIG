@@ -1,0 +1,75 @@
+﻿@using GdPicture14.WEB
+@using GdPicture14
+@{
+    Layout = null;
+    string documentName = "viewer";
+    string documentPath = null;
+    //
+    if (ViewBag.DocumentPath != null)
+    {
+        documentPath = Convert.ToString(ViewBag.DocumentPath);
+    }
+}
+
+<!DOCTYPE html>
+
+<html style="height: 100%">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Document Viewer</title>
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <!-- We need jQuery to be loaded first -->
+    <script src="@Url.Content("~/Scripts/lib/jquery/dist/jquery.js")"></script>
+    <!-- Then the DocuVieware JS & CSS resources -->
+    <script src="~/Content/Theme/global/plugins/docuvieware/docuvieware-min.js"></script>
+    <link href="~/Content/Theme/global/plugins/docuvieware/docuvieware-min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .dv-logo-lite {
+            display: none;
+        }
+    </style>
+</head>
+<body style="overflow: hidden; margin: 0; height: 100%;">
+    <div id="viewer_container" style="height: 100%">
+        @{
+            DocuVieware docuVieware = new DocuVieware
+            {
+                ID = "EKDocuVieware",
+                Height = new System.Web.UI.WebControls.Unit("100%"),
+                Width = new System.Web.UI.WebControls.Unit("100%"),
+                EnablePrintButton = true,
+                EnableSaveButton = true
+            };
+            if (documentPath != null) // When a document is sent from controller, we want to display it
+            {
+                var ctl = (EK.Common.BaseKontroller)this.ViewContext.Controller;
+                Stream docStream = null;
+                var file = ctl.GetFileStorage(documentPath);
+                //
+                if (file != null)
+                {
+                    docStream = file.Content;
+                    docStream.Position = 0;
+                    //
+                    if (file.MetaData != null)
+                    {
+                        file.MetaData.TryGetValue("name", out documentName);
+                    }
+                }
+
+                //
+                GdPictureStatus status = docuVieware.LoadFromStream(docStream, false, documentName);
+                //
+                if (status != GdPictureStatus.OK)
+                {
+                    <script>
+                            setTimeout(function () { alert("An error occured: @status"); }, 1);
+                    </script>
+                }
+            }
+            docuVieware.RenderControl(Output);
+        }
+    </div>
+</body>
+</html>

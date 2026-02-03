@@ -1,0 +1,50 @@
+﻿{
+  "UnidadMedida": {
+    "bc": {
+      "text": "UnidadMedida",
+      "link": "/kontrol/UnidadMedida"
+    },
+    "consulta": {
+      "title": "Administración de Unidad de Medida",
+      "grid": {
+        "headers": {
+          "estatus": "Estatus",
+          "clave": "Clave",
+          "nombre": "Nombre"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Capture el Estatus de la Unidad de Medida"
+      }
+    },
+
+    "mensajes": {
+      "exito": "La Unidad ha sido actualizado",
+      "nodata": "No existe registros",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones "
+    },
+    "edit": {
+      "titulo": "Nuevo Unidad de Medida"
+    },
+    "titulo": {
+      "nuevo": "Nueva Unidad de Medida"
+    }
+  }
+}

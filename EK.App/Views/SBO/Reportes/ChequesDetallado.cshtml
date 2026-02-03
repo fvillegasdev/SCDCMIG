@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "~/Views/Shared/_R3LetterPortrait.cshtml";
+
+    dynamic data = ViewBag.Data.Resultado;
+
+    var reporte = new EK.Common.Reportes.Reporte();
+    reporte.Titulo = "Reporte Detallado de Cheques por Cuenta";
+    reporte.SubTitulo = "Inmobiliaria RUBA, S.A. de C.V.";
+    reporte.FechaImpresion = System.DateTime.Now.ToString();
+
+    reporte.Columnas = new List<EK.Common.Reportes.Reporte.Columna>();
+    reporte.Columnas.Add(new EK.Common.Reportes.Reporte.Columna() { Titulo = "ID", Longitud = 100, Campo="Cheque" });
+    reporte.Columnas.Add(new EK.Common.Reportes.Reporte.Columna() { Titulo = "Descripcion", Longitud = 400, Campo = "descripcion" });
+
+    ViewBag.Reporte = reporte;
+}
+@*@ReportesHelper.Reporte(reporte)*@

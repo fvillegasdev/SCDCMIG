@@ -1,0 +1,214 @@
+﻿{
+  "expedientes": {
+    "bc": {
+      "text": "Expedientes",
+      "link": "/scv/expedientes"
+    },
+    "consulta": {
+      "title": "Expedientes",
+      "grid": {
+        "headers": {
+          "iD": "Folio Expediente",
+          "clave": "Clave",
+          "cliente": { "Nombre": "Cliente" },
+          "estados": "Fases Expediente",
+          "configuracion": "Configuración",
+
+          "etapa": {
+            "Nombre": "Etapa",
+            "FechaInicio": "Fecha Inicio",
+            "DiasTranscurridos": "Días"
+          },
+          "estatusExpediente": { "Nombre": "Estatus Expediente" }
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "Folio Expediente",
+        "helplabel": "Capture el Folio Expediente"
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave"
+      },
+      "Asesor": {
+        "label": "Agente",
+        "helplabel": "Capture el Agente"
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre"
+      },
+      "Cliente": {
+        "label": "Prospecto/Cliente",
+        "helplabel": "Capture el cliente",
+        "validaciones": {
+          "requerida": "El cliente es requerido"
+        }
+      },
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Capture el desarrollo",
+        "validaciones": {
+          "requerida": "El desarrollo es requerido"
+        }
+      },
+      "TipoComercializacion": {
+        "label": "Tipo Comercialización",
+        "helplabel": "Capture el Tipo Comercialización",
+        "validaciones": {
+          "requerida": "El Tipo Comercialización es requerido"
+        }
+      },
+      "TipoCliente": {
+        "label": "Tipo Expediente",
+        "helplabel": "Capture el Tipo de expediente",
+        "validaciones": {
+          "requerida": "El Tipo de expediente es requerido"
+        }
+      },
+      "EstatusExpediente": {
+        "label": "Estatus",
+        "helplabel": "Capture el estatus de expediente",
+        "validaciones": {
+          "requerida": "El estatus de expediente es requerido"
+        }
+      },
+      "Posicion": {
+        "label": "Posición",
+        "helplabel": "Capture la posición",
+        "validaciones": {
+          "requerida": "La posición es requerida"
+        }
+      },
+      "Fase": {
+        "label": "Fase de Expediente",
+        "helplabel": "Capture la fase",
+        "validaciones": {
+          "requerida": "La fase del seguimiento es requerida"
+        }
+      },
+      "EstatusSeguimiento": {
+        "label": "Estatus Seguimiento",
+        "helplabel": "Capture el estatus del seguimiento",
+        "validaciones": {
+          "requerida": "El estatus del seguimiento es requerido"
+        }
+      },
+      "Esquema": {
+        "label": "Esquema de Seguimiento",
+        "helplabel": "Capture el esquema",
+        "validaciones": {
+          "requerida": "El esquema es requerido"
+        }
+      },
+      "FechaEstimada": {
+        "label": "Fecha Estimada de Finalización",
+        "helplabel": "Capture la fecha estimada",
+        "validaciones": {
+          "requerida": "La fecha estimada es requerida"
+        }
+      },
+      "Responsable": {
+        "label": "Agente Asignado",
+        "helplabel": "Capture la posición del agente",
+        "validaciones": {
+          "requerida": "La posición del agente es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Genero": {
+        "label": "Genero",
+        "helplabel": "Sexo del prospecto/cliente"
+      },
+      "Estado": {
+        "label": "Ciudad/Estado",
+        "helplabel": "Ciudad del prospecto/cliente"
+      },
+      "EstadoCivil": {
+        "label": "Estado Civil",
+        "helplabel": "Estado civil del prospecto/cliente"
+      },
+      "RegimenConyugal": {
+        "label": "Régimen conyugal",
+        "helplabel": "Régimen conyugal del prospecto/cliente"
+      },
+      "RangoIngresos": {
+        "label": "Rango de Ingresos",
+        "helplabel": "Rango de ingresos en moneda conyugal del prospecto/cliente"
+      },
+      "Giro": {
+        "label": "Giro del prospecto/cliente",
+        "helplabel": "La actividad a la que se dedica la persona o la empresa"
+      },
+      "EstatusCliente": {
+        "label": "Estatus del cliente",
+        "helplabel": "El estatus en el que se encuentra el prospecto/cliente de acuerdo a sus procesos"
+      },
+      "MotivoCancelacion": {
+        "label": "Motivo de Cancelación",
+        "helplabel": "Motivo de cancelación del expediente"
+      },
+      "FechaCancelacion": {
+        "label": "Fecha de Cancelación",
+        "helplabel": "FechaCancelación"
+      },
+      "ObservacionesCancelacion": {
+        "label": "Observaciones",
+        "helplabel": "Observaciones relacionadas con la cancelación del expediente"
+      },
+      "Tags": {
+        "label": "Tags",
+        "helplabel": ""
+      }
+    },
+    "sections": {
+      "agentes": {
+        "title": "Agentes"
+      },
+      "Expediente": {
+        "title": "Información del Expediente"
+      },
+      "Owners": {
+        "title": "Dueños del Expediente"
+      },
+      "Relacionados": {
+        "title": "Colaboradores del Expediente"
+      },
+      "SeguimientoProspeccion": {
+        "title": "Fase Prospección"
+      },
+      "SeguimientoVenta": {
+        "title": "Fase Venta"
+      },
+      "SeguimientoPosventa": {
+        "title": "Fase Posventa"
+      },
+      "AutorizadosProspeccion": {
+        "title": "Lista de Autorizados"
+      },
+      "AutorizadosVenta": {
+        "title": "Lista de Autorizados"
+      },
+      "AutorizadosPosventa": {
+        "title": "Lista de Autorizados"
+      }
+    },
+    "mensajes": {
+      "exito": "El expediente ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones",
+      "seguimiento": "El seguimiento ha sido actualizado",
+      "nuevo": "La oportunidad de venta se creará cuando se abra el expediente."
+    },
+    "edit": {
+      "title": "Modificar expediente"
+    },
+    "titulo": {
+      "Nuevo": "Abrir expediente"
+    }
+  }
+}

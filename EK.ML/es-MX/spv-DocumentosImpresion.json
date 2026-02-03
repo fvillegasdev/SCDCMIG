@@ -1,0 +1,63 @@
+﻿{
+  "DocumentosImpresion": {
+    "bc": {
+        "text": "Documentos Impresión",
+        "link": "/scv/pv/DocumentosImpresion"
+    },
+    "consulta": {
+        "title": "Administración de Documentos Impresión",
+        "grid": {
+            "headers": {
+                "clave": "Clave",
+                "descripcion": "Descripción",
+                "ruta": "Ruta",
+                "estatus": "Estatus"
+            }
+        }
+    },
+    "form": {
+        "clave_origen": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Clave": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Descripcion": {
+            "label": "Descripción",
+            "helplabel": "Capture la Descripción",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "ruta": {
+            "label": "Ruta",
+            "helplabel": "Capture la Ruta",
+            "validaciones": {
+                "requerida": "La Ruta es requerida"
+            }
+        },
+       
+        "Estatus": {
+            "label": "Activo",
+            "helplabel": "Estatus"
+        }
+    },
+    "mensajes": {
+        "exito": "El Documento Impresión ha sido actualizado"
+    },
+    "edit": {
+        "titulo": "Nuevo  Documento Impresión"
+    },
+    "titulo": {
+        "nuevo": "Nuevo  Documento Impresión"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "ReportExample";
+    Layout = "~/Views/Shared/_ReportLayout.cshtml";
+}
+
+<h1>ReportExample</h1>
+<h2>ReportExample</h2>
+
+<style>
+    .ftext {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 12px;
+    }
+
+    table {
+        border: none;
+        border-spacing: 0px;
+        border-collapse: separate;
+    }
+
+    .report-row {
+        clear:both;
+    }
+
+    .report-cell {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 12px;
+        float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 2px;
+    }
+
+    .report-header {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        border-bottom: solid 3px #333;
+        padding: 2px;
+    }
+</style>
+
+<div class="report-body">
+</div>
+<hr />
+<span class="ftext">
+Header 1&nbsp;&nbsp;&nbsp;Header 2&nbsp;&nbsp;&nbsp;Header 3&nbsp;&nbsp;&nbsp;Header 4&nbsp;&nbsp;&nbsp;Header 5&nbsp;&nbsp;&nbsp;Header 6&nbsp;&nbsp;&nbsp;Header 7&nbsp;&nbsp;&nbsp;Header 8&nbsp;&nbsp;&nbsp;Header 9&nbsp;&nbsp;&nbsp;Header 10&nbsp;&nbsp;Header 11
+</span>
+<hr />
+<span class="ftext">
+0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789
+</span>
+
+<br /><br /><br /><br />
+
+<div class="report-row">
+    <div class="report-header" style="width: 100px;">Header 1</div>
+    <div class="report-header" style="width: 500px;">Header 2</div>
+    <div class="report-header" style="width: 200px;">Header 3</div>
+</div>
+<div class="report-row">
+    <div class="report-cell" style="width: 100px;">0123456789</div>
+    <div class="report-cell" style="width: 500px;">0123456789</div>
+    <div class="report-cell" style="width: 200px;">0123456789012345678901234567890123456789</div>
+</div>

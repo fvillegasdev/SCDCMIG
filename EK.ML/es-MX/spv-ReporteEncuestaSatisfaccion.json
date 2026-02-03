@@ -1,0 +1,11 @@
+{
+  "ReporteEncuestaSatisfaccion": {
+    "bc": {
+      "text": "Reporte de Encuesta de Satisfaccion",
+      "link": "/scv/pv/ReporteEncuestaSatisfaccion"
+    },
+    "consulta": {
+      "title": "Administración de Reporte de Encuesta de Satisfaccion",
+    }
+  }
+}

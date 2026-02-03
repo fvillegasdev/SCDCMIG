@@ -1,0 +1,34 @@
+﻿{
+  "consultaUbicaciones": {
+    "bc": {
+      "text": "Consulta de Ubicaciones",
+      "link": "/scv/consultaUbicaciones"
+    },
+    "titulo": {
+      "nuevo": ""
+    },
+    "consulta": {
+      "title": "Consulta de Ubicaciones",
+      "grid": {
+        "headers": {
+          "desarrollo": { "Nombre": "Desarrollo" },
+          "tipoUbicacion": { "Nombre": "TipoUbicacion" },
+          "prototipo": { "Nombre": "Prototipo" },
+          "estatus": { "Nombre": "Estatus" },
+          "idDtu": "DTU",
+          "superficie": "Superficie",
+          "excedente": "Excedente",
+          "porcentajeConstruccion": "% Construcción",
+          "numeroExp": "Exp",
+          "claveFormato": "Clave",
+          "nombre": "Ubicación",
+          "cliente": { "Nombre": "Cliente" },
+          "agente": { "Nombre": "Agente" },
+          "fase": { "Nombre": "Fase Activa" },
+          "esquema": { "Nombre": "Esquema" },
+          "etapa": { "Nombre": "Etapa Activa" }
+        }
+      }
+    }
+  }
+}

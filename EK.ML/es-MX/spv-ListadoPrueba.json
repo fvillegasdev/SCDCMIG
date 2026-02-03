@@ -1,0 +1,88 @@
+﻿{
+    "ListadoPrueba": {
+        "bc": {
+            "text": " Listado de Prueba",
+            "link": "/scv/pv/ListadoPrueba"
+        },
+        "consulta": {
+            "title": "Categorías de Medios de Comunicación",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "iD": "ID",
+                    "Nombre": "Nombre",
+                    "Edad": "Edad",
+                    "Estatura": "Estatura",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "view": {
+            "title": "Listado de Prueba",
+            "subtitle": "",
+            "grids": {
+                "headers": {}
+            }
+        },
+        "editar": {
+            "title": "Editar listado de prueba",
+            "subtitle": "Nuevo",
+            "href": "",
+            "grid": {
+                "headers": {}
+            }
+        },
+        "mensajes": {
+            "update": "El listado de prueba ha sido actualizado...",
+            "save": "El listado de pureba se ha guardado con éxito.",
+            "savetitle": "Guardar Listados de Prueba",
+            "exito": "El listado de pruebas ha siso actualizado"
+        },
+        "form": {
+            "Id": {
+                "label": "",
+                "helpLabel": "",
+                "validaciones": ""
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helpLabel": "Capture el nombre",
+                "validaciones": {
+                    "requerida": "El nombre del listado de prueba es requerido"
+                }
+            },
+            "Edad": {
+                "label": "Edad",
+                "helpLabel": "Capture la edad listado de prueba",
+                "validaciones": {
+                    "requerida": "Capture la edad del listado de prueba"
+                }
+            },
+            "Estatura": {
+                "label": "Estatura",
+                "helpLabel": "Capture la estatura",
+                "validaciones": {
+                    "requerida": "Capture la estatura del listado de prueba"
+                }
+            },
+            "Clave": {
+                "label": "Clave",
+                "helpLabel": "Capture la Clav listado de prueba",
+                "validaciones": {
+                    "requerida": "Capture la Clave del listado de prueba"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helpLabel": "Estatus",
+                "validaciones": ""
+            }            
+        },
+        "titulo": {
+            "nuevo": "Nuevo listado de prueba"
+        },
+        "edit": {
+            "titulo": "El listado de prueba sido actualizado"
+        }
+    }
+}

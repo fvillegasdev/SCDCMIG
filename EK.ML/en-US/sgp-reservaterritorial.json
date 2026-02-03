@@ -1,0 +1,60 @@
+﻿{
+    "ReservaTerritorial": {
+        "bc": {
+            "text": "Reserva territorial de proyectos",
+            "link": "/sgp/reservaterritorial"
+        },
+        "consulta": {
+            "title": "Reserva territorial de proyectos",
+            "subTitle": "Catalogo de reserva territorial",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helpLabel": "La clave es un identificador único para la reserva territorial",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helpLabel": "Nombre descriptivo del la reserva territorial",
+                "validaciones": {
+                    "requerida": "El nombre es requerido"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            },
+            "Descripcion": {
+                "label": "Descripción",
+                "helpLabel": "Descripción del la reserva territorial"
+            }
+        },
+        "sections": {
+            "Info": {
+                "title": "Información General"
+            },
+            "Grupos": {
+                "title": "Reserva Territorial"
+            },
+            "Globalizacion": {
+                "title": "Configuración Regional"
+            }
+        },
+        "mensajes": {
+            "exito": "La reserva territorial ha sido actualizado"
+        },
+        "titulo": {
+            "nuevo": "Nueva reserva territorial"
+        }
+    }
+}

@@ -1,0 +1,103 @@
+﻿{
+  "Presupuestos": {
+    "bc": {
+      "text": "Administración de Presupuestos",
+      "link": "/scco/Presupuestos"
+    },
+    "consulta": {
+      "title": "Administración de Presupuestos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "obra": { "Nombre": "Obra" },
+          "tabulador": {
+            "Nombre": "Tabulador",
+            "Moneda": { "Nombre": "Moneda" }
+          },
+          "tipoPresupuesto": { "Nombre": "Tipo Presupuesto" },
+          "estatusPresupuesto": { "Nombre": "Estatus Presupuesto" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "ID",
+        "helplabel": "Capture el ID",
+        "validaciones": {
+          "requerida": "El ID es requerido"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La Clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Obra": {
+        "label": "Obra",
+        "helplabel": "Capture la obra",
+        "validaciones": {
+          "requerida": "La Obra es requerida"
+        }
+      },
+      "Tabulador": {
+        "label": "Tabulador",
+        "helplabel": "Capture el tabulador",
+        "validaciones": {
+          "requerida": "El Tabulador es requerido"
+        }
+      },
+      "EstatusPresupuesto": {
+        "label": "Estatus Presupuesto",
+        "helplabel": "Capture el estatus del presupuesto",
+        "validaciones": {
+          "requerida": "El Estatus es requerido"
+        }
+      },
+      "TipoPresupuesto": {
+        "label": "Tipo Presupuesto",
+        "helplabel": "Capture el tipo de presupuesto",
+        "validaciones": {
+          "requerida": "El Tipo de Presupuesto es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus",
+        "validaciones": {
+          "requerida": "El Estatus es requerido"
+        }
+      }
+    },
+    "sections": {
+      "tarjeta$insumos": {
+        "title": "Insumos"
+      },
+      "tarjeta$insumos$wbs": {
+        "title": "Insumos"
+      },
+      "wbs$presupuesto": {
+        "title": "Presupuesto"
+      }
+    },
+    "mensajes": {
+      "exito": "El presupuesto ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo presupuesto"
+    },
+    "titulo": {
+      "nuevo": "Nuevo presupuesto"
+    }
+  }
+}

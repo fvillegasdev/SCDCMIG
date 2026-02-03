@@ -1,0 +1,105 @@
+﻿{
+  "empresas": {
+    "bc": {
+      "text": "Administración de Empresassss",
+      "link": "/scv/empresas"
+    },
+    "consulta": {
+      "title": "Catalogo de Empresas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "rFC": "RFC",
+          "nRP": "NRP",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la empresa es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la empresa",
+        "validaciones": {
+          "requerida": "El nombre de la empresa es requerido"
+        }
+      },
+      "CodigoPostal": {
+        "label": "Codigo Postal",
+        "helplabel": "Capture el código postal",
+        "validaciones": {
+          "requerida": "El código postal es requerido"
+        }
+      },
+      "Domicilio": {
+        "label": "Domicilio",
+        "helplabel": "Capture el domicilio",
+        "validaciones": {
+          "requerida": "El domicilio es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Extension": {
+        "label": "Extensión",
+        "helplabel": "Capture la extensión",
+        "validaciones": {
+          "requerida": "La extensión es requerido"
+        }
+      },
+      "Localidad": {
+        "label": "Localidad",
+        "helplabel": "Capture la localidad",
+        "validaciones": {
+          "requerida": "La localidad es requerida"
+        }
+      },
+      "NRP": {
+        "label": "NRP",
+        "helplabel": "Capture la clave NRP",
+        "validaciones": {
+          "requerida": "La clave NRP es requerido"
+        }
+      },
+      "RFC": {
+        "label": "RFC",
+        "helplabel": "Capture el RFC",
+        "validaciones": {
+          "requerida": "El RFC es requerido"
+        }
+      },
+      "Telefono": {
+        "label": "Teléfono",
+        "helplabel": "Capture el teléfono",
+        "validaciones": {
+          "requerida": "El teléfono es requerido"
+        }
+      },
+      "TitularRH": {
+        "label": "Titular RH",
+        "helplabel": "Capture el Titular RH",
+        "validaciones": {
+          "requerida": "El Titular RH es requerido"
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "La empresa ha sido actualizado"
+    },
+    "editar": {
+      "title": "Modificar empresa"
+    },
+    "titulo": {
+      "nuevo": "Nueva empresa"
+    }
+  }
+}

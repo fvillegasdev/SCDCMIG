@@ -1,0 +1,155 @@
+﻿{
+  "Contratos": {
+    "bc": {
+      "text": "Contratos",
+      "link": "/scco/Contratos"
+    },
+    "consulta": {
+      "title": "Registro de Contratos",
+      "grid": {
+        "headers": {
+          "Clave": "Clave",
+          "IdConvenio": "Convenio",
+          "Nombre": "Nombre Convenio",
+          "Representante": "Representante",
+          "Descripcion": "Descripción",
+          "Estatus": "Estatus",
+          "FechaInicio": "Fecha Inicio",
+          "FechaFin": "Fecha Fin",
+          "FechaFirma": "Fecha Firma",
+          "Direccion": "Dirección",
+          "Atencion": "Atención",
+          "TipoConvenio": { "Nombre": "Tipo de Convenio" },
+          "RepresentanteBitacora": "Representante Bitacora",
+          "Telefono": "Telefono",
+          "email": "E-mail",
+          "ImporteContrato": "Importe Contrato",
+          "AditivaAutorizada": "Aditiva Autorizada",
+          "Monto": "Monto Convenio",
+          "Iva": "Iva",
+          "Moneda": { "Nombre": "Moneda" },
+          "Contratista": { "Nombre": "Contratista" },
+          "Compania": { "Nombre": "Compania" },
+          "Obra": { "Nombre": "Obra" }
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Representante": {
+        "label": "Representante",
+        "helplabel": "Capture el Representante"
+      },
+      "FechaInicio": {
+        "label": "Vigencia Desde",
+        "helplabel": "Vigencia Desde"
+      },
+      "FechaFin": {
+        "label": "Vigencia Hasta",
+        "helplabel": "Vigencia Hasta"
+      },
+      "FechaFirma": {
+        "label": "Fecha Firma del Contrato",
+        "helplabel": "Capture le Fecha del Contrato"
+      },
+      "ImporteContrato": {
+        "label": "Importe del Contrato",
+        "helplabel": "Capture el Importe"
+      },
+      "Obra": {
+        "label": "Obra",
+        "helplabel": "Capture La Obra"
+      },
+      "Compania": {
+        "label": "Compania",
+        "helplabel": "Capture La Compania"
+      },
+      "Contratista": {
+        "label": "Contratista",
+        "helplabel": "Capture el Contratista"
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helplabel": "Capture La Moneda"
+      },
+      "AditivaAutorizada": {
+        "label": "Aditiva Autorizada",
+        "helplabel": "Capture La Aditiva Autorizada"
+      },
+      "Monto": {
+        "label": "Monto",
+        "helplabel": "Capture el Monto"
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture el Monto"
+      },
+      "TipoConvenio": {
+        "label": "Tipo Convenio",
+        "helplabel": "Capture el Tipo Convenio"
+      },
+      "Iva": {
+        "label": "Iva",
+        "helplabel": "Capture el Iva"
+      },
+      "Direccion": {
+        "label": "Dirección",
+        "helplabel": "Capture la Dirección"
+      },
+      "Atencion": {
+        "label": "Atención"
+      },
+      "RepresentanteBitacora": {
+        "label": "Representante Bitacora",
+        "helplabel": "Capture el Representante de la Bitacora"
+      },
+      "Telefono": {
+        "label": "Telefono",
+        "helplabel": "Capture el Telefono"
+      },
+      "email": {
+        "label": "E-mail",
+        "helplabel": "Capture el E-mail"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Estatus"
+      }
+    },
+    "sections": {
+      "BitacoraAD": {
+        "title": "Bitacora Aditivas-Deductivas"
+      },
+      "RegistroAnticipoRetencion": {
+        "title": "Registro de Anticipos/Retenciones"
+      },
+      "TestigosContratos": {
+        "title": "Testigos"
+      }
+    },
+    "mensajes": {
+      "exito": "El Contrato ha sido actualizado",
+      "save": "El Contrato ha sido Creado",
+      "nodata": "No existe registros"
+    },
+    "edit": {
+      "titulo": "Editar Contrato"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Contrato"
+    }
+  }
+}

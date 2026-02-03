@@ -1,0 +1,83 @@
+﻿{
+  "Prereportes": {
+    "bc": {
+      "text": "Pre-Reporte de Fallas",
+      "link": "/scv/pv/prereportes"
+    },
+    "consulta": {
+      "title": "Pre-Reporte de Fallas",
+      "grid": {
+        "headers": {
+          "ubicacion": {
+            "ClaveFormato": "Ubicación",
+            "IdPlaza": "Plaza",
+            "Plaza": {
+              "Clave": "Plaza",
+              "Nombre": "Plaza"
+            }
+          },
+          "ID": "ID",
+          "idCliente": "No. Cliente",
+          "idPrereporte": "Pre-Reporte",
+          "cliente": { "Nombre": "Cliente" },
+          "fechaCaptura": "Fecha Reporte",
+          "estatusReporte": "Estatus",
+          "calificacion": "Calificación"
+        }
+      }
+    },
+    "form": {
+      "Cliente": {
+        "label": "Cliente",
+        "helpLabel": "Capture el cliente",
+        "validaciones": {
+          "requerida": "El cliente es requerido"
+        }
+      },
+      "FechaCaptura": {
+        "label": "Fecha Captura",
+        "helpLabel": "Capture la fecha",
+        "validaciones": {
+          "requerida": "La fecha es requerida"
+        }
+      },
+      "IdReporte": {
+        "label": "# Reporte Fallas",
+        "helpLabel": "Capture el reporte de fallas",
+        "validaciones": {
+          "requerida": "El reporte de fallas es requerido"
+        }
+      },
+      "EstatusReporte": {
+        "label": "Estatus",
+        "helpLabel": "Capture el estatus",
+        "validaciones": {
+          "requerida": "El estatus es requerido"
+        }
+      },
+      "Calificacion": {
+        "label": "Calificación"
+      },
+      "CalificacionObservacion": {
+        "label": "Observaciones"
+      }
+    },
+    "sections": {
+      "prereporte$partidas": {
+        "title": "Partidas"
+      },
+      "prereporte$calificacion": {
+        "title": "Calificación"
+      }
+    },
+    "mensajes": {
+      "exito": "El Pre-Reporte ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Editar Pre-Reporte de fallas"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo Pre-Reporte de Fallas"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+﻿{
+  "Origen": {
+    "bc": {
+      "text": "Origen",
+      "link": "/kontrol/Origen"
+    },
+    "consulta": {
+      "title": "Origen",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "La clave es un identificador único para el Origen",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Nombre descriptivo de Origen",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "Origen ha sido actualizado"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Origen"
+    }
+  }
+}

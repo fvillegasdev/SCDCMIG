@@ -1,0 +1,41 @@
+﻿{
+  "cuentabancaria": {
+    "consulta": {
+      "title": "Administración de Cuentas Bancarias",
+      "grid": {
+        "headers":{
+          "banco": "Banco",
+          "clave": "Clave",
+          "descripcion": "Descripción",
+          "moneda": "Moneda",
+          "centrocosto": "Centro de Costo",
+          "tipopoliza": "Tipo Póliza",
+          "estatus":  "Estatus"
+        }
+      },
+      "labels": {
+
+      },
+      "mensajes": {
+      }
+    },
+    "nuevo": {
+      "title": "Nueva Cuenta Bancaria",
+      "grid": {
+        "headers": {
+        }
+      },
+      "labels": {},
+      "mensajes": {}
+    },
+    "editar": {
+      "title":"",
+      "grid": {
+        "headers": {},
+      },
+      "label":{},
+      "mensajes": {
+      }
+    }
+  }
+}

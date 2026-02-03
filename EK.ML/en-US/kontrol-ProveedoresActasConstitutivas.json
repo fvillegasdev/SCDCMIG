@@ -1,0 +1,63 @@
+﻿{
+  "ActaConstitutiva": {
+    "bc": {
+      "text": "Proveedores Actas Constitutivas",
+      "link": "/kontrol/ActaConstitutiva"
+    },
+    "consulta": {
+      "title": "Administración Proveedores Actas Constitutivas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture un Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "VolumenActa": {
+        "label": "Volumen Acta",
+        "helplabel": "El campo Volumen Acta es requerido"
+      },
+      "NombreNotario": {
+        "label": "Nombre Notario",
+        "helplabel": "Es requerido el campo Nombre Notario"
+      },
+      "NumNotario": {
+        "label": "Número del Notario",
+        "helplabel": "Es requerido el campo Número del Notario"
+      },
+      "FechaActa": {
+        "label": "Fecha Acta",
+        "helplabel": "Es requerido el campo Fecha"
+      }
+    },
+    "mensajes": {
+      "exito": "Acta Constitutiva actualizada"
+    },
+    "edit": {
+      "titulo": "Nueva Acta Constitutiva"
+    },
+    "titulo": {
+      "nuevo": "Nueva Acta Constitutiva"
+    }
+  }
+}

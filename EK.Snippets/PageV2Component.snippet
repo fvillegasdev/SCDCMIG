@@ -1,0 +1,146 @@
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>PageV2 Template for New Component</Title>
+    <Author>Josué A. Torres</Author>
+    <Description>PageV2 Template for New Component</Description>
+    <Shortcut>ReactPageV2Component</Shortcut>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>Name</ID>
+        <ToolTip>Replace with the name of the component.</ToolTip>
+        <Default>"Name"</Default>
+      </Literal>
+      <Literal>
+        <ID>idPage</ID>
+        <ToolTip>Replace with the id of the page</ToolTip>
+        <Default>"ID000"</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="TypeScript">
+      <![CDATA[
+					namespace EK.Modules.Kontrol.Pages {
+						const PAGE_ID: string = "$idPage$";
+
+						interface I$Name$Props extends React.Props<any> {
+							setSelected?: (item: any) => void;
+						};
+				
+						interface I$Name$State extends I$Name$Props {
+						};
+						
+						class Page$Name$ extends React.Component<I$Name$Props, I$Name$State> {
+							constructor(props: I$Name$Props) {
+								super(props);
+								
+								this.onSelectedChanged = this.onSelectedChanged.bind(this);
+							};
+						
+						    onSelectedChanged(item: any): void {
+								this.props.setSelected(item);
+							};
+							
+							componentDidMount(): void {}
+
+							render(): JSX.Element {
+								let $$page: any = $$ml.$Name$;
+								let $$bc: any = $$ml.bc;
+							
+								let bc: any = [$$bc.global.ek];
+								let columns: any[] = [
+									{ title: $$page.grid.headers.nombre,  data: "Nombre" }
+								];
+
+								let title: EK.UX.IPageTitle = {
+									title: $$page.title,
+									subTitle: ""
+								};
+
+								let page: JSX.Element = <PageV2 id={PAGE_ID} title={title} breadcrumb={bc}>
+									<PageButtons>
+										<PrintButton linkTo="$Name$/imprimir" />
+										<ViewButton />
+										<NewButton />
+									</PageButtons>
+									<PageTable id="tbl$Name$" columns={columns} onRowSelected={this.onSelectedChanged} />
+								</PageV2>;
+
+								return page;
+							};
+						};
+
+						export class $$$Name$Page {
+							static getProps(state: any): any {
+								return {
+									selected: state.$Name$.selected
+								};
+							};
+
+							static dispatchs: any = {
+								setSelected: (item: any): void => {
+									dispatchSuccessful("$Name$-setSelected", item);
+									setCurrentEntity(item);
+								}
+							};
+
+							static getDispatchs(): any { $$$Name$Page.dispatchs; };
+						};
+
+						//
+						// map props
+						//
+						const table$Name$MapProps: any = (state: any): any => {
+							return {
+								data: state.$Name$.$Name$,
+								selectedItem: state.$Name$.selected
+							};
+						};
+
+						const viewButtonMapProps: any = (state: any) => {
+							return {
+								info: state.$Name$.selected,
+								visible: isSuccessful(state.$Name$.selected)
+							};
+						};
+
+						const newButtonMapProps: any = (state: any) => {
+							return {
+								visible: true
+							};
+						};
+						
+						//
+						// map dispatchs
+						//
+						const viewButtonMapDispatchs: any = (dispatch: Redux.Dispatch<any>) => {
+							return {
+								onClick: (info: any): void => {
+									dispatchSync("forms-reset-state", { idForm: "$Name$Editar" });
+
+									go("kontrol/$Name$/" + info.data.ID);
+								}
+							}
+						};
+
+						const newButtonMapDispatchs: any = (dispatch: Redux.Dispatch<any>) => {
+							return {
+								onClick: (info: any): void => go("kontrol/$Name$/nuevo")
+							};
+						};
+						
+						// 
+						// connect
+						// 
+						export let $Name$Page: any = ReactRedux.connect($$$Name$Page.getProps, $$$Name$Page.getDispatchs)(Page$Name$);
+						let PageTable: any = ReactRedux.connect(table$Name$MapProps, null)(DataTableExt);
+						let ViewButton: any = ReactRedux.connect(viewButtonMapProps, viewButtonMapDispatchs)(EK.UX.ViewButton);
+						let NewButton: any = ReactRedux.connect(newButtonMapProps, newButtonMapDispatchs)(EK.UX.NewButton);
+					};	
+                ]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

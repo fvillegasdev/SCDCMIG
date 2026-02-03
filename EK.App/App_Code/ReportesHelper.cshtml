@@ -1,0 +1,24 @@
+﻿@helper Reporte(EK.Common.Reportes.Reporte reporte) {
+}
+
+@helper ImprimeEncabezados(EK.Common.Reportes.Reporte reporte) {
+    <div class="encabezados-columnas">
+        @foreach (var c in reporte.Columnas) {
+            var style = $"width:{c.Longitud}px";
+            
+            <div class="encabezado-columna" style="@style">@c.Titulo</div>
+        }
+    </div>
+}
+
+@helper ImprimeLinea(EK.Common.Reportes.Reporte reporte, dynamic valores)
+{
+    <div class="linea">
+        @foreach (var c in reporte.Columnas)
+        {
+            var style = $"width:{c.Longitud}px";
+
+            <div class="valor-columna" style="@style">@c.Titulo</div>
+        }
+    </div>
+}

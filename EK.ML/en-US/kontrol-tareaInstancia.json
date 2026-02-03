@@ -1,0 +1,61 @@
+{
+  "tareaInstancia": {
+    "consulta": {
+      "title": "Administración de tareas de procesos de autorización",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "view": {
+      "title": "Tarea de Proceso de autorización",
+      "subtitle": "Nuevo",
+      "href": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "deactivate": "El registro dela tarea de la instancia de flujo ha sido cancelada...",      
+      "update": "El registro de la tarea de la instancia de flujo ha sido actualizada..."
+    },
+    "form": {
+      "title": "Tarea de Proceso de autorización",
+      "textUpdate": "Actualizando información",
+      "titleTareas": "Tareas de la instancia",
+      "id": {
+        "label": "ID",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "flujo": {
+        "label": "Flujo",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "comentarios": {
+        "label": "Comentarios",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "status": {
+        "label": "Status",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "fechaVigencia": {
+        "label": "Fecha Vigencia",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "referencia": {
+        "label": "Fecha Vigencia",
+        "helpLabel": "",
+        "validations": ""
+      }
+    }
+  }
+}

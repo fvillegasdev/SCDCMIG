@@ -1,0 +1,61 @@
+﻿{
+  "OrigenLead": {
+    "bc": {
+      "text": "Origen Lead",
+      "link": "/scv/OrigenLead"
+    },
+    "consulta": {
+      "title": "Origen Lead",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave  es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la fase",
+        "validaciones": {
+          "requerida": "El nombre  es requerido"
+        }
+      },
+      "Color": {
+        "label": "Color",
+        "helplabel": "Capture el color",
+        "validaciones": {
+          "requerida": "El color es requerido"
+        }
+      },
+      "BGColor": {
+        "label": "Fondo",
+        "helplabel": "Capture el fondo",
+        "validaciones": {
+          "requerida": "El fondo es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Origen Lead ha sido actualizado"
+    },
+    "editar": {
+      "title": "Modificar el Origen Lead"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Origen Lead"
+    }
+  }
+}

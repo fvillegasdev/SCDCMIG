@@ -1,0 +1,14 @@
+{
+  "ReporteIncidenciasEntregaVivienda": {
+    "bc": {
+      "text": "Reporte de incidencias de entrega vivienda",
+      "link": "/scv/pv/ConsultaIncidenciasEntregaVivienda"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        
+      }
+    }
+  }
+}

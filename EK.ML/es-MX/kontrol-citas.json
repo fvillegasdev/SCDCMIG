@@ -1,0 +1,135 @@
+﻿{
+  "citas": {
+    "bc": {
+      "text": "Citas",
+      "link": "/kontrol/citas"
+    },
+    "consulta": {
+      "title": "Administracion de citas",
+      "grid": {
+        "headers": {
+            "tipoCitas": { "Nombre": "Tipo de Cita" },
+            "cliente": { "Nombre": "Cliente" },
+            "expediente": { "ID": "Expediente" },
+            "localidad": { "Nombre": "Localidad" },
+            "fechaInicio": "Fecha Inicio",
+            "fechaFin": "Fecha Fin",
+            "duracion": "Duracion",
+            "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerido": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Centro de Costo",
+        "helplabel": "Capture el nombre del centro de costo",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "TipoCitas": {
+        "label": "Tipo de Cita",
+        "helplabel": "Capture el nombre del centro de costo",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Expediente": {
+        "label": "Expediente",
+        "helplabel": "Capture el expediente",
+        "validaciones": {
+          "requerido": "El expediente del cliente  es requerido"
+        }
+      },
+      "AsignadoA": {
+        "label": "Asignar A",
+        "helplabel": "Capture Asignado A",
+        "validaciones": {
+          "requerido": "Asignado A  es requerido"
+        }
+      },
+      "Localidad": {
+        "label": "C.P / COLONIA / MUNICIPIO",
+        "helplabel": "Capture la localidad",
+        "validaciones": {
+          "requerido": "La loclaidad es requerida"
+        }
+      },
+      "Geolocalizacion": {
+        "label": "Coordenadas"
+      },
+      "Estatus": {
+        "label": "No Atendida",
+        "helplabel": "Estatus"
+      },
+      "Cliente": {
+        "label": "Cliente",
+        "helplabel": "Capture el tipo de clasificador",
+        "validaciones": {
+          "requerido": "El cliente es requerido"
+        },
+        "Descripcion": {
+          "label": "Descripción",
+          "helplabel": "Capture la descripcion",
+          "validaciones": {
+            "requerido": "La descripcion es requerida"
+          }
+        }
+      },
+      "FechaInicio": {
+        "label": "Fecha Inicio",
+        "helplabel": "Capture la fecha inicio",
+        "validaciones": {
+          "requerido": "La fecha inicio es requerida"
+        }
+      },
+      "FechaFin": {
+        "label": "Fecha Fin",
+        "helplabel": "Capture la fecha fin",
+        "validaciones": {
+          "requerido": "La fecha fin es requerida"
+        }
+      },
+      "HoraInicio": {
+        "label": "Hora Inicio",
+        "helplabel": "Capture la hora inicio",
+        "validaciones": {
+          "requerido": "La hora inicio es requerida"
+        }
+      },
+
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la descripcion",
+        "validaciones": {
+          "requerido": "La descripcion requerida"
+        }
+      },
+      "Duracion": {
+        "label": "Duracion",
+        "helplabel": "Capture la duracion",
+        "validaciones": {
+          "requerido": "La duracion es requerida"
+        }
+      }
+    },
+    "sections": {
+      "Mapa": {
+        "title": "Lugar de la cita"
+      }
+    },
+      "mensajes": {
+        "exito": "La cita ha sido actualizado"
+      },
+      "titulo": {
+        "nuevo": "Nueva Cita"
+      }
+    }
+  }

@@ -1,0 +1,86 @@
+﻿{
+  "parametros": {
+    "consulta": {
+      "title": "Administración de parámetros",
+      "grid": {
+        "headers": {
+          "seccion": "Sección",
+          "parametro": "Parámetro",
+          "tipodato": "Tipo Dato",
+          "descripcion": "Descripción",
+          "estatus": "Estatus"
+        }
+      },
+      "filtros": {
+        "modulo": "Módulo",
+        "ambito": "Ámbito",
+        "compania": "Compañía"
+      }
+    },
+    "form": {
+      "ambito": {
+        "label": "Ámbito",
+        "helplabel": "Seleccione el ámbito",
+        "validaciones": {
+          "requerido": "Seleccione el ámbito"
+        }
+      },
+      "modulo": {
+        "label": "Módulo",
+        "helplabel": "Seleccione el módulo",
+        "validaciones": {
+          "requerido": "Seleccione el módulo"
+        }
+      },
+      "estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la descripción"
+      },
+      "nombre": {
+        "label": "Parámetro",
+        "helplabel": "Capture el parámetro",
+        "validaciones": {
+          "requerido": "El nombre del parámetro es requerido"
+        }
+      },
+      "seccion": {
+        "label": "Sección",
+        "helplabel": "Capture el nombre de la Sección.",
+        "validaciones": {
+          "requerido": "Capture el nombre de la Sección."
+        }
+      },
+      "tipodato": {
+        "label": "Tipo de Dato",
+        "helplabel": "Seleccione el tipo de dato",
+        "validaciones": {
+          "requerido": "Seleccione el tipo de dato"
+        }
+      },
+      "longitud": {
+        "label": "Longitud",
+        "helplabel": "Capture la longitud",
+        "validaciones": {
+          "requerido": "Capture la longitud"
+        }
+      },
+      "decimales": {
+        "label": "Decimales",
+        "helplabel": "Capture el número de decimales",
+        "validaciones": {
+          "requerido": "Capture el número de decimales"
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "El parámetro ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo parámetro"
+    }
+  }
+}

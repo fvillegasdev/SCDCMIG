@@ -1,0 +1,55 @@
+﻿{
+  "macroEtapas": {
+    "bc": {
+      "text": "Administración de Macro-Etapas",
+      "link": "/scv/macroEtapas"
+    },
+    "consulta": {
+      "title": "Catálogo de Macro-Etapas",
+      "grid": {
+        "headers": {
+            "clave": "Clave",
+            "nombre": "Nombre",
+            "faseExpediente": { "Nombre": "Fase Expediente" },
+            "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+        "Clave": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave de la macro-etapa es requerida"
+            }
+        },
+        "Nombre": {
+            "label": "Nombre",
+            "helplabel": "Capture el nombre de la macro-etapa",
+            "validaciones": {
+                "requerida": "El nombre de la macro-etapa es requerido"
+            }
+        },
+        "FaseExpediente": {
+            "label": "Fase Expediente",
+            "helplabel": "Seleccione la fase del expediente",
+            "validaciones": {
+                "requerida": "La fase de expediente es requerida"
+            }
+        },
+        "Estatus": {
+            "label": "Activo",
+            "helplabel": "Estatus"
+        }
+    },
+    "mensajes": {
+      "exito": "La macro-etapa ha sido actualizada"
+    },
+    "editar": {
+      "title": "Modificar macro-etapa"
+    },
+    "titulo": {
+      "nuevo": "Nueva macro-etapa"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+﻿{
+  "centralesObreras": {
+    "bc": {
+      "text": "Centrales Obrearas",
+      "link": "/scv/centralesObreras"
+    },
+    "consulta": {
+      "title": "Catálogo de Centrales Obreras",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la central obrera es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "La descripción de la central obrera es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Estatus de la central obrera"
+      }
+    },
+    "mensajes": {
+      "exito": "La central obrera ha sido actualizada"
+    },
+    "edit": {
+      "title": "Nueva central obrera"
+    },
+    "titulo": {
+      "nuevo": "Nueva central obrera"
+    }
+  }
+}

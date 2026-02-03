@@ -1,0 +1,70 @@
+﻿{
+  "fasesExpediente": {
+    "bc": {
+      "text": "Administración Fases de Expediente",
+      "link": "/scv/fasesExpediente"
+    },
+    "consulta": {
+      "title": "Catálogo Fase de Expediente",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "orden": "Orden Expediente",
+          "proceso": { "Nombre": "Proceso" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la fase es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la fase",
+        "validaciones": {
+          "requerida": "El nombre de la fase es requerido"
+        }
+      },
+      "Proceso": {
+        "label": "Proceso",
+        "helplabel": "Capture la proceso",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "TipoExpediente": {
+        "label": "Tipo de Expediente",
+        "helplabel": "Capture el Tipo Expediente",
+        "validaciones": {
+          "requerida": "requerido"
+        }
+      },
+      "Orden": {
+        "label": "Orden Expediente",
+        "helplabel": "Capture el orden",
+        "validaciones": {
+          "requerida": "El orden es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "La fase de expediente ha sido actualizada"
+    },
+    "editar": {
+      "title": "Modificar fase de expediente"
+    },
+    "titulo": {
+      "nuevo": "Nueva fase de expediente"
+    }
+  }
+}

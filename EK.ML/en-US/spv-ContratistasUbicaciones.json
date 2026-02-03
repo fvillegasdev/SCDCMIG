@@ -1,0 +1,60 @@
+﻿{
+  "ContratistasUbicaciones": {
+    "bc": {
+      "text": "Relación de Contratistas-Lotes",
+      "link": "/scv/pv/ContratistasUbicaciones"
+    },
+    "consulta": {
+      "title": "Relación de Contratistas-Lotes",
+      "grid": {
+        "headers": {
+        }
+      }
+    },
+    "form": {
+      "Cliente": {
+        "label": "Cliente",
+        "helplabel": "Capture los datos del cliente o la ubicación",
+        "validaciones": {
+          "requerida": "El cliente o la ubicación es requerida"
+        }
+      },
+      "contratistasLotes$contratistas": {
+        "TipoContratista": {
+          "label": "Tipo de Contratista",
+          "helplabel": "Capture el tipo de contratista",
+          "validaciones": {
+            "requerida": "El tipo de contratista es requerido"
+          }
+        },
+        "ContratistaDefault": {
+          "label": "Default",
+          "helplabel": "Capture si es el contratista default",
+          "validaciones": {
+            "requerida": "El campo es requerido"
+          }
+        }
+      }
+    },
+    "sections": {
+      "contratistasLotes$contratistas": {
+        "title": "Contratistas"
+      },
+      "contratistasLotes$fraccionamientos": {
+        "title": "Fraccionamientos"
+      },
+      "contratistasLotes$ubicaciones": {
+        "title": "Ubicaciones"
+      }
+    },
+    "mensajes": {
+      "exito": "La relación contratista-lote ha sido actualizada"
+    },
+    "edit": {
+      "titulo": "Editar relación contratista-lote"
+    },
+    "titulo": {
+      "Nuevo": "Nueva relación contratista-lote"
+    }
+  }
+}

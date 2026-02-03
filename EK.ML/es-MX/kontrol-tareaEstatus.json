@@ -1,0 +1,65 @@
+﻿{
+  "tareaEstatus": {
+    "bc": {
+        "text": "Estatus de Tarea",
+        "link": "/kontrol/tareaEstatus"
+    },
+    "consulta": {
+      "title": "Administración de estatus de tareas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "view": {
+      "title": "Administración de estatus de tareas",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "editar": {
+      "title": "Estatus de tareas",
+      "subtitle": "Nuevo",
+      "href": "kontrol/tareaestatus/editar",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "update": "El estatus de la tarea ha sido actualizado...",
+      "save": "El estatus de la tarea se ha guardado con éxito.",
+      "savetitle": "Guardar estatus de la tarea"
+    },
+    "form": {
+      "title": "Estatus de tareas",
+      "textUpdate": "Actualizando información",
+      "id": {
+        "label": "ID",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la clave",
+        "validations": "La clave del estatus es requerida"
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre",
+        "validations": "El nombre del estatus es requerido"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus del registro",
+        "validations": ""
+      }
+    },
+    "edit": {
+      "titulo": "Nuevo estatus"
+    }
+  }
+}

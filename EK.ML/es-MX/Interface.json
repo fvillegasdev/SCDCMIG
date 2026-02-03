@@ -1,0 +1,69 @@
+﻿{
+  "Interface": {
+    "bc": {
+      "text": "Interface Versión 9",
+      "link": "/scv/Interface"
+    },
+    "consulta": {
+      "title": "Interface Versión 9",
+      "grid": {
+        "headers": {
+          "estatus": "Estatus",
+          "ID": "Num. Interface",
+          "clave": "Clave"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "activo": {
+        "label": "Activo",
+        "helplabel": "Seleccione el Activo",
+        "validaciones": {
+          "requerida": "El Activo es Requerida"
+        }
+      },
+      "AplicarTodos": {
+        "label": "Aplicar Todos",
+        "helplabel": "Aplicar Todos"
+      },
+      "EstatusRegistro": {
+        "label": "Estatus Registro",
+        "helplabel": "Estatus Registro"
+      },
+      "EstatusInterface": {
+        "label": "Estatus Interface",
+        "helplabel": "Estatus Interface"
+      },
+      "Importe": {
+        "label": "Importe",
+        "helplabel": "Importe"
+      }
+    },
+    "validaciones": {
+      "SeleccionarReasignacion": "Seleccionar un Interface"
+    },
+    "mensajes": {
+      "exito": "La Interface ha sido Enviado"
+    },
+    "edit": {
+      "titulo": "Nuevo Interface"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Interface"
+    }
+  }
+}

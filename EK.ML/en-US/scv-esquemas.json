@@ -1,0 +1,261 @@
+﻿{
+  "esquemas": {
+    "bc": {
+      "text": "Esquemas de Seguimiento",
+      "link": "/scv/esquemas"
+    },
+    "consulta": {
+      "title": "Administración de Esquemas de Seguimiento",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "faseExpediente": { "Nombre": "Fase Expediente" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "editar": {
+      "edicion": "Modificar Esquema de Seguimiento",
+      "nuevo": "Nuevo Esquema de Seguimiento"
+    },
+    "form": {
+      "clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave del Esquema",
+        "validaciones": {
+          "requerida": "La clave del Esquema es requerida"
+        }
+      },
+      "nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre del Esquema",
+        "validaciones": {
+          "requerida": "El nombre del Esquema es requerido"
+        }
+      },
+      "tipoFinanciamiento": {
+        "label": "Tipo Financiamiento",
+        "helplabel": "Capture el tipo de financiamiento",
+        "validaciones": {
+          "requerida": "El tipo de financiamiento es requerido"
+        }
+      },
+      "faseExpediente": {
+        "label": "Fase Expediente",
+        "helplabel": "Capture la fase de expediente",
+        "validaciones": {
+          "requerida": "La fase de expediente es requerida"
+        }
+      },
+      "estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "section": {
+        "esquemas$Niveles": {
+          "titulo": "Niveles del Esquema",
+          "list": {
+            "orden": "",
+            "etapas": "Etapa(s)",
+            "opciones": ""
+          }
+        },
+        "esquemas$Etapas": {
+          "titulo": "Etapas del Esquema",
+          "list": {
+            "orden": "",
+            "etapa": "Etapa",
+            "plazoDias": "Plazo (días)",
+            "areaResponsable": "Área de la Organización",
+            "autorizacion": "Autorización",
+            "opciones": ""
+          },
+          "form": {
+            "etapa": {
+              "label": "Etapa",
+              "helplabel": "Capture la etapa del esquema",
+              "validaciones": {
+                "requerida": "La etapa del esquema es requerida"
+              }
+            },
+            "plazoDias": {
+              "label": "Plazo (días)",
+              "helplabel": "Capture el plazo de la etapa",
+              "validaciones": {
+                "requerida": "El plazo de la etapa es requerido",
+                "numero": "El plazo no es válido"
+              }
+            },
+            "areaResponsable": {
+              "label": "Área de la Organizacíón",
+              "helplabel": "Capture el área de la organización",
+              "validaciones": {
+                "requerida": "El área de la organización es requerida"
+              }
+            },
+            "section": {
+              "etapas$Requisitos": {
+                "titulo": "Requisitos de la Etapa",
+                "list": {
+                  "requisito": "Requisito",
+                  "plazoDias": "Plazo (días)",
+                  "obligatorio": "Obligatorio",
+                  "opciones": ""
+                },
+                "form": {
+                  "requisito": {
+                    "label": "Requisito",
+                    "helplabel": "Capture el requisito de la etapa",
+                    "validaciones": {
+                      "requerida": "El requisito de la etapa es requerida"
+                    }
+                  },
+                  "plazoDias": {
+                    "label": "Plazo (días)",
+                    "helplabel": "Capture el plazo de entrega del requisito",
+                    "validaciones": {
+                      "numero": "El plazo del requisito no es válido"
+                    }
+                  },
+                  "obligatorio": {
+                    "label": "Obligatorio",
+                    "helplabel": "Obligatorio"
+                  },
+                  "etapas$Autorizacion": {
+                    "titulo": "Autorización del Requisito",
+                    "form": {
+                      "tipoWorkflow": {
+                        "label": "Tipo del Flujo Trabajo",
+                        "helplabel": "Capture el tipo del flujo de trabajo",
+                        "validaciones": {
+                          "requerida": "El tipo de flujo de trabajo es requerido"
+                        }
+                      },
+                      "workflow": {
+                        "label": "Flujo Trabajo",
+                        "helplabel": "Capture el flujo de trabajo",
+                        "validaciones": {
+                          "requerida": "El flujo de trabajo es requerido"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "etapas$Documentos": {
+                "titulo": "Documentos de la Etapa",
+                "list": {
+                  "documento": "Requisito",
+                  "copias": "Copias",
+                  "opciones": ""
+                },
+                "form": {
+                  "documento": {
+                    "label": "Documento",
+                    "helplabel": "Capture el documento de la etapa",
+                    "validaciones": {
+                      "requerida": "El documento de la etapa es requerido"
+                    }
+                  }
+                }
+              },
+              "etapas$Procesos": {
+                "titulo": "Procesos de la Etapa",
+                "list": {
+                  "proceso": "Proceso",
+                  "responsable": "Responsable",
+                  "evento": "Evento",
+                  "opciones": ""
+                },
+                "form": {
+                  "proceso": {
+                    "label": "Proceso",
+                    "helplabel": "Capture el proceso de la etapa",
+                    "validaciones": {
+                      "requerida": "El proceso de la etapa es requerido"
+                    }
+                  }
+                }
+              },
+              "etapas$Autorizacion": {
+                "titulo": "Autorización de la Etapa",
+                "form": {
+                  "tipoWorkflow": {
+                    "label": "Tipo del Flujo Trabajo",
+                    "helplabel": "Capture el tipo del flujo de trabajo",
+                    "validaciones": {
+                      "requerida": "El tipo de flujo de trabajo es requerido"
+                    }
+                  },
+                  "workflow": {
+                    "label": "Flujo Trabajo",
+                    "helplabel": "Capture el flujo de trabajo",
+                    "validaciones": {
+                      "requerida": "El flujo de trabajo es requerido"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "esquemas$Requisitos": {
+          "titulo": "Requisitos del Esquema",
+          "list": {
+            "etapa": "Etapa",
+            "requisito": "Requisito",
+            "plazoDias": "Plazo (días)",
+            "obligatorio": "Obligatorio",
+            "observaciones": "Observaciones"
+          }
+        },
+        "esquemas$Documentos": {
+          "titulo": "Documentos del Esquema",
+          "list": {
+            "etapa": "Etapa",
+            "documento": "Documento",
+            "copias": "Copias"
+          }
+        },
+        "etapas$Procesos": {
+          "titulo": "Procesos del Esquema",
+          "list": {
+            "etapa": "Etapa",
+            "proceso": "Proceso",
+            "responsable": "Responsable",
+            "evento": "Evento"
+          }
+        }
+      }
+    },
+    "mensajes": {
+      "confirm": {
+        "nivel": {
+          "message": "Presione Confirmar para eliminar el nivel...",
+          "title": "Niveles del Esquema de Financiamiento"
+        },
+        "etapa": {
+          "message": "Presione confirmar para eliminar la etapa...",
+          "title": "Etapas del Esquema de Financiamiento"
+        }
+      },
+      "warning": {
+        "message": "Los datos están incompletos, verificar campos requeridos y validaciones",
+        "etapa": {
+          "message": "La etapa ya está agregada al esquema"
+        },
+        "nivel": {
+          "message": "No se agregaron etapas"
+        },
+        "requisito": {
+          "message": "El plazo del requisito debe ser igual o menor al plazo de la etapa"
+        }
+      },
+      "exito": "El Esquema de Seguimiento ha sido actualizado"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo Esquema de Seguimiento"
+    }
+  }
+}

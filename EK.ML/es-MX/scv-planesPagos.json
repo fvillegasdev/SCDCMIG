@@ -1,0 +1,292 @@
+﻿{
+  "planesPagos": {
+    "bc": {
+      "text": "Planes de Pago",
+      "link": "/scv/planesPagos"
+    },
+    "consulta": {
+      "title": "Administración de Planes de Pagos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "descripcion": "Nombre",
+          "vigenciaInicio": "Vigencia Inicio",
+          "vigenciaFin": "Vigencia Fin",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave del Plan de Pagos",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Descripcion": {
+        "label": "Nombre",
+        "helplabel": "Capture la descripción del plan de pagos",
+        "validaciones": {
+          "requerida": "La descripción es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helplabel": "Capture la Moneda",
+        "validaciones": {
+          "requerida": "La Moneda es requerida"
+        }
+      },
+      "RangoIngreso": {
+        "label": "Rango de Ingresos Requerido",
+        "helplabel": "Capture el rango de ingresos",
+        "validaciones": {
+          "requerida": "El rango de ingresos es requerido"
+        }
+      },
+      "CasasLimite": {
+        "label": "Cantidad de Casas Límite",
+        "helplabel": "Capture la cantidad de casas límite",
+        "validaciones": {
+          "numero": "La Cantidad de Casas Límite no es valida"
+        }
+      },
+      "VigenciaInicio": {
+        "label": "Vigencia Inicio",
+        "helplabel": "Capture la vigencia inicial",
+        "validaciones": {
+          "requerida": "La vigencia inicial es requerida"
+        }
+      },
+      "VigenciaFin": {
+        "label": "Vigencia Fin",
+        "helplabel": "Capture la vigencia final",
+        "validaciones": {
+          "requerida": "La vigencia final es requerida"
+        }
+      },
+      "Orden": {
+        "label": "Orden",
+        "helplabel": "Capture el orden",
+        "validaciones": {
+          "requerida": "El orden es requerido"
+        }
+      },
+      "Formula": {
+        "label": "Fórmula",
+        "helplabel": "Capture la fórmula",
+        "validaciones": {
+          "requerida": "La formula es requerida"
+        }
+      },
+      "Venta": {
+        "label": "Venta",
+        "helplabel": "Capture la venta",
+        "validaciones": {
+          "requerida": "La venta es requerida"
+        }
+      },
+      "Reestructura": {
+        "label": "Reestructura",
+        "helplabel": "Capture la Reestructura",
+        "validaciones": {
+          "requerida": "La Reestructura es requerida"
+        }
+      },
+      "Finiquito": {
+        "label": "Finiquito",
+        "helplabel": "Capture el Finiquito",
+        "validaciones": {
+          "requerida": "El Finiquito es requerido"
+        }
+      },
+      "ConceptoPago": {
+        "label": "Concepto de Pago",
+        "helplabel": "Capture el concepto de pago",
+        "validaciones": {
+          "requerida": "El Concepto de Pago es requerido"
+        }
+      },
+      "Modificable": {
+        "label": "Modificable",
+        "helplabel": "Modificable es requerido",
+        "validaciones": {
+          "requerida": "Modificable es requerido"
+        }
+      },
+      "Importe": {
+        "label": "Importe",
+        "helplabel": "El importe es requerido",
+        "validaciones": {
+          "requerida": "El importe es requerido"
+        }
+      },
+      "Porcentaje": {
+        "label": "Porcentaje %",
+        "helplabel": "El Porcentaje es requerido",
+        "validaciones": {
+          "requerida": "El Porcentaje es requerido"
+        }
+      },
+      "NumeroPagos": {
+        "label": "Número de Pagos",
+        "helplabel": "El Numero de Pagos es requerido",
+        "validaciones": {
+          "requerida": "El Numero de Pagos es requerido"
+        }
+      },
+      "FrecuenciaPago": {
+        "label": "Frecuencia de Pago",
+        "helplabel": "La Frecuencia de Pago es requerido",
+        "validaciones": {
+          "requerida": "La Frecuencia de pago es requerido"
+        }
+      },
+      "PorcentajeTIF": {
+        "label": "Porcentaje TIF",
+        "helplabel": "El Porcentaje TIF es requerido",
+        "validaciones": {
+          "requerida": "El PorcentajeTIF es requerido"
+        }
+      },
+      "PorcentajeTIM": {
+        "label": "Porcentaje TIM",
+        "helplabel": "El Porcentaje TIM es requerido",
+        "validaciones": {
+          "requerida": "El Porcentaje TIM es requerido"
+        }
+      },
+      "NumeroPlazoPrimerPago": {
+        "label": "Plazo primer pago",
+        "helplabel": "El Numero de Plazo Primer Pago es requerido",
+        "validaciones": {
+          "requerida": "El Numero de Plazo Primer Pago es requerido"
+        }
+      },
+      "PeriodoPrimerPago": {
+        "label": "Periodo Primer Pago",
+        "helplabel": "El Periodo de Primer Pago es requerido",
+        "validaciones": {
+          "requerida": "El Periodo Primer Pago es requerido"
+        }
+      },
+      "Impresion": {
+        "label": "Impresion"
+      },
+      "section": {
+        "conceptos": {
+          "titulo": "Conceptos de Pago",
+          "list": {
+            "headers": {
+              "concepto": "Concepto Pago",
+              "tipo": "Tipo",
+              "plazo": "Plazo",
+              "importe": "Importe",
+              "porcentaje": "%Venta",
+              "modificable": "Modificable"
+            }
+          }
+        },
+        "childs": {
+          "concepto": {
+            "label": "Concepto de Pago",
+            "helplabel": "Capture el concepto de pago",
+            "validaciones": {
+              "requerida": "El concepto de pago es requerido"
+            }
+          },
+          "frecuenciaPago": {
+            "label": "Frecuencia de Pago",
+            "helplabel": "Capture la frecuencia de los pagos",
+            "validaciones": {
+              "requerida": "La frencuencia de pago es requerida"
+            }
+          },
+          "numeroPagos": {
+            "label": "Número de Pagos",
+            "helplabel": "Capture el número de pagos",
+            "validaciones": {
+              "requerida": "El número de pagos es requerido",
+              "numero": "El número de pagos no es válido"
+            }
+          },
+          "importe": {
+            "label": "Importe",
+            "helplabel": "Capture el importe",
+            "validaciones": {
+              "numero": "El importe no es válido"
+            }
+          },
+          "porcentaje": {
+            "label": "% Venta",
+            "helplabel": "Capture el porcentaje de venta",
+            "validaciones": {
+              "numero": "El porcentaje de venta no es válido"
+            }
+          },
+          "porcentajeTIF": {
+            "label": "% TIF",
+            "helplabel": "Capture el % Tasa Interés Financiero",
+            "validaciones": {
+              "numero": "El porcentaje no es válido"
+            }
+          },
+          "porcentajeTIM": {
+            "label": "% TIM",
+            "helplabel": "Capture el % Tasa Interés Moratorio",
+            "validaciones": {
+              "numero": "El porcentaje no es válido"
+            }
+          },
+          "numeroPlazoPrimerPago": {
+            "label": "Número Plazo Primer Pago",
+            "helplabel": "Capture el numero plazo del primer pago",
+            "validaciones": {
+              "requerida": "El número de plazo es requerido",
+              "numero": "El número de plazo no es válido"
+            }
+          },
+          "periodo": {
+            "label": "Período Primer Pago",
+            "helplabel": "Capture el período del primer pago",
+            "validaciones": {
+              "requerida": "El período de plazo es requerido"
+            }
+          },
+          "modificable": {
+            "label": "Modificable",
+            "helplabel": "Modificable"
+          },
+          "impresion": {
+            "label": "Impresion"
+          }
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "El plan de pagos ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones",
+      "requiredImporte": "Capture el Importe o el % de Venta",
+      "requiredPorcentaje": "Capture únicamente el Importe, de lo contrario el % de Venta"
+    },
+    "edit": {
+      "titulo": "Nuevo plan de pagos"
+    },
+    "titulo": {
+      "nuevo": "Nuevo plan de pagos"
+    },
+    "sections": {
+      "scv_Planes_Pagos_ConceptosPago": {
+        "title": "Conceptos de Pago"
+      },
+      "Configuracion": {
+        "title": "Configuración"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+﻿{
+  "TipoInsumo": {
+    "bc": {
+        "text": "Tipo de Insumos",
+        "link": "/scco/TipoInsumo"
+    },
+    "consulta": {
+        "title": "Administración Tipo de Insumos",
+        "grid": {
+          "headers": {
+            "estatus": "Estatus",
+            "clave": "Clave",
+            "nombre": "Nombre"
+          }
+        }
+    },
+    "form": {
+      "clave_tipo_insumos": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El Nombre es requerida"
+        }
+      },
+      "activo": {
+        "label": "Activo",
+        "helplabel": "Capture el Activo",
+        "validaciones": {
+          "requerida": "El Activo es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Categoria": {
+        "label": "Categoría",
+        "helplabel": "Capture una Categoría"
+      }
+    },
+    "mensajes": {
+      "exito": "El Tipo de Insumo ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de Insumo"
+    },
+    "titulo": {
+        "nuevo": "Nuevo tipo de Insumo"
+    }
+  }
+}

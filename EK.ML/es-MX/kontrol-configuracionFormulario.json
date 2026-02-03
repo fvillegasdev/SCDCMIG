@@ -1,0 +1,229 @@
+﻿{
+  "configuracionFormulario": {
+    "bc": {
+      "text": "Configuracion de formulario",
+      "link": "/scv/configuracionFormularios"
+    },
+    "consulta": {
+      "title": "Configuración de Formularios",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "descripcion": "Nombre",
+          "centroCosto": { "Nombre": "Centro Costo" },
+          "estatus": "Estatus",
+          "geolocalizacion": "Geolocalización"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave del Desarrollo es requerida"
+        }
+      },
+      "Sector": {
+        "label": "Sector",
+        "helplabel": "Capture el Sector",
+        "validaciones": {
+          "requerida": "El dato es numérico"
+        }
+      },
+      "Geolocalizacion": {
+        "label": "Geolocalización",
+        "helplabel": "Capture la Geolocalización"
+      },
+      "Descripcion": {
+        "label": "Nombre",
+        "helplabel": "Capture la descripción del Desarrollo",
+        "validaciones": {
+          "requerida": "La descripción del Desarrollo es requerida"
+        }
+      },
+      "CentroCosto": {
+        "label": "Centro de Costos",
+        "validaciones": {
+          "requerida": "El Centro de Costo es requerido"
+        }
+      },
+      "Direccion": {
+        "label": "Calle y Número",
+        "helplabel": "Capture la Calle y el Número"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "Localidad": {
+        "label": "C.P / COLONIA / MUNICIPIO",
+        "helplabel": "Capture la Localidad",
+        "validaciones": {
+          "requerida": "La Localidad es requerida"
+        }
+      },
+      "LadaRep": {
+        "label": "Lada",
+        "helplabel": "Capture la Lada"
+      },
+      "TelefonoRep": {
+        "label": "Teléfono ",
+        "helplabel": "Capture el Teléfono del Representante",
+        "validaciones": {
+          "requerida": "El teléfono es requerido",
+          "length": "La longitud del teléfono es de 10 posiciones"
+        }
+      },
+      "ExtensionRep": {
+        "label": "Extensión",
+        "helplabel": "Capture la extensión del Representante",
+        "validaciones": {
+          "requerida": "El dato es numérico"
+        }
+      },
+      "SegmentaPrecios": {
+        "label": "Segmentación",
+        "helplabel": "Indicar si tendrá segmentación por rango de precios"
+      },
+      "Mapa2D": {
+        "label": "Mapa 2D",
+        "helplabel": "Indicar si se usará Mapa."
+      },
+      "Compania": {
+        "label": "Compañía cartera",
+        "helplabel": "Capture la Compañía cartera."
+      },
+      "ClaveConjunto": {
+        "label": "Clave de Conjunto",
+        "helplabel": "Capture la Clave de conjunto habitacional"
+      },
+      "NombreAcreedor": {
+        "label": "Nombre del Acreedor Hipotecario",
+        "helplabel": "Capture el Nombre del Acreedor Hipotecario"
+      },
+      "RFCAcreedor": {
+        "label": "RFC",
+        "helplabel": "Capture el RFC del Acreedor"
+      },
+      "ClabeAcreedor": {
+        "label": "Clave del Acreedor",
+        "helplabel": "Capture la Clave del Acreedor"
+      },
+      "EstatusDes": {
+        "label": "Estatus",
+        "helplabel": "Capture el Estatus del Desarrollo"
+      },
+      "PrecioExcedenteM2": {
+        "label": "Precio m2 Excedente",
+        "helplabel": "Capture el Precio por m2 de Excedente"
+      },
+
+      "Notario": {
+        "label": "Nombre del Notario",
+        "helplabel": "Capture el Nombre del Notario"
+      },
+      "NombreRep": {
+        "label": "Nombre del Representante",
+        "helplabel": "Capture el Nombre del Representante"
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helplabel": "Capture la Moneda"
+      },
+      "PlantillaMail": {
+        "label": "Plantilla",
+        "helplabel": "Capture la Plantilla"
+      },
+      "Cuentas": {
+        "titulo": "Cuentas para Depósito"
+      },
+      "CentrosCosto": {
+        "label": "Centros de Costo"
+      },
+      "CCConstruccion": {
+        "label": "Centros de Costo de Construcción"
+      },
+      "Prototipo": {
+        "titulo": "Prototipos",
+        "caracteristicas": "Características Desarrollo - Prototipo",
+        "label": "Prototipo: "
+      },
+      "Esquemas": {
+        "titulo": "Esquemas",
+        "caracteristicas": "Características Desarrollo Esquema",
+        "label": "Esquema: "
+      },
+      "Caracteristicas": {
+        "caracteristicas": "Características Desarrollo"
+      },
+      "Comisiones": {
+        "titulo": "Comisiónes"
+      },
+      "PrecioBase": {
+        "label": "Valor Base"
+      },
+      "Vigencia": {
+        "label": "Vigencia"
+      },
+      "Banco": {
+        "label": "Banco"
+      },
+      "Plaza": {
+        "label": "Plaza"
+      },
+      "Posicion": {
+        "label": "Responsable"
+      },
+      "FormatoClave": {
+        "Nombre": {
+          "label": "Parte"
+        },
+        "Longitud": {
+          "label": "Longitud"
+        }
+      }
+    },
+    "sections": {
+      "Prototipos": {
+        "title": "Prototipos"
+      },
+      "Esquemas": {
+        "title": "Esquemas"
+      },
+      "Financiamientos": {
+        "title": "Financiamientos"
+      },
+      "Cuentas": {
+        "title": "Cuentas para Depósito"
+      },
+      "DesarrollosCCIngresos": {
+        "title": "Centros de Costo de Ingresos"
+      },
+      "DesarrollosCCConstruccion": {
+        "title": "Centros de Costo de Construcción"
+      },
+      "Caracteristicas": {
+        "title": "Características"
+      },
+      "TiposComercializacion": {
+        "title": "Tipo Comercialización"
+      },
+      "VistasMapa": {
+        "title": "Vistas Mapa"
+      },
+      "FormatoClave": {
+        "title": "Formato de la clave de ubicaciones"
+      }
+    },
+    "mensajes": {
+      "exito": "La configuración ha sido actualizada"
+    },
+    "editar": {
+      "titulo": "Nuevo Desarrollo"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Desarrollo"
+    }
+  }
+}

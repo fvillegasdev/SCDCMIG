@@ -1,0 +1,246 @@
+﻿<style>
+    #adressMap {
+        height: 100%;
+    }
+</style>
+<script src="@Url.Content("~/Scripts/lib/jquery/dist/jquery.js")"></script>
+<link href="@Url.Content("~/Scripts/lib/bootstrap/dist/css/bootstrap.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/lib/bootstrap/dist/js/bootstrap.js")"></script>
+
+<input type="hidden" id="hdnGeoLatLng" value="" />
+<script type="text/javascript">
+    var initLat = 0, initLng = 0;
+    var mapa; var geocoder;
+    var markers = [];
+    var marcadores = [];
+    var valores = '@Html.Raw((string)ViewBag.Geolocalizaciones)';
+    var capasGJ  = '@Html.Raw((string)ViewBag.geoJsonList)';
+    var localidades = JSON.parse(valores);
+    var geoJsnUrls = JSON.parse(capasGJ);
+
+ //   debugger;
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+           alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        initLat = position.coords.latitude;
+        initLng = position.coords.longitude;
+        //map.setCenter({ lat: initLat, lng : initLng });
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred while getting the browser coordinates.")
+                break;
+        }
+    }
+
+    //function retornaIcono(valor) {
+    //    if (valor == "FechaConstruccion") {
+    //        return eval("'\\u" + 'f0f7' + "'");
+    //    } else {
+    //        return eval("'\\u" + 'f007' + "'");
+    //    }
+    //}
+
+    function initMap() {
+       // debugger;
+        initLat =  0 ; 
+        initLng = 0;
+        if (geoJsnUrls.length > 0) {
+            initLat = parseFloat(geoJsnUrls[0].Latitud);
+            initLng = parseFloat(geoJsnUrls[0].Longitud);
+        }
+       // debugger;
+        mapa = new google.maps.Map(document.getElementById('adressMap'), {
+            zoom: 15,
+            center: { lat: initLat, lng: initLng },
+            gestureHandling: 'greedy'
+        });
+        var limites = new google.maps.LatLngBounds();
+        var infowindow = new google.maps.InfoWindow();
+        //var marcador, i;
+
+        //for (i = 0; i < localidades.length; i++) {
+        //    var latlngStr = localidades[i].Geolocalizacion.split(',', 2);
+        //    var latlng = { lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1]) };
+        //    marcador = new google.maps.Marker({
+        //        position: new google.maps.LatLng(latlng.lat, latlng.lng),
+        //        //TipoAgendaBgColor
+        //        title: '',
+        //        icon: {
+        //            path: "M27.648 -41.399q0 -3.816 -2.7 -6.516t-6.516 -2.7 -6.516 2.7 -2.7 6.516 2.7 6.516 6.516 2.7 6.516 -2.7 2.7 -6.516zm9.216 0q0 3.924 -1.188 6.444l-13.104 27.864q-0.576 1.188 -1.71 1.872t-2.43 0.684 -2.43 -0.684 -1.674 -1.872l-13.14 -27.864q-1.188 -2.52 -1.188 -6.444 0 -7.632 5.4 -13.032t13.032 -5.4 13.032 5.4 5.4 13.032z",
+        //            //path: "M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0z",
+        //            scale: 0.6,
+        //           // strokeWeight: 0.2,
+        //           // strokeColor: 'black',
+        //            strokeOpacity: 1,
+        //            fillColor: localidades[i].EstatusAgendaIconoColor,
+        //            fillOpacity: 1,
+        //            labelOrigin: new google.maps.Point(19, -42)
+        //        },
+        //        label: {
+        //            fontFamily: "FontAwesome",
+        //            fontSize: "20px",
+        //            text: retornaIcono(localidades[i].TipoAgenda.Clave), //f007
+        //            color: 'white'
+        //        },
+        //        map: mapa
+        //    });
+        //    marcadores.push(marcador);
+        //    limites.extend(marcador.position);
+        //    google.maps.event.addListener(marcador, 'click', (function (marcador, i) {
+        //      var   a = "<div>  <h2>" + localidades[i].TipoAgenda.Nombre + "</h2></div> <div>Inicio " + localidades[i].FechaInicio + "</div> <div>Fin " + localidades[i].FechaFin + "</div><div> " + localidades[i].AsignadoA.Nombre + "</div>";
+
+        //        return function () {
+        //            infowindow.setContent(a);
+        //            infowindow.open(mapa, marcador);
+        //        }
+        //    })(marcador, i));
+        //}
+
+        //for (i = 0; i < localidades.length; i++) {
+        //    var latlngStr = localidades[i].Geolocalizacion.split(',', 2);
+        //    var latlng = { lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1]) };
+        //    limites.extend(new google.maps.LatLng(latlng.lat, latlng.lng));
+        //}
+        limites.extend(new google.maps.LatLng(initLat, initLng));
+      
+
+        //debugger;
+
+        var fileResource
+        //for (i = 0; i < geoJsnUrls.length; i++) {
+        //    fileResource = geoJsnUrls[i].rutaGJson;
+        //    if (fileResource != null) {
+        //        mapa.data.loadGeoJson(geoJsnUrls[i].rutaGJson, null, function (features) {
+        //            features.forEach(function (feature) {
+        //                if (feature.getGeometry().getType() === 'Polygon' || feature.getGeometry().getType() === 'MultiPolygon') {
+        //                    var idLote = feature.getProperty("ID");
+        //                    for (var i = 0; i < localidades.length; i++) {
+        //                        if (idLote == localidades[i].IdLote) {
+        //                            feature.setProperty('color', localidades[i].EstatusAgendaIconoColor);
+
+        //                            feature.setProperty('TipoAgenda_Nombre', localidades[i].TipoAgenda.Nombre);
+        //                            feature.setProperty('FechaInicio', localidades[i].FechaInicio);
+        //                            feature.setProperty('FechaFin', localidades[i].FechaFin);
+        //                            feature.setProperty('AsignadoA_Nombre', localidades[i].AsignadoA.Nombre);
+        //                        }
+        //                    }
+        //                }
+        //            });
+        //        });
+        //    }
+        //}
+
+        mapa.fitBounds(limites);
+     
+        mapa.data.setStyle(function (feature) {
+            color = feature.getProperty('color');
+
+            return ({
+                fillColor: color,
+                strokeWeight: 1
+            });
+        });
+
+        mapa.data.addListener('mouseover', function (event) {
+            if ((event.feature.getGeometry().getType() === 'Polygon' || event.feature.getGeometry().getType() === 'MultiPolygon')
+                && event.feature.getProperty("TipoAgenda_Nombre") != undefined) {
+                var center = null;
+
+                var bounds = new google.maps.LatLngBounds();
+                event.feature.getGeometry().getArray().forEach(function (path) {
+                    path.getArray().forEach(function (latLng, index) {
+                        bounds.extend(latLng.j[index]);
+                    });
+                });
+                center = bounds.getCenter();
+
+                var fechaInicio = new Date(event.feature.getProperty("FechaInicio"));
+                var fechaFin = new Date(event.feature.getProperty("FechaFin"));
+
+                var numNom = event.feature.getProperty("AsignadoA_Nombre");
+                var splitNumNom = numNom.split(" ");
+                var numero = splitNumNom[0];
+                var nombre = "";
+
+                for (var i = 1; i < splitNumNom.length; i++)
+                    nombre += " " + splitNumNom[i];
+
+                var myHTML = "<div><h2>" + event.feature.getProperty("TipoAgenda_Nombre") + "</h2></div>" +
+                    "<div>Inicio " + getStringDate(fechaInicio) + "</div>" +
+                    "<div>Fin " + getStringDate(fechaFin) + "</div>" +
+                    "<div>" +
+                    "<span class='badge' style='background:#36c6d3;'>" + numero + "</span>" +
+                    nombre + "</div>";
+
+                infowindow.setContent(myHTML);
+                infowindow.setPosition(center);
+                infowindow.setOptions({ pixelOffset: new google.maps.Size(0, 0), disableAutoPan: true });
+                infowindow.open(mapa);
+            }
+        });
+        mapa.data.addListener('mouseout', function (event) {
+            infowindow.close();
+        });
+    }
+
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    function deleteMarkers() {
+        setMapOnAll(null);
+        markers = [];
+    };
+
+    function getStringDate(formatDate) {
+        var date = "";
+
+        var day = formatDate.getDate() + "";
+        var month = (formatDate.getMonth() + 1) + "";
+        var year = formatDate.getFullYear() + "";
+        var hour = formatDate.getHours() + "";
+        var minutes = formatDate.getMinutes() + "";
+
+        day = checkZero(day);
+        month = checkZero(month);
+        year = checkZero(year);
+        hour = checkZero(hour);
+        minutes = checkZero(minutes);
+
+        date = day + "/" + month + "/" + year + " " + hour + ":" + minutes;
+
+        return date;
+    }
+
+    function checkZero(data) {
+        if (data.length == 1) {
+            data = "0" + data;
+        }
+        return data;
+    }
+
+</script>
+<div id="adressMap" style="min-height:600px; margin: auto;"></div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVm1BxY9W3jlFhmKR64ZtrKL_Wxk-QAtA&callback=initMap"></script>

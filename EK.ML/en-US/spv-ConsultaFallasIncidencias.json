@@ -1,0 +1,110 @@
+﻿{
+  "ConsultaFallasIncidencias": {
+    "bc": {
+      "text": "Consulta de Fallas (5 Incidencias)",
+      "link": "/scv/pv/ConsultaFallasIncidencias"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        "headers": {
+          "nombre": "Nombre",
+          "clave": "Clave",
+          "cantidad": "Cantidad",
+          "porcentaje": "Porcentaje"
+        }
+      }
+    },
+    "consultas": {
+      "datos": {
+        "incidencias": {
+          "consulta": {
+            "title": "",
+            "grid": {
+              "headers": {
+                "nombre": "Nombre",
+                "cantidad": "Cantidad",
+                "porcentaje": "Porcentaje"
+              }
+            }
+          }
+        }
+      }
+    },
+    "form": {
+      "PlazaInicial": {
+        "label": "Plazas",
+        "helplabel": "Seleccione las plazas",
+        "validaciones": {
+          "requerida": "La plaza es requerida"
+        }
+      },
+      "Vocacion": {
+        "label": "Vocaciones",
+        "helplabel": "Seleccione la vocación",
+        "validaciones": {
+          "requerida": "La vocación es requerida"
+        }
+      },
+      "Fraccionamientos": {
+        "label": "Fraccionamientos",
+        "helplabel": "Seleccione el fraccionamiento",
+        "validaciones": {
+          "requerida": "El fraccionamiento es requerido"
+        }
+      },
+      "FechaInicial": {
+        "label": "Fecha Inicial",
+        "helplabel": "Seleccione la fecha inicial",
+        "validaciones": {
+          "requerida": "La fecha inicial es requerida"
+        }
+      },
+      "FechaFinal": {
+        "label": "Fecha Final",
+        "helplabel": "Seleccione la fecha final",
+        "validaciones": {
+          "requerida": "La fecha final es requerida"
+        }
+      },
+      "Proceden": {
+        "label": "Estatus Incidencia",
+        "helplabel": "Seleccione una opción",
+        "validaciones": {
+          "requerida": "La opción es requerida"
+        }
+      },
+      "TipoVisualizacion": {
+        "label": "Tipo Visualización",
+        "helplabel": "Seleccione una opción",
+        "validaciones": {
+          "requerida": "La opción es requerida"
+        }
+      },
+      "FiltrarPor": {
+        "label": "Filtrar Por",
+        "helplabel": "Seleccione una opción",
+        "validaciones": {
+          "requerida": "La opción es requerida"
+        }
+      }
+    },
+    "sections": {
+      "reportesConsulta$opcionesPartidas": {
+        "title": "Opciones Partidas"
+      },
+      "reportesConsulta$opcionesFolios": {
+        "title": "Opciones Reportes"
+      }
+    },
+    "mensajes": {
+      "exito": "La Consulta de Fallas ha sido actualizada"
+    },
+    "edit": {
+      "titulo": "Consulta de Fallas"
+    },
+    "titulo": {
+      "Nuevo": "Nueva Consulta de Fallas"
+    }
+  }
+}

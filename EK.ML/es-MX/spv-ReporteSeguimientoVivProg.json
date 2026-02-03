@@ -1,0 +1,11 @@
+﻿{
+  "ReporteSeguimientoVivProg": {
+    "bc": {
+      "text": "Reporte de seguimiento de vivienda programada",
+      "link": "/scv/pv/ReporteSeguimientoVivProg"
+    },
+    "consulta": {
+      "title": "Administraci�n de Reporte de seguimiento de vivienda programada"
+    }
+  }
+}

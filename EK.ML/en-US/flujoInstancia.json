@@ -1,0 +1,13 @@
+{
+  "flujoInstancia": {
+    "grid": {
+      "headers": {
+        "clave": "Clave",
+        "nombre": "Nombre",
+        "referencia":  "Referencia",
+        "status": "Status"
+      }
+    },
+    "title": "Listado de Procesos Activos"
+  }
+}

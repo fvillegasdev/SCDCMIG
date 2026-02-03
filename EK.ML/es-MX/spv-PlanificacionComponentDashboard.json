@@ -1,0 +1,74 @@
+﻿{
+  "SPVPlanificacionDashboard": {
+    "bc": {
+      "text": "SPVPlanificacionDashboard",
+      "link": "scv/pv/DashboardPlanificacion"
+    },
+    "consulta": {
+      "title": "Planificacion Dashboard",
+      "grid": {
+        "headers": {
+          "estatusAgendaEntrega": { "Nombre": "Estatus Agenda Entrega" }
+        }
+      }
+    },
+    "form": {
+      "EstatusTarea": {
+        "label": "Estatus Tarea",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "TipoTarea": {
+        "label": "Tipo de Agenda",
+        "helplabel": "Seleccione un Tipo",
+        "validaciones": {
+          "requerida": "El Tipo es Requeridos"
+        }
+      },
+      "Tarea": {
+        "label": "Tarea",
+        "helplabel": "Seleccione una Tarea",
+        "validaciones": {
+          "requerida": "La Tarea es Requerida"
+        }
+      },
+      "Plazas": {
+        "label": "Plaza",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Desarrollos": {
+        "label": "Desarrollo",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Prototipos": {
+        "label": "Prototipo",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      }
+    },
+    "sections": {
+      "ConfigViviendaEntregableResult": {
+        "title": "Detalles Programación de Vivienda"
+      }
+    },
+    "mensajes": {
+      "exito": "La Causas de Consulta de Vivienda Entregable ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+    }
+  }
+}

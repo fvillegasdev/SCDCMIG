@@ -1,0 +1,21 @@
+﻿@using EK.Common.Reportes
+@{
+
+    Layout = "~/Views/Shared/_R3LetterPortrait.cshtml";
+
+    var reporte = new EK.Common.Reportes.Reporte();
+    reporte.Titulo = "MotivosCancelacion";
+    reporte.SubTitulo = "HAVITAL COMERCIAL, S.A. DE C.V.";
+    reporte.FechaImpresion = System.DateTime.Now.ToString();
+
+    reporte.Columnas = new List<Reporte.Columna>();
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "ID", Longitud = 50, Campo = "ID" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Descripcion", Longitud = 200, Campo = "Descripcion" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Abrev", Longitud = 250, Campo = "Abrev" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Porcentaje", Longitud = 250, Campo = "Porcentaje" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Estatus", Longitud = 50, Campo = "Estatus.Nombre" });
+
+    ViewBag.Reporte = reporte;
+}
+
+

@@ -1,0 +1,120 @@
+﻿{
+  "listaPrecios": {
+    "bc": {
+      "text": "Lista De Precios",
+      "link": "/scv/listaPrecios"
+    },
+    "consulta": {
+      "title": "Lista de Precios Ubicaciones",
+      "grid": {
+        "headers": {
+          "ubicacion": {
+            "Clave": "Ubicación",
+            "Prototipo": { "Clave": "Prototipo" },
+            "Desarrollo": { "Clave": "Desarrollo" },
+            "EstatusUbicacion": "Disponible",
+            "Estatus": "Disponible"
+          },
+          "prototipo": "Prototipo",
+          "vigenciaInicio": "Vigencia Inicio",
+          "vigenciaFin": "Vigencia Fin",
+          "valorCalculado": "Valor Calculado",
+          "valorAutorizado": "Valor Autorizado",
+          "desarrollo": "Desarrollo"
+        }
+      }
+    },
+    "form": {
+      "VigenciaInicio": {
+        "label": "Vigencia Inicio",
+        "helplabel": "Capture la nueva vigencia del inicio de la ubicación"
+      },
+      "VigenciaFin": {
+        "label": "Vigencia Fin",
+        "helplabel": "Capture la vigencia fin de la ubicación"
+      },
+      "ValorAutorizado": {
+        "label": "Valor Autorizado",
+        "helplabel": "Capture el valor de autotizacion"
+      },
+      "ValorCalculado": {
+        "label": "Valor Calculado",
+        "helplabel": "Capture el valor actual"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Capture el estatus"
+      },
+      "Ubicacion": {
+        "label": "Ubicación",
+        "helplabel": "Capture el estatus"
+      },
+      "Caracteristicas": {
+        "label": "Caracteristicas Ubicación",
+        "helplabel": "Caracteristicas Ubicación"
+      },
+      "nuevoValor": {
+        "label": "Precio por Autorizar",
+        "helplabel": "Capture el nuevo precio de la ubicación",
+        "validaciones": {
+          "numero": "El precio no es válido"
+        }
+      },
+      "useValor": {
+        "checked": "Utilizar Precio por Autorizar",
+        "unchecked": "Utilizar Precio Calculado"
+      },
+      "section": {
+        "filtros": {
+          "titulo": "Filtros",
+          "childs": {
+            "desarrollo": {
+              "label": "Desarrollo",
+              "helplabel": "Capture el desarrollo"
+            },
+            "moneda": {
+              "label": "Moneda"
+            },
+            "prototipo": {
+              "label": "Prototipo",
+              "helplabel": "Capture el prototipo"
+            },
+            "estatusUbicacion": {
+              "label": "Estatus Ubicación",
+              "helplabel": "Capture el estatus ubicación"
+            },
+            "estatusExpediente": {
+              "label": "Estatus Seguimiento Expediente",
+              "helplabel": "Capture el estatus seguimiento expediente"
+            }
+          }
+        },
+        "listaUbicaciones": {
+          "titulo": "Ubicaciones Seleccionadas",
+          "list": {
+            "ubicacion": "Ubicacion",
+            "prototipo": "Prototipo",
+            "vigencia": "Vigencia",
+            "valorAutorizado": "Valor Autorizado",
+            "valorActual": "Valor Actual"
+          }
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "La lista de precios ha sido actualizada",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+    },
+    "edit": {
+      "titulo": "Modificar Lista de Precios"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Precio"
+    },
+    "sections": {
+        "Caracteristicas": {
+          "title": "Caracteristicas Ubicacion"
+      }
+    }
+  }
+}

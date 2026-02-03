@@ -1,0 +1,377 @@
+﻿{
+  "ventas": {
+    "bc": {
+      "text": "Ventas",
+      "link": "/scv/ventas"
+    },
+    "consulta": {
+      "title": "Administración de Ventas",
+      "grid": {
+        "headers": {
+          "id": "Id",
+          "idExpediente": "Expediente",
+          "nocliente": "No.Cliente",
+          "nombre": "Cliente",
+          "desarrollo": { "Nombre": "Nombre Desarrollo" },
+          "estatus": "Estatus",
+          "cliente": {
+            "Nombre": "Nombre Cliente",
+            "Clave": "Clave",
+            "ID": "Id"
+          }
+        }
+      }
+    },
+    "form": {
+      "ventas$PPConcepto": {
+        "PlanPagos": {
+          "label": "Plan de Pagos",
+          "helplabel": "Capture el Plan de Pagos",
+          "validaciones": {
+            "requerida": "El Plan de Pagos es requerido"
+          }
+        }
+      },
+      "IdExpediente": {
+        "label": "Expediente"
+      },
+      "ImporteOriginalMoneda": {
+        "label": "Precio Original"
+      },
+      "ImporteNuevo": {
+        "label": "Precio de Venta"
+      },
+      "id": {
+        "label": "Folio"
+      },
+      "ID": {
+        "label": "Clave"
+      },
+      "Clave": {
+        "label": "Número",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la cotización",
+        "validaciones": {
+          "requerida": "El nombre de la cotización es requerido"
+        }
+      },
+      "Cliente": {
+        "label": "Cliente",
+        "helplabel": "Capture el Nombre del Cliente",
+        "validaciones": {
+          "requerida": "El Nombre del Cliente es requerido"
+        }
+      },
+      "IdMoneda": {
+        "label": "Moneda",
+        "helplabel": "Capture la Moneda"
+      },
+      "Caracteristica": {
+        "label": "Características",
+        "helplabel": ""
+      },
+      "Ubicacion": {
+        "label": "Ubicación",
+        "helplabel": ""
+      },
+      "Moneda": {
+        "label": "Moneda",
+        "helplabel": "Capture la Moneda"
+      },
+      "estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "IdEstatusVenta": {
+        "label": "Estatus de Venta",
+        "helplabel": "Estatus de Venta"
+      },
+      "EstatusVenta": {
+        "label": "Estatus de Venta",
+        "helplabel": "Estatus de Venta"
+      },
+      "FechaSeleccion": {
+        "label": "Fecha Selección"
+      },
+      "IdAgente": {
+        "label": "Agente",
+        "helplabel": "Capture el Agente",
+        "validaciones": {
+          "requerida": "El Agente es requerido"
+        }
+      },
+      "Agente": {
+        "label": "Agente",
+        "helplabel": "Capture el Agente",
+        "validaciones": {
+          "requerida": "El Agente es requerido"
+        }
+      },
+      "IdPuntoVenta": {
+        "label": "Punto de Venta",
+        "helplabel": "Capture el Punto de Venta"
+      },
+      "PuntoVenta": {
+        "label": "Punto de Venta",
+        "helplabel": "Capture el Punto de Venta"
+      },
+      "IdGradoInteres": {
+        "label": "Grado Interés",
+        "helplabel": "Capture el Grado de Interés"
+      },
+      "GradoInteres": {
+        "label": "Grado Interés",
+        "helplabel": "Capture el Grado de Interés"
+      },
+      "IdClienteRecomienda": {
+        "label": "Recomendó",
+        "helplabel": "Capture quién Recomendó"
+      },
+      "ClienteRecomienda": {
+        "label": "Recomendó",
+        "helplabel": "Capture quién Recomendó"
+      },
+      "IdDesarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Capture el Desarrollo",
+        "validaciones": {
+          "requerida": "El Desarrollo es requerido"
+        }
+      },
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Capture el Desarrollo",
+        "validaciones": {
+          "requerida": "El Desarrollo es requerido"
+        }
+      },
+      "IdTipoComercializacion": {
+        "label": "Desarrollo",
+        "helplabel": "Capture el Desarrollo",
+        "validaciones": {
+          "requerida": "El Desarrollo es requerido"
+        }
+      },
+      "TipoComercializacion": {
+        "label": "Tipo Comercializacion",
+        "helplabel": "Capture el Tipo Comercializacion",
+        "validaciones": {
+          "requerida": "El Tipo Comercializacion es requerido"
+        }
+      },
+      "Ubicaciones": {
+        "titulo": "Ubicaciones",
+        "caracteristicas": "Ubicaciones",
+        "label": "Ubicaciones: ",
+        "Topar": {
+          "label": "Topar",
+          "helpLabel": "Topar"
+        }
+      },
+      "Reestructura": {
+        "titulo": "Reestructura",
+        "caracteristicas": "Reestructura",
+        "label": "Reestructura: "
+      },
+      "PlanPagos": {
+        "titulo": "Plan de Pagos",
+        "caracteristicas": "Plan de Pagos",
+        "label": "Plan de Pagos: "
+      },
+      "Financiamiento": {
+        "label": "Tipo Financiamiento",
+        "helplabel": "Capture el Tipo de Financiamiento",
+        "validaciones": {
+          "requerida": "El Tipo de Financiamiento es requerido"
+        }
+      },
+      "Institucion": {
+        "label": "Institución de Crédito",
+        "helplabel": "Capture la Institucion de Crédito",
+        "validaciones": {
+          "requerida": "La Institucion de Crédito es requerida"
+        }
+      },
+      "Seleccionada": {
+        "label": "Seleccionar",
+        "helplabel": "Seleccione la cotización"
+      },
+      "FechaVigencia": {
+        "label": "Fecha Vigencia",
+        "helplabel": "Capture la fecha de vigencia",
+        "validaciones": {
+          "requerida": "La fecha de vigencia es requerida"
+        }
+      },
+      "sections": {
+        "informacion": {
+          "titulo": "Información de Vivienda"
+        },
+        "Cotizaciones": {
+          "title": "Cotizaciones"
+        },
+        "Ubicaciones": {
+          "title": "Ubicaciones"
+        },
+        "PlanPagos": {
+          "title": "Plan de Pagos"
+        },
+        "Financiamiento": {
+          "title": "Financiamiento"
+        },
+        "comentarios": {
+          "label": "Comentarios",
+          "validaciones": {
+            "requerida": "Ingrese un Comentario"
+          }
+        },
+        "montoCredito": {
+          "label": "Monto de Crédito",
+          "validaciones": {
+            "requerida": "El Monto del Crédito es requerido."
+          }
+        },
+        "validaciones": {
+          "numero": ""
+        },
+        "plandeventa": {
+          "titulo": "Plan de Venta"
+        },
+        "saldo": {
+          "label": "Saldo",
+          "validaciones": {
+            "numero": ""
+          }
+        },
+        "pagado": {
+          "label": "Pagado",
+          "validaciones": {
+            "numero": ""
+          }
+        },
+        "porcentajeTIF": {
+          "label": "% TIF",
+          "validaciones": {
+            "numero": ""
+          }
+        },
+        "periodo": {
+          "label": "Periodo",
+          "validaciones": {
+            "requerida": ""
+          }
+        },
+        "numeroPagos": {
+          "label": "Plazo",
+          "validaciones": {
+            "requerida": "",
+            "numero": ""
+          }
+        },
+        "numeroPlazoPrimerPago": {
+          "label": "Plazo Primer Pago",
+          "validaciones": {
+            "requerida": "",
+            "numero": ""
+          }
+        },
+        "periodoPrimerPago": {
+          "label": "Primer Pago",
+          "validaciones": {
+            "requerida": "",
+            "numero": ""
+          }
+        },
+        "Documentos": {
+          "label": "Documentos",
+          "validaciones": {
+            "requerida": "",
+            "numero": ""
+          }
+        },
+        "Abonos": {
+          "label": "Abonos",
+          "validaciones": {
+            "requerida": "",
+            "numero": ""
+          }
+        },
+        "versionPP": {
+          "label": "Versión de Venta",
+          "validaciones": {
+            "requerida": "",
+            "numero": ""
+          }
+        }
+      }
+    },
+    "importe": {
+      "label": "Importe"
+    },
+    "Reestructura": {
+      "motivo": {
+        "label": "Motivo de reestructura"
+      }
+    },
+    "sections": {
+      "Cotizaciones": {
+        "title": "Cotizaciones"
+      },
+      "Ubicaciones": {
+        "title": "Ubicaciones"
+      },
+      "Financiamiento": {
+        "title": "Financiamiento"
+      },
+      "FinanciamientoInstituciones": {
+        "title": "Instituciones de Crédito"
+      },
+      "Institucion$Conceptos": {
+        "title": "Conceptos de Crédito"
+      },
+      "Documentos": {
+        "title": "Documentos"
+      },
+      "Abonos": {
+        "title": "Abonos"
+      },
+      "PlanPagos": {
+        "title": "Plan de Pagos"
+      },
+      "$ventasNPP": {
+        "title": "Ventas"
+      },
+      "ventas$PPAbono": {
+        "title": "Ventas Abono"
+      },
+      "$ventasNPPDoc": {
+        "title": "Ventas"
+      },
+      "Caracteristicas": {
+        "title": "Características adicionales"
+      }
+    },
+    "mensajes": {
+      "exito": "El expediente ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones",
+      "pendingAuthorization": "La venta ha sido actualizada (Autorización Pendiente)",
+      "pendingReestructura": "La venta ha sido actualizada (Modo Reestructura)",
+      "pendingFiniquito": "La venta ha sido actualizada (Modo Finiquito)",
+      "cotizacionEnviada": "Cotización Enviada",
+      "cotizacionCargando": "Solicitud Enviada",
+      "solicitarAutorizacion": "Presione Confirmar para solicitar la autorización"
+    },
+    "edit": {
+      "titulo": "Modificar Datos Cliente"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Plan de Pago"
+    }
+  }
+}

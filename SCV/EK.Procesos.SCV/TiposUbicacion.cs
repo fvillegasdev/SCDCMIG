@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using m = EK.Modelo;
+using d = EK.Datos;
+using p = EK.Procesos;
+
+namespace EK.Procesos.SCV
+{
+    public class TiposUbicacion
+        :p.Kontrol.BPBase<m.SCV.Interfaces.ITiposUbicacion,d.SCV.Interfaces.ITiposUbicacion>,p.SCV.Interfaces.ITiposUbicacion
+    {
+        public TiposUbicacion(m.Kontrol.Interfaces.IContainerFactory factory,d.SCV.Interfaces.ITiposUbicacion dao)
+            :base(factory,dao, "tiposUbicacion")
+        { }
+    }
+}

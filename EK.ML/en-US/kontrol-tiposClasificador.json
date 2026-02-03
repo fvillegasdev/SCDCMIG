@@ -1,0 +1,98 @@
+{
+  "tiposClasificador": {
+    "bc": {
+      "text": "Tipos de clasificador",
+      "link": "/kontrol/tiposClasificador"
+    },
+    "consulta": {
+      "title": "Catálogo de tipos de clasificadores",
+      "grid": {
+        "headers": {
+          "id": "ID",
+          "nombre": "Nombre",
+          "clave": "Clave",
+          "descripcion": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "view": {
+      "title": "Tipo de clasificador",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "editar": {
+      "title": "Tipo de clasificador",
+      "subtitle": "Nuevo",
+      "href": "",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "update": "El tipo de clasificador ha sido actualizado...",
+      "save": "El tipo de clasificador se ha guardado con éxito.",
+      "savetitle": "Guardar tipo de clasificador",
+      "warningDuplicado": "Se ha encontrado un clasificador con la misma clave que capturó, verifique.",
+      "warningDuplicadoTitle": "Clasificador ya capturado.",
+      "updating": "Guardando los clasificadores",
+      "getdata": "Obteniendo clasificadores",
+      "exito": "El grado de interes ha sido actualizado"
+    },
+    "form": {
+      "title": "Clasificadores",
+      "textUpdate": "Actualizando información",
+      "Id": {
+        "label": "",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "IdCatalogosGenerales": {
+        "label": "Catalogo Clasificador",
+        "helpLabel": "",
+        "validations": ""
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave del tipo de clasificador",
+        "validations": "La clave del tipo de clasificador es requerido"
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre del tipo de clasificador",
+        "validations": "El nombre del tipo de clasificador es requerido"
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus del tipo de clasificador",
+        "validations": ""
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helpLabel": "Capture la descripción del tipo de clasificador",
+        "validations": ""
+      }
+    },
+    "formClasificadores": {
+      "title": "Clasificadores",
+      "clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave del clasificador",
+        "validations": "La clave del tipo de clasificador es requerido"
+      },
+      "nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre del tipo de clasificador",
+        "validations": "El nombre del tipo de clasificador es requerido"
+      }
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de clasificador"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de clasificador"
+    }
+  }
+}

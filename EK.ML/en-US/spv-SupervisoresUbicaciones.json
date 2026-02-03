@@ -1,0 +1,85 @@
+﻿{
+  "SupervisoresUbicaciones": {
+    "bc": {
+      "text": "Relación Supevisor Lotes",
+      "link": "/scv/pv/SupervisoresUbicaciones"
+    },
+    "consulta": {
+      "title": "Administración de la Relación Supervisor Lotes",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Status"
+        }
+      }
+    },
+    "view": {
+      "title": "Relación Supervisor Lotes",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "editar": {
+      "title": "Relación Supervisor Lotes",
+      "subtitle": "Nuevo",
+      "href": "",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "update": "La Relación Supervisor Lotes ha sido actualizada...",
+      "save": "La Relación Supervisor Lotes se ha guardado con éxito.",
+      "savetitle": "Guardar Relación Supervisor Lotes",
+      "exito": "La Relación Supervisor Lotes han sido actualizada"
+    },
+    "form": {
+      "Id": {
+        "label": "",
+        "helpLabel": "",
+        "validaciones": ""
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus",
+        "validaciones": ""
+      }
+    },
+    "sections": {
+      "SupervisoresUbicaciones$supervisores": {
+        "title": "Supervisores"
+      },
+      "SupervisoresUbicaciones$plazas": {
+        "title": "Plazas"
+      },
+      "SupervisoresUbicaciones$fraccionamientos": {
+        "title": "Fraccionamientos "
+      },
+      "SupervisoresUbicaciones$ubicaciones": {
+        "title":  "Ubicaciones"
+      }
+    },
+    "titulo": {
+      "nuevo": "Nuevo  Relación Supervisor Lotes"
+    },
+    "edit": {
+      "titulo": "La Relación Supervisor Lotes ha sido actualizada"
+    }
+  }
+}

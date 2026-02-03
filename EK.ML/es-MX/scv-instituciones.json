@@ -1,0 +1,69 @@
+﻿{
+    "instituciones": {
+        "bc": {
+            "text": "Administración de Instituciones de Crédito",
+            "link": "/scv/instituciones"
+        },
+        "consulta": {
+            "title": "Catalogo de Instituciones de Crédito",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "Nombre": {
+                "label": "Nombre",
+                "helplabel": "Capture la descripción",
+                "validaciones": {
+                    "requerida": "La descripción es requerida"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            },
+            "section": {
+                "instituciones$Esquemas": {
+                    "titulo": "Esquemas de Financiamiento",
+                    "list": {
+                        "headers": {
+                            "clave": "Clave",
+                            "esquema": "Esquema",
+                            "opciones": ""
+                        }
+                    },
+                    "form": {
+                        "esquema": {
+                            "label": "Esquema",
+                            "helplabel": "Capture el esquema",
+                            "validaciones": {
+                                "requerida": "El esquema es requerido"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "mensajes": {
+            "exito": "La institución de crédito ha sido actualizada",
+            "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+        },
+        "edit": {
+            "titulo": "Modificar institución de crédito"
+        },
+        "titulo": {
+            "nuevo": "Nuevo institución de crédito"
+        }
+    }
+}

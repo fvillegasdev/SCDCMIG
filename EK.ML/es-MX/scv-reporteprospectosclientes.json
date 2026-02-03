@@ -1,0 +1,162 @@
+﻿{
+    "reporteprospectosclientes": {
+        "bc": {
+            "text": "Reporte de Prospectos Clientes",
+            "link": "/scv/reporteprospectosclientes"
+        },
+        "consulta": {
+            "title": "Reporte de Prospectos Clientes",
+            "grid": {
+                "headers": {
+                    "clave": "Clave",
+                    "nombre": "Nombre",
+                    "plazoEstandar": "Plazo Estándar",
+                    "macroEtapa": { "Nombre": "Macro-Etapa" },
+                    "faseExpediente": { "Nombre": "Fase Expediente" },
+                    "estatus": "Estatus"
+                }
+            }
+        },
+        "form": {
+            "Clave": {
+                "label": "Clave",
+                "helplabel": "Capture la clave",
+                "validaciones": {
+                    "requerida": "La clave es requerida"
+                }
+            },
+            "idDomicilio": {
+                "label": "Domicilio",
+                "helplabel": "Domicilio",
+                "validaciones": {
+                    "requerida": "El Domicilio es requerido."
+                }
+            },
+            "AgenteTitular": {
+                "label": "Agente Titular",
+                "helplabel": "Seleccione el Agente Titular.",
+                "validaciones": {
+                    "requerida": "El Agente Titular es Requerido"
+                }
+            },
+            "AgenteRegistro": {
+                "label": "Agente Registro",
+                "helplabel": "Seleccione el Agente Registro.",
+                "validaciones": {
+                    "requerida": "El Agente Registro es Requerido."
+                }
+            },
+            "DesarrolloExpediente": {
+                "label": "Desarrollo Expediente",
+                "helplabel": "Desarrollo Expediente",
+                "validaciones": {
+                    "requerida": "El Desarrollo Expediente es Requerido."
+                }
+            },
+            "DesarrolloInteres": {
+                "label": "Desarrollo Interes",
+                "helplabel": "Seleccione el Desarrollo Interes.",
+                "validaciones": {
+                    "requerida": "El Desarrollo Interes es Requerido."
+                }
+            },
+            "ReferenciaLaboral": {
+                "label": "Referencia Laboral",
+                "helplabel": "Seleccione la Referencia Laboral.",
+                "validaciones": {
+                    "requerida": "La Referencia Laboral es Requerida."
+                }
+            },
+            "FechaContactoInicial": {
+                "label": "Fecha de Contacto Inicial",
+                "helplabel": "Seleccione la Fecha de Contacto Inicial.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaContactoFinal": {
+                "label": "Fecha de Contacto Final",
+                "helplabel": "Seleccione la Fecha de Contacto Final.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaProspectoInicial": {
+                "label": "Fecha de Prospecto Inicial",
+                "helplabel": "Seleccione la Fecha Prospecto para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaProspectoFinal": {
+                "label": "Fecha de Prospecto Final",
+                "helplabel": "Seleccione la Fecha Prospecto Final para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaClienteInicial": {
+                "label": "Fecha de Cliente Inicial",
+                "helplabel": "Seleccione la Fecha Cliente Inicial para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "FechaClienteFinal": {
+                "label": "Fecha de Cliente Final",
+                "helplabel": "Seleccione la Fecha Final para la busqueda.",
+                "validaciones": {
+                    "requerida": "La Fecha es requerida para la busqueda."
+                }
+            },
+            "Genero": {
+                "label": "Género",
+                "helplabel": "Seleccione el género a buscar.",
+                "validaciones": {
+                    "requerida": "El Género es requerido para la busqueda."
+                }
+            },
+            "TipoPersona": {
+                "label": "Tipo de Persona",
+                "helplabel": "Seleccione el tipo de Persona.",
+                "validaciones": {
+                    "requerida": "El Tipo de Persona es requerido."
+                }
+            },
+            "Origen": {
+                "label": "Origen",
+                "helplabel": "Seleccione el Origen.",
+                "validaciones": {
+                    "requerida": "El Origen es requerido."
+                }
+            },
+            "FechaNacInicial": {
+                "label": "Fecha Nacimiento Inicial",
+                "helplabel": "Seleccione La Fecha Nacimiento Inicial.",
+                "validaciones": {
+                    "requerida": "La Fecha es Requerida"
+                }
+            },
+            "FechaNacFinal": {
+                "label": "Fecha Nacimiento Final",
+                "helplabel": "Seleccione La Fecha Nacimiento Final",
+                "validaciones": {
+                    "requerida": "La Fecha es Requerida"
+                }
+            },
+            "Estatus": {
+                "label": "Activo",
+                "helplabel": "Estatus"
+            }
+        }
+    },
+    "mensajes": {
+        "exito": "La etapa del trámite ha sido actualizado"
+    },
+    "edit": {
+        "titulo": "Nuevo etapa de trámite"
+    },
+    "titulo": {
+        "nuevo": "Nuevo etapa de trámite"
+    }
+} 

@@ -1,0 +1,63 @@
+﻿{
+  "segmentosvigencia": {
+    "bc": {
+      "text": "Administración De Vigencia De Segmentos",
+      "link": "/scv/segmentosVigencia"
+    },
+    "consulta": {
+      "title": "Administración de vigencia de segmentos",
+      "grid": {
+        "headers": {
+          "segmento": { "Descripcion": "Segmento" },
+          "vigencia": "Vigencia",
+          "precioInicial": "Rango de precio inicial",
+          "precioFinal": "Rango de precio final",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Segmento": {
+        "label": "Segmento",
+        "helplabel": "Seleccione el segmento",
+        "validaciones": {
+          "requerida": "El segmento es requerido"
+        }
+      },
+      "Vigencia": {
+        "label": "Vigencia",
+        "helplabel": "Capture la vigencia",
+        "validaciones": {
+          "requerida": "La vigencia es requerida"
+        }
+      },
+      "PrecioInicial": {
+        "label": "Rango de precio inicial",
+        "helplabel": "Capture el rango de precio inicial",
+        "validaciones": {
+          "requerida": "Rango de precio inicial es requerido"
+        }
+      },
+      "PrecioFinal": {
+        "label": "Rango de precio final",
+        "helplabel": "Capture el rango de precio final",
+        "validaciones": {
+          "requerida": "Rango de precio final es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "La vigencia del segmento ha sido actualizada"
+    },
+    "edit": {
+      "titulo": "Nueva vigencia de segmento"
+    },
+    "titulo": {
+      "nuevo": "Nueva vigencia de segmento"
+    }
+  }
+}

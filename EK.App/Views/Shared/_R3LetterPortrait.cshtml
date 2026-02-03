@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @functions {
+        EK.Common.Reportes.Reporte reporte = null;
+        DateTime fechaImpresion = DateTime.Now;
+
+        private string setParameters(string template)
+        {
+            return template
+                .Replace("@Titulo@", reporte.Titulo)
+                .Replace("@SubTitulo@", reporte.SubTitulo)
+                .Replace("@FechaImpresion@", reporte.FechaImpresion)
+                .Replace("@paginaActual@", "0")
+                .Replace("@totalPaginas@", "0");
+        }
+    }
+    @{
+        // https://fonts.google.com/specimen/Roboto+Mono
+        reporte = (EK.Common.Reportes.Reporte)ViewBag.Reporte;
+        dynamic data = ViewBag.Data;
+        string encabezadoReporteSection = null;
+        string pieDePaginReporteSection = null;
+
+        if (reporte.Encabezado != null)
+        {
+            encabezadoReporteSection = reporte.Encabezado;
+        }
+
+        if (reporte.PieDePagina != null)
+        {
+            pieDePaginReporteSection = reporte.PieDePagina;
+        }
+
+        int maxLineas = 64;
+        int lineaActual = 0;
+        int totalLineas = Convert.ToInt32(data.Count);
+        int paginaActual = 0;
+        int totalPaginas = Convert.ToInt32(Math.Ceiling(data.Count / Convert.ToDouble(maxLineas)));
+    }
+    <title>@reporte.Titulo</title>
+    <meta charset="utf-8" />
+    <link href="//fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <style type="text/css">
+        .page-letter {
+            /*width: 216mm;
+                height: 279mm;*/
+        }
+
+        .pageBreak {
+            page-break-after: always;
+        }
+
+        .encabezado-reporte {
+            width: 1070px;
+            height: 120px;
+            border: 1px solid white;
+            /*background-color: yellow;*/
+            position: relative;
+            display: block;
+        }
+
+        .encabezado-izquierda {
+            float: left;
+            /*display: inline-block;*/
+            width: 530px;
+            /*background-color: red;*/
+        }
+
+        .encabezado-derecha {
+            float: right;
+            /*display: inline-block;*/
+            width: 530px;
+            text-align: right;
+            padding-top: 40px;
+            /*background-color: green;*/
+        }
+
+        .piepagina-reporte {
+            width: 1070px;
+            height: 60px;
+            border-top: 1px solid #ccc;
+        }
+
+        .piepagina-izquierda {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10pt;
+            font-weight: 300;
+            font-style: normal;
+            color: #484848;
+            float: left;
+            width: 405px;
+            padding: 25px 25px;
+        }
+
+        .piepagina-derecha {
+            float: right;
+            width: 405px;
+            text-align: right;
+            padding: 15px 25px;
+        }
+
+        .titulo-reporte {
+            font-family: 'Roboto';
+            font-size: 16px;
+            font-weight: 400;
+            font-style: normal;
+            padding: 0px;
+        }
+
+        .subTitulo-reporte {
+            font-family: 'Roboto';
+            font-size: 12px;
+            font-weight: 300;
+            font-style: normal;
+            padding: 5px 0;
+        }
+
+        .fechaHora-reporte {
+            font-family: 'Roboto';
+            font-size: 12px;
+            font-weight: 300;
+            font-style: normal;
+            padding: 5px 0;
+        }
+
+        .logo-reporte {
+            width: 300px;
+            height: auto;
+        }
+
+        .logo-piepagina {
+            width: 150px;
+            height: auto;
+        }
+
+        .cuerpo-reporte {
+            width: 1070px;
+            height: 1220px;
+            margin-top: 20px;
+            /*border: 1px solid blue;*/
+        }
+
+        .encabezados-columnas {
+            padding: 0px 0px 3px 0px;
+            height: 30px;
+            margin-bottom: 10px;
+            width: 1070px;
+            white-space: nowrap;
+            overflow: hidden;
+            border: 1px solid white;
+        }
+
+        .encabezado-columna {
+            font-family: 'Roboto';
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            float: left;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+        }
+
+        .linea {
+            padding: 0px 0px 3px 0px;
+            /*
+            border-bottom: 1px solid #f1f1f1;*/
+            /*height: 15px;*/
+            width: 1065px;
+            /*display: inline-block;*/
+            white-space: nowrap;
+            overflow: hidden;
+            /*border: 1px solid yellow;
+            border-color: brown;*/
+        }
+
+        .valor-columna {
+            font-family: 'Roboto';
+            font-size: 13px !important;
+            font-weight: 300 !important;
+            padding: 0px;
+            float: left;
+        }
+
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    @RenderBody()
+    @while (paginaActual < totalPaginas)
+    {
+        var pageClass = "page-letter";
+        if (paginaActual + 1 < totalPaginas)
+        {
+            pageClass = $"{pageClass} pageBreak";
+        }
+
+    <div class="@pageClass">
+        @{ ViewBag.Estatus = "HEADER"; }
+        @if (encabezadoReporteSection == null)
+    {
+        <div class="encabezado-reporte">
+            <div class="encabezado-izquierda">
+                <img class="logo-reporte" src="~/Content/Img/havital.png" style="width: 150px; height: auto;" />
+            </div>
+            <div class="encabezado-derecha">
+                <div class="titulo-reporte">@reporte.Titulo</div>
+                <div class="subTitulo-reporte">@reporte.SubTitulo</div>
+                <div class="fechaHora-reporte">@reporte.FechaImpresion</div>
+            </div>
+        </div>
+}
+else
+{
+    @Html.Raw(setParameters(encabezadoReporteSection))
+}
+
+        @{ ViewBag.Estatus = "BODY"; }
+        <div class="cuerpo-reporte">
+            @if (IsSectionDefined("Encabezados"))
+        {
+            RenderSection("Encabezados");
+        }
+        else
+        {
+            <div class="encabezados-columnas">
+                @foreach (var c in reporte.Columnas)
+            {
+                var style = $"width:{c.Longitud}px";
+
+                <div class="encabezado-columna ellipsis" style="@style">@c.Titulo</div>
+        }
+            </div>
+    }
+
+        @while (lineaActual < totalLineas)
+        {
+            <div class="linea">
+                @foreach (var c in reporte.Columnas)
+            {
+                var style = $"width:{c.Longitud}px; text-align: {c.Alineacion};";
+                var nodo = data[lineaActual].SelectToken(c.Campo);
+                object value = null;
+
+                if (nodo != null && nodo.Value != null)
+                {
+                    value = nodo.Value;
+                }
+
+                if (value == null)
+                {
+                    <div class="valor-columna ellipsis" style="@style">&nbsp;</div>
+            }
+            else
+            {
+                <div class="valor-columna ellipsis" style="@style">@value</div>
+        }
+    }
+            </div>
+
+        lineaActual++;
+        if (lineaActual >= maxLineas)
+        {
+            lineaActual = 0;
+            paginaActual++;
+            break;
+        }
+    }
+        </div>
+
+    @if (pieDePaginReporteSection == null)
+    { 
+        <div class="piepagina-reporte">
+            <div class="piepagina-izquierda">
+                <span>Página: </span><span style="font-weight: 400;">@(paginaActual + 1)</span><span> de </span><span style="font-weight: 400;">@totalPaginas</span>
+            </div>
+            <div class="piepagina-derecha">
+                <img class="logo-piepagina" src="~/Content/Img/logo.png" />
+            </div>
+        </div>
+    }
+    else
+    {
+        @Html.Raw(setParameters(pieDePaginReporteSection))
+    }
+
+    @if (lineaActual >= totalLineas)
+    {
+        lineaActual = 0;
+        paginaActual++;
+    }
+    </div>
+}
+</body>
+</html>

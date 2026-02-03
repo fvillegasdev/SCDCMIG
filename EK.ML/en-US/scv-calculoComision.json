@@ -1,0 +1,215 @@
+﻿{
+  "calculoComisiones": {
+    "bc": {
+      "text": "Calculo de Comisiones",
+      "link": "/scv/calculo/comisiones"
+    },
+    "titulo": {
+      "nuevo": "Prospecto nuevo"
+    },
+    "consulta": {
+      "title": "Administración de Prospectos",
+      "grid": {
+        "headers": {
+          "iD": "No. Prospecto",
+          "nombre": "Nombre",
+          "tipoPersona": { "Nombre": "Tipo de persona" },
+          "rFC": "RFC",
+          "correo": "Coreo",
+          "telefono": "Telefono",
+          "estatus": "Estatus"
+
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "#",
+        "helplabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Nombre": {
+        "label": "Nombre(s)",
+        "helplabel": "Capture el Nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "ApellidoPaterno": {
+        "label": "Apellido Paterno",
+        "helplabel": "Capture el apellido paterno",
+        "validaciones": {
+          "requerida": "El apellido paterno es requerido"
+        }
+      },
+      "ApellidoMaterno": {
+        "label": "Apellido Materno",
+        "helplabel": "Capture el apellido materno",
+        "validaciones": {
+          "requerida": "El apellido materno es requerido"
+        }
+      },
+      "Domicilio": {
+        "label": "Domicilio",
+        "helplabel": "Capture el Domicilio",
+        "validaciones": {
+          "requerida": "El Domicilio es requerida",
+          "formato": "el Domicilio no tiene el formato esperado"
+        }
+      },
+      "Asentamiento": {
+        "label": "Localidad",
+        "helplabel": "Capture la Localidad",
+        "validaciones": {
+          "requerida": "El Localidad es requerida",
+          "formato": "el Localidad no tiene el formato esperado"
+        }
+      },
+      "Correo": {
+        "label": "Correo",
+        "helplabel": "Capture el Correo",
+        "validaciones": {
+          "requerida": "El Correo es requerida",
+          "formato": "el Correo no tiene el formato esperado"
+        }
+      },
+      "Celular": {
+        "label": "Celular",
+        "helplabel": "Capture el Celular",
+        "validaciones": {
+          "requerida": "El Celular es requerida",
+          "formato": "el Celular no tiene el formato esperado"
+        }
+      },
+      "Telefono": {
+        "label": "Teléfono",
+        "helplabel": "Capture el número de teléfono",
+        "validaciones": {
+          "requerida": "El teléfono es requerido",
+          "length": "la longitud del teléfono es de 10 posiciones"
+        }
+      },
+      "Genero": {
+        "label": "Genero",
+        "helplabel": "Capture el Genero",
+        "validaciones": {
+          "requerida": "El Genero es requerido"
+        }
+      },
+      "FechaNacimiento": {
+        "label": "Fecha Nacimiento",
+        "helplabel": "Captura la Fecha Nacimiento",
+        "validaciones": {
+          "requerida": "La Fecha Nacimiento es requerida"
+        }
+      },
+      "NSS": {
+        "label": "NSS",
+        "helplabel": "Capture el NSS",
+        "validaciones": {
+          "requerida": "El número de NSS es requerido"
+        }
+      },
+      "RFC": {
+        "label": "RFC",
+        "helplabel": "Capture el RFC",
+        "validaciones": {
+          "requerida": "El RFC es requerido"
+        }
+      },
+      "CURP": {
+        "label": "CURP",
+        "helplabel": "Capture CURP",
+        "validaciones": {
+          "requerida": "El CURP es requerido"
+        }
+      },
+      "MontoPrecalificado": {
+        "label": "Monto Precalificado",
+        "helplabel": "Capture el Monto Precalificado",
+        "validaciones": {
+          "requerida": "El Monto Precalificado es requerido"
+        }
+      },
+      "MontoCredito": {
+        "label": "Monto Crédito",
+        "helplabel": "Capture el Monto Crédito",
+        "validaciones": {
+          "requerida": "El Monto Crédito es requerido"
+        }
+      },
+      "Giro": {
+        "label": "Giro",
+        "helplabel": "Capture el Giro",
+        "validaciones": {
+          "requerida": "El Giro es requerido"
+        }
+      },
+      "LugarProspeccion": {
+        "label": "Lugar de Prospección",
+        "helplabel": "Capture el Lugar Prospección",
+        "validaciones": {
+          "requerida": "El Lugar Prospección es requerido"
+        }
+      },
+      "ResidenciaActual": {
+        "label": "Actualmente vive en",
+        "helplabel": "Capture la residencia actual",
+        "validaciones": {
+          "requerida": "La residencia actual es requerida"
+        }
+      },
+      "TipoPersona": {
+        "label": "Tipo de persona",
+        "helplabel": "Tipo de persona",
+        "validaciones": {
+          "requerida": "El Tipo de persona es requerido"
+        }
+      },
+      "CreadoPor": {
+        "label": "Asesor",
+        "helplabel": "Capture el Asesor",
+        "validaciones": {
+          "requerida": "El Asesor es requerido"
+        }
+      },
+      "Desarrollo": {
+        "label": "Desarrollo de interes",
+        "helplabel": "Capture el desarrollo de interes",
+        "validaciones": {
+          "requerida": "El desarrollo de interes es requerido"
+        }
+      },
+      "EstadoOrigen": {
+        "label": "Ciudad y Estado de origen",
+        "helplabel": "Seleccione un estado de origen",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus",
+        "validaciones": ""
+      },
+      "edit": {
+        "titulo": "Nuevo Prospecto"
+      }
+    },
+    "sections": {
+      "Bitacora": {
+        "title": "Bitacora"
+      },
+      "bitacora": {
+        "title": "Bitacora"
+      }
+    },
+    "mensajes": {
+      "save": "El Prospeccto ha sido actualizado",
+      "nodata": "No existe registros",
+      "exito": "El Prospecto ha sido actualizado"
+    }
+  }
+}

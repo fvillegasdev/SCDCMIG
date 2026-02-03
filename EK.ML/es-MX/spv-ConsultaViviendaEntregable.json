@@ -1,0 +1,194 @@
+﻿{
+  "ConsultaViviendaEntregable": {
+    "bc": {
+      "text": "Reporte de Viviendas Entregables",
+      "link": "/scv/pv/ConsultaViviendaEntregable"
+    },
+    "consulta": {
+      "title": "Administración de Reporte de Viviendas Entregables",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Cliente",
+          "nom_fracc": "Fraccionamiento",
+          "id_num_smza": "ET",
+          "id_num_mza": "M",
+          "id_num_lote": "L",
+          "id_num_interior": "I",
+          "id_num_exterior": "Ext.",
+          "dir_casa": "Dirección",
+          "hipoteca_verde": "Hipoteca Verde",
+          "Ecocasa": "Ecocasa",
+          "vale_mueble": "Equipamiento",
+          "desc_tipo_vivienda": "Tipo Vivienda",
+          "Financiamiento": "Financiamiento",
+          "subsidio": "Subsidio",
+          "fec_escritura_fisica": "Fec. Firma",
+          "fec_liberacion": "Liberación",
+          "dias_firma_liberacion": "Días Firma - Liberación",
+          "fecha_construccion": "Fec. Const.",
+          "dias_firma_contruccion": "Días Firma - Construcción",
+          "Detalles": "Detalles",
+          "fecha_programacion": "Fec. Prog.",
+          "fecha_entrega": "Fec. Entrega",
+          "dias_liberacion_entrega": "Días Liberación - Entrega",
+          "rezago_entrega": "Desc. Rezago",
+          "fecha_reprogramacion": "Fec. Reprog.",
+          "Obs_Cliente": "Obs. Cliente",
+          "pendiente_pago": "Pendiente Pago",
+          "fec_pendiente_pago": "Fec. Pendiente Pago",
+          "pago": "Pago",
+          "fec_pago": "Fec. Pagado",
+          "tel_casa": "Teléfono",
+          "tel_oficina": "Tel. Oficina",
+          "tel_otros": "Celular",
+          "dir_email": "Correo Electrónico",
+          "CURP": "CURP",
+          "RFC": "RFC",
+          "id_num_tipocasa": "# Prototipo",
+          "nom_tipocasa": "Prototipo",
+          "dscontratista": "Contratista de Vivienda",
+          "nom_entrega_viv": "Entrego Vivienda",
+          "nom_gerente_ventas": "Gte. de PostVenta",
+          "num_credito": "Num. Crédito",
+          "num_credito_cony": "Num. Cred. Cony.",
+          "diferencia_dias": "Días Firma - Entrega",
+          "monto_seguro": "Seguro",
+          "descripcion": "Descripción",
+          "estatus": "Estatus",
+          "FraccInicial": "Fraccionamiento Inicial",
+          "FraccFinal": "Fraccionamiento Final",
+          "PlazaInicial": "Plaza Inicial",
+          "PlazaFinal": "Plaza Final",
+          "HipotecaVerde": "Hipoteca Verde",
+          "Equipamiento": "Equipamiento",
+          "ClienteInicial": "Cliente Inicial",
+          "ClienteFinal": "Cliente Final",
+          "ViviendaEntregable": "Vivienda Entregable",
+          "Segmentos": "Segmentos",
+          "ViviendasEntregadas": "Viviendas Entregadas"
+        }
+      }
+    },
+    "form": {
+      "ViviendaEntregable": {
+        "label": "Viviendas Entregadas",
+        "helplabel": "Capture La Vivienda Entregada",
+        "validaciones": {
+          "requerida": "La Vivienda Entregada es Requerido"
+        }
+      },
+      "Financiamiento": {
+        "label": "Financiamiento",
+        "helplabel": "Capture el Financiamiento",
+        "validaciones": {
+          "requerida": "El Financiamiento es Requerido"
+        }
+      },
+      "Segmentos": {
+        "label": "Segmentos",
+        "helplabel": "Capture el Segmento",
+        "validaciones": {
+          "requerida": "El Segmentos es Requerida"
+        }
+      }
+    },
+    "ClienteInicial": {
+      "label": "Cliente Inicial",
+      "helplabel": "Capture al Cliente Inicial",
+      "validaciones": {
+        "requerida": "El Cliente Inicial es Requerido"
+      }
+    },
+    "ClienteFinal": {
+      "label": "Cliente Final",
+      "helplabel": "Capture el Cliente Final",
+      "validaciones": {
+        "requerida": "El Cliente Final es Requerido"
+      }
+    },
+    "HipotecaVerde": {
+      "label": "Hipoteca Verde",
+      "helplabel": "Capture la Hipoteca Verde",
+      "validaciones": {
+        "requerida": "La Hipoteca Verde es Requerido"
+      }
+    },
+    "Equipamiento": {
+      "label": "Equipamiento",
+      "helplabel": "Capture el Equipamiento",
+      "validaciones": {
+        "requerida": "El Equipamiento es Requerido"
+      }
+    },
+    "PlazaInicial": {
+      "label": "Plaza Inicial",
+      "helplabel": "Capture el Plaza Inicial",
+      "validaciones": {
+        "requerida": "El Plaza Inicial es Requerido"
+      }
+    },
+    "PlazaFinal": {
+      "label": "Plaza Final",
+      "helplabel": "Capture el Plaza Final",
+      "validaciones": {
+        "requerida": "El Plaza Final es Requerido"
+      }
+    },
+    "FechaInicio": {
+      "label": "Fecha Inicial",
+      "helplabel": "Capture la Fecha Inicial",
+      "validaciones": {
+        "requerida": "La Fecha Inicial es Requerido"
+      }
+    },
+    "FechaFinal": {
+      "label": "Fecha Final",
+      "helplabel": "Capture la Fecha Final",
+      "validaciones": {
+        "requerida": "La Fecha Final es Requerido"
+      }
+    },
+    "FraccInicial": {
+      "label": "Fraccionamiento Inicial",
+      "helplabel": "Capture el Plaza Inicial",
+      "validaciones": {
+        "requerida": "El Plaza Inicial es Requerido"
+      }
+    },
+    "FraccFinal": {
+      "label": "Fraccionamiento Final",
+      "helplabel": "Capture el Fraccionamiento Final",
+      "validaciones": {
+        "requerida": "El Fraccionamiento Final es Requerido"
+      }
+    },
+    "Clave": {
+      "label": "Clave",
+      "helplabel": "Capture la clave",
+      "validaciones": {
+        "requerida": "La clave es requerida"
+      }
+    },
+    "Descripcion": {
+      "label": "Descripción",
+      "helplabel": "Capture la Descripción",
+      "validaciones": {
+        "requerida": "La Descripci�n es requerida"
+      }
+    },
+    "Estatus": {
+      "label": "Activo",
+      "helplabel": "Estatus"
+    }
+  },
+  "mensajes": {
+    "exito": "La Causas de Consulta de Vivienda Entregable ha sido actualizado"
+  },
+  "edit": {
+    "titulo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+  },
+  "titulo": {
+    "nuevo": "Nuevo tipo de la Consulta de Vivienda Entregable"
+  }
+}

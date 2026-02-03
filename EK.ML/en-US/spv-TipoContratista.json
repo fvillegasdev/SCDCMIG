@@ -1,0 +1,54 @@
+﻿{
+  "TipoContratista": {
+    "bc": {
+        "text": "Tipo Contratista",
+        "link": "/scv/pv/TipoContratista"
+    },
+    "consulta": {
+        "title": "Administración de Tipo Contratista",
+        "grid": {
+            "headers": {
+                "clave": "Clave",
+                "descripcion": "Descripción",
+                "estatus": "Estatus"
+            }
+        }
+    },
+    "form": {
+        "clave_tipo_contratista": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Clave": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Descripcion": {
+            "label": "Descripción",
+            "helplabel": "Capture la Descripción",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "Estatus": {
+            "label": "Activo",
+            "helplabel": "Estatus"
+        }
+    },
+    "mensajes": {
+        "exito": "El Tipo de Contratista ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo Tipo de Contratista"
+    },
+    "titulo": {
+        "nuevo": "Nuevo tipo Tipo de Contratista"
+    }
+  }
+}

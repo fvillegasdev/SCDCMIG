@@ -1,0 +1,74 @@
+﻿{
+  "documentosExpediente": {
+    "bc": {
+      "text": "Catálogo de Documentos para Expediente",
+      "link": "/scv/documentosExpediente"
+    },
+    "consulta": {
+      "title": "Catálogo de Documentos para Expediente",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "numeroCopias": "Número de Copias",
+          "tipoDocumento": { "Nombre": "Tipo de Documento" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave del documento",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre del documento",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "NumeroCopias": {
+        "label": "Número de Copias",
+        "helplabel": "Capture el número de copias del documento",
+        "validaciones": {
+          "requerida": "El número de copias es requerido",
+          "numero": "El número de copias no es válido"
+        }
+      },
+      "TipoDocumento": {
+        "label": "Tipo de Documento",
+        "helplabel": "Capture el tipo de documento",
+        "validaciones": {
+          "requerida": "El tipo de documento es requerido",
+          "numero": "El tipo de documento no es válido"
+        }
+      },
+      "Plantilla": {
+        "label": "Plantilla",
+        "helplabel": "Capture la plantilla email",
+        "validaciones": {
+          "requerida": "La plantilla es requerida",
+          "numero": "La plantilla no es válida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El documento ha sido actualizado",
+      "warning": "Los datos están incompletos, verificar campos requeridos y validaciones"
+    },
+    "editar": {
+      "title": "Modificar documento de expediente"
+    },
+    "titulo": {
+      "nuevo": "Nuevo documento de expediente"
+    }
+  }
+}

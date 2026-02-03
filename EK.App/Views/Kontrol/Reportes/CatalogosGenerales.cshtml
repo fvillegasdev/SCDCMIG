@@ -1,0 +1,16 @@
+﻿@using EK.Common.Reportes
+@{
+    Layout = "~/Views/Shared/_R3LetterPortrait.cshtml";
+
+    dynamic data = ViewBag.Data;
+
+    var reporte = new EK.Common.Reportes.Reporte();
+    reporte.Titulo = "Catálogo " + data[0].SelectToken("Catalogo.Nombre");
+    reporte.SubTitulo = "HAVITAL COMERCIAL, S.A. DE C.V.";
+    reporte.FechaImpresion = System.DateTime.Now.ToString();
+    reporte.Columnas = new List<Reporte.Columna>();
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Clave", Longitud = 250, Campo = "Clave" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Nombre", Longitud = 250, Campo = "Nombre" });
+    reporte.Columnas.Add(new Reporte.Columna() { Titulo = "Estatus", Longitud = 250, Campo = "Estatus.Nombre" });
+    ViewBag.Reporte = reporte;
+}

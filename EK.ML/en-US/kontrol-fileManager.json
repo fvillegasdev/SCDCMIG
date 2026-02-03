@@ -1,0 +1,18 @@
+﻿{
+  "kontrolFileManager": {
+    "title": "Administrador de archivos",
+    "list": {
+      "headers": {
+        "icon": "Icono",
+        "name": "Nombre",
+        "size": "Tamaño",
+        "option": ""
+      }
+    },
+    "mensajes": {
+      "uploaded": "El archivo ha sido cargado exitosamente",
+      "deleted": "El archivo fue eliminado exitosamente",
+      "fileSize":  "El tamaño máximo permitido del archivo es de:"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Xceed.PDFCreator.NET</name>
+  </assembly>
+  <members>
+    <member name="T:Xceed.PDFCreator.NET.DocPDF">
+      <summary>Represents a DocPDF document.</summary>
+    </member>
+    <member name="T:Xceed.PDFCreator.NET.Licenser">
+      <summary>Represents the class that registers the classes defined in the Xceed.PDFCreator.NET assembly.</summary>
+    </member>
+    <member name="M:Xceed.PDFCreator.NET.DocPDF.Copy">
+      <summary>Copies the document into a new Document.</summary>
+      <returns>A copy of the document.</returns>
+    </member>
+    <member name="M:Xceed.PDFCreator.NET.DocPDF.Create(System.String)">
+      <summary>Creates a DocPDF Document using a fully qualified or relative filename.</summary>
+      <returns>A <strong>DocPDF</strong> object which represents the document.</returns>
+      <param name="filename">The fully qualified or relative filename.</param>
+    </member>
+    <member name="M:Xceed.PDFCreator.NET.DocPDF.Save">
+      <summary>Saves this document.</summary>
+    </member>
+    <member name="P:Xceed.PDFCreator.NET.Licenser.LicenseKey">
+      <summary>Gets or sets the license key used to license this product.</summary>
+    </member>
+  </members>
+</doc>

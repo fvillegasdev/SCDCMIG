@@ -1,0 +1,56 @@
+﻿{
+  "tipoFinanciamiento": {
+    "bc": {
+      "text": "Tipos de Financiamiento",
+      "link": "/scv/tipofinanciamiento"
+    },
+    "consulta": {
+      "title": "Administración de Tipos de Financiamiento",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "descripcion": "Descripción",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerida"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "sections": {
+      "Instituciones": {
+        "title": "Instituciones de Crédito"
+      },
+      "Conceptos": {
+        "title": "Conceptos de Crédito"
+      }
+    },
+    "mensajes": {
+      "exito": "El tipo de financiamiento ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de fiananciamiento"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de financiamiento"
+    }
+  }
+}

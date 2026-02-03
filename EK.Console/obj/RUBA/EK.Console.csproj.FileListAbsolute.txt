@@ -1,0 +1,12 @@
+D:\KV10\Codigo\EK\EK.Console\bin\RUBA\EK.Console.exe.config
+D:\KV10\Codigo\EK\EK.Console\bin\RUBA\EK.Console.exe
+D:\KV10\Codigo\EK\EK.Console\bin\RUBA\EK.Console.pdb
+D:\KV10\Codigo\EK\EK.Console\bin\RUBA\Microsoft.ServiceBus.dll
+D:\KV10\Codigo\EK\EK.Console\bin\RUBA\Microsoft.WindowsAzure.Configuration.dll
+D:\KV10\Codigo\EK\EK.Console\bin\RUBA\Microsoft.ServiceBus.xml
+D:\KV10\Codigo\EK\EK.Console\bin\RUBA\Microsoft.WindowsAzure.Configuration.xml
+D:\KV10\Codigo\EK\EK.Console\obj\RUBA\EK.Console.csprojAssemblyReference.cache
+D:\KV10\Codigo\EK\EK.Console\obj\RUBA\EK.Console.csproj.CoreCompileInputs.cache
+D:\KV10\Codigo\EK\EK.Console\obj\RUBA\EK.Console.csproj.CopyComplete
+D:\KV10\Codigo\EK\EK.Console\obj\RUBA\EK.Console.exe
+D:\KV10\Codigo\EK\EK.Console\obj\RUBA\EK.Console.pdb

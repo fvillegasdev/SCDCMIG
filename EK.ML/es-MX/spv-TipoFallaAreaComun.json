@@ -1,0 +1,70 @@
+﻿{
+  "TipoFallaAreaComun": {
+    "bc": {
+      "text": "Tipo Incidencia de Área Común",
+      "link": "/scv/pv/TipoFallaAreaComun"
+    },
+    "consulta": {
+      "title": "Administración de Tipo Incidencia de Área Común",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "siglas": "Siglas",
+          "descripcion": "Descripción",
+          "duracionGarantia": "Dur. Garantía",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+        "id_area_falla": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Clave": {
+            "label": "Clave",
+            "helplabel": "Capture la clave",
+            "validaciones": {
+                "requerida": "La clave es requerida"
+            }
+        },
+        "Siglas": {
+            "label": "Siglas",
+            "helplabel": "Capture las Siglas",
+            "validaciones": {
+                "requerida": "Las Siglas es requerida"
+            }
+        },
+        "Descripcion": {
+            "label": "Descripción",
+            "helplabel": "Capture la Descripción",
+            "validaciones": {
+                "requerida": "La Descripción es requerida"
+            }
+        },
+        "DuracionGarantia": {
+            "label": "Duración Garantía",
+            "helplabel": "Capture la Duración Garantiía",
+            "validaciones": {
+                "requerida": "La Duración Garantía es requerida"
+            }
+        },
+        "Estatus": {
+            "label": "Activo",
+            "helplabel": "Estatus"
+        }
+    },
+    "mensajes": {
+      "exito": "El Tipo de la Incidencia de Área Comun ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de la Incidencia de Área Comun"
+    },
+    "titulo": {
+      "nuevo": "Nuevo tipo de la Incidencia de Área Comun"
+    }
+  }
+}

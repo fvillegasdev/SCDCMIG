@@ -1,0 +1,18 @@
+{
+  "ReporteFallasAreasComunesAct": {
+    "bc": {
+      "text": "Actualizador de Reporte de Incidencias Areas Comunes",
+      "link": "/scv/pv/ActualizadorAreasComunes"
+    },
+    "mensajes": {
+      "exito": "El Reporte de incidencia ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Actualizar reporte de incidencia"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo Reporte de incidencia"
+    }
+  }
+}
+

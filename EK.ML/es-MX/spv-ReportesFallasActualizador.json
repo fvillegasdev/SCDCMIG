@@ -1,0 +1,116 @@
+﻿{
+  "ReportesFallasActualizador": {
+    "bc": {
+      "text": "Actualizador de Reportes de Fallas",
+      "link": "/scv/pv/ReportesFallasActualizador"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        "headers": {
+          "iD": ""
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "",
+        "helplabel": ""
+      },
+      "ReporteCliente": {
+        "label": "Reporte de Fallas",
+        "helplabel": "Capture el reporte de fallas",
+        "validaciones": {
+          "requerida": "El reporte de fallas es requerido"
+        }
+      },
+      "actualizador$reporte": {
+        "FechaCaptura": {
+          "label": "Fecha Reporte"
+        },
+        "FechaEntregaVivienda": {
+          "label": "Fecha de Entrega Vivienda"
+        },
+        "MesesTranscurridos": {
+          "label": "Días transcurridos"
+        },
+        "EstatusReporte": {
+          "label": "Estatus Reporte"
+        },
+        "DiasSolucion": {
+          "label": "Días Estimado Solución"
+        },
+        "DiasContratista": {
+          "label": "Días Trabajo Contratista"
+        },
+        "ResponsableConstruccion": {
+          "label": "Responsable de Construcción"
+        },
+        "FechaSolucionReporte": {
+          "label": "Fecha Reporte"
+        },
+        "FechaContratistaInicial": {
+          "label": "Fecha Contratista Inicial"
+        },
+        "MedioSolicitud": {
+          "label": "Medio de Solicitud"
+        },
+        "FechaSolucionTerminacion": {
+          "label": "Fecha Estimada Término"
+        },
+        "FechaContratistaFinal": {
+          "label": "Fecha Contratista Final"
+        },
+        "SupervisorContratista": {
+          "label": "Supervisión Externa"
+        },
+        "ObservacionesServicio": {
+          "label": "Observaciones del Cliente"
+        },
+        "ObservacionesContratista": {
+          "label": "Observaciones del Contratista"
+        }
+      },
+      "actualizador$ubicacion": {
+        "Calle": {
+          "label": "Dirección"
+        },
+        "Desarrollo": {
+          "label": "Fraccionamiento"
+        },
+        "Plaza": {
+          "label": "Plaza"
+        },
+        "Segmento": {
+          "label": "Segmento"
+        },
+        "Prototipo": {
+          "label": "Prototipo"
+        }
+      }
+    },
+    "sections": {
+      "actualizador$ubicacion": {
+        "title": "Ubicación"
+      },
+      "actualizador$reporte": {
+        "title": "Información del Reporte de Fallas"
+      },
+      "actualizador$reporte$ordenTrabajo": {
+        "title": "Ordenes de Trabajo"
+      },
+      "actualizador$reportePartidas": {
+        "title": "Partidas Reportadas"
+      }
+    },
+    "mensajes": {
+      "exito": "El Reporte de fallas ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Actualizar reporte de fallas"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo Reporte de Fallas"
+    }
+  }
+}

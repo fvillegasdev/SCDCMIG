@@ -1,0 +1,69 @@
+﻿{
+  "conceptosCredito": {
+    "bc": {
+      "text": "Conceptos de Crédito",
+      "link": "/scv/conceptosCredito"
+    },
+    "consulta": {
+      "title": "Administración de Conceptos de Crédito",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "tipoConcepto": { "Nombre": "Tipo Concepto" },
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "editar": {
+      "title": "Modificar Concepto"
+    },
+    "form": {
+      "ID": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido."
+        }
+      },
+      "Naturaleza": {
+        "label": "Naturaleza",
+        "helpLabel": "Capture la naturaleza",
+        "validaciones": {
+          "requerida": "El naturaleza es requerido."
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "TipoConcepto": {
+        "label": "Tipo de Concepto",
+        "helpLabel": "Capture el tipo de concepto",
+        "validaciones": {
+          "requerida": "El tipo de concepto es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El Concepto ha sido actualizada"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Concepto"
+    }
+  }
+}

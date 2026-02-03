@@ -1,0 +1,85 @@
+{
+  "PersonalEntregaUbicaciones": {
+    "bc": {
+      "text": "Personal de Entrega de Viviendas",
+      "link": "/scv/pv/PersonalEntregaUbicaciones"
+    },
+    "consulta": {
+      "title": "Administración del Personal de Entrega de Viviendas",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "estatus": "Status"
+        }
+      }
+    },
+    "view": {
+      "title": "Personal de Entrega de Viviendas",
+      "subtitle": "",
+      "grids": {
+        "headers": {}
+      }
+    },
+    "editar": {
+      "title": "Personal de Entrega de Viviendas",
+      "subtitle": "Nuevo",
+      "href": "",
+      "grid": {
+        "headers": {}
+      }
+    },
+    "mensajes": {
+      "update": "El Personal de Entrega de Viviendas ha sido actualizado...",
+      "save": "El Personal de Entrega de Viviendas se ha guardado con éxito.",
+      "savetitle": "Guardar Personal de Entrega de Viviendas",
+      "exito": "El Personal de Entrega de Viviendas han sido actualizado"
+    },
+    "form": {
+      "Id": {
+        "label": "",
+        "helpLabel": "",
+        "validaciones": ""
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helpLabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helpLabel": "",
+        "validaciones": {
+          "requerida": ""
+        }
+      },
+      "Estatus": {
+        "label": "Activo",
+        "helpLabel": "Estatus",
+        "validaciones": ""
+      }
+    },
+    "sections": {
+      "PersonalEntregaUbicaciones$usuarios": {
+        "title": "Usuarios por Plazas"
+      },
+      "PersonalEntregaUbicaciones$plazas": {
+        "title": "Plazas"
+      },
+      "PersonalEntregaUbicaciones$fraccionamientosNoAsignados": {
+        "title": "Fraccionamientos Disponibles"
+      },
+      "PersonalEntregaUbicaciones$fraccionamientosAsignados": {
+        "title": "Fraccionamientos Asignados"
+      }
+    },
+    "titulo": {
+      "nuevo": "Nuevo Personal de Entrega de Viviendas"
+    },
+    "edit": {
+      "titulo": "El Personal de Entrega de Viviendas ha sido actualizado"
+    }
+  }
+}

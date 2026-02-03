@@ -1,0 +1,72 @@
+﻿{
+  "configurarparametros": {
+    "consulta": {
+      "title": "Configurar parámetros",
+      "grid": {
+        "headers": {
+          "seccion": "Sección",
+          "parametro": "Parámetro",
+          "valor": "Valor",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la sección es requerida"
+        }
+      },
+      "ambito": {
+        "label": "Ámbito",
+        "helplabel": "Capture el ámbito",
+        "validaciones": {
+          "requerida": "La clave de la sección es requerida"
+        }
+      },
+      "modulo": {
+        "label": "Módulo",
+        "helplabel": "Capture el módulo",
+        "validaciones": {
+          "requerida": "El módulo es requerido"
+        }
+      },
+      "compania": {
+        "label": "Compañía",
+        "helplabel": "Capture la compañía",
+        "validaciones": {
+          "requerida": "La compañía es requerida"
+        }
+      },
+      "nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la sección es requerida"
+        }
+      },
+      "estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      },
+      "valor": {
+        "label": "Valor",
+        "helplabel": "Capture el valor",
+        "validaciones": {
+          "requerido": "El valor es requerido",
+          "esnumero": "El valor del campo debe ser numérico",
+          "esboolean": "El valor del campo debe ser booleano",
+          "esdatetime": "El valor del campo debe ser fecha"
+        }
+      }
+    },
+    "mensajes": {
+      "exito": "El parámetro ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo parámetro"
+    }
+  }
+}

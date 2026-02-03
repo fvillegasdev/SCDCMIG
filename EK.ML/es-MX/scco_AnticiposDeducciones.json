@@ -1,0 +1,80 @@
+﻿{
+  "AnticiposDeducciones": {
+    "bc": {
+      "text": "Anticipos Y Deducciones",
+      "link": "/scco/AnticiposDeducciones"
+    },
+    "consulta": {
+      "title": "Catálogo de Anticipos y Deducciones.",
+      "grid": {
+        "headers": {
+          "Clave": "Clave Anticipo",
+          "Nombre": "Nombre",
+          "TipoConcepto": { "Nombre": "Tipo Concepto" },
+          "Insumo": { "Nombre": "Insumo" },
+          "TipoMovimiento": { "Nombre": "Tipo Movimiento OC" },
+          "AfectaFacturacion": "Afecta Facturacion",
+          "AfectaOc": "Afecta Orden de Compra",
+          "AplicaIva": "Aplica Antes de iva",
+          "Estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "Insumo": {
+        "label": "Insumo",
+        "helplabel": "Capture Insumo"
+      },
+      "TipoMovimiento": {
+        "label": "Tipo Movimiento OC",
+        "helplabel": "Capture el Tipo Movimiento OC"
+      },
+      "TipoConcepto": {
+        "label": "Tipo de Concepto",
+        "helplabel": "Capture el Tipo de Concepto"
+      },
+      "AfectaFacturacion": {
+        "label": "Afecta Factura"
+      },
+      "AfectaOc": {
+        "label": " Afecta OC"
+      },
+      "AplicaIva": {
+        "label": "Aplica antes de IVA"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Estatus"
+      },
+      "PorcentajeDefault": {
+        "label": "% Default",
+        "helplabel": "Porcentaje"
+      }
+    },
+    "mensajes": {
+      "exito": "La Amortiazción ha sido actualizada",
+      "save": "La Amortiazción ha sido Creado",
+      "nodata": "No existe registros"
+    },
+    "edit": {
+      "titulo": "Editar Amortiazción"
+    },
+    "titulo": {
+      "nuevo": "Nuevo Amortiazción"
+    }
+  }
+}

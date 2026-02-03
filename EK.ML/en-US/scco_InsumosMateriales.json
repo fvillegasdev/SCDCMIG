@@ -1,0 +1,109 @@
+﻿{
+  "Insumo": {
+    "bc": {
+      "text": "Insumo",
+      "link": "/scco/Insumo"
+    },
+    "consulta": {
+      "title": "Administración de Insumo",
+      "grid": {
+        "headers": {
+          "claveInsumo": "Clave Insumo",
+          "nombre": "Nombre",
+          "unidadMedida": { "Nombre": "UnidadMedida" },
+          "tipoInsumo": { "Nombre": "Tipo Insumo" },
+          "grupoInsumo": { "Nombre": "Grupo Insumo" },
+          "estatus": "Estatus"
+          //"desarrollo": { "Nombre": "Desarrollo" },
+          //"centroCosto": { "Nombre": "CentroCosto" },
+          //"compañia": { "Nombre": "Compañia" },
+
+        }
+      }
+    },
+    "form": {
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre de la lista",
+        "validaciones": {
+          "requerido": "El nombre es requerido"
+        }
+      },
+      "TipoInsumo": {
+        "label": "Tipo Insumo",
+        "helplabel": "Capture tipo Insumo"
+      },
+      "ClaveInsumo": {
+        "label": "Tipo Insumo"
+      },
+      "GrupoInsumo": {
+        "label": "Grupo Insumo",
+        "helplabel": "Capture el Grupo Insumo"
+      },
+      "FechaInicio": {
+        "label": "Fecha Inicio",
+        "helplabel": "Fecha Inicial"
+      },
+      "FechaFin": {
+        "label": "Fecha Fin",
+        "helplabel": "Fecha Final"
+      },
+      "Descripcion": {
+        "label": "Descripcion",
+        "helplabel": "Descripcion"
+      },
+      "UnidadMedida": {
+        "label": "UnidadMedida",
+        "helplabel": "Capture Unidad Medida"
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Capture el Estatus del Insumo"
+      },
+      "ProductoTerminado": {
+        "label": "Producto Terminado",
+        "helplabel": "Capture el Producto Terminado"
+      },
+      "MateriaPrima": {
+        "label": "Materia Prima",
+        "helplabel": "Capture la MateriaPrima"
+      },
+      "DiasPromedioE": {
+        "label": "Dias Promedio Entrega",
+        "helplabel": "Capture el Día de entrega"
+      },
+      "Proceso": {
+        "label": "Tipo de Proceso",
+        "helplabel": "Seleccione un Proceso"
+      },
+      "Tolerancia": {
+        "label": "Tolerancia",
+        "helplabel": "Capture campo Tolerancia"
+      }
+    },
+    "sections": {
+      "ToleranciaProcesos": {
+        "title": "Tolerancia Procesos"
+      }
+    },
+      "mensajes": {
+        "exito": "El Insumo ha sido actualizado",
+        "save": "El Insumo ha sido Creado",
+        "nodata": "No existe registros"
+      },
+      "edit": {
+        "titulo": "Editar Insumo"
+      },
+      "titulo": {
+        "nuevo": "Nuevo Insumo"
+      }
+    }
+  }
+

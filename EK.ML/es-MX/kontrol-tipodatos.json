@@ -1,0 +1,40 @@
+﻿{
+  "tiposdatos": {
+    "consulta": {
+      "title": "Administración de tipo de datos",
+      "grid": {
+        "headers": {
+          "clave": "Clave",
+          "tipodato": "Tipo de Dato",
+          "estatus": "Estatus"
+        }
+      }
+    },
+    "form": {
+      "clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre es requerido"
+        }
+      },
+      "estatus": {
+        "label": "Activo",
+        "helplabel": "Estatus"
+      }
+    },
+    "mensajes": {
+      "exito": "El tipo de dato ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Nuevo tipo de dato"
+    }
+  }
+}

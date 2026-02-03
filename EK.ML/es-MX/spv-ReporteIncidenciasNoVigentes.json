@@ -1,0 +1,14 @@
+{
+  "ReporteIncidenciasNoVigentes": {
+    "bc": {
+      "text": "Reporte de incidencias no vigentes",
+      "link": "/scv/pv/ConsultaReporteIncidenciasNoVigentes"
+    },
+    "consulta": {
+      "title": "",
+      "grid": {
+        
+      }
+    }
+  }
+}

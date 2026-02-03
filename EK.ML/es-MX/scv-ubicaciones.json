@@ -1,0 +1,288 @@
+﻿{
+  "ubicaciones": {
+    "bc": {
+      "text": "Administración de Ubicaciones para Vivienda",
+      "link": "/scv/ubicaciones"
+    },
+    "consulta": {
+      "title": "Administración de Ubicaciones para Viviendas",
+      "grid": {
+        "headers": {
+          "claveFormato": "Clave",
+          "clave": "Clave",
+          "nombre": "Nombre",
+          "desarrollo": { "Descripcion": "Desarrollo" },
+          "prototipo": { "Nombre": "Prototipo" },
+          "estatus": "Estatus",
+          "idEstatusUbicacion": "Disponible"
+        }
+      }
+    },
+    "form": {
+      "ID": {
+        "label": "Clave",
+        "helpLabel": "Capture la Clave",
+        "validaciones": {
+          "requerida": "La clave es requerida"
+        }
+      },
+      "Clave": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la ubicación es requerida"
+        }
+      },
+      "ClaveValidacion": {
+        "label": "Clave (no configurada)",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la ubicación es requerida"
+        }
+      },
+      "ClaveCorta": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la ubicación es requerida"
+        }
+      },
+      "ClaveFormato": {
+        "label": "Clave",
+        "helplabel": "Capture la clave",
+        "validaciones": {
+          "requerida": "La clave de la ubicación es requerida"
+        }
+      },
+      "Nombre": {
+        "label": "Nombre",
+        "helplabel": "Capture el nombre",
+        "validaciones": {
+          "requerida": "El nombre de la ubicación es requerida"
+        }
+      },
+      "EstatusUbicacion": {
+        "label": "Disponible",
+        "helplabel": "Capture el Estatus de Ubicación",
+        "validaciones": {
+          "requerida": "El Estatus de Ubicación es requerido"
+        }
+      },
+      "PuntajeDTU": {
+        "label": "Puntaje",
+        "helplabel": "Capture el Puntaje",
+        "validaciones": {
+          "requerida": "El Puntaje es requerido"
+        }
+      },
+      "Estatus": {
+        "label": "Estatus",
+        "helplabel": "Estatus",
+        "validaciones": {
+          "requerida": "El Estatus de Ubicación es requerido"
+        }
+      },
+      "EstatusExpediente": {
+        "label": "Estatus Expediente",
+        "helplabel": "Estatus Expediente"
+      },
+      "Desarrollo": {
+        "label": "Desarrollo",
+        "helplabel": "Capture el desarrollo",
+        "validaciones": {
+          "requerida": "El Desarrollo es requerido"
+        }
+      },
+      "Paquete": {
+        "label": "Paquete",
+        "helplabel": "Capture el desarrollo",
+        "validaciones": {
+          "requerida": "El Desarrollo es requerido"
+        }
+      },
+      "Prototipo": {
+        "label": "Prototipo",
+        "helplabel": "Capture el prototipo",
+        "validaciones": {
+          "requerida": "El Prototipo es requerido"
+        }
+      },
+      "Naturaleza": {
+        "label": "Naturaleza",
+        "helplabel": "Capture la Naturaleza",
+        "validaciones": {
+          "requerida": "La Naturaleza es requerido"
+        }
+      },
+      "CentroCosto": {
+        "label": "Centro de Costo de Ingresos",
+        "helplabel": "Capture el centro de costo",
+        "validaciones": {
+          "requerida": "El centro de costo es requerido"
+        }
+      },
+      "CentroCostoConstruccion": {
+        "label": "Centro de Costo de Construcción",
+        "helplabel": "Capture el centro de costo",
+        "validaciones": {
+          "requerida": "El centro de costo es requerido"
+        }
+      },
+      "NumeroInterior": {
+        "label": "N° Int",
+        "helplabel": "Capture el Número Interior",
+        "validaciones": {
+          "requerida": "El Número Interior es requerido"
+        }
+      },
+      "Cierre": {
+        "label": "Cierre",
+        "helplabel": "Capture el Estatus de Ubicación",
+        "validaciones": {
+          "requerida": "El estatus de ubicación es requerido"
+        }
+      },
+      "IdEstatusUbicacion": {
+        "label": "Disponible",
+        "helplabel": "Capture el Estatus de Ubicación",
+        "validaciones": {
+          "requerida": "El estatus de ubicación es requerido"
+        }
+      },
+      "IdDtu": {
+        "label": "DTU",
+        "helplabel": "Seleccione el DTU de la Ubicación",
+        "validaciones": {
+          "requerida": "El DTU es Requerida"
+        }
+      },
+      "Segmento": {
+        "label": "Segmento",
+        "helplabel": "Capture el Segmento",
+        "validaciones": {
+          "requerida": "El Segmento es requerido"
+        }
+      },
+      "TipoUbicacion": {
+        "label": "Tipo de Ubicación",
+        "helplabel": "Capture el Tipo de Ubicación",
+        "validaciones": {
+          "requerida": "El Tipo de Ubicación es requerido"
+        }
+      },
+      "NumeroExterior": {
+        "label": "N° Ext",
+        "helplabel": "Capture el Número Exterior",
+        "validaciones": {
+          "numero": "La Número Exterior no es válido"
+        }
+      },
+      "Calle": {
+        "label": "Calle",
+        "helplabel": "Capture la Calle",
+        "validaciones": {
+          "requerida": "La Calle es requerida"
+        }
+      },
+      "Superficie": {
+        "label": "Superficie (m²)",
+        "helplabel": "Capture la superficie",
+        "validaciones": {
+          "numero": "La Superficie no es válida"
+        }
+      },
+      "Excedente": {
+        "label": "Excedente (m²)",
+        "hellabel": "Capture el excedente",
+        "validaciones": {
+          "numero": "El Excedente no es válido"
+        }
+      },
+      "FrenteUbicacion": {
+        "label": "Frente Ubicación (m²)",
+        "helplabel": "Capture el Frente de Ubicación",
+        "validaciones": {
+          "numero": "La Frente Ubicación no es válida"
+        }
+      },
+      "EstatusDeUbicacion": {
+        "label": "Estatus De Ubicación",
+        "helplabel": "Capture el Estatus De Ubicación",
+        "validaciones": {
+          "numero": "Estatus De Ubicación no es válida"
+        }
+      },
+      "RUC": {
+        "label": "Orden de Verificación",
+        "helplabel": "Capture la Orden de Verificación"
+      },
+      "RUV": {
+        "label": "Clave Única de Vivienda",
+        "helplabel": "Capture la Clave Única de Vivienda"
+      },
+      "Descripcion": {
+        "label": "Descripción",
+        "helplabel": "Capture la Descripción"
+      },
+      "ColindanciaGeneral": {
+        "label": "Colindancia General",
+        "helplabel": "Capture información de la Colindancia General"
+      },
+      "ColindanciaComun": {
+        "label": "Colindancia Común",
+        "helplabel": "Capture información de la Colindancia Común"
+      },
+      "Observaciones": {
+        "label": "Observaciones",
+        "helplabel": "Capture observaciónes de la ubicación"
+      },
+      "FechaHabitabilidad": {
+        "label": "Fecha de Habitabilidad",
+        "helplabel": "Capture la Fecha de Habitabilidad"
+      },
+      "FechaProgramada": {
+        "label": "Fecha de Programada",
+        "helplabel": "Capture la Fecha de Programada"
+      },
+      "FechaEntrega": {
+        "label": "Fecha de Entrega",
+        "helplabel": "Capture la Fecha de Entrega"
+      },
+      "PorcentajeConstruccion": {
+        "label": "% de Avance de Construcción",
+        "helplabel": "Capture la Fecha de Entrega"
+      },
+      "FechaDTU": {
+        "label": "Fecha de DTU",
+        "helplabel": "Capture la Fecha de DTU"
+      },
+      "FechaUltimaTarea": {
+        "label": "Fecha de última Tarea",
+        "helplabel": "Fecha de Avance de acuerdo a la última tarea realizada"
+      }
+    },
+    "sections": {
+      "informacion": {
+        "title": "Información Adiciónal"
+      },
+      "progreso": {
+        "title": "Información Adiciónal"
+      },
+      "seguimiento": {
+        "title":  "Seguimiento Tecnico"
+      }
+    },
+    "mensajes": {
+      "exito": "La ubicación ha sido actualizada"
+    },
+    "validaciones": {
+      "desarrollo": "Seleccione un Desarrollo"
+    },
+    "edit": {
+      "title": "Nueva ubicación"
+    },
+    "titulo": {
+      "nuevo": "Nueva ubicación"
+    }
+  }
+}

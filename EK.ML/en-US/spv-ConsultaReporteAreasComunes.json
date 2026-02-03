@@ -1,0 +1,171 @@
+{
+  "ConsultaReporteAreasComunes": {
+    "bc": {
+      "text": "Consulta de Reporte de Fallas Areas Comunes",
+      "link": "/scv/pv/ConsultaReporteAreasComunes"
+    },
+    "form": {
+      "PlazaInicial": {
+        "label": "Plazas",
+        "helplabel": "Seleccione las plazas",
+        "validaciones": {
+          "requerida": "La plaza es requerida"
+        }
+      },
+      "Vocacion": {
+        "label": "Vocaciones",
+        "helplabel": "Seleccione la vocación",
+        "validaciones": {
+          "requerida": "La vocación es requerida"
+        }
+      },
+      "Fraccionamientos": {
+        "label": "Fraccionamientos",
+        "helplabel": "Seleccione el fraccionamiento",
+        "validaciones": {
+          "requerida": "El fraccionamiento es requerido"
+        }
+      },
+      "Contratista": {
+        "label": "Contratistas",
+        "helplabel": "Seleccione el contratista",
+        "validaciones": {
+          "requerida": "El contratista es requerido"
+        }
+      },
+      "MedioSolicitud": {
+        "label": "Medios de Solicitud",
+        "helplabel": "Seleccione el medio de solicitud",
+        "validaciones": {
+          "requerida": "El medio de solicitud es requerido"
+        }
+      },
+      "FechaInicial": {
+        "label": "Fecha Inicial",
+        "helplabel": "Seleccione la fecha inicial",
+        "validaciones": {
+          "requerida": "La fecha inicial es requerida"
+        }
+      },
+      "FechaFinal": {
+        "label": "Fecha Final",
+        "helplabel": "Seleccione la fecha final",
+        "validaciones": {
+          "requerida": "La fecha final es requerida"
+        }
+      },
+      "TipoFalla": {
+        "label": "Familias",
+        "helplabel": "Seleccione la familia del componente",
+        "validaciones": {
+          "requerida": "La familia es requerida"
+        }
+      },
+      "Falla": {
+        "label": "Componentes",
+        "helplabel": "Seleccione el componente",
+        "validaciones": {
+          "requerida": "El componente es requerido"
+        }
+      },
+      "CausaFalla": {
+        "label": "Componentes",
+        "helplabel": "Seleccione el componente",
+        "validaciones": {
+          "requerida": "El componente es requerido"
+        }
+      },
+      "AgruparPorFolio": {
+        "label": "Agrupar por Folio",
+        "helplabel": "Agrupar por Folio",
+        "validaciones": {
+          "requerida": "El campo es requerido"
+        }
+      },
+      "ProcedeSi": {
+        "label": "Si Procede",
+        "helplabel": "Seleccione la opción"
+      },
+      "ProcedeNo": {
+        "label": "No Procede",
+        "helplabel": "Seleccione la opción"
+      },
+      "ProcedeTodos": {
+        "label": "Todos",
+        "helplabel": "Seleccione la opción"
+      },
+      "CanceladoSi": {
+        "label": "Cancelados",
+        "helplabel": "Seleccione la opción"
+      },
+      "CanceladoNo": {
+        "label": "No Cancelados",
+        "helplabel": "Seleccione la opción"
+      },
+      "CanceladoTodos": {
+        "label": "Todos",
+        "helplabel": "Seleccione la opción"
+      },
+      "CanceladoContingencia": {
+        "label": "Contingencia",
+        "helplabel": "Seleccione la opción"
+      },
+      "ConDiagnostico": {
+        "label": "Con diagnostico",
+        "helplabel": "Seleccione la opción"
+      },
+      "DiagnosticoTodosStatus": {
+        "label": "Todos",
+        "helplabel": "Seleccione la opción"
+      },
+      "DiagnosticoAbiertoStatus": {
+        "label": "Abierto",
+        "helplabel": "Seleccione la opción"
+      },
+      "DiagnosticoCerradoStatus": {
+        "label": "Cerrado",
+        "helplabel": "Seleccione la opción"
+      },
+      "PartidaDiagnosticoTodosStatus": {
+        "label": "Todos",
+        "helplabel": "Seleccione la opción"
+      },
+      "PartidaDiagnosticoAbiertoStatus": {
+        "label": "Abierto",
+        "helplabel": "Seleccione la opción"
+      },
+      "PartidaDiagnosticoAceptadoStatus": {
+        "label": "Aceptado",
+        "helplabel": "Seleccione la opción"
+      },
+      "PartidaDiagnosticoNoProcedeStatus": {
+        "label": "No procede",
+        "helplabel": "Seleccione la opción"
+      }
+
+    },
+    "sections": {
+      "reportesConsulta$opcionesPartidas": {
+        "title": "Opciones Incidencia"
+      },
+      "reportesConsulta$opcionesFolios": {
+        "title": "Opciones Reportes"
+      },
+      "reportesConsulta$estatusDiagnostico": {
+        "title": "Estatus diagnostico"
+      },
+      "reportesConsulta$estatusPartidaDiagnostico": {
+        "title": "Estatus incidencia diagnostico"
+      }
+    },
+    "mensajes": {
+      "exito": "El Reporte de incidencia ha sido actualizado"
+    },
+    "edit": {
+      "titulo": "Actualizar reporte de incidencia"
+    },
+    "titulo": {
+      "Nuevo": "Nuevo Reporte de Incidencia"
+    }
+  }
+}

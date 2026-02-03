@@ -1,0 +1,1816 @@
+﻿@using Newtonsoft.Json;
+@using System.Configuration;
+@model  EK.Modelo.SCV.Map
+
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="~/Content/Img/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="EnKontrol" name="description" />
+    <meta content="" name="EnKontrol" />
+
+    <script src="@Url.Content("~/Scripts/lib/jquery/dist/jquery.js")"></script>
+    <link href="@Url.Content("~/Scripts/lib/bootstrap/dist/css/bootstrap.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/lib/bootstrap/dist/js/bootstrap.js")"></script>
+    <link href="@Url.Content("~/Content/Theme/global/plugins/font-awesome/5.11.2/css/all.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Content/Theme/global/plugins/jquery.blockui.min.js")"></script>
+
+    <style type="text/css">
+        html, body, #mapContainer, #map {
+            height: 100%;
+        }
+
+        #vContainer {
+            display: flex;
+            flex-flow: column;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            height: 98%;
+            width: 300px;
+            background-color: #fff;
+            z-index: 100;
+            box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5) !important;
+            padding: 0px;
+            transition: all .8s;
+            border-radius: 6px;
+        }
+
+            #vContainer.collapsed {
+                height: 57px;
+                transition: all .8s;
+            }
+
+        #propsContainer {
+            display: flex;
+            flex-flow: column;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            height: 100%;
+            width: 300px;
+            background-color: #fff;
+            z-index: 105;
+            box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5) !important;
+            padding: 0px 15px;
+            transition: all .8s;
+        }
+
+        #propsContainerCollapse {
+            position: absolute;
+            cursor: pointer;
+            top: 0px;
+            right: 300px;
+            z-index: 106;
+            background-color: #E65100;
+            height: 40px;
+            width: 40px;
+            border-bottom-left-radius: 5px;
+            padding: 7px 14px;
+            font-size: 20px;
+            color: #fff;
+            transition: all .8s;
+        }
+
+            #propsContainerCollapse i:before {
+                content: "\f00d";
+                background-color: transparent !important;
+            }
+
+        #propsContainer div.title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1976D2;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px 0px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+            #propsContainer div.title span.subTitle {
+                font-size: 85%;
+                display: block;
+                color: #78909C;
+                font-weight: 400;
+            }
+
+        #propsContainerInfo {
+        }
+
+            #propsContainerInfo i.fa-info {
+                font-size: 108px;
+                margin: 40px 0px 40px 100px;
+                color: #BBDEFB;
+            }
+
+        #propsContainer #propsContainerInfo table.props {
+        }
+
+            #propsContainer #propsContainerInfo table.props tr td {
+            }
+
+            #propsContainer #propsContainerInfo table.props td {
+            }
+
+        #propsContainerImage {
+        }
+
+        #propsContainerImageViewer {
+            position: absolute;
+            width: calc(100% - 300px);
+            height: 100%;
+            z-index: 103;
+            background-color: rgba(0,0,0,.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            #propsContainerImageViewer div.selected-image {
+                height: 100%;
+                width: 100%;
+                background-size: auto;
+                background-repeat: no-repeat;
+                background-position: center center;
+                /*background-image: url(/KontrolFiles/GetFile/prototipos/16/anexos/636564969154399120);*/
+            }
+
+        #propsContainerImage i.fa-images {
+            font-size: 108px;
+            margin: 60px;
+            color: #BBDEFB;
+        }
+
+        #propsContainerImageWrapper {
+            display: grid;
+            grid-template-columns: 130px 130px;
+            grid-gap: 10px;
+        }
+
+            #propsContainerImageWrapper div.ImageBox {
+                color: #fff;
+                border-radius: 5px;
+                font-size: 11px;
+                width: 130px;
+                height: 150px;
+                position: relative;
+            }
+
+                #propsContainerImageWrapper div.ImageBox span {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 5px;
+                }
+
+        /* Props windows collapsed */
+        body.props-collapsed #propsContainer {
+            width: 0px !important;
+            box-shadow: none !important;
+            padding: 0px;
+        }
+
+        body.props-collapsed #propsContainerCollapse {
+            transition: all .8s;
+            right: 0px;
+            background-color: #37474F !important;
+        }
+
+            body.props-collapsed #propsContainerCollapse i:before {
+                content: "\f0c9";
+            }
+
+        body.props-collapsed #propsContainerInfoTitle {
+            display: none;
+        }
+
+        body.props-collapsed #propsContainerImageTitle {
+            display: none;
+        }
+
+        body.props-collapsed #propsContainerInfo {
+            display: none;
+        }
+
+        body.props-collapsed #propsContainerImage {
+            display: none;
+        }
+
+        /* Image Viewer */
+        #propsContainerImageViewer {
+            transition: all .6s;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        body.img-viewer #propsContainerImageViewer {
+            transition: all .6s;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #vTitle > #vDesarrollos, #vIcons {
+            border: 1px solid #ccc;
+            position: absolute;
+            z-index: 101;
+            background-color: #f1f1f1;
+            padding: 5px 10px;
+            box-shadow: 0px 13px 10px -6px rgba(0, 0, 0, 0.5) !important;
+            opacity: 1;
+            visibility: visible;
+            transition: visibility .5s, opacity 0.5s ease;
+        }
+
+        #vTitle > #vDesarrollos {
+            border-top: none;
+            top: 27px;
+            left: 1px;
+            overflow-y: scroll;
+            max-height: 90%;
+            width: 297px;
+        }
+
+        #vIcons {
+            overflow: hidden;
+            width: 55px;
+        }
+
+            #vTitle.collapsed > #vDesarrollos, #vIcons.collapsed {
+                opacity: 0;
+                visibility: hidden;
+                transition: visibility 1s, opacity 1s ease;
+            }
+
+            #vTitle > #vDesarrollos > ul, #vIcons > ul {
+                list-style-type: none;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            #vTitle.collapsed > #vDesarrollos > ul, #vIcons.collapsed > ul {
+            }
+
+            #vDesarrollos li, #vIcons li {
+                font-size: 11px;
+                padding: 8px;
+                font-family: Roboto, Arial, sans-serif;
+                margin-bottom: 5px;
+                cursor: pointer;
+                border: 1px solid transparent;
+                color: #455A64;
+            }
+
+            #vIcons li {
+                text-align: center;
+            }
+
+                #vDesarrollos li.selected, #vIcons li.selected {
+                    color: #455A64;
+                    background-color: #CFD8DC;
+                    border-radius: 4px !important;
+                    border: 1px solid #ECEFF1;
+                }
+
+                #vDesarrollos li:hover, #vIcons li:hover {
+                    color: #F57C00;
+                    background-color: #FFCC80;
+                    border-radius: 4px !important;
+                    border: 1px solid #FFB74D;
+                }
+
+        #vContainer > #vTitle > .ca {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-size: 16px;
+            color: #fff;
+            transition: all .6s;
+        }
+
+        #vContainer.collapsed > #vTitle > .ca {
+            transform: rotate(180deg);
+        }
+
+        #vContainer > #vTitle > .cd {
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            left: 12px;
+            font-size: 16px;
+            color: #fff;
+            transition: all .6s;
+        }
+
+        #vContainer > #vTitle.collapsed > .cd {
+            transform: rotate(-90deg);
+        }
+
+        #vContainer > #vTitle > span {
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+            color: #fff;
+            transition: all .6s;
+            margin: 2px 0px 0px 20px;
+        }
+
+        #vTitle {
+            flex: 0 1 auto;
+            font-size: 12px;
+            font-family: Roboto, Arial, sans-serif;
+            color: #fff;
+            background-color: #304FFE;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+            #vTitle.collapsed {
+                background-color: #448AFF;
+            }
+
+        /*#vTitle::before {
+            content: "\f5a0";
+            font-family: "Font Awesome 5 Free";
+            font-weight: bold;
+            margin-right: 5px;
+            font-size: 18px;
+        }*/
+
+        #vActions {
+            display: flex;
+            flex-direction: row;
+            background-color: #fafafa;
+            padding: 5px 10px;
+        }
+
+        #vActions button {
+            background-color: #ECEFF1;
+            border: none;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 11px;
+            padding: 3px;
+            border-radius: 4px;
+        }
+
+        #vActions button.selected {
+            background-color: #00C853;
+            color: #fff;
+        }
+
+        #vActions button.normal {
+            flex-grow: 2;
+        }
+
+        #vActions button.satelite {
+            flex-grow: 2;
+        }
+
+        #vActions button.fs {
+            flex-grow: 1;
+            font-size: 18px;
+            color: blue;
+            margin-left: 1px;
+            margin-right: 1px;
+            background-color: #E3F2FD;
+        }
+        #vActions button.reload {
+            flex-grow: 1;
+            font-size: 18px;
+            color: blue;
+            margin-left: 1px;
+            margin-right: 1px;
+            background-color: #E3F2FD;
+        }
+        #vList {
+            flex: 1 1 auto;
+            background-color: #fff;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-radius: 5px;
+        }
+
+        #list {
+            list-style-type: none;
+            margin: 15px 0px 0px 15px;
+            padding: 0;
+        }
+
+            #list .listParent {
+                cursor: pointer;
+                user-select: none; /* Prevent text selection */
+                font-weight: 600;
+                color: #37474F;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                height: 25px;
+            }
+
+        .nested {
+            height: 0px !important;
+            transition: all .6s;
+            overflow: hidden;
+        }
+
+        .active {
+            transition: all .6s;
+        }
+
+        #list .listChildren ul {
+            list-style-type: none;
+        }
+
+        #list .listParent::before {
+            content: "\f105";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+            font-family: "Font Awesome 5 Pro";
+            font-weight: bold;
+            transition: all .6s;
+        }
+
+        #list .listParent i {
+            margin-right: 2px;
+            color: #B0BEC5;
+            padding: 2px;
+            border-radius: 4px;
+            transition: all .6s;
+        }
+
+            #list .listParent i.selected {
+                color: #fff;
+                background-color: #FF9E80;
+                padding: 4px;
+                font-size: 16px;
+                transition: all .6s;
+            }
+
+            #list .listParent i:hover {
+                border: dashed 1px #9C27B0;
+            }
+
+        #list .listParent .text {
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-family: Roboto, Arial, sans-serif;
+            margin-left: 5px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 180px;
+        }
+        #list .listParent .count {
+            float: right;
+            font-weight: 600;
+            font-size: 10px;
+            background-color: #536DFE;
+            color: #fff;
+            padding: 4px 8px;
+            margin-top: 0px;
+            margin-right: 4px;
+            border-radius: 4px;
+        }
+        #list .listParent.listParentDown span {
+            font-weight: bold;
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: #8C9EFF;
+        }
+
+        #list .listParentDown::before {
+            transform: rotate(90deg);
+            transition: all .6s;
+        }
+
+        #list .listChild {
+            /*cursor: pointer;*/
+            user-select: none; /* Prevent text selection */
+            height: 25px;
+            margin: 5px auto;
+            overflow: hidden;
+            font-size: 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #37474F;
+        }
+
+        #list .nested .listChild {
+            user-select: none; /* Prevent text selection */
+            opacity: 0;
+            margin: 5px auto;
+            transition: all .6s;
+        }
+
+        #list .active .listChild {
+            user-select: none; /* Prevent text selection */
+            opacity: 1;
+            margin: 0px auto;
+            padding: 5px 0px;
+            transition: all .6s;
+        }
+
+            #list .active .listChild span {
+                border-radius: 25%;
+                padding: 3px 5px;
+                color: #fff;
+                font-weight: 600;
+                margin-right: 5px;
+            }
+
+        #list .listChild i {
+            margin-right: 5px;
+            font-size: 10px;
+        }
+
+        #list .listChild .text {
+            float: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 180px;
+        }
+
+        #list .listChild .count {
+            float: right;
+            font-weight: 600;
+            background-color: #90CAF9;
+            color: #fff;
+            padding: 4px 8px;
+            margin-top: -3px;
+            margin-right: 4px;
+            border-radius: 4px;
+        }
+
+        /*#list .listChild::before {
+          content: "\f111";
+          color: black;
+          display: inline-block;
+          margin-right: 6px;
+          font-family: "Font Awesome 5 Free";
+          font-weight: bold;
+        }*/
+    </style>
+    <script language="JavaScript" type="text/javascript">
+        var propName = '@ConfigurationManager.AppSettings["drivers:maps:propName"]';
+        var sale = @Html.Raw(Model.Sale.HasValue ? Model.Sale.Value.ToString().ToLower() : "false");
+        var defaultIdDesarrollo = @Html.Raw(Model.IdDesarrollo);
+        var defaultURL = "@(Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath)";
+
+        function GISViewItem(config) {
+            this.config = config;
+            //
+            this.getIcon = function() {
+                return this.config.icon;
+            };
+            //
+            this.getPath = function () {
+                return this.config.path;
+            };
+            //
+            this.getHTMLIcon = function () {
+                return $("<i class='" + this.config.icon + "'></i>");
+            };
+        }
+
+        function GISView() {
+            var $this = this;
+            //
+            this.map = null;
+            this.infoWindow = null;
+            //
+            this.cv = {
+                idDesarrollo: null,
+                features : [],
+                files : {},
+                markers : {},
+                ubicaciones : {},
+                views : {
+                    items : []
+                }
+            };
+            //
+            this.vt = {
+                none: new GISViewItem({
+                    icon: "fas fa-eye-slash bs"
+                }),
+                fill: new GISViewItem({
+                    icon: "fas fa-fill-drip bs"
+                }),
+                border: new GISViewItem({
+                    icon: "fas fa-draw-polygon bs"
+                }),
+                circle: new GISViewItem({
+                    icon: "fas fa-circle bs",
+                    path: "M7.5,0c0,2.1-0.8,3.9-2.2,5.3S2.1,7.5,0,7.5s-3.9-0.8-5.3-2.2S-7.5,2.1-7.5,0s0.8-3.9,2.2-5.3S-2.1-7.5,0-7.5s3.9,0.8,5.3,2.2S7.5-2.1,7.5,0z"
+                }),
+                plus: new GISViewItem({
+                    icon: "fas fa-plus bs",
+                    path: "M7.5-1.9c0-0.2-0.1-0.3-0.1-0.4C7.2-2.6,6.9-2.7,6.8-2.7C6.6-2.8,6.5-2.8,6.4-2.8H3.5C3-2.8,2.6-3.2,2.6-3.7v-2.9c0-0.5-0.4-0.9-0.9-0.9h-3.7c-0.5,0-0.9,0.4-0.9,0.9v2.9c0,0.5-0.4,0.9-0.9,0.9h-2.9c-0.5,0-0.9,0.4-0.9,0.9v3.9c0,0.5,0.4,0.9,0.9,0.9h2.9c0.5,0,0.9,0.4,0.9,0.9v2.9c0,0.5,0.4,0.9,0.9,0.9h3.9c0.5,0,0.9-0.4,0.9-0.9V3.7c0-0.5,0.4-0.9,0.9-0.9h2.9c0.5,0,0.9-0.4,0.9-0.9C7.5,0.7,7.5-0.7,7.5-1.9z"
+                }),
+                gem: new GISViewItem({
+                    icon: "fas fa-triangle bs",
+                    path: "M7.5,6.6h-15L0-6.6L7.5,6.6z"
+                }),
+                star: new GISViewItem({
+                    icon: "fas fa-star bs",
+                    path: "M5.7,-0.2 6.6,-1.2 7.5,-2.2 4.9,-2.5 2.3,-2.8 1.6,-3.9 1,-5.1 0.4,-6.3 -0.3,-7.5 -0.8,-6.3 -1.3,-5 -1.8,-3.8 -2.3,-2.5 -3.6,-2.3 -4.9,-2 -6.2,-1.8 -7.5,-1.5 -5.5,0.3 -3.6,2.1 -3.7,3.5 -3.9,4.8 -4.1,6.2 -4.2,7.5 -3.1,6.8 -2,6.1 -0.8,5.4 0.3,4.8 1.5,5.3 2.7,5.9 3.9,6.5 5,7 4.8,5.7 4.5,4.4 4.2,3.1 3.9,1.7 4.8,0.8z"
+                })
+            };
+            //
+            this.defaults = {
+                fillColor: "#82B1FF",
+                borderColor: "#455A64",
+                lineWeight: 1,
+                map: {
+                    initialLat : 22.8485622,
+                    initialLng : -98.2848572,
+                    zoom : 5
+                }
+            };
+            //
+            this.dom = {
+                body: $("body"),
+                views: {
+                    container: $("#vContainer"),
+                    desarrollos: $("#vDesarrollos"),
+                    title: $("#vTitle"),
+                    devList: $("#vDesarrollos > ul"),
+                    list: $("#list"),
+                    viewSatellite: $("#vActions button.satelite"),
+                    viewRoadmap: $("#vActions button.normal"),
+                    viewFullScreen: $("#vActions button.fs"),
+                    reload: $("#vActions button.reload")
+                },
+                props: {
+                    container: $("#propsContainer"),
+                    collapse: $("#propsContainerCollapse"),
+                    info: $("#propsContainerInfo"),
+                    title: $("#propsContainerInfoTitle"),
+                    imageWrapper: $("#propsContainerImageWrapper"),
+                    imageViewer: $("#propsContainerImageViewer"),
+                    images: $("#propsContainerImage")
+                }
+            };
+            //
+            this.getBoundingBox = function (f) {
+                var retValue;
+                //
+                if (f) {
+                    retValue = new google.maps.LatLngBounds();
+
+                    f.getGeometry().forEachLatLng(function (e) {
+                        var latLng = new google.maps.LatLng({ lat: e.lat(), lng: e.lng() });
+                        //
+                        retValue.extend(latLng);
+                    });
+                };
+                //
+                return retValue;
+            };
+            //
+            this.init = function () {
+                $this.loadDesarrollos();
+                //
+                $this.dom.views.title.find(".ca").click(function () {
+                    $this.dom.views.container.toggleClass("collapsed"); // ???
+                    // body mark
+                    $this.dom.body.toggleClass("views-collapsed");
+                });
+                //
+                $this.dom.props.collapse.click(function () {
+                    $this.dom.props.container.toggleClass("collapsed"); // ???
+                    // body mark
+                    $this.dom.body.toggleClass("props-collapsed");
+                });
+                //
+                $this.infowindow = new google.maps.InfoWindow();
+                //
+                $this.map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: $this.defaults.map.zoom,
+                    center: {
+                        lat: $this.defaults.map.initialLat,
+                        lng: $this.defaults.map.initialLng
+                    },
+                    zoomControl: true,
+                    mapTypeControl: false,
+                    fullscreenControl: false,
+                    streetViewControl: false,
+                    gestureHandling: "greedy"
+                });
+                // update the map
+                google.maps.event.trigger($this.map, "resize");
+                // Click event, re-configure
+                //$this.map.data.addListener("click", function (event) {
+                //    var geometryType = event.feature.getGeometry().getType();
+                //    //
+                //    if (geometryType == "Polygon" || geometryType == "MultiPolygon") {
+                //        if (sale) {
+                //            if (event.feature.getProperty(propName)) {
+                //                this.updateParentWIndow(event.feature.getProperty(propName));
+                //            } else {
+                //                alert("Clave no registrada");
+                //            }
+                //        }
+                //    }
+                //});
+
+                $this.configureListeners();
+                // roadmap default
+                $this.dom.views.viewRoadmap
+                    .click(function (e) {
+                        $this.map.setMapTypeId("roadmap");
+                        //
+                        $(e.currentTarget).addClass("selected");
+                        //
+                        $this.dom.views.viewSatellite.removeClass("selected");
+                    })
+                    .addClass("selected");
+                //
+                $this.dom.views.viewSatellite
+                    .click(function (e) {
+                        $this.map.setMapTypeId("satellite");
+                        //
+                        $(e.currentTarget).addClass("selected");
+                        //
+                        $this.dom.views.viewRoadmap.removeClass("selected");
+                    });
+                //
+                $this.dom.views.viewFullScreen
+                    .click(function (e) {
+                        var fullScreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+                        if (!fullScreenElement) {
+                            $this.fullScreen(true);
+                        }
+                        else {
+                            $this.fullScreen(false);
+                        }
+                    });
+                                //
+                $this.dom.views.reload
+                    .click(function (e) {
+                        location.reload();
+                    });
+            };
+            //
+            this.configureListeners = function () {
+                google.maps.event.addListener($this.map, "zoom_changed", function (event) {
+                    $this.refresh();
+                });
+                //google.maps.event.addListener($this.map, "click", function (event) {
+                $this.map.data.addListener("click", function (event) {
+                    var geometryType = event.feature.getGeometry().getType();
+                    //
+                    if (geometryType == "Polygon" || geometryType == "MultiPolygon") {
+                        var claveFeature = event.feature.getProperty(propName);;
+                        var ubicacion = $this.cv.ubicaciones[claveFeature];
+
+                        if (event.feature.getProperty(propName)) {
+                            $this.setHtmlContent(ubicacion);
+                        };
+                    }
+                });
+                $this.map.addListener("click", function (event) {
+                    var geometryType = event.feature.getGeometry().getType();
+                    //
+                    if (geometryType == "Polygon" || geometryType == "MultiPolygon") {
+                        //
+                        if (event.feature.getProperty(propName)) {
+                            $("infoContent").html($this.setHtmlContent(ubicacion));
+                        };
+                        // else {
+                        //    alert("Clave no registrada");
+                        //}
+                        //if (sale) {
+                            // this.updateParentWIndow(event.feature.getProperty(propName));
+                        //}
+                    }
+                });
+                //$this.map.data.addListener("mouseover", function (event) {
+                //    var geometryType = event.feature.getGeometry().getType();
+                //    //
+                //    if (geometryType == "Polygon" || geometryType == "MultiPolygon") {
+                //        var claveFeature = event.feature.getProperty(propName);;
+                //        var ubicacion = $this.cv.ubicaciones[claveFeature];
+                //        //
+                //        if (ubicacion) {
+                //            infowindow.setContent("<div id='infoContainer' style='width:auto;'> <div id='infoContent'>" + setHtmlContent(ubicacion) + "</div></div>");
+                //            infowindow.setPosition(event.latLng);
+                //            infowindow.setOptions({
+                //                pixelOffset: new google.maps.Size(0, -34)
+                //            });
+                //            infowindow.open(map);
+                //        };
+                //    };
+                //});
+                //
+                //$this.map.data.addListener("mouseout", function (event) {
+                    //var geometryType = event.feature.getGeometry().getType();
+                    //if (geometryType == "Polygon" || geometryType == "MultiPolygon") {
+                    //    if (!mappingLocations) {
+                    //        $this.map.data.revertStyle();
+                    //    }
+                    //}
+                    //infowindow.close();
+                //});
+            }
+            //
+            this.updateParentWIndow = function (pos) {
+                    if (window.parent && window.parent.window.parent) {
+                        var p = window.parent.window.parent.window;
+                        //
+                        if (p.onMapLocationClicked) {
+                            p.onMapLocationClicked(pos);
+                        };
+                    };
+                };
+            //
+            this.getIconScale = function () {
+                var scale = $.trim($this.map.getZoom());
+                var scaleTable = {
+                    "17": 0.125,
+                    "18": 0.25,
+                    "19": 0.5,
+                    "20": 1,
+                    "21": 1.5,
+                    "22": 2
+                };
+
+                var retValue = scaleTable[scale];
+                if (!scale) {
+                    retValue = 0;
+                };
+
+                return retValue;
+            };
+            //
+            this.refresh = function (s) {
+                var views = {};
+                for (var i = 0; i < $this.cv.views.items.length; i++) {
+                    //
+                    var item = $this.cv.views.items[i];
+                    if (item.colors) {
+                        if (item.Elements && item.Elements.length > 0) {
+                            for (var j = 0; j < item.Elements.length; j++) {
+                                var idElemento = item.Elements[j].IdElemento;
+                                //
+                                if (!item.colorsCount) {
+                                    var colorsCount = {};
+                                    //
+                                    for (var k = 0; k < item.colors.length; k++) {
+                                        var color = item.colors[k];
+                                        //
+                                        if (!colorsCount[color.IdElemento]) {
+                                            colorsCount[color.IdElemento] = 0;
+                                        };
+                                        //
+                                        colorsCount[color.IdElemento] = colorsCount[color.IdElemento] + 1;
+                                    };
+                                    //
+                                    item.colorsCount = colorsCount;
+                                };
+                                //
+
+                            };
+                        };
+                    };
+                    //
+                    if ($this.cv.views.items[i].viewType) {
+                        views[$this.cv.views.items[i].viewType] = $this.cv.views.items[i];
+                        if ($this.cv.views.items[i].markerType) {
+                            if ($this.cv.views.items[i].viewType !== $this.cv.views.items[i].markerType) {
+                                $this.cv.views.items[i].markerType = $this.cv.views.items[i].viewType;
+                                //
+                                if ($this.cv.views.items[i].markers) {
+                                    for (var m in $this.cv.views.items[i].markers) {
+                                        $this.cv.views.items[i].markers[m].setMap(null);
+                                    };
+                                };
+                            };
+                        }
+                        else {
+                            $this.cv.views.items[i].markerType = $this.cv.views.items[i].viewType;
+                        };
+                    }
+                    else {
+                        $this.cv.views.items[i].markerType = undefined;
+                        if ($this.cv.views.items[i].markers) {
+                            for (var m in $this.cv.views.items[i].markers) {
+                                $this.cv.views.items[i].markers[m].setMap(null);
+                            };
+                        };
+                    };
+                };
+                //
+                $this.map.data.setStyle(function (feature) {
+                    //var color = "#82B1FF"; //'#0000FF';
+                    //var lineColor = "#455A64";
+                    //var lineWeight = 1;
+
+                    //var layer = feature.getProperty('LAYER');
+                    //var idLayer = feature.getProperty('ID');
+                    var geometryType = feature.getGeometry().getType();
+                    var clave = feature.getProperty(propName);
+                    var color = $this.defaults.fillColor;
+                    var lineColor = $this.defaults.borderColor;
+                    var lineWeight = $this.defaults.lineWeight;
+                    var scale = s ? s : .5;
+                    //
+                    if (clave) {
+                        if (geometryType == "Polygon" || geometryType == "MultiPolygon") {
+                            var ubicacion = $this.cv.ubicaciones[clave];
+
+                            if (ubicacion) {
+                                var iconsBounds;
+                                var bounds = $this.getBoundingBox(feature);
+                                //
+                                if (bounds) {
+                                    var center = bounds.getCenter();
+                                    var clat = center.lat();
+                                    var clng = center.lng();
+
+                                    iconsBounds = {
+                                         circle: new google.maps.LatLng(clat - ((clat - bounds.getNorthEast().lat()) / 2.0), clng), // north
+                                         plus:   new google.maps.LatLng(clat - ((clat - bounds.getSouthWest().lat()) / 2.0), clng), // south
+                                         gem:    new google.maps.LatLng(clat, clng - ((clng - bounds.getNorthEast().lng()) / 2.0)), // east
+                                         star:   new google.maps.LatLng(clat, clng - ((clng - bounds.getSouthWest().lng()) / 2.0)) // west
+                                    };
+                                };
+                                //
+                                var fnAddMarker = function (mp, view, c, vt) {
+                                    var idMarker = mp.lat() + ", " + mp.lng();
+                                    //
+                                    if (!view.markers) {
+                                        view.markers = {};
+                                    };
+
+                                    if (view.markers[idMarker]) {
+                                        var icon = $.extend({}, view.markers[idMarker].getIcon());
+                                        icon.scale = $this.getIconScale();
+                                        //
+                                        view.markers[idMarker].setIcon(icon);
+                                    }
+                                    else {
+                                        var marker = new google.maps.Marker({
+                                            position: mp,
+                                            map: $this.map,
+                                            ubicacion: $this.cv.ubicaciones[c],
+                                            icon:
+                                                {
+                                                    path: vt.getPath(),
+                                                    scale: $this.getIconScale(),
+                                                    strokeWeight: 0,
+                                                    fillColor: view.colors && view.colors[c] ? view.colors[c].Color : "#000",
+                                                    fillOpacity: 1
+                                                }
+                                        });
+                                        //
+                                        view.markers[idMarker] = marker;
+                                        //
+                                        google.maps.event.addListener(marker, "click", function() {
+                                            $this.setHtmlContent(marker.ubicacion);
+                                        });
+                                    };
+                                };
+
+                                for (var v in views) {
+                                    if (v === "none") {
+                                        //
+                                    }
+                                    else if (v === "fill") {
+                                        color = views[v].colors && views[v].colors[clave] ? views[v].colors[clave].Color : "#000";
+                                    }
+                                    else if (v === "border") {
+                                        lineColor = views[v].colors && views[v].colors[clave] ? views[v].colors[clave].Color : "#000";
+                                    }
+                                    else {
+                                        fnAddMarker(iconsBounds[v], views[v], clave, $this.vt[v]);
+                                    }
+                                };
+                            };
+                        }
+                    }
+
+                    return ({
+                        fillColor: color,
+                        strokeColor: lineColor,
+                        fillOpacity: ".5",
+                        strokeWeight: lineWeight
+                    });
+                });
+                //
+                //colorLocations();
+            };
+            //
+            this.loadDesarrollos = function () {
+                $this.getJson("/base/scv/desarrollos/all/", { kv: 1 },
+                    function (data, textStatus, jqXHR) {
+                        //
+                        $this.dom.views.title.find("i.cd")
+                            .removeClass("fa-spinner")
+                            .removeClass("fa-spin")
+                            .addClass("fas fa-caret-down");
+                        //
+                        $this.dom.views.devList
+                        var vd = $this.dom.views.desarrollos.find("ul");
+                        var liDefault = null;
+                        //
+                        for (var i = 0; i < data.length; i++) {
+                            var li = $("<li>" + data[i].Nombre + "</li>");
+                            li.data("info", data[i]);
+                            //
+                            li.click(function () {
+                                var $source = $(this); 
+                                var $data = $source.data("info");
+                                //
+                                location.href = defaultURL + "gis/" + $data.ID;
+                            });
+                            //
+                            vd.append(li);
+                            //
+                            if (defaultIdDesarrollo > 0 && defaultIdDesarrollo === data[i].ID) {
+                                liDefault = li;
+                            }
+                        }
+
+                        if (liDefault) {
+                            var $source = liDefault; 
+                            var $data = $source.data("info");
+                            //
+                            $this.cv.idDesarrollo = $data.ID;
+                            //
+                            $this.dom.views.title.addClass("collapsed");
+                            //
+                            $source.parent().find("li").removeClass("selected");
+                            $source.addClass("selected");
+                            // set title / desarrollo
+                            $this.dom.views.title.find("span").html($data.Nombre);
+                            // clear
+                            for (var i = 0; i < $this.cv.features.length; i++) {
+                                $this.map.data.remove($this.mapFeatures[i]);
+                            };
+                            $this.cv.features = [];
+                            // move to desarrollo coordenada
+                            if ($data.Geolocalizacion) {
+                                var localization = $data.Geolocalizacion.split(",");
+                                //
+                                if (localization && localization.length === 2) {
+                                    $this.map.setCenter({
+                                        lat: parseFloat(localization[0]),
+                                        lng: parseFloat(localization[1])
+                                    });
+                                    //
+                                    $this.map.setZoom(16);
+                                };
+                            };
+                            // load vistas
+                            $this.loadViews();
+                            // load ubicaciones
+                            $this.loadUbicaciones();
+                            // load geojson
+                            if (!$this.cv.files[$data.ID]) {
+                                $this.getJson("/Desarrollos/GetFileLocations/" + $data.ID, null,
+                                    function (data, textStatus, jqXHR) {
+                                        if (data) {
+                                            $this.cv.files[$data.ID] = data;
+                                            //
+                                            $this.setGeoJson($data.ID);
+                                        };
+                                    },
+                                    function (jqXHR, textStatus, errorThrown) {
+                                        $this.cv.files[$data.ID] = undefined;
+                                    }
+                                );
+                            }
+                            else {
+                                $this.setGeoJson($data.ID);
+                            };
+                        }
+                        else {
+                            $this.dom.views.title.find("span").html("seleccione un desarrollo");
+                        }
+                        //
+                        var fnTitle = function () {
+                            $this.dom.views.title.toggleClass("collapsed");
+                        };
+                        $this.dom.views.title.find("i.cd").click(fnTitle);
+                        $this.dom.views.title.find("span").click(fnTitle);
+                    },
+                    function (jqXHR, textStatus, errorThrown) {
+                        $this.cv.ubicaciones = {};
+                    }
+                );
+            };
+            //
+            this.loadUbicaciones = function () {
+                $this.getJson("/base/scv/ubicaciones/GetBP/GetUbicacionesGIS/", { idDesarrollo: $this.cv.idDesarrollo },
+                    function (data) {
+                        $this.cv.ubicaciones = {};
+                        for (var i = 0; i < data.length; i++) {
+                            $this.cv.ubicaciones[data[i].Clave] = data[i];
+                        }
+                    },
+                    function (jqXHR) {
+                        $this.cv.ubicaciones = {};
+                    }
+                );
+            };
+            //
+            this.loadViews = function () {
+                $this.getJson("/base/kontrol/GISVistas/GetBP/GetVistas/", { idDesarrollo: $this.cv.idDesarrollo },
+                    function (data) {
+                        $this.cv.views.items = data;
+                        $this.renderViews();
+                    }
+                );
+                //$.ajax({
+                //    url: "/base/kontrol/GISVistas/GetBP/GetVistas",
+                //    type: "GET",
+                //    contentType: "application/json; charset=UTF-8",
+                //    headers: { "X-EK-PAGE-ID": "GIS" },
+                //    context: document.body
+                //}).done(function (data, textStatus, jqXHR) {
+                //    $this.cv.views.items = data;
+
+                //    $this.renderViews();
+                //});
+            };
+            //
+            this.loadViewColors = function (index) {
+                var $index = index;
+                //
+                var data = JSON.stringify({
+                    idVista: $this.cv.views.items[index].ID,
+                    idDesarrollo: $this.cv.idDesarrollo
+                });
+                //
+                $this.getJson("/base/kontrol/GISVistas/GetBP/GetVistaColores/", data,
+                    function (data) {
+                        var uc = {};
+                        for (var i = 0; i < data.length; i++) {
+                            uc[data[i].Clave] = data[i];
+                        }
+                        $this.cv.views.items[$index].colors = uc;
+                        //
+                        $this.refresh();
+                    },
+                    function (jqXHR) {
+                        $this.cv.views.items[$index].colors = undefined;
+                        //
+                        $this.refresh();
+                    }
+                );
+            };
+            //
+            this.renderViews = function () {
+                var fnSelect = function (index, idIcon) {
+                    var $index = index;
+                    //
+                    for (var i = 0; i < $this.cv.views.items.length; i++) {
+                        if ($this.cv.views.items[i].viewType === idIcon) {
+                            $this.cv.views.items[i].viewType = undefined;
+                        };
+                    };
+                    $this.cv.views.items[$index].viewType = idIcon;
+                    //
+                    if (!$this.cv.views.items[$index].colors) {
+                        $this.loadViewColors($index);
+                    }
+                    else {
+                        $this.refresh();
+                    };
+                };
+                var fnShowActions = function (e) {
+                    var button = $(e.currentTarget);
+                    var viewIndex = button.data("index");
+                    var $icons = $("#vIcons");
+                    var offset = $(e.target).offset();
+                    // menu
+                    var $ul = $icons.find("ul");
+                    //
+                    if ($icons.find("li").size() == 0) {
+                        for (var v in $this.vt) {
+                            var $li = $("<li></li>");
+                            $li.append($this.vt[v].getHTMLIcon());
+                            $li.data("id", v);
+                            $li.data("index", viewIndex);
+                            $li.data("idParent", button.attr("id"));
+                            //
+                            $li.click(function (e) {
+                                var idIcon = $(this).data("id");
+                                var index = $(this).data("index");
+                                var idParent = $(this).data("idParent");
+                                //
+                                $("#" + idParent).removeClass();
+                                $("#" + idParent).addClass($this.vt[idIcon].getIcon());
+                                //
+                                fnSelect(index, idIcon);
+                                //
+                                $("#vIcons").toggleClass("collapsed");
+                                //
+                                e.stopPropagation();
+                            });
+                            $ul.append($li);
+                        };
+                    }
+                    else {
+                        $ul.find("li").each(function (index, value) {
+                            $(value).data("index", viewIndex);
+                            $(value).data("idParent", button.attr("id"));
+                        });
+                    };
+                    //
+                    if (offset) {
+                        //
+                        $icons.css("top", (offset.top + 20) + "px");
+                        $icons.css("left", offset.left + "px");
+                        //
+                        $icons.toggleClass("collapsed");
+                    };
+                    //
+                    e.stopPropagation();
+                };
+
+                if ($this.cv.views.items) {
+                    for (var i = 0; i < $this.cv.views.items.length; i++) {
+                        var v = $this.cv.views.items[i];
+                        var li = $("<li></li>");
+                        var btnIcons = $this.vt.none.getHTMLIcon();
+                        //
+                        btnIcons.addClass("bs");
+                        btnIcons.data("index", i);
+                        btnIcons.attr("id", "button_bs_" + i);
+                        //
+                        var listParent = $("<div class='listParent'></div>");
+                        var listChildren = $("<div class='listChildren nested' style='height: " + ((v.Elements.length * 25) + 5) + "px'>");
+                        //
+                        btnIcons.click(fnShowActions);
+                        //
+                        listParent.data("index", i);
+                        listParent.append(btnIcons);
+                        listParent.append("<div class='text'>" + v.Nombre + "</div>");
+                        listParent.append("<div class='count'>" + v.Count + "</div>");
+                        //
+                        var ul = $("<ul></ul>");
+                        for (var j = 0; j < v.Elements.length; j++) {
+                            var e = v.Elements[j];
+
+                            ul.append($("<li class='listChild'><div class='text'><i class='fas fa-circle' style='color: " + e.Color + "'></i>" + e.Nombre + "</div><div class='count'>" + e.Count + "</div></li>"));
+                            //ul.append($("<li class='listChild'><div class='text'><i class='fas fa-circle' style='color: " + e.Color + "'></i>" + e.Nombre + "</div></li>"));
+                        };
+                        //
+                        listChildren.append(ul);
+                        //
+                        li.append(listParent);
+                        li.append(listChildren);
+                        //
+                        this.dom.views.list.append(li);
+                    };
+                    /*
+                    $("div.listParent").each(function (index, value) {
+                        value.click(function () {
+                            //$(this)
+                            this.parentElement.querySelector(".listChildren").classList.toggle("active");
+                            this.parentElement.querySelector(".listChildren").classList.toggle("nested");
+
+                            if (!$this.cv.views.items[$index].colors) {
+                                $this.loadViewColors($index);
+                            };
+
+                            this.classList.toggle("listParentDown");
+                        });
+                    });
+                    */
+
+                    var toggler = document.getElementsByClassName("listParent");
+                    for (var i = 0; i < toggler.length; i++) {
+                        toggler[i].addEventListener("click", function () {
+                            var vIndex = $(this).data("index");
+                            //
+                            this.parentElement.querySelector(".listChildren").classList.toggle("active");
+                            this.parentElement.querySelector(".listChildren").classList.toggle("nested");
+
+                            if (!$this.cv.views.items[vIndex].colors) {
+                                $this.loadViewColors(vIndex);
+                            };
+
+                            this.classList.toggle("listParentDown");
+                        });
+                    };
+
+                };
+            };
+            //
+            this.setGeoJson = function setGeoJson(id) {
+                var geoJsnUrls = $this.cv.files[id];
+                //
+                for (var i in geoJsnUrls) {
+                    $.getJSON(geoJsnUrls[i], function (data) {
+                        var featuresResult = $this.map.data.addGeoJson(data);
+                        //
+                        $this.cv.features = $this.cv.features.concat(featuresResult);
+
+                        //for (var f in featuresResult) {
+                        //    var geometryType = featuresResult[f].getGeometry().getType();
+                        //    //
+                        //    if (geometryType == "Polygon" || geometryType == "MultiPolygon") {
+                        //        if (featuresResult[f].getProperty(propName)) {
+                        //            google.maps.event.addListener(featuresResult[f], "click", function (event) {
+                        //                var claveFeature = event.feature.getProperty(propName);;
+                        //                var ubicacion = $this.cv.ubicaciones[claveFeature];
+
+                        //                $("infoContent").html($this.setHtmlContent(ubicacion));
+                        //            });
+                        //        };
+                        //    }
+                        //};
+                    });
+                };
+            };
+            //
+            this.block = function (m) {
+                $.blockUI({
+                    message: m,
+                    css: {
+                        border: "none",
+                        padding: "15px",
+                        backgroundColor: "#000",
+                        "-webkit-border-radius": "10px",
+                        "-moz-border-radius": "10px",
+                        opacity: .5,
+                        color: "#fff"
+                    }
+                });
+            };
+            //
+            this.unblock = function () {
+                $.unblockUI();
+            };
+            //
+            this.getJson = function (url, data, done, fail) {
+                $this.block("descargando información...");
+                //
+                var jsonData = "";
+                if (data) {
+                    if (data && data.constructor.name === "Object") {
+                        jsonData = JSON.stringify(data);
+                    }
+                    else {
+                        jsonData = data;
+                    };
+                }
+                else {
+                    jsonData = "";
+                }
+                var filtros = btoa(encodeURIComponent(jsonData));
+                //
+                $.ajax({
+                    url: url + filtros,
+                    type: "GET",
+                    contentType: "application/json; charset=UTF-8",
+                    headers: { "X-EK-PAGE-ID": "GIS" },
+                    context: document.body
+                }).done(function (data, textStatus, jqXHR) {
+                    if (done) {
+                        done(data)
+                    };
+                    //
+                    $.unblockUI();
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    if (fail) {
+                        fail(jqXHR);
+                    };
+                    //
+                    $this.unblock;
+                });
+            };
+            //
+            this.fullScreen = function (mode) {
+                var elem = document.documentElement;
+                //
+                if (mode === true) {
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.mozRequestFullScreen) { /* Firefox */
+                        elem.mozRequestFullScreen();
+                    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                        elem.webkitRequestFullscreen();
+                    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                        elem.msRequestFullscreen();
+                    }
+                }
+                else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.mozCancelFullScreen) { /* Firefox */
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) { /* IE/Edge */
+                        document.msExitFullscreen();
+                    }
+                };
+            },
+            //
+            this.setHtmlContent = function(ubicacion) {
+                if (!ubicacion) {
+                    return '';
+                };
+                //
+                var noData = "<i class='fas fa-minus'></i>";
+                var calle = ubicacion.Calle ? ubicacion.Calle : noData;
+                var numero = ubicacion.NumeroExterior ? ubicacion.NumeroExterior : noData;
+                var clave = ubicacion.ClaveFormato ? ubicacion.ClaveFormato : ubicacion.Clave;
+                var prototipo = ubicacion.Prototipo && ubicacion.Prototipo.Nombre ? ubicacion.Prototipo.Nombre: noData;
+                var excedente = isNaN(ubicacion.Excedente) ? "0 M2" : ubicacion.Excedente + " M2";
+                var dtu = ubicacion.IdDtu === true ? "<i class='fas fa-check' style='color: rgb(76, 217, 100)'></i>" : noData;
+                
+                var avance = isNaN(ubicacion.PorcentajeConstruccion) ?  "0%" : ubicacion.PorcentajeConstruccion + "%";
+                var ruv = ubicacion.RUV ? ubicacion.RUV : noData;
+                var cuv = ubicacion.CUV ? ubicacion.CUV : noData;
+
+                var fechadtu = ubicacion.FechaDTU === true ? ubicacion.FechaDTU : noData;
+                var cliente = ubicacion.Cliente ? ubicacion.Cliente : noData;
+                var agente = ubicacion.Agente ? ubicacion.Agente : noData;
+                var estatus = ubicacion.EstatusDeUbicacion ? ubicacion.EstatusDeUbicacion.Nombre : noData;
+                var etapas = ubicacion.Etapas ? ubicacion.Etapas : noData;
+                var fechaHabitabilidad = ubicacion.FechaHabitabilidad ? ubicacion.FechaHabitabilidad : noData;
+                var superficie = isNaN(ubicacion.Superficie) ? "0 M2" : ubicacion.Superficie + " M2";
+                var fechaPorcConstruccion = ubicacion.FechaPorcentajeConstruccion ? ubicacion.FechaPorcentajeConstruccion : noData;
+                var importeMoneda = ubicacion.ImporteMoneda ? ubicacion.ImporteMoneda : noData;
+
+                var fnRow = function (label, value) {
+                    var titleStyle = "style='font-weight: bold; font-size: 11px; padding: 0px 5px;'";
+                    var valueStyle = "style='font-weight: 400; font-size: 11px; padding: 0px 5px;'";
+
+                    return "<tr><td " + titleStyle + ">" + label + "</td><td " + valueStyle + ">" + value + "</td></tr>";
+                };
+
+                var fnRowMark = function (label, value, icon) {
+                    var titleStyle = "style='border-bottom: solid 5px #fff; font-size: 18px; padding: 5px 5px; text-align:center; background-color: #fafafa;'";
+                    var valueStyle = "style='border-bottom: solid 5px #fff; font-weight: bold; font-size: 11px; padding: 5px 5px; background-color: #fafafa;'";
+
+                    return "<tr><td " + titleStyle + "><i class='" + icon + "' style='color: " + label + "; font-size: 18px;'></i></td><td " + valueStyle + ">" + value + "</td></tr>";
+                };
+
+                var border;
+                //if (vistaBorder && vistaBorder.ElementsColores) {
+                //    var element = vistaBorder.ElementsColores[ubicacion.Clave];
+                //    //
+                //    if (element) {
+                //        if (vistaBorder.Elements && vistaBorder.Elements.length > 0) {
+                //            for (var i = 0; i < vistaBorder.Elements.length; i++) {
+                //                if (vistaBorder.Elements[i].Color === element.Color) {
+                //                    border = fnRowMark(element.Color, vistaBorder.Elements[i].Nombre, "fas fa-draw-polygon");
+                //                    //
+                //                    break;
+                //                };
+                //            };
+                //        }
+                //    };
+                //};
+                var fill;
+                //if (vistaFill && vistaFill.ElementsColores) {
+                //    var element = vistaFill.ElementsColores[ubicacion.Clave];
+                //    //
+                //    if (element) {
+                //        if (vistaFill.Elements && vistaFill.Elements.length > 0) {
+                //            for (var i = 0; i < vistaFill.Elements.length; i++) {
+                //                if (vistaFill.Elements[i].Color === element.Color) {
+                //                    fill = fnRowMark(element.Color, vistaFill.Elements[i].Nombre, "fas fa-fill-drip");
+                //                    //
+                //                    break;
+                //                };
+                //            };
+                //        }
+                //    };
+                //}
+
+                var htmlContent = "<table class='props'>" +
+                    fnRow("Clave", clave) +
+                    fnRow("Prototipo", prototipo) +
+                    fnRow("Precio", importeMoneda) +
+                    fnRow("Superficie", superficie) +
+                    fnRow("Excedente", excedente) +
+                    fnRow("DTU", dtu) +
+                    fnRow("Fecha DTU", fechadtu) +
+                    fnRow("Fecha Habitabilidad", fechaHabitabilidad) +
+                    fnRow("Avance construcción", avance) +
+                    fnRow("Fecha de avance construcción", fechaPorcConstruccion) +
+                    fnRow("RUV", ruv) +
+                    fnRow("CUV", cuv) +
+                    fnRow("Cliente", cliente) +
+                    fnRow("Agente", agente) +
+                    fnRow("Estatus", estatus) +
+                    fnRow("Etapas", etapas) +
+                    fnRow("Calle", calle) +
+                    fnRow("Número", numero) +
+                    fnRow("&nbsp;", "&nbsp;") +
+                    (border ? border : "") +
+                    (fill ? fill : "")
+                    "</table>";
+
+                $this.dom.props.title.html(clave + "<span class='subTitle'>" + prototipo + "</span>");
+                $this.dom.props.info.html(htmlContent);
+
+
+                $this.dom.props.imageWrapper.empty();
+                if (ubicacion.Prototipo && ubicacion.Prototipo.Archivos && ubicacion.Prototipo.Archivos.length > 0) {
+                    for (var i = 0; i < ubicacion.Prototipo.Archivos.length; i++) {
+                        var archivo = ubicacion.Prototipo.Archivos[i];
+                        var imgBox = $("<div class='ImageBox' style='background-image: url(/" + archivo.FilePath + ");'><span>" + archivo.Nombre + "</span></div>");
+                        //
+                        var toggleViewer = function () {
+                            var $thisImage = $(this);
+                            //
+                            $this.dom.body.toggleClass("img-viewer");
+                            //
+                            $this.dom.props.imageViewer.find("div.selected-image").css("background-image", $thisImage.css("background-image"));
+                        };
+                        imgBox
+                            .mouseenter(toggleViewer)
+                            .mouseleave(toggleViewer);
+                        //
+                        $this.dom.props.imageWrapper.append(imgBox);
+                    }
+                    //
+                    $this.dom.props.images.find("i.fa-images").css("display", "none");
+                }
+                else {
+                    $this.dom.props.images.find("i.fa-images").css("display", "");
+                }
+                //
+                $("infoContent").html(htmlContent);
+
+                if ($this.dom.props.container.hasClass("collapsed")) {
+                    $this.dom.props.container.removeClass("collapsed");
+                };
+
+                // body mark
+                if ($this.dom.body.hasClass("props-collapsed")) {
+                    $this.dom.body.removeClass("props-collapsed");
+                };
+            }
+            //
+            this.init();
+        };
+        //
+        function initMap() {
+            gis = new GISView();
+        };
+    </script>
+</head>
+<body class="props-collapsed" style="width: 100%; height: 100%;">
+    <div id="vContainer">
+        <div id="vTitle" class="collapsed">
+            <i class="fas fa-spinner fa-spin cd"></i>
+            <span>obteniendo desarrollos...</span>
+            <i class="fas fa-angle-double-up ca"></i>
+
+            <div id="vDesarrollos">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="vActions">
+            <button class="normal">Normal</button>
+            <button class="fs">
+                <i class="fad fa-expand-arrows"></i>
+            </button>
+            <button class="reload">
+                <i class="fad fa-sync"></i>
+            </button>
+            <button class="satelite">Satélite</button>
+        </div>
+        <div id="vList">
+            <div id="vIcons" class="collapsed">
+                <ul></ul>
+            </div>
+            <ul id="list"></ul>
+        </div>
+    </div>
+    <div id="propsContainerImageViewer">
+        <div class="selected-image"></div>
+    </div>
+    <div id="propsContainerCollapse">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div id="propsContainer">
+        <div id="propsContainerInfoTitle" class="title">
+            Información de la ubicación
+        </div>
+        <div id="propsContainerInfo">
+            <i class="fas fa-info"></i>
+        </div>
+        <div id="propsContainerImageTitle" class="title">
+            Galería
+        </div>
+        <div id="propsContainerImage">
+            <i class="far fa-images"></i>
+            <div id="propsContainerImageWrapper"></div>
+        </div>
+    </div>
+    <div id="mapContainer" style="position: relative;">
+        <div id="map" style="min-height:600px; margin: auto; ">
+        </div>
+    </div>
+    <input type="hidden" id="jsll_des" value="" />
+
+    <script async defer src="@ConfigurationManager.AppSettings["drivers:maps:url"]?key=@ConfigurationManager.AppSettings["drivers:maps:key"]&libraries=@ConfigurationManager.AppSettings["drivers:maps:libraries"]&callback=initMap"></script>
+</body>
+</html>
+
+@*//var views =
+
+        //for (var i = 0; i < ubicaciones.length; i++) {
+        //    ubicacionesObj[ubicaciones[i].Clave] = ubicaciones[i];
+        //}
+
+        //function addLocationMap(feature) {
+        //    map.data.overrideStyle(feature, { fillColor: 'green', strokeColor: 'green' });
+        //}
+
+        //function invertColor(hex) {
+        //    if (hex.indexOf('#') === 0) {
+        //        hex = hex.slice(1);
+        //    }
+        //    // convert 3-digit hex to 6-digits.
+        //    if (hex.length === 3) {
+        //        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        //    }
+        //    if (hex.length !== 6) {
+        //        throw new Error('Invalid HEX color.');
+        //    }
+        //    // invert color components
+        //    var r = (255 - parseInt(hex.slice(0, 2), 16)).toString(16),
+        //        g = (255 - parseInt(hex.slice(2, 4), 16)).toString(16),
+        //        b = (255 - parseInt(hex.slice(4, 6), 16)).toString(16);
+        //    // pad each with zeros and return
+        //    return '#' + padZero(r) + padZero(g) + padZero(b);
+        //}
+
+        //function padZero(str, len) {
+        //    len = len || 2;
+        //    var zeros = new Array(len).join('0');
+        //    return (zeros + str).slice(-len);
+        //}
+
+        //function colorLocationsMapping() {
+        //    var color = '#d80a0a';
+
+        //    map.data.setStyle(function (feature) {
+        //        color = '#d80a0a';
+        //        var clave = feature.getProperty(propName);
+        //        var idLayer = feature.getProperty('ID');
+        //        //
+        //        if (clave)
+        //        {
+        //            var ubicacion = ubicacionesObj[clave];
+
+        //            if (ubicacion && ubicacion.Color) {
+        //                color = ubicacion.Color;
+        //            }
+        //            else {
+        //                color = '#d80a0a';
+        //            }
+        //        }
+
+        //        return ({
+        //            fillColor: color,
+        //            strokeColor: invertColor(color),
+        //            fillOpacity: '0.2',
+        //            strokeWeight: 2
+        //        });
+        //    });
+        //};
+
+        //function saveLatLngDB(feature) {
+        //    var geometryType = feature.getGeometry().getType();
+        //    if (geometryType == "Polygon" || geometryType == "MultiPolygon") {
+        //        var order = feature.getProperty('Order');
+        //        var fileId = feature.getProperty('FileId');
+        //        var fileUrl = feature.getProperty('FileUrl');
+        //        var repo = feature.getProperty('Repo');
+        //        if (order != undefined) {
+        //            if (fileId) {
+        //                if (fileUrl) {
+        //                    if (repo) {
+        //                        jsLtLng(order, fileId, fileUrl, repo);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        //function jsLtLng(order,fileId,fileUrl, repo) {
+        //    var iu = parseInt(selectedId());
+        //    if (iu > 0) {
+        //        for (x in locationsMapArr) {
+        //            if (locationsMapArr[x].IdUbicacion) {
+        //                if (locationsMapArr[x].IdUbicacion === iu) {
+        //                    locationsMapArr.splice(x, 1);
+        //                }
+        //            }
+        //        }
+        //        locationsMapArr.push({ IdUbicacion: iu, Clave: selectedClave(), Order: order, IdUser: 0, FileId: fileId, FileName: fileUrl, Repo: repo });
+        //        document.getElementById('jsll_des').value = '';
+        //        document.getElementById('jsll_des').value = JSON.stringify(locationsMapArr);
+        //    } else {
+        //        alert('Selecciona una ubicación válida.')
+        //    }
+        //}
+
+        //function selectedId() {
+        //    var e = document.getElementById("ubicacionesddl");
+        //    return e.options[e.selectedIndex].value;
+        //}
+
+        //function selectedClave() {
+        //    var e = document.getElementById("ubicacionesddl");
+        //    return e.options[e.selectedIndex].text;
+        //}
+
+        //function setLocationsItemsDDL() {
+        //    var s = document.getElementById('ubicacionesddl');
+        //    for (var i = 0; i < ubicacionesLength; i++)
+        //    {
+        //        var opt = document.createElement('option');
+        //        opt.value = ubicaciones[i].ID;
+        //        opt.textContent = ubicaciones[i].Clave;
+        //        s.appendChild(opt);
+        //    }
+        //}
+
+        //function colorLocations() {
+        //    //var color = '#0000FF';
+        //    //var locLength = ubicaciones.length;
+        //    //DYNAMIC PROPERTY
+
+        //}
+
+
+        //function displayContent(feature) {
+        //    var claveFeature = feature.getProperty(propName);;
+        //    var exists = false;
+        //    //
+        //    var ubicacion = ubicacionesObj[claveFeature];
+        //    //
+        //    if (ubicacion) {
+        //        if (isRenderedInfoWindow()) {
+        //            try {
+        //                document.getElementById('infoContent').innerHTML = setHtmlContent(ubicacion);
+        //            } catch (e) {
+
+        //            }
+        //        }
+        //        //
+        //        exists = true;
+        //    }
+        //    else {
+        //        exists = false;
+        //    }
+
+        //    if (!exists) {
+        //        if (isRenderedInfoWindow()) {
+        //            try {
+        //                document.getElementById('infoContent').innerHTML = '';
+        //            } catch(e) {
+        //            }
+        //        }
+        //    }
+        //}
+
+        //function isRenderedInfoWindow() {
+        //    if (document.getElementById('infoContent')) {
+        //        return true;
+        //    } else {
+        //        return false;
+        //    }
+        //}
+
+
+
+        //function hideLayer(layerId, hide) {
+        //    map.data.setStyle(function (feature) {
+        //        var layer = feature.getProperty('FileId');
+        //        if (layer == layerId) {
+        //            map.data.overrideStyle(feature, {
+        //                visible: hide
+        //            });
+        //        }
+        //    });
+        //}*@

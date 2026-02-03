@@ -1,0 +1,8 @@
+﻿{
+  "DiasPromedioAtencion": {
+    "bc": {
+      "text": "Consulta de Dias Promedio de Atención",
+      "link": "/scv/pv/DiasPromedioAtencion"
+    }
+  }
+}
