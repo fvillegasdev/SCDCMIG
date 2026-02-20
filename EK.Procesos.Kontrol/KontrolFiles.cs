@@ -237,7 +237,7 @@ namespace EK.Procesos.Kontrol
                 int id = await this.dao.Save(item);
                 retValue = await this.dao.GetById(id);
 
-                await this.Log(retValue);
+                //await this.Log(retValue);
             }
             catch (Exception ex)
             {

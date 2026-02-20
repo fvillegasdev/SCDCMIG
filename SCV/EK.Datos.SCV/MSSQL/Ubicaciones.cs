@@ -15,6 +15,7 @@ namespace EK.Datos.SCV.MSSQL
         : dk.DAOBaseGeneric<m.IUbicaciones>, d.IUbicaciones
     {
         private const string ENTITY_NAME = "scv_ubicaciones";
+        private const string USP_SPV_UBICACIONES_SELECT = "usp_spv_ubicaciones_select";
         private const string USP_SCV_UBICACIONES_SELECT = "usp_scv_ubicaciones_select";
         private const string USP_SCV_UBICACION_ESTATUS_UPD = "usp_scv_ubicacion_estatus_upd";
 
@@ -26,7 +27,7 @@ namespace EK.Datos.SCV.MSSQL
 
 
         public Ubicaciones(mki.IContainerFactory factory, dki.IDBHelper helper)
-            : base(factory, helper, USP_SCV_UBICACIONES_SELECT, null, ENTITY_NAME)
+            : base(factory, helper, USP_SPV_UBICACIONES_SELECT, null, ENTITY_NAME)
         {
 
         }
@@ -51,7 +52,7 @@ namespace EK.Datos.SCV.MSSQL
         {
             try
             {
-                return await helper.CreateEntitiesAsync(USP_SCV_UBICACIONES_SELECT, CommandType.StoredProcedure, parametros);
+                return await helper.CreateEntitiesAsync(USP_SPV_UBICACIONES_SELECT, CommandType.StoredProcedure, parametros);
             }
             catch (Exception ex)
             {

@@ -11,6 +11,7 @@ namespace EK.Datos.SCV.MSSQL
         : d.Kontrol.DAOBaseGeneric<m.SCV.Interfaces.ISupervisorUbicacion>, d.SCV.Interfaces.ISupervisoresUbicaciones
     {
         private const string USP_SPV_BASE_SELECT = "usp_spv_supervisores_ubicaciones_select";
+        private const string USP_SPV_SAVE_SUPUBI = "usp_spv_save_supervisores_ubicaciones";
 
         public SupervisoresUbicaciones(m.Kontrol.Interfaces.IContainerFactory factory, d.Kontrol.Interfaces.IDBHelper helper)
             : base(factory, helper, USP_SPV_BASE_SELECT, null, "sm_fraccionamiento_lote")
@@ -45,7 +46,7 @@ namespace EK.Datos.SCV.MSSQL
         {
             try
             {
-                return await helper.CreateEntitiesAsync<m.SCV.Interfaces.ISupervisorUbicacion>(USP_SPV_BASE_SELECT, CommandType.StoredProcedure, parametros);
+                return await helper.CreateEntitiesAsync<m.SCV.Interfaces.ISupervisorUbicacion>(USP_SPV_SAVE_SUPUBI, CommandType.StoredProcedure, parametros);
             }
             catch (Exception ex)
             {

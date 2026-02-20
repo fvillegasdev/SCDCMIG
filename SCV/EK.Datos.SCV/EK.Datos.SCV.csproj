@@ -337,11 +337,17 @@
     <Compile Include="Interfaces\SGP\ITipoProyecto.cs" />
     <Compile Include="Interfaces\SGP\IProyectos.cs" />
     <Compile Include="MSSQL\AnalisisProspecto.cs" />
+    <Compile Include="MSSQL\BitacorasClienteSPV.cs" />
+    <Compile Include="MSSQL\CausasFallas.cs" />
     <Compile Include="MSSQL\ChecklistsControl.cs" />
     <Compile Include="MSSQL\DesarrollosFaseGrupo.cs" />
     <Compile Include="MSSQL\InterfaceDetalle.cs" />
     <Compile Include="MSSQL\Interface.cs" />
     <Compile Include="MSSQL\InterfaceSaldoFacturaDetalle.cs" />
+    <Compile Include="MSSQL\OrdenesTrabajoDetallesRUBA.cs" />
+    <Compile Include="MSSQL\OrdenesTrabajoRUBA.cs" />
+    <Compile Include="MSSQL\Prereportes.cs" />
+    <Compile Include="MSSQL\PrereporteDetalle.cs" />
     <Compile Include="MSSQL\PuntosVentaDesarrollos.cs" />
     <Compile Include="MSSQL\ExpedientesReportes.cs" />
     <Compile Include="MSSQL\ComisionesTabuladoresExpedientes.cs" />
@@ -389,6 +395,8 @@
     <Compile Include="MSSQL\Reasignacion.cs" />
     <Compile Include="MSSQL\ReporteAnalisisComunidades.cs" />
     <Compile Include="MSSQL\ReporteConsultaProspectos.cs" />
+    <Compile Include="MSSQL\ReportesDictamenes.cs" />
+    <Compile Include="MSSQL\ReportesFallasDetalles.cs" />
     <Compile Include="MSSQL\SCCO\TestigosContratos.cs" />
     <Compile Include="MSSQL\SCCO\RegistroAnticiposConfiguracion.cs" />
     <Compile Include="MSSQL\SCCO\RegistroAnticiposRetenciones.cs" />
@@ -451,6 +459,9 @@
     <Compile Include="MSSQL\SGP\ReservaTerritorial.cs" />
     <Compile Include="MSSQL\SGP\TipoProyecto.cs" />
     <Compile Include="MSSQL\SGP\Proyectos.cs" />
+    <Compile Include="MSSQL\SPVFraccionamientosCAT.cs" />
+    <Compile Include="MSSQL\SPVSupervisoresCat.cs" />
+    <Compile Include="MSSQL\SPVSupervisoresCoordinadores.cs" />
     <Compile Include="MSSQL\UbicacionesEstatus.cs" />
     <Compile Include="MSSQL\TiposUbicacion.cs" />
     <Compile Include="MSSQL\UbicacionesFallaPrototipos.cs" />

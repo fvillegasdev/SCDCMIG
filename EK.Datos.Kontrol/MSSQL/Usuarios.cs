@@ -25,6 +25,7 @@ namespace EK.Datos.Kontrol.MSSQL
         private const string USP_USUARIOS_FAVORITOS_INSERT = "usp_usuarios_favoritos_insert";
         private const string USP_USUARIOS_FAVORITOS_DELETE = "usp_usuarios_favoritos_delete";
         private const string USP_USUARIONIVELCOMPANIA_SELECT = "usp_usuarionivelcompania_select";
+        private const string USP_CATSBYPLAZA_SELECT = "usp_catsbyplaza_select";
         private const string USP_USUARIONIVELCOMPANIA_INS_DEL = "usp_usuarionivelcompania_ins_del";
         private const string USP_USUARIOINTENTOSBLOQUEO_UPD = "usp_usuariointentosbloqueo_upd";
         private const string USP_USUARIOS_REPORTE = "usp_usuarios_reporte";
@@ -556,7 +557,7 @@ namespace EK.Datos.Kontrol.MSSQL
                 //    { "id" , id}
                 //};
 
-                return await helper.CreateEntitiesAsync<m.Kontrol.Interfaces.IUsuario>(USP_USUARIONIVELCOMPANIA_SELECT, CommandType.StoredProcedure, parametros);
+                return await helper.CreateEntitiesAsync<m.Kontrol.Interfaces.IUsuario>(USP_CATSBYPLAZA_SELECT, CommandType.StoredProcedure, parametros);
             }
             catch
             {

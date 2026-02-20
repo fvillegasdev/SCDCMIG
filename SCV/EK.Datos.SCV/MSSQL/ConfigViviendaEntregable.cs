@@ -15,13 +15,14 @@ namespace EK.Datos.SCV.MSSQL
     public class ConfigViviendaEntregable
         : d.Kontrol.DAOBaseGeneric<m.SCV.Interfaces.IConfigViviendaEntregable>, d.SCV.Interfaces.IConfigViviendaEntregable
     {
+
         private const string USP_SPV_CONFIG_VIVIENDA_ENTREGABLE_SELECT = "usp_spv_Config_Vivienda_Entregable";
         private const string USP_SPV_CONFIG_VIVIENDAENTREGABLE_SELECT = "usp_spv_ConfigViviendaEntregable_select";
-        private const string USP_SPV_DET_PROGRAMACION_INS = "usp_spv_det_programacion_ins";
         private const string USP_SPV_CONFIG_VIVIENDAENTREGABLE_INS = "usp_spv_config_viviendaentregable_ins";
         private const string USP_SPV_CONSULTA_DOCS_IMPRESION_SELECT = "usp_spv_DocImpresion_select";
         private const string USP_SPV_CONSULTA_INFO_CLIENTE_SELECT = "usp_spv_Cliente_Info_Impresion_select";
-        private const string USP_SPV_UPDATE_RESPONSABLEVIV = "usp_spv_Cliente_Info_Impresion_select";
+        private const string USP_SPV_UPDATE_RESPONSABLEVIV = "usp_spv_update_responsableViv";
+        private const string USP_SPV_ENCUESTA_ENTREGA_VIVIENDA = "ups_proc_encuesta_entrega_vivienda";
 
         public ConfigViviendaEntregable(m.Kontrol.Interfaces.IContainerFactory factory, d.Kontrol.Interfaces.IDBHelper helper)
             : base(factory, helper, USP_SPV_CONFIG_VIVIENDA_ENTREGABLE_SELECT, null, "sm_financiamiento_etapa")
@@ -39,30 +40,7 @@ namespace EK.Datos.SCV.MSSQL
             }
         }
 
-        public async Task<List<miSCV.IConfigViviendaEntregable>> SaveDetProg(int numcte, string desc_detalle_repr, int cve_detalle, int bit_reparado, int Usuario)
-        {
-            try
-            {
-                var parameters = new Dictionary<string, object>
-                {
-                    { "numcte", numcte },
-                    { "desc_detalle_repr", desc_detalle_repr },
-                    { "cve_detalle", cve_detalle },
-                    { "bit_reparado", bit_reparado },
-                    { "Usuario", Usuario }
-
-
-                };
-
-                return await helper.CreateEntitiesAsync<miSCV.IConfigViviendaEntregable>(USP_SPV_DET_PROGRAMACION_INS, CommandType.StoredProcedure, parameters);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public async Task<List<miSCV.IConfigViviendaEntregable>> SaveConfigViv(int numcte, DateTime FechaProgramacion, int PersonaEntregaV, string HoralugarEntrega, string ObservacionesCte)
+        public async Task<List<miSCV.IConfigViviendaEntregable>> SaveConfigViv(int numcte, DateTime fecha_programacion, int num_entrega_viv, string lugar_hora_entrega, string bit_detalles)
         {
             try
             {
@@ -70,10 +48,10 @@ namespace EK.Datos.SCV.MSSQL
                 {
 
                     { "numcte", numcte },
-                    { "FechaProgramacion", FechaProgramacion },
-                    { "PersonaEntregaV", PersonaEntregaV },
-                    { "HoralugarEntrega", HoralugarEntrega },
-                    { "ObservacionesCte", ObservacionesCte }
+                    { "FechaProgramacion", fecha_programacion },
+                    { "PersonaEntregaV", num_entrega_viv },
+                    { "HoralugarEntrega", lugar_hora_entrega },
+                    { "ObservacionesCte", bit_detalles }
 
                 };
 
@@ -93,8 +71,9 @@ namespace EK.Datos.SCV.MSSQL
                 var parameters = new Dictionary<string, object>();
 
                 parameters.Add("Plaza", model.plaza);
-                parameters.Add("clave_tipo_vivienda ", model.clave_tipo_vivienda);
+                parameters.Add("clave_tipo_vivienda", model.clave_tipo_vivienda);
                 parameters.Add("hipoteca_verde", model.hipoteca_verde);
+                parameters.Add("numcte", model.numcte);
 
                 return await helper.CreateEntitiesAsync<m.Kontrol.Interfaces.IPreparacionVivienda>(USP_SPV_CONSULTA_DOCS_IMPRESION_SELECT, CommandType.StoredProcedure, parameters);
 
@@ -122,6 +101,7 @@ namespace EK.Datos.SCV.MSSQL
                 throw ex;
             }
         }
+
         public async Task<int> UpdateResponsableEntViv(Dictionary<string, object> parametros)
         {
             try
@@ -136,9 +116,16 @@ namespace EK.Datos.SCV.MSSQL
                 throw ex;
             }
         }
-        public Task<int> EncuestaVivienddaEntregable(Dictionary<string, object> parametros)
+        public async Task<int> EncuestaVivienddaEntregable(Dictionary<string, object> parametros)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await helper.GetResultAsync(USP_SPV_ENCUESTA_ENTREGA_VIVIENDA, CommandType.StoredProcedure, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

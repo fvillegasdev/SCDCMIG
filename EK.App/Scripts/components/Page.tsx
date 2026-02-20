@@ -971,6 +971,7 @@
                     if (params && !isNaN(parseInt(params.id))) {
                         let id: number = Number(params.id);
                         //aqui
+                        console.log(this.props.config)
                         let idEntidad: number = Number(this.props.config.getIDEntidad(this.props, null));
                         if (id !== idEntidad && idEntidad > 0) {
                             go(window.location.href, false);

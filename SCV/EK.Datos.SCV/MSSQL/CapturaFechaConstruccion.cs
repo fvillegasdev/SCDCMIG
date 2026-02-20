@@ -17,9 +17,10 @@ namespace EK.Datos.SCV.MSSQL
     {
         private const string USP_SPV_CONSULTA_PREPARACION_VIVIENDA_SELECT = "usp_spv_ConsultaPreparacionVivienda_select";
         private const string USP_SPV_CONSUL_CAPTURA_FECHA_SELECT = "usp_spv_Captura_fechas_construccion_select";
-        private const string USP_SPV_ACTUALIZA_FECHA_CONSTRUC_INS_UPD = "usp_spv_Captura_fechas_construccion_select";
+        private const string USP_SPV_ACTUALIZA_FECHA_CONSTRUC_INS_UPD = "usp_spv_actualiza_fecha_construc_ins_upd";
         private const string USP_SPV_DET_PROGRAMACION_INS = "usp_spv_det_programacion_ins";
         private const string USP_SPV_MOTIVOS_REPROGRAMACION_SELECT = "usp_spv_motivos_reprogramacion_select";
+        private const string USP_SPV_MOTIVOS_REZAGO_SELECT = "usp_spv_motivos_rezago_select";
         private const string USP_SPV_MOTIVOS_RECEPDET_SELECT = "usp_spv_motivos_recepciondetalle_select";
         private const string USP_SPV_PROGRAMADOS_SELECT = "usp_spv_programados_sel";
         private const string USP_SPV_CONSULTA_CONSULTAPERSONAENTREGAVXFRACC_SELECT = "usp_spv_personal_entrega_viv_fracc_select";
@@ -119,7 +120,7 @@ namespace EK.Datos.SCV.MSSQL
             try
             {
 
-                return await helper.CreateEntitiesAsync<miSCV.IMotivosReprogramacion>(USP_SPV_MOTIVOS_REPROGRAMACION_SELECT, CommandType.StoredProcedure, parametros);
+                return await helper.CreateEntitiesAsync<miSCV.IMotivosReprogramacion>(USP_SPV_MOTIVOS_REZAGO_SELECT, CommandType.StoredProcedure, parametros);
             }
             catch (Exception ex)
             {

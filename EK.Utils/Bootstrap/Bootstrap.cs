@@ -997,6 +997,7 @@ namespace EK.Utils
             container.Register<dKontrol.Interfaces.IUnidadMedida, dKontrol.MSSQL.UnidadMedida>();
             container.Register<dKontrol.Interfaces.ICompania, dKontrol.MSSQL.Companias>();
 
+            container.Register<dKontrol.Interfaces.IDateDifference, dKontrol.MSSQL.DateDifference>();
 
 
             container.Register<dKontrol.Interfaces.INotification, dKontrol.MSSQL.Notification>();
@@ -1080,6 +1081,8 @@ namespace EK.Utils
             container.Register<dKontrol.Interfaces.IPullNotificationsActions, dKontrol.MSSQL.PullNotificationsActions>();
             container.Register<dKontrol.Interfaces.IPullNotificationsEntities, dKontrol.MSSQL.PullNotificationsEntities>();
             container.Register<dKontrol.Interfaces.IPullNotificationsFiles, dKontrol.MSSQL.PullNotificationsFiles>();
+            container.Register<dKontrol.Interfaces.IAgenda, dKontrol.MSSQL.Agenda>();
+            container.Register<dKontrol.Interfaces.IAgendaEntVivienda, dKontrol.MSSQL.AgendasEntregasViviendas>();
 
             //container.Register<dKontrol.Interfaces.IChatConversacion, dKontrol.MSSQL.ChatConversacion>();
             //container.Register<dKontrol.Interfaces.IChatTema, dKontrol.MSSQL.ChatTema>();
@@ -1341,7 +1344,7 @@ namespace EK.Utils
 
 
 
-            //container.Register<dSCV.Interfaces.ICausasFallas, dSCV.MSSQL.CausasFallas>();
+            container.Register<dSCV.Interfaces.ICausasFallas, dSCV.MSSQL.CausasFallas>();
 
             container.Register<dSCV.Interfaces.IClientesSPV, dSCV.MSSQL.ClientesSPV>();
             container.Register<dSCV.Interfaces.ITipoFallaAreaComun, dSCV.MSSQL.TipoFallaAreaComun>();
@@ -1357,7 +1360,7 @@ namespace EK.Utils
             container.Register<dSCV.Interfaces.ITiposDeProcesos, dSCV.MSSQL.TiposDeProcesos>();
             container.Register<dSCV.Interfaces.IPolizaFiniquito, dSCV.MSSQL.PolizaFiniquito>();
             container.Register<dSCV.Interfaces.IFiniquito, dSCV.MSSQL.Finiquito>();
-
+          
             container.Register<dSCV.Interfaces.IAgendaSPV, dSCV.MSSQL.AgendaSPV>();
             container.Register<dSCV.Interfaces.IHorarioAtencion, dSCV.MSSQL.HorarioAtencion>();
             container.Register<dSCV.Interfaces.IVocacionesSPV, dSCV.MSSQL.VocacionesSPV>();
@@ -1403,7 +1406,20 @@ namespace EK.Utils
             container.Register<dSCV.Interfaces.IAnalisisProspecto, dSCV.MSSQL.AnalisisProspecto>();
 
             container.Register<dSCV.Interfaces.IChecklistsControl, dSCV.MSSQL.ChecklistsControl>();
-
+            container.Register<dSCV.Interfaces.IFraccionamientos, dSCV.MSSQL.Fraccionamientos>();
+            container.Register<dSCV.Interfaces.ISPVCoordinadores, dSCV.MSSQL.SPVSupervisoresCoordinadores>();
+            container.Register<dSCV.Interfaces.ISmFraccionamiento, dSCV.MSSQL.SPVFraccionamientosCAT>();
+            container.Register<dSCV.Interfaces.ISPVSupervisoresCAT, dSCV.MSSQL.SPVSupervisoresCat>();
+            container.Register<dSCV.Interfaces.IConfigViviendaEntregable, dSCV.MSSQL.ConfigViviendaEntregable>();
+            container.Register<dSCV.Interfaces.ICapturaFechaConstruccion, dSCV.MSSQL.CapturaFechaConstruccion>();
+            container.Register<dSCV.Interfaces.IReportesFallas, dSCV.MSSQL.ReportesFallas>();
+            container.Register<dSCV.Interfaces.IReportesFallasDetalles, dSCV.MSSQL.ReportesFallasDetalles>();
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoRUBA, dSCV.MSSQL.OrdenesTrabajoRUBA>();
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoDetallesRUBA, dSCV.MSSQL.OrdenesTrabajoDetallesRUBA>();
+            container.Register<dSCV.Interfaces.IReportesDictamenes, dSCV.MSSQL.ReportesDictamenes>();
+            container.Register<dSCV.Interfaces.IPrereportes, dSCV.MSSQL.Prereportes>();
+            container.Register<dSCV.Interfaces.IPrereportesDetalles, dSCV.MSSQL.PrereporteDetalle>();
+            container.Register<dSCV.Interfaces.IBitacorasClienteSPV, dSCV.MSSQL.BitacorasClienteSPV>();
 
             #endregion SCV
 

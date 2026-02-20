@@ -599,24 +599,24 @@ namespace EK.Procesos.SCV
                 item = await this.saveModel(item);
 
                 //asignar el folio al prereporte correspondiente.
-                if (idPrereporte > 0 && isNew == true)
-                {
-                    var pprt = await bpPRE.GetById((int)idPrereporte);
-                    pprt.EstatusReporteId = 3;
-                    pprt.IdReporte = item.ID;
-                    pprt.Modificado = DateTime.Now;
-                    pprt.IdModificadoPor = base.getUserId();
+                //if (idPrereporte > 0 && isNew == true)
+                //{
+                //    var pprt = await bpPRE.GetById((int)idPrereporte);
+                //    pprt.EstatusReporteId = 3;
+                //    pprt.IdReporte = item.ID;
+                //    pprt.Modificado = DateTime.Now;
+                //    pprt.IdModificadoPor = base.getUserId();
 
-                    pprt.Changed("EstatusReporteId", true);
-                    pprt.Changed("IdReporte", true);
-                    pprt.Changed("Modificado", true);
-                    pprt.Changed("IdModificadoPor", true);
+                //    pprt.Changed("EstatusReporteId", true);
+                //    pprt.Changed("IdReporte", true);
+                //    pprt.Changed("Modificado", true);
+                //    pprt.Changed("IdModificadoPor", true);
 
-                    pprt = await daoPRE.Save(pprt);
+                //    pprt = await daoPRE.Save(pprt);
 
-                    item.Prereporte = pprt;
-                    item.IdPrereporte = pprt.ID;
-                }
+                //    item.Prereporte = pprt;
+                //    item.IdPrereporte = pprt.ID;
+                //}
                 List<PartidasPendientesOt> AceptadasPendientes = new List<PartidasPendientesOt>();
                 int TotalPartidaNoProcede = 0;
                 bool CancelarPordiagnosticoNoProcede = false;
@@ -1206,6 +1206,7 @@ namespace EK.Procesos.SCV
 
 
                 item = await this.afterGetItem(item);
+                item.HistorialFechasOT = await this.GetHistorialFechasOT(item.ID.Value);
 
                 Commit();
                 // ========== INICIO PREREPORTES
@@ -2547,7 +2548,6 @@ namespace EK.Procesos.SCV
                 }
             }
 
-            item.HistorialFechasOT = await this.GetHistorialFechasOT(item.ID.Value);
 
             return await base.afterGetItem(item);
         }
