@@ -12,9 +12,9 @@ namespace EK.Datos.SCV.MSSQL
     public class TiposComponentes
       : d.Kontrol.DAOBaseGeneric<m.SCV.Interfaces.ITipoComponente>, d.SCV.Interfaces.ITiposComponentes
     {
-        private const string USP_SPV_TIPO_FALLA_SELECT = "usp_spv_tipos_componentes_select";
+        private const string USP_SPV_TIPO_FALLA_SELECT = "usp_spv_tipo_falla_select";
         public TiposComponentes(m.Kontrol.Interfaces.IContainerFactory factory, d.Kontrol.Interfaces.IDBHelper helper)
-            : base(factory, helper, USP_SPV_TIPO_FALLA_SELECT, null, "spv_Tipos_Componentes")
+            : base(factory, helper, USP_SPV_TIPO_FALLA_SELECT, null, "sv_tipo_falla")
         { }
     }
 }

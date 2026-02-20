@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using d = EK.Datos;
 using m = EK.Modelo;
 
-namespace EK.Datos.SCV.Sybase17
+namespace EK.Datos.SCV.MSSQL
 {
     public class Contratistas
         : d.Kontrol.DAOBaseGeneric<m.SCV.Interfaces.IContratista>, d.SCV.Interfaces.IContratistas

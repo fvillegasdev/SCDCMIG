@@ -2195,15 +2195,15 @@
             }
         }
 
-        let SingleUserSendMail: () => any = (): any => {
-            let usuario = EK.Store.getState().global.app.data.Me;
-            //console.log(usuario);
-            if (usuario.ID === 1150 || usuario.ID === 1) { // 1150, 2057
-                dispatchEnviarCorreoACat();
-                //setInterval(dispatchEnviarCorreoACat, 300000); //Cada 5 minutos = 1000 * 60 * 5
-                //setInterval(dispatchEnviarCorreoACat, 60000); //Cada 2 minutos = 1000 * 60 * 5
-            }
-        };
+        //let SingleUserSendMail: () => any = (): any => {
+        //    //let usuario = EK.Store.getState().global.app.data.Me;
+        //    ////console.log(usuario);
+        //    //if (usuario.ID === 1150 || usuario.ID === 1) { // 1150, 2057
+        //    //    dispatchEnviarCorreoACat();
+        //    //    //setInterval(dispatchEnviarCorreoACat, 300000); //Cada 5 minutos = 1000 * 60 * 5
+        //    //    //setInterval(dispatchEnviarCorreoACat, 60000); //Cada 2 minutos = 1000 * 60 * 5
+        //    //}
+        //};
         //if (global.isSuccessful(EK.Store.getState().global.app)) {
         //    dispatchAsync("global-notifications", "kontrol/notifications/assigned");
         //};
@@ -2215,7 +2215,7 @@
             dispatchAsync("load::PLAZASPOSTVENTA", "ConsultaViviendaEntregable/GetPlazas/");
         };
         //dispatchEnviarCorreoACat();
-        SingleUserSendMail();
+        //SingleUserSendMail();
         dispatchAsignaciones();
         dispatchAsignacionesApp();
         setInterval(dispatchAsignaciones, 180000);

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using d = EK.Datos;
 using m = EK.Modelo;
 
-namespace EK.Datos.SCV.MSSQL
+namespace EK.Datos.SCV.Sybase17
 {
     public class ReportesFallasDetalles : d.Kontrol.DAOBaseGeneric<m.SCV.Interfaces.IReporteFallaDetalle>, d.SCV.Interfaces.IReportesFallasDetalles
     {

@@ -7,7 +7,7 @@ using d = EK.Datos;
 using m = EK.Modelo;
 
 
-namespace EK.Datos.SCV.MSSQL
+namespace EK.Datos.SCV.Sybase17
 {
     public class OrdenesTrabajoDetallesRUBA :
         d.Kontrol.DAOBaseGeneric<m.SCV.Interfaces.IOrdenTrabajoDetalleRUBA>, d.SCV.Interfaces.IOrdenesTrabajoDetallesRUBA

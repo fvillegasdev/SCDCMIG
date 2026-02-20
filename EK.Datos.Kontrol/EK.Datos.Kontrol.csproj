@@ -207,6 +207,9 @@
     <Compile Include="Interfaces\IVistas.cs" />
     <Compile Include="Interfaces\IWorkflowInstance.cs" />
     <Compile Include="Interfaces\IWorkflowManager.cs" />
+    <Compile Include="MSSQL\Agenda.cs" />
+    <Compile Include="MSSQL\AgendasEntregasViviendas.cs" />
+    <Compile Include="MSSQL\DateDifference.cs" />
     <Compile Include="MSSQL\PersonalizarCamposValores.cs" />
     <Compile Include="MSSQL\PersonalizarCamposSecciones.cs" />
     <Compile Include="MSSQL\ConfiguracionFormularioEntidad.cs" />
