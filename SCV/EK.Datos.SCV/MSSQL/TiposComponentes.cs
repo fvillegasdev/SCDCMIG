@@ -14,7 +14,7 @@ namespace EK.Datos.SCV.MSSQL
     {
         private const string USP_SPV_TIPO_FALLA_SELECT = "usp_spv_tipo_falla_select";
         public TiposComponentes(m.Kontrol.Interfaces.IContainerFactory factory, d.Kontrol.Interfaces.IDBHelper helper)
-            : base(factory, helper, USP_SPV_TIPO_FALLA_SELECT, null, "spv_Tipos_Componentes")
+            : base(factory, helper, USP_SPV_TIPO_FALLA_SELECT, null, "sv_tipo_falla")
         { }
     }
 }

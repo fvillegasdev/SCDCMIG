@@ -1,12 +1,18 @@
-﻿using System;
-
-
+﻿using EK.Common.Managers;
+using EK.Datos.SCV.Interfaces;
+using SimpleInjector;
+using System;
+using System.Configuration;
+using dKontrol = EK.Datos.Kontrol;
+using dSCCO = EK.Datos.SCCO;
+using dSCO = EK.Datos.SCO;
+using dSCP = EK.Datos.SCP;
+using dSCV = EK.Datos.SCV;
+using dSDC = EK.Datos.SDC;
+using dSGP = EK.Datos.SGP;
 /*Base*/
 
 using mKontrol = EK.Modelo.Kontrol;
-using dKontrol = EK.Datos.Kontrol;
-using pKontrol = EK.Procesos.Kontrol;
-
 /*Banco*/
 using mSBO = EK.Modelo.SBO;
 //using dSBO = EK.Datos.SBO;
@@ -15,39 +21,22 @@ using mSBO = EK.Modelo.SBO;
 
 /*Construccion*/
 using mSCCO = EK.Modelo.SCCO;
-using dSCCO = EK.Datos.SCCO;
-using pSCCO = EK.Procesos.SCCO;
-
 using mSCO = EK.Modelo.SCO;
-using dSCO = EK.Datos.SCO;
-using pSCO = EK.Procesos.SCO;
-
-
 using mSCP = EK.Modelo.SCP;
-using dSCP = EK.Datos.SCP;
-using pSCP = EK.Procesos.SCP;
-
+/*Vivienda*/
+using mSCV = EK.Modelo.SCV;
 /*Desarrollo comunitario*/
 
 using mSDC = EK.Modelo.SDC;
-using dSDC = EK.Datos.SDC;
-using pSDC = EK.Procesos.SDC;
-
-/*Vivienda*/
-using mSCV = EK.Modelo.SCV;
-using dSCV = EK.Datos.SCV;
-using pSCV = EK.Procesos.SCV;
-
 /*Gestión de Proyectos SGP*/
 using mSGP = EK.Modelo.SGP;
-using dSGP = EK.Datos.SGP;
+using pKontrol = EK.Procesos.Kontrol;
+using pSCCO = EK.Procesos.SCCO;
+using pSCO = EK.Procesos.SCO;
+using pSCP = EK.Procesos.SCP;
+using pSCV = EK.Procesos.SCV;
+using pSDC = EK.Procesos.SDC;
 using pSGP = EK.Procesos.SGP;
-
-
-using EK.Common.Managers;
-
-using SimpleInjector;
-using System.Configuration;
 
 namespace EK.Utils
 {
@@ -1090,7 +1079,7 @@ namespace EK.Utils
             //Ohss 2019-03-26
             container.Register<dSCV.Interfaces.IConsultaViviendaEntregables, dSCV.MSSQL.ConsultaViviendaEntregable>();
             //Ohss 2019-04-12
-            container.Register<dSCV.Interfaces.IContratistas, dSCV.MSSQL.Contratistas>();
+            container.Register<dSCV.Interfaces.IContratistas, dSCV.MSSQL.Contratistas>(); 
 
             #region SBO
 
@@ -1312,7 +1301,19 @@ namespace EK.Utils
             container.Register<dSCV.Interfaces.IUbicacionComun, dSCV.MSSQL.UbicacionComun>();
             container.Register<dSCV.Interfaces.ITipoContratista, dSCV.MSSQL.TipoContratista>();
             container.Register<dSCV.Interfaces.IOrigenFalla, dSCV.MSSQL.OrigenFalla>();
-            //container.Register<dSCV.Interfaces.IDocumentosImpresion, dSCV.MSSQL.DocumentosImpresion>();
+            container.Register<dSCV.Interfaces.IDocumentosImpresion, dSCV.MSSQL.DocumentosImpresion>();
+            container.Register<dSCV.Interfaces.IFallasAreasComunes, dSCV.MSSQL.FallasAreasComunes>();
+            container.Register<dSCV.Interfaces.ICatalogosSpv, dSCV.MSSQL.CatalogosSpv>(); 
+            container.Register<dSCV.Interfaces.ICapturaFechaConstruccion, dSCV.MSSQL.CapturaFechaConstruccion>();
+            container.Register<dSCV.Interfaces.IReporteFallasAreasComunes, dSCV.MSSQL.ReporteFallasAreasComunes>(); 
+            container.Register<dSCV.Interfaces.IFraccionamientos, dSCV.MSSQL.Fraccionamientos>();
+
+            container.Register<dSCV.Interfaces.IReportesFallas, dSCV.MSSQL.ReportesFallas>();
+            container.Register<dSCV.Interfaces.IReporteFallasAreasComunesPartidas, dSCV.MSSQL.ReporteFallasAreasComunesPartidas>(); 
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoRUBAAreasComunes, dSCV.MSSQL.OrdenesTrabajoRUBAAreasComunes>(); 
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoDetallesRUBAAreasComunes, dSCV.MSSQL.OrdenesTrabajoDetallesRUBAAreasComunes>(); 
+            container.Register<dSCV.Interfaces.IReportesDictamenesAreasComunes, dSCV.MSSQL.ReportesDictamenesAreasComunes>();
+            container.Register<dSCV.Interfaces.ISPVCoordinadores, dSCV.MSSQL.SPVSupervisoresCoordinadores>();
             container.Register<dSCV.Interfaces.IRezagosEntrega, dSCV.MSSQL.RezagosEntrega>();
             container.Register<dSCV.Interfaces.IMotivosCancelacionPV, dSCV.MSSQL.MotivosCancelacionPV>();
             container.Register<dSCV.Interfaces.ICausasReprogramacion, dSCV.MSSQL.CausasReprogramacion>();
@@ -1322,7 +1323,21 @@ namespace EK.Utils
 
             container.Register<dSCV.Interfaces.ITicketsDictamenes, dSCV.MSSQL.TicketsDictamenes>();
             container.Register<dSCV.Interfaces.IOrdenesTrabajo, dSCV.MSSQL.OrdenesTrabajo>();
-            container.Register<dSCV.Interfaces.IOrdenesTrabajoDetalles, dSCV.MSSQL.OrdenesTrabajoDetalle>();
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoDetalles, dSCV.MSSQL.OrdenesTrabajoDetalle>(); 
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoDetallesRUBA, dSCV.MSSQL.OrdenesTrabajoDetallesRUBA>(); 
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoDetallesRUBAAreasComunes, dSCV.MSSQL.OrdenesTrabajoDetallesRUBAAreasComunes>();
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoRUBA, dSCV.MSSQL.OrdenesTrabajoRUBA>(); 
+            container.Register<dSCV.Interfaces.IOrdenesTrabajoRUBAAreasComunes, dSCV.MSSQL.OrdenesTrabajoRUBAAreasComunes>(); 
+            container.Register<dSCV.Interfaces.IReportesFallasDetalles, dSCV.MSSQL.ReportesFallasDetalles>(); 
+            container.Register<dSCV.Interfaces.IAgendasContratistas, dSCV.MSSQL.AgendasContratistas>();
+            container.Register<dSCV.Interfaces.IAgendasContratistasAreasComunes, dSCV.MSSQL.AgendasContratistasAreasComunes>();
+            container.Register<dSCV.Interfaces.IAgendasDictamenes, dSCV.MSSQL.AgendasDictamenes>();
+            container.Register<dSCV.Interfaces.IAgendasDictamenesAreasComunes, dSCV.MSSQL.AgendasDictamenesAreasComunes>(); 
+            container.Register<dSCV.Interfaces.IReportesDictamenes, dSCV.MSSQL.ReportesDictamenes>(); 
+            container.Register<dSCV.Interfaces.ICausasFallas, dSCV.MSSQL.CausasFallas>(); 
+            container.Register<dSCV.Interfaces.IReportesFallasConsulta, dSCV.MSSQL.ReportesFallasConsulta>(); 
+            container.Register<dSCV.Interfaces.IReporteEncuestaSatisfaccion, dSCV.MSSQL.ReporteEncuestaSatisfaccion>(); 
+            container.Register<dSCV.Interfaces.IClasificacionViviendaPendienteEntrega, dSCV.MSSQL.ClasificacionViviendaPendienteEntrega>(); 
 
 
 
